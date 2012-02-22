@@ -1,6 +1,4 @@
-﻿using Flags;
-using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Flags.MVVMUtils
