@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagsWP7", "FlagsWP7\FlagsWP7.csproj", "{BF1FB83B-B325-4773-8111-09E75A40B8C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagsWPF", "FlagsWPF\FlagsWPF.csproj", "{05362B7D-17B5-45BA-8F4A-66145C23EC47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BF1FB83B-B325-4773-8111-09E75A40B8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF1FB83B-B325-4773-8111-09E75A40B8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BF1FB83B-B325-4773-8111-09E75A40B8C5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{05362B7D-17B5-45BA-8F4A-66145C23EC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05362B7D-17B5-45BA-8F4A-66145C23EC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05362B7D-17B5-45BA-8F4A-66145C23EC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05362B7D-17B5-45BA-8F4A-66145C23EC47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
