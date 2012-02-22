@@ -16,17 +16,6 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace Flags.MVVMUtils
 {
-    /// <summary>
-    /// This class contains static references to all the view models in the
-    /// application and provides an entry point for the bindings.
-    /// <para>
-    /// Use the <strong>mvvmlocatorproperty</strong> snippet to add ViewModels
-    /// to this locator.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm/getstarted
-    /// </para>
-    /// </summary>
     public class ViewModelLocator
     {
         static ViewModelLocator()
@@ -45,13 +34,7 @@ namespace Flags.MVVMUtils
             SimpleIoc.Default.Register<MainWindowViewModel>();
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
-            "CA1822:MarkMembersAsStatic",
-            Justification = "This non-static member is needed for data binding purposes.")]
-        public MainWindowViewModel Main
+        public MainWindowViewModel MainWindowVm
         {
             get
             {
@@ -59,9 +42,6 @@ namespace Flags.MVVMUtils
             }
         }
 
-        /// <summary>
-        /// Cleans up all the resources.
-        /// </summary>
         public static void Cleanup()
         {
         }

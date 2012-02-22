@@ -42,7 +42,7 @@
               Margin="12,0,12,0">
         	<Button Content="Button" Height="105" Margin="70,127,160,0" VerticalAlignment="Top"/>
         	<Button Content="Button" Margin="86,281,199,221"/>
-        	<TextBlock Height="63" Margin="46,31,134,0" TextWrapping="Wrap" Text="Tutaj beda wyniki itp." VerticalAlignment="Top"/></Grid>
+        	<TextBlock Height="63" Margin="46,31,134,0" TextWrapping="Wrap" Text="{Binding TestString}" VerticalAlignment="Top"/></Grid>
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

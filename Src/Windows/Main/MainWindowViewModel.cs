@@ -4,12 +4,10 @@ namespace Flags
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        static public int x;
+        public string TestString { get; set; }
         public MainWindowViewModel()
         {
-            int a;
-            a = 23;
-            x = a;
+            TestString = "Testowy string z VM";
         }
     }
 }
