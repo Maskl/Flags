@@ -3,6 +3,7 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace Flags.MVVMUtils
 {
+    //#if WINDOWS_PHONE
     public class ViewModelLocator
     {
         static ViewModelLocator()
@@ -19,6 +20,9 @@ namespace Flags.MVVMUtils
             //}
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
+            SimpleIoc.Default.Register<ResultsWindowViewModel>();
+
+            SimpleIoc.Default.Register<INavigationService, NavigationService>();
         }
 
         public MainWindowViewModel MainWindowVm
@@ -26,6 +30,14 @@ namespace Flags.MVVMUtils
             get
             {
                 return ServiceLocator.Current.GetInstance<MainWindowViewModel>();
+            }
+        }
+
+        public ResultsWindowViewModel ResultsWindowVm
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ResultsWindowViewModel>();
             }
         }
 

@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\Src\MVVMUtils\INavigationService.cs">
+      <Link>MVVMUtils\INavigationService.cs</Link>
+    </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
     </Compile>
@@ -80,12 +83,20 @@
       <Link>Windows\Main\MainWindowViewWPF.xaml.cs</Link>
       <DependentUpon>MainWindowViewWPF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="..\Src\Windows\Results\ResultsWindowViewModel.cs">
+      <Link>Windows\Results\ResultsWindowViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Windows\Results\ResultsWindowViewWPF.xaml.cs">
+      <Link>Windows\Results\ResultsWindowViewWPF.xaml.cs</Link>
+      <DependentUpon>ResultsWindowViewWPF.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVMUtils\NavigationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -112,6 +123,11 @@
   <ItemGroup>
     <Page Include="..\Src\Windows\Main\MainWindowViewWPF.xaml">
       <Link>Windows\Main\MainWindowViewWPF.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\Src\Windows\Results\ResultsWindowViewWPF.xaml">
+      <Link>Windows\Results\ResultsWindowViewWPF.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Threading;
 
-namespace FlagsWPF
+namespace Flags
 {
     public partial class App
     {

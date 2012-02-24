@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage x:Class="Flags.MainWindowViewWP7"
+﻿<phone:PhoneApplicationPage x:Class="Flags.ResultsWindowViewWP7"
                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -14,7 +14,7 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
+                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot"
           Background="Transparent">
@@ -30,8 +30,8 @@
             <TextBlock x:Name="ApplicationTitle"
                        Text="MY APPLICATION"
                        Style="{StaticResource PhoneTextNormalStyle}" />
-            <TextBlock x:Name="PageTitle"
-                       Text="page name"
+            <TextBlock x:Name="fsdf"
+                       Text="Wyniki!"
                        Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" />
         </StackPanel>
@@ -40,9 +40,18 @@
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
               Margin="12,0,12,0">
-        	<Button Content="Button" Height="105" Margin="70,127,160,0" VerticalAlignment="Top"/>
-        	<Button Content="Button" Margin="86,281,199,221"/>
-        	<TextBlock Height="63" Margin="46,31,134,0" TextWrapping="Wrap" Text="{Binding TestString}" VerticalAlignment="Top"/></Grid>
+            <Button Content="Button"
+                    Height="105"
+                    Margin="70,127,160,0"
+                    VerticalAlignment="Top"
+                    Command="{Binding ShowResultsWindowCommand}" />
+            
+            <TextBlock Height="63"
+                       Margin="46,31,134,0"
+                       TextWrapping="Wrap"
+                       Text="{Binding TestString}"
+                       VerticalAlignment="Top" />
+        </Grid>
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->
