@@ -11,7 +11,6 @@ namespace Flags
 
         private readonly ViewManager _viewManager;
 
-        public string TestString { get; set; }
         public MainWindowViewModel(ViewManager viewManager)
         {
             _viewManager = viewManager;
@@ -27,6 +26,19 @@ namespace Flags
         }
 
 
-    
+        private string _testString;
+        public string TestString
+        {
+            get { return _testString; }
+            set
+            {
+                if (_testString == value)
+                    return;
+
+                _testString = value;
+
+                RaisePropertyChanged("TestString");
+            }
+        }
     }
 }

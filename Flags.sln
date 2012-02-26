@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlagsWPF", "FlagsWPF\FlagsW
 EndProject
 Project("{00000000-0000-0000-0000-000000000000}") = "FlagsSL", "FlagsSL\FlagsSL.csproj", "{6C556510-74EA-4AC1-8E68-AE5DFE68476B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationSample", "NavigationSample\NavigationSample.csproj", "{1C280446-478A-4539-9E48-BDB64A2469CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{6C556510-74EA-4AC1-8E68-AE5DFE68476B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C556510-74EA-4AC1-8E68-AE5DFE68476B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C556510-74EA-4AC1-8E68-AE5DFE68476B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C280446-478A-4539-9E48-BDB64A2469CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C280446-478A-4539-9E48-BDB64A2469CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C280446-478A-4539-9E48-BDB64A2469CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C280446-478A-4539-9E48-BDB64A2469CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

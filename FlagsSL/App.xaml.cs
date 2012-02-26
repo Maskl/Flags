@@ -8,7 +8,6 @@ namespace FlagsSL
 {
     public partial class App : Application
     {
-
         public App()
         {
             Startup += this.ApplicationStartup;
@@ -20,7 +19,7 @@ namespace FlagsSL
 
         private void ApplicationStartup(object sender, StartupEventArgs e)
         {
-            RootVisual = new MainWindowView(); // new MainPage();
+            RootVisual = new MainWindowView();
             DispatcherHelper.Initialize();
         }
 
