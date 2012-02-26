@@ -5,7 +5,7 @@ using System.Windows.Navigation;
 
 namespace Flags
 {
-    public class NavigationService : INavigationService
+    public class NavigationServiceX : INavigationService
     {
         //private Frame _mainFrame;
 
@@ -13,6 +13,9 @@ namespace Flags
 
         public void NavigateTo(Uri pageUri)
         {
+            var newView = new ResultsWindowViewWPF();
+            newView.ShowDialog();
+
             //if (EnsureMainFrame())
             //{
             //    _mainFrame.Navigate(pageUri);

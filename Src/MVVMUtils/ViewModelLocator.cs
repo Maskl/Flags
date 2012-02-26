@@ -22,7 +22,7 @@ namespace Flags.MVVMUtils
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<ResultsWindowViewModel>();
 
-            SimpleIoc.Default.Register<INavigationService, NavigationService>();
+            SimpleIoc.Default.Register<INavigationService, NavigationServiceX>();
         }
 
         public MainWindowViewModel MainWindowVm

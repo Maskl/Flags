@@ -40,9 +40,19 @@
         <Grid x:Name="ContentPanel"
               Grid.Row="1"
               Margin="12,0,12,0">
-        	<Button Content="Button" Height="105" Margin="70,127,160,0" VerticalAlignment="Top"/>
-        	<Button Content="Button" Margin="86,281,199,221"/>
-        	<TextBlock Height="63" Margin="46,31,134,0" TextWrapping="Wrap" Text="{Binding TestString}" VerticalAlignment="Top"/></Grid>
+            <Button Content="RESults"
+                    Command="{Binding GoToPage2Command}"
+                    Height="105"
+                    Margin="70,127,160,0"
+                    VerticalAlignment="Top" />
+            <Button Content="Button"
+                    Margin="86,281,199,221" />
+            <TextBlock Height="63"
+                       Margin="46,31,134,0"
+                       TextWrapping="Wrap"
+                       Text="{Binding TestString}"
+                       VerticalAlignment="Top" />
+        </Grid>
     </Grid>
 
     <!--Sample code showing usage of ApplicationBar-->

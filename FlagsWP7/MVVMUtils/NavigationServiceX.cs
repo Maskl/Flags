@@ -2,17 +2,19 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using Microsoft.Phone.Shell;
 
 namespace Flags
 {
-    public class NavigationService : INavigationService
+    public class NavigationServiceX : INavigationService
     {
-        //private Frame _mainFrame;
+        private Frame _mainFrame;
 
         public event NavigatingCancelEventHandler Navigating;
 
         public void NavigateTo(Uri pageUri)
         {
+        //////    NavigationService.Navigate(new Uri("/ReultsWindowViewWP7.xaml", UriKind.Relative));
             //if (EnsureMainFrame())
             //{
             //    _mainFrame.Navigate(pageUri);
@@ -40,7 +42,7 @@ namespace Flags
             //    return true;
             //}
 
-            //var mainPage = (Application.Current.RootVisual as MainPage);
+            //var mainPage = (Application.Current.RootVisual as MainWindowViewWP7);
 
             //if (mainPage != null)
             //{
