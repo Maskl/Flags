@@ -21,6 +21,9 @@ namespace Flags.MVVMUtils
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
             SimpleIoc.Default.Register<ResultsWindowViewModel>();
+            SimpleIoc.Default.Register<CountriesListWindowViewModel>();
+            SimpleIoc.Default.Register<CountryDetailsWindowViewModel>();
+            SimpleIoc.Default.Register<HelpWindowViewModel>();
 
             SimpleIoc.Default.Register<ViewManager>();
         }
@@ -38,6 +41,30 @@ namespace Flags.MVVMUtils
             get
             {
                 return ServiceLocator.Current.GetInstance<ResultsWindowViewModel>();
+            }
+        }
+
+        public CountriesListWindowViewModel CountriesListWindowVm
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CountriesListWindowViewModel>();
+            }
+        }
+
+        public CountryDetailsWindowViewModel CountryDetailsWindowVm
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CountryDetailsWindowViewModel>();
+            }
+        }
+
+        public HelpWindowViewModel HelpWindowVm
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<HelpWindowViewModel>();
             }
         }
 

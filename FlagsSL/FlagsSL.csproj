@@ -120,6 +120,15 @@
     <Compile Include="..\Src\MVVMUtils\ViewsList.cs">
       <Link>MVVMUtils\ViewsList.cs</Link>
     </Compile>
+    <Compile Include="..\Src\Windows\CountriesList\CountriesListWindowViewModel.cs">
+      <Link>Windows\CountriesList\CountriesListWindowViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Windows\CountryDetails\CountryDetailsWindowViewModel.cs">
+      <Link>Windows\CountryDetails\CountryDetailsWindowViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Windows\Help\HelpWindowViewModel.cs">
+      <Link>Windows\Help\HelpWindowViewModel.cs</Link>
+    </Compile>
     <Compile Include="..\Src\Windows\Main\MainWindowViewModel.cs">
       <Link>Windows\Main\MainWindowViewModel.cs</Link>
     </Compile>
@@ -141,6 +150,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Windows\CountriesList\CountriesListWindowView.xaml.cs">
+      <DependentUpon>CountriesListWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CountryDetails\CountryDetailsWindowView.xaml.cs">
+      <DependentUpon>CountryDetailsWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Help\HelpWindowView.xaml.cs">
+      <DependentUpon>HelpWindowView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
@@ -154,6 +172,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\CountriesList\CountriesListWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\CountryDetails\CountryDetailsWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Help\HelpWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
