@@ -30,6 +30,12 @@ namespace Flags
             _viewManager.Show(View.CountryDetails, CountryTag);
         }
 
+        public void ParseSearchParameters(string parameters)
+        {
+            // todo
+            CountryTag = parameters;
+        }
+
 
         private string _countryTag;
         public string CountryTag

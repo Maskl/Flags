@@ -25,6 +25,11 @@ namespace Flags
             Country = message.Country + "!";
         }
 
+        public void ParseCountry(string v)
+        {
+            Country = v + "!";
+        }
+
         private string _country;
         public string Country
         {

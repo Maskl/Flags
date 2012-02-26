@@ -7,7 +7,7 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="768"
+                            d:DesignHeight="696"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -44,7 +44,7 @@
             <TextBlock Height="63"
                        Margin="46,31,134,0"
                        TextWrapping="Wrap"
-                       Text="{Binding TestString}"
+                       Text="{Binding Country}"
                        VerticalAlignment="Top" />
         </Grid>
     </Grid>

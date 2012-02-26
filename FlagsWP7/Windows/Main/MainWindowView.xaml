@@ -47,8 +47,7 @@
                     Margin="70,127,160,0"
                     VerticalAlignment="Top" />
 
-            <TextBlock Height="63"
-                       Margin="46,31,134,0"
+            <TextBox   Margin="46,31,134,0"
                        TextWrapping="Wrap"
                        Text="{Binding TestString}"
                        VerticalAlignment="Top" />
