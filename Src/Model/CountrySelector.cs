@@ -4,7 +4,12 @@ namespace Flags
 {
     public class CountrySelector : ICountrySelector
     {
-        public void GetCountriesListByParams(ICollection<Country> list, int color, int shape, int add)
+        public void GetCountriesByParams(ICollection<Country> list, int color, int shape, int add)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetAllCountries(ICollection<Country> list)
         {
             throw new System.NotImplementedException();
         }

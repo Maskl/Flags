@@ -4,7 +4,8 @@ namespace Flags
 {
     public interface ICountrySelector
     {
-        void GetCountriesListByParams(ICollection<Country> list, int color, int shape, int add);
+        void GetCountriesByParams(ICollection<Country> list, int color, int shape, int add);
+        void GetAllCountries(ICollection<Country> list);
         Country GetCountryByTag(string tag);
     }
 }

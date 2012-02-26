@@ -5,7 +5,7 @@ namespace Flags
 {
     public class CountrySelectorDebug : ICountrySelector
     {
-        public void GetCountriesListByParams(ICollection<Country> list, int color, int shape, int add)
+        public void GetCountriesByParams(ICollection<Country> list, int color, int shape, int add)
         {
             list.Clear();
             if (color % 2 == 0) list.Add(new Country { Tag = "POL", Name = "Poland", Continent = "Europe", Capital = "Warsaw" });
@@ -14,6 +14,18 @@ namespace Flags
             if (shape % 4 == 0) list.Add(new Country { Tag = "JAP", Name = "Japan", Continent = "Asia", Capital = "Tokyo" });
             if (add % 2 != 0) list.Add(new Country { Tag = "NOR", Name = "Norway", Continent = "Europe", Capital = "Oslo" });
             if (add % 3 != 0) list.Add(new Country { Tag = "ARG", Name = "Argentina", Continent = "South America", Capital = "Buenos Aires" });
+        }
+
+        public void GetAllCountries(ICollection<Country> list)
+        {
+            list.Clear();
+            list.Add(new Country { Tag = "POL", Name = "Poland", Continent = "Europe", Capital = "Warsaw" });
+            list.Add(new Country { Tag = "USA", Name = "United States", Continent = "North America", Capital = "Washington" });
+            list.Add(new Country { Tag = "AUT", Name = "Austria", Continent = "Europe", Capital = "Vien" });
+            list.Add(new Country { Tag = "JAP", Name = "Japan", Continent = "Asia", Capital = "Tokyo" });
+            list.Add(new Country { Tag = "NOR", Name = "Norway", Continent = "Europe", Capital = "Oslo" });
+            list.Add(new Country { Tag = "ARG", Name = "Argentina", Continent = "South America", Capital = "Buenos Aires" });
+            list.Add(new Country { Tag = "COL", Name = "Columbia", Continent = "South America", Capital = "Bogota" });
         }
 
         private static readonly Random Rand = new Random();

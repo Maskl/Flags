@@ -11,10 +11,13 @@
 
     <Grid x:Name="LayoutRoot">
 
-        <TextBlock FontSize="36"
+        <TextBlock FontSize="20"
                    FontWeight="Bold"
-                   Foreground="Pink"
-                   Text="{Binding TestString}"
+                   Foreground="Black"
+                   Text="Example help text. 
+                   There will be something like lorem ipsum dolor sit amet, whatever. Or maybe:
+                   Litwo! Ojczyzno moja! Ty jesteś jak zdrowie
+                   Ile Cię trzeba cenić ten tylko się dowie kto Cię stracił czy jakoś tak... Starczy chyba."
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap" />

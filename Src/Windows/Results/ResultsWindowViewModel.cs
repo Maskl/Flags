@@ -71,7 +71,7 @@ namespace Flags
             var add = values["add"];
 
             // Get list of countries with proper flags.
-            _countrySelector.GetCountriesListByParams(Countries, color, shape, add);
+            _countrySelector.GetCountriesByParams(Countries, color, shape, add);
             if (Countries.Count > 0)
                 SelectedCountry = Countries[0];
         }
