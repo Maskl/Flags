@@ -34,6 +34,12 @@
                        FontFamily="Segoe UI Semibold"
                        FontSize="24" />
 
+            <HyperlinkButton x:Name="Link2"
+                             NavigateUri="/Results"
+                             TargetName="ContentFrame"
+                             Content="about"
+                             FontSize="34" />
+
             <!--<HyperlinkButton Content="(refresh)"
                              Margin="10,0,0,6"
                              VerticalAlignment="Bottom"

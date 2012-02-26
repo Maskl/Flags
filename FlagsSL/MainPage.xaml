@@ -13,17 +13,17 @@
         <Border x:Name="ContentBorder">
 
             <navigation:Frame x:Name="ContentFrame"
-                              Source="/Home"
+                              Source="/Main"
                               Navigated="ContentFrame_Navigated"
                               NavigationFailed="ContentFrame_NavigationFailed">
-                <!--<navigation:Frame.UriMapper>
+                <navigation:Frame.UriMapper>
                     <uriMapper:UriMapper>
                         <uriMapper:UriMapping Uri=""
-                                              MappedUri="/Views/Home.xaml" />
+                                              MappedUri="/Windows/Main/MainWindowView.xaml" />
                         <uriMapper:UriMapping Uri="/{pageName}"
-                                              MappedUri="/Views/{pageName}.xaml" />
+                                              MappedUri="/Windows/{pageName}/{pageName}WindowView.xaml" />
                     </uriMapper:UriMapper>
-                </navigation:Frame.UriMapper>-->
+                </navigation:Frame.UriMapper>
             </navigation:Frame>
         </Border>
 
@@ -35,7 +35,8 @@
                     <ContentControl />
 
                     <TextBlock x:Name="ApplicationNameTextBlock"
-                               Text="my simple flag app" />
+                               Text="my simple flag app"
+                               FontSize="16" />
 
                 </StackPanel>
             </Border>
@@ -44,14 +45,16 @@
                 <StackPanel x:Name="LinksStackPanel">
 
                     <HyperlinkButton x:Name="Link1"
-                                     NavigateUri="/Windows/Main/MainWindowView.xaml"
+                                     NavigateUri="/Main"
                                      TargetName="ContentFrame"
-                                     Content="home" />
+                                     Content="home"
+                                     FontSize="12" />
 
                     <HyperlinkButton x:Name="Link2"
-                                     NavigateUri="/Windows/Results/ResultsWindowView.xaml"
+                                     NavigateUri="/Results"
                                      TargetName="ContentFrame"
-                                     Content="about" />
+                                     Content="about"
+                                     FontSize="24" />
 
                 </StackPanel>
             </Border>
