@@ -70,8 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="..\Src\MVVMUtils\INavigationService.cs">
-      <Link>MVVMUtils\INavigationService.cs</Link>
+    <Compile Include="..\Src\MVVMUtils\IViewManager.cs">
+      <Link>MVVMUtils\IViewManager.cs</Link>
     </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
@@ -96,7 +96,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVMUtils\NavigationServiceX.cs" />
+    <Compile Include="MVVMUtils\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

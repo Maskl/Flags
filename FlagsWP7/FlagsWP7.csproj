@@ -74,8 +74,8 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Src\MVVMUtils\INavigationService.cs">
-      <Link>MVVMUtils\INavigationService.cs</Link>
+    <Compile Include="..\Src\MVVMUtils\IViewManager.cs">
+      <Link>MVVMUtils\IViewManager.cs</Link>
     </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
@@ -97,7 +97,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVMUtils\NavigationServiceX.cs" />
+    <Compile Include="MVVMUtils\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

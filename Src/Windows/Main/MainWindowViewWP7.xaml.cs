@@ -10,7 +10,7 @@ namespace Flags
         {
             InitializeComponent();
 
-            Messenger.Default.Register<Uri>(this, "NavigationRequest", (uri) => NavigationService.Navigate(uri));
+            Messenger.Default.Register<Uri>(this, "NavigationRequest", uri => NavigationService.Navigate(uri));
         }
 
     }

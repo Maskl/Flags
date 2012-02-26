@@ -41,7 +41,7 @@
               Grid.Row="1"
               Margin="12,0,12,0">
             <Button Content="RESults"
-                    Command="{Binding GoToPage2Command}"
+                    Command="{Binding ShowResultsWindowCommand}"
                     Height="105"
                     Margin="70,127,160,0"
                     VerticalAlignment="Top" />
