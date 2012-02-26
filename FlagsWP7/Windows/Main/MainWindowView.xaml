@@ -7,7 +7,7 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="768"
+                            d:DesignHeight="696"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -47,10 +47,20 @@
                     Margin="70,127,160,0"
                     VerticalAlignment="Top" />
 
-            <TextBox   Margin="46,31,134,0"
-                       TextWrapping="Wrap"
-                       Text="{Binding TestString}"
-                       VerticalAlignment="Top" />
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding ColorNumber, Mode=TwoWay}"
+                     VerticalAlignment="Top" />
+
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding ShapeNumber, Mode=TwoWay}"
+                     VerticalAlignment="Center" />
+
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding AddNumber, Mode=TwoWay}"
+                     VerticalAlignment="Bottom" />
         </Grid>
     </Grid>
 

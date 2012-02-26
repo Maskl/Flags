@@ -41,11 +41,13 @@
               Grid.Row="1"
               Margin="12,0,12,0">
 
-            <TextBlock Height="63"
-                       Margin="46,31,134,0"
-                       TextWrapping="Wrap"
-                       Text="{Binding Country}"
-                       VerticalAlignment="Top" />
+            <TextBlock FontSize="36"
+                       FontWeight="Bold"
+                       Foreground="Gold"
+                       Text="{Binding SelectedCountry}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap" />
         </Grid>
     </Grid>
 

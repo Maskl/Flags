@@ -41,11 +41,13 @@
               Grid.Row="1"
               Margin="12,0,12,0">
 
-            <TextBlock Height="63"
-                       Margin="46,31,134,0"
-                       TextWrapping="Wrap"
-                       Text="{Binding TestString}"
-                       VerticalAlignment="Top" />
+            <ListBox FontSize="18"
+                     FontWeight="Bold"
+                     Foreground="Red"
+                     ItemsSource="{Binding Countries}"
+                     SelectedItem="{Binding Path=SelectedCountry, Mode=TwoWay}"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center" />
 
             <Button Content="Details"
                     Command="{Binding ShowCountryDetailsWindowCommand}"
