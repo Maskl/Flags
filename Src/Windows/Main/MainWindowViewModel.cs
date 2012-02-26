@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq.Expressions;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -7,42 +9,68 @@ namespace Flags
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private readonly ViewManager _viewManager;
+        #region Properties
+        private int _addNumber;
+        public int AddNumber
+        {
+            get { return _addNumber; }
+            set { _addNumber = value; RaisePropertyChanged("AddNumber"); }
+        }
+
+        private int _colorNumber;
+        public int ColorNumber
+        {
+            get { return _colorNumber; }
+            set { _colorNumber = value; RaisePropertyChanged("ColorNumber"); }
+        }
+
+        private int _shapeNumber;
+        public int ShapeNumber
+        {
+            get { return _shapeNumber; }
+            set { _shapeNumber = value; RaisePropertyChanged("ShapeNumber"); }
+        }
+
+        private string _resultUri;
+        public string ResultUri
+        {
+            get { return _resultUri; }
+            set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
+        }
+        #endregion
+
+        #region Relay Commands
+        private ViewManager _viewManager;
         public RelayCommand ShowResultsWindowCommand { get; private set; }
         public RelayCommand ShowCountriesListWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
-        
-        public string ResultUri { get; set; }
 
-        public MainWindowViewModel(ViewManager viewManager)
+        private void CreateRelayCommands(ViewManager viewManager)
         {
-            TestString = "Sh=1, Col=23, Add=5";
-            ResultUri = "/Results/jakies_parametry_i_inne_znaczki";
-
             _viewManager = viewManager;
             ShowResultsWindowCommand = new RelayCommand(ShowResults);
             ShowCountriesListWindowCommand = new RelayCommand(() => _viewManager.Show(View.CountriesList));
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
         }
+        #endregion
 
-        void ShowResults()
+        public MainWindowViewModel(ViewManager viewManager)
         {
-            _viewManager.Show(View.Results, TestString);
+            CreateRelayCommands(viewManager);
+
+            // REM:
+            ColorNumber = 123;
+            ShapeNumber = 345;
+            AddNumber = 567;
+            ResultUri = "/Results/undifined";
         }
 
-        private string _testString;
-        public string TestString
+        public void ShowResults()
         {
-            get { return _testString; }
-            set
-            {
-                if (_testString == value)
-                    return;
-
-                _testString = value;
-
-                RaisePropertyChanged("CountryTag");
-            }
+            var color = ColorNumber;
+            var shape = ShapeNumber;
+            var add = AddNumber;
+            _viewManager.Show(View.Results, String.Format("color={0}&shape={1}&add={2}", color, shape, add));
         }
     }
 }

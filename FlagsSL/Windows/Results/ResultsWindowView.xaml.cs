@@ -28,7 +28,7 @@ namespace Flags
         {
             var url = e.Uri.ToString();
             var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
-            _viewModel.ParseSearchParameters(parameters);
+            _viewModel.ParseMessageFromMainWindow(parameters);
         }
     }
 }

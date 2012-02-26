@@ -74,6 +74,9 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\src\model\Country.cs">
+      <Link>Model\Country.cs</Link>
+    </Compile>
     <Compile Include="..\src\mvvmutils\messages\CountryToShowDetailsMessage.cs">
       <Link>MVVMUtils\Messages\CountryToShowDetailsMessage.cs</Link>
     </Compile>

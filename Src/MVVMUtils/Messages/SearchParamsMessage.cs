@@ -1,6 +1,6 @@
 ﻿namespace Flags
 {
-    class SearchParamsMessage
+    public class SearchParamsMessage
     {
         public SearchParamsMessage(string v)
         {
