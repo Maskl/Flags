@@ -11,13 +11,13 @@
 
     <Grid x:Name="LayoutRoot">
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Pink"
-                   Text="{Binding TestString}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+        <TextBox FontSize="36"
+                 FontWeight="Bold"
+                 Foreground="Violet"
+                 Text="{Binding CountryTag, Mode=TwoWay}"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 TextWrapping="Wrap" />
 
         <Button Content="DETAILS"
                 HorizontalAlignment="Right"

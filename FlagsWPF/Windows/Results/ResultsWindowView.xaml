@@ -10,16 +10,15 @@
         DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
-
-        <TextBlock FontSize="36"
+        <TextBox FontSize="36"
                    FontWeight="Bold"
-                   Foreground="Pink"
-                   Text="{Binding TestString}"
+                   Foreground="Green"
+                   Text="{Binding CountryTag, Mode=TwoWay}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap" />
 
-        <Button Content="DETAILS"
+            <Button Content="DETAILS"
                 HorizontalAlignment="Right"
                 Height="25"
                 Margin="0,0,8,8"

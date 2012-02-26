@@ -70,6 +70,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="..\Src\MVVMUtils\Messages\CountryToShowDetailsMessage.cs">
+      <Link>MVVMUtils\Messages\CountryToShowDetailsMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\MVVMUtils\Messages\SearchParamsMessage.cs">
+      <Link>MVVMUtils\Messages\SearchParamsMessage.cs</Link>
+    </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
     </Compile>

@@ -14,7 +14,7 @@
         <TextBlock FontSize="36"
                    FontWeight="Bold"
                    Foreground="Pink"
-                   Text="{Binding TestString}"
+                   Text="{Binding Country}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap" />

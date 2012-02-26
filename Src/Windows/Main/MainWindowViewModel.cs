@@ -39,7 +39,7 @@ namespace Flags
 
                 _testString = value;
 
-                RaisePropertyChanged("TestString");
+                RaisePropertyChanged("CountryTag");
             }
         }
     }

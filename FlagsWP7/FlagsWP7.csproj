@@ -74,6 +74,12 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\src\mvvmutils\messages\CountryToShowDetailsMessage.cs">
+      <Link>MVVMUtils\Messages\CountryToShowDetailsMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\src\mvvmutils\messages\SearchParamsMessage.cs">
+      <Link>MVVMUtils\Messages\SearchParamsMessage.cs</Link>
+    </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
     </Compile>
