@@ -22,8 +22,7 @@ namespace Flags
 
         void ShowCountryDetails()
         {
-            Messenger.Default.Send(new CountryToShowDetailsMessage(CountryTag));
-            _viewManager.Show(View.CountryDetails);
+            _viewManager.Show(View.CountryDetails, CountryTag);
         }
     }
 }

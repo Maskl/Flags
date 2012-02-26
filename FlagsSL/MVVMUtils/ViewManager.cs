@@ -20,7 +20,7 @@ namespace Flags
                              };
         }
 
-        public void Show(View view)
+        public void Show(View view, object param = null)
         {
             Messenger.Default.Send(_viewToUri[view], "NavigationRequest");
         }

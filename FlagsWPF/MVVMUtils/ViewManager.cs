@@ -1,10 +1,11 @@
 ﻿using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
     public class ViewManager
     {
-        public void Show(View view)
+        public void Show(View view, object param = null)
         {
             Window newWindow;
             
@@ -24,6 +25,7 @@ namespace Flags
 
                 case View.CountryDetails:
                     newWindow = new CountryDetailsWindowView();
+                    Messenger.Default.Send(new CountryToShowDetailsMessage((string)param));
                     break;
 
                 case View.Help:
