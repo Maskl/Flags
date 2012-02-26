@@ -1,9 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Linq.Expressions;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
@@ -54,6 +51,7 @@ namespace Flags
         }
         #endregion
 
+        #region Initialization
         public MainWindowViewModel(ViewManager viewManager)
         {
             CreateRelayCommands(viewManager);
@@ -64,7 +62,9 @@ namespace Flags
             AddNumber = 567;
             ResultUri = "/Results/undifined";
         }
+        #endregion
 
+        #region Navigation
         public void ShowResults()
         {
             var color = ColorNumber;
@@ -72,5 +72,6 @@ namespace Flags
             var add = AddNumber;
             _viewManager.Show(View.Results, String.Format("color={0}&shape={1}&add={2}", color, shape, add));
         }
+        #endregion
     }
 }

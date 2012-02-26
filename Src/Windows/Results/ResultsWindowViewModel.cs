@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using GalaSoft.MvvmLight;
@@ -9,23 +8,47 @@ using GalaSoft.MvvmLight.Messaging;
 namespace Flags
 {
     public class ResultsWindowViewModel : ViewModelBase
-    {
+    {        
+        #region Properties
+        private readonly ICountrySelector _countrySelector;
         public ObservableCollection<Country> Countries { get; set; }
-        private readonly ViewManager _viewManager;
+
+        private Country _selectedCountry;
+        public Country SelectedCountry
+        {
+            get { return _selectedCountry; }
+            set { _selectedCountry = value; RaisePropertyChanged("SelectedCountry"); }
+        }
+
+        private string _resultUri;
+        public string ResultUri
+        {
+            get { return _resultUri; }
+            set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
+        }
+        #endregion
+
+        #region Relay Commands
+        private ViewManager _viewManager;
         public RelayCommand ShowCountryDetailsWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
 
-        public string CountryDetailsUri { get; set; }
-
-        public ResultsWindowViewModel(ViewManager viewManager)
+        private void CreateRelayCommands(ViewManager viewManager)
         {
-            Countries = new ObservableCollection<Country>();
-            CountryTag = "USA";
-            CountryDetailsUri = "/Country/ARG";
-
             _viewManager = viewManager;
             ShowCountryDetailsWindowCommand = new RelayCommand(ShowCountryDetails);
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
+        }
+        #endregion
+
+        #region Initialization
+        public ResultsWindowViewModel(ViewManager viewManager, ICountrySelector countrySelector)
+        {
+            CreateRelayCommands(viewManager);
+
+            _countrySelector = countrySelector;
+
+            Countries = new ObservableCollection<Country>();
             Messenger.Default.Register<SearchParamsMessage>(this, ParseMessageFromMainWindow);
         }
 
@@ -37,8 +60,8 @@ namespace Flags
         public void ParseMessageFromMainWindow(string url)
         {
             // If we have whole URL then we remobe part before "?".
-            var parameters = url.Contains("?") 
-                ? url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1) 
+            var parameters = url.Contains("?")
+                ? url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1)
                 : url;
 
             // Create dictionary: param name -> value (int).
@@ -48,38 +71,20 @@ namespace Flags
             var add = values["add"];
 
             // Get list of countries with proper flags.
-            GetCountriesListByParams(Countries, color, shape, add);
+            _countrySelector.GetCountriesListByParams(Countries, color, shape, add);
+            if (Countries.Count > 0)
+                SelectedCountry = Countries[0];
         }
+        #endregion
 
-        private void GetCountriesListByParams(Collection<Country> list, int color, int shape, int add)
-        {
-            if (color % 2 == 0) list.Add(new Country { Tag = "POL", Name = "Poland", Continent = "Europe", Capital = "Warsaw" });
-            if (color % 2 != 0) list.Add(new Country { Tag = "USA", Name = "United States", Continent = "North America", Capital = "Washington" });
-            if (shape % 3 == 0) list.Add(new Country { Tag = "AUT", Name = "Austria", Continent = "Europe", Capital = "Vien" });
-            if (shape % 4 == 0) list.Add(new Country { Tag = "JAP", Name = "Japan", Continent = "Asia", Capital = "Tokyo" });
-            if (add % 2 != 0) list.Add(new Country { Tag = "NOR", Name = "Norway", Continent = "Europe", Capital = "Oslo" });
-            if (add % 3 != 0) list.Add(new Country { Tag = "ARG", Name = "Argentina", Continent = "South America", Capital = "Buenos Aires" });
-        }
-
+        #region Navigation
         void ShowCountryDetails()
         {
-            _viewManager.Show(View.CountryDetails, CountryTag);
+            if (SelectedCountry == null)
+                return;
+
+            _viewManager.Show(View.CountryDetails, SelectedCountry.Tag);
         }
-
-        public Country SelectedCountry { get; set; }
-        private string _countryTag;
-        public string CountryTag
-        {
-            get { return _countryTag; }
-            set
-            {
-                if (_countryTag == value)
-                    return;
-
-                _countryTag = value;
-
-                RaisePropertyChanged("CountryTag");
-            }
-        }
+        #endregion
     }
 }

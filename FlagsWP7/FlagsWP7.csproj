@@ -77,6 +77,15 @@
     <Compile Include="..\src\model\Country.cs">
       <Link>Model\Country.cs</Link>
     </Compile>
+    <Compile Include="..\Src\Model\CountrySelector.cs">
+      <Link>Model\CountrySelector.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Model\CountrySelectorDebug.cs">
+      <Link>Model\CountrySelectorDebug.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Model\ICountrySelector.cs">
+      <Link>Model\ICountrySelector.cs</Link>
+    </Compile>
     <Compile Include="..\src\mvvmutils\messages\CountryToShowDetailsMessage.cs">
       <Link>MVVMUtils\Messages\CountryToShowDetailsMessage.cs</Link>
     </Compile>
