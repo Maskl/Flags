@@ -7,22 +7,24 @@ namespace Flags
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public RelayCommand ShowResultsWindowCommand { get; private set; }
-
         private readonly ViewManager _viewManager;
+        public RelayCommand ShowResultsWindowCommand { get; private set; }
+        public RelayCommand ShowCountriesListWindowCommand { get; private set; }
+        public RelayCommand ShowHelpWindowCommand { get; private set; }
 
         public MainWindowViewModel(ViewManager viewManager)
         {
-            _viewManager = viewManager;
-
             TestString = "Testowy string";
 
-            ShowResultsWindowCommand = new RelayCommand(ShowAllMeasurementsView);
+            _viewManager = viewManager;
+            ShowResultsWindowCommand = new RelayCommand(() => _viewManager.Show(View.Results));
+            ShowCountriesListWindowCommand = new RelayCommand(() => _viewManager.Show(View.CountriesList));
+            ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
         }
 
         private void ShowAllMeasurementsView()
         {
-            _viewManager.Show(View.Results);
+            ;
         }
 
 

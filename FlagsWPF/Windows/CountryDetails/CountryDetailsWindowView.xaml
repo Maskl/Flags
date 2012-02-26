@@ -6,8 +6,8 @@
         mc:Ignorable="d"
         Height="300"
         Width="300"
-        Title="MVVM Light Application"
-        DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
+        Title="Country Details"
+        DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
 

@@ -4,8 +4,8 @@
     {
         Main,
         Results,
-        List,
-        Details,
+        CountriesList,
+        CountryDetails,
         Help
     }
 }

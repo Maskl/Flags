@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Height="300"
         Width="300"
-        Title="MVVM Light Application"
+        Title="Main"
         DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
@@ -25,6 +25,26 @@
                 Margin="0,0,8,8"
                 VerticalAlignment="Bottom"
                 Command="{Binding ShowResultsWindowCommand}"
+                Width="150"
+                Grid.Row="1"
+                d:LayoutOverrides="VerticalAlignment" />
+
+        <Button Content="LIST"
+                HorizontalAlignment="Left"
+                Height="25"
+                Margin="0,0,8,8"
+                VerticalAlignment="Bottom"
+                Command="{Binding ShowCountriesListWindowCommand}"
+                Width="150"
+                Grid.Row="1"
+                d:LayoutOverrides="VerticalAlignment" />
+
+        <Button Content="HELP"
+                HorizontalAlignment="Right"
+                Height="25"
+                Margin="0,0,8,8"
+                VerticalAlignment="Top"
+                Command="{Binding ShowHelpWindowCommand}"
                 Width="150"
                 Grid.Row="1"
                 d:LayoutOverrides="VerticalAlignment" />

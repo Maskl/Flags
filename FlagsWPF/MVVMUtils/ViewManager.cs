@@ -18,6 +18,18 @@ namespace Flags
                     newWindow = new ResultsWindowView();
                     break;
 
+                case View.CountriesList:
+                    newWindow = new CountriesListWindowView();
+                    break;
+
+                case View.CountryDetails:
+                    newWindow = new CountryDetailsWindowView();
+                    break;
+
+                case View.Help:
+                    newWindow = new HelpWindowView();
+                    break;
+
                 default:
                     return;
             }

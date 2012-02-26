@@ -14,7 +14,7 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
+                            DataContext="{Binding CountriesListWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot"
           Background="Transparent">

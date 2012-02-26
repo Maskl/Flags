@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Height="300"
         Width="300"
-        Title="MVVM Light Application"
+        Title="Results"
         DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">

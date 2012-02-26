@@ -13,7 +13,10 @@ namespace Flags
             _viewToUri = new Dictionary<View, Uri>
                              {
                                  {View.Main, new Uri("/Windows/Main/MainWindowView.xaml", UriKind.Relative)},
-                                 {View.Results, new Uri("/Windows/Results/ResultsWindowView.xaml", UriKind.Relative)}
+                                 {View.Results, new Uri("/Windows/Results/ResultsWindowView.xaml", UriKind.Relative)},
+                                 {View.CountriesList, new Uri("/Windows/Results/CountriesListWindowView.xaml", UriKind.Relative)},
+                                 {View.CountryDetails, new Uri("/Windows/Results/CountryDetailsWindowView.xaml", UriKind.Relative)},
+                                 {View.Help, new Uri("/Windows/Results/HelpWindowView.xaml", UriKind.Relative)}
                              };
         }
 
