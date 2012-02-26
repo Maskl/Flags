@@ -9,12 +9,12 @@ namespace Flags
     {
         public RelayCommand ShowResultsWindowCommand { get; private set; }
 
-        private ViewManager _navigationService;
+        private readonly ViewManager _viewManager;
 
         public string TestString { get; set; }
-        public MainWindowViewModel(ViewManager navigationService)
+        public MainWindowViewModel(ViewManager viewManager)
         {
-            _navigationService = navigationService;
+            _viewManager = viewManager;
 
             TestString = "Testowy string";
 
@@ -23,8 +23,7 @@ namespace Flags
 
         private void ShowAllMeasurementsView()
         {
-            var nextPage = new Uri("/Windows/Results/ResultsWindowViewWP7.xaml", UriKind.Relative);
-            _navigationService.NavigateTo(nextPage);
+            _viewManager.Show(View.Results);
         }
 
 

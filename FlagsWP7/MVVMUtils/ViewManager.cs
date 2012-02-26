@@ -1,15 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
-    public class ViewManager
+    public class ViewManager : IViewManager
     {
-        public void NavigateTo(Uri pageUri)
+        private readonly Dictionary<View, Uri> _viewToUri;  
+
+        public ViewManager()
         {
-            Messenger.Default.Send(pageUri, "NavigationRequest");
+            _viewToUri = new Dictionary<View, Uri>
+                             {
+                                 {View.Main, new Uri("/Windows/Main/MainWindowViewWP7.xaml", UriKind.Relative)},
+                                 {View.Results, new Uri("/Windows/Results/ResultsWindowViewWP7.xaml", UriKind.Relative)}
+                             };
+        }
+
+        public void Show(View view)
+        {
+            Messenger.Default.Send(_viewToUri[view], "NavigationRequest");
         }
     }
 }

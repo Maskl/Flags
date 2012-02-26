@@ -1,6 +1,6 @@
 ﻿namespace Flags
 {
-    public enum ViewEnum
+    public enum View
     {
         Main,
         Results,
@@ -11,6 +11,6 @@
 
     public interface IViewManager
     {
-        void Show(ViewEnum view);
+        void Show(View view);
     }
 }

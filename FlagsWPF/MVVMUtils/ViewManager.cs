@@ -1,13 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 
 namespace Flags
 {
-    public class ViewManager
+    public class ViewManager : IViewManager
     {
-        public void NavigateTo(Uri pageUri)
+        public void Show(View view)
         {
-            var newView = new ResultsWindowViewWPF();
-            newView.ShowDialog();
+            Window newWindow;
+            
+            switch (view)
+            {
+                case View.Main:
+                    newWindow = new MainWindowViewWPF();
+                    break;
+                    
+                case View.Results:
+                    newWindow = new ResultsWindowViewWPF();
+                    break;
+
+                default:
+                    return;
+            }
+
+            newWindow.ShowDialog();
         }
     }
 }
