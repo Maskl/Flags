@@ -11,7 +11,7 @@ namespace FlagsSL
         public App()
         {
             Startup += this.ApplicationStartup;
-            Exit += ApplicationExit;
+            //Exit += ApplicationExit;
             UnhandledException += this.ApplicationUnhandledException;
 
             InitializeComponent();
@@ -19,14 +19,13 @@ namespace FlagsSL
 
         private void ApplicationStartup(object sender, StartupEventArgs e)
         {
-            RootVisual = new MainWindowView();
-            DispatcherHelper.Initialize();
+            RootVisual = new MainPage(); //MainWindowView();
         }
 
-        private static void ApplicationExit(object sender, EventArgs e)
-        {
-            ViewModelLocator.Cleanup();
-        }
+        //private static void ApplicationExit(object sender, EventArgs e)
+        //{
+        //    ViewModelLocator.Cleanup();
+        //}
 
         private void ApplicationUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {

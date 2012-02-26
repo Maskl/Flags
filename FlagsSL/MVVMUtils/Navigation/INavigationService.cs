@@ -1,8 +1,12 @@
-﻿namespace GadgetVote.Client.Navigation
+﻿using System;
+using System.Windows.Navigation;
+
+namespace FlagsSL
 {
     public interface INavigationService
     {
-        void Navigate(string url);
-        void Back();
+        event NavigatingCancelEventHandler Navigating;
+        void NavigateTo(Uri uri);
+        void GoBack();
     }
 }

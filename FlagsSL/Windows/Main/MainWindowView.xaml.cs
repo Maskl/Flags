@@ -1,28 +1,23 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
-using FlagsSL;
-using GadgetVote.Client.Navigation;
-using GalaSoft.MvvmLight.Messaging;
-using NavigationSample;
+﻿using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace Flags
 {
-    public partial class MainWindowView : INavigable
+    public partial class MainWindowView : Page
     {
-        public INavigationService NavigationService { get; set; }
+        private MainWindowViewModel _vm;
 
         public MainWindowView()
         {
             InitializeComponent();
 
-            Messenger.Default.Register<Uri>(this, "NavigationRequest", ExecuteGotoPage2Command);//uri => NavigationService.Navigate(uri.ToString()));
+            _vm = (MainWindowViewModel)DataContext;
         }
 
-        private void ExecuteGotoPage2Command(Uri notUsed)
+        // Executes when the user navigates to this page.
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            MessageBox.Show(notUsed.ToString());
-            NavigationService.Navigate(notUsed.ToString());
         }
     }
 }
+

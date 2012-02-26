@@ -1,23 +1,27 @@
-﻿<UserControl x:Class="Flags.ResultsWindowView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:Navigation="clr-namespace:GadgetVote.Client.Navigation" mc:Ignorable="d"
-             Height="300"
-             Width="300"
-             Navigation:Navigator.Source="{Binding}"
-             DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
+﻿<navigation:Page x:Class="Flags.ResultsWindowView"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+                 mc:Ignorable="d"
+                 d:DesignWidth="640"
+                 d:DesignHeight="480"
+                 Title="About">
 
     <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer">
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Red"
-                   Text="Testowo"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+            <StackPanel x:Name="ContentStackPanel">
 
+                <TextBlock x:Name="HeaderText"
+                           Text="About" />
+                <TextBlock x:Name="ContentText"
+                           Text="About page content" />
+
+            </StackPanel>
+
+        </ScrollViewer>
     </Grid>
-</UserControl>
+
+</navigation:Page>

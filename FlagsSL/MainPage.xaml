@@ -1,30 +1,63 @@
 ﻿<UserControl x:Class="FlagsSL.MainPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+             xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             Height="300"
-             Width="300"
-             DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
+             d:DesignWidth="640"
+             d:DesignHeight="480">
 
     <Grid x:Name="LayoutRoot">
+        <Border x:Name="ContentBorder">
 
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />
+            <navigation:Frame x:Name="ContentFrame"
+                              Source="/Home"
+                              Navigated="ContentFrame_Navigated"
+                              NavigationFailed="ContentFrame_NavigationFailed">
+                <!--<navigation:Frame.UriMapper>
+                    <uriMapper:UriMapper>
+                        <uriMapper:UriMapping Uri=""
+                                              MappedUri="/Views/Home.xaml" />
+                        <uriMapper:UriMapping Uri="/{pageName}"
+                                              MappedUri="/Views/{pageName}.xaml" />
+                    </uriMapper:UriMapper>
+                </navigation:Frame.UriMapper>-->
+            </navigation:Frame>
+        </Border>
+
+        <Grid x:Name="NavigationGrid">
+
+            <Border x:Name="BrandingBorder">
+                <StackPanel x:Name="BrandingStackPanel">
+
+                    <ContentControl />
+
+                    <TextBlock x:Name="ApplicationNameTextBlock"
+                               Text="my simple flag app" />
+
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="LinksBorder">
+                <StackPanel x:Name="LinksStackPanel">
+
+                    <HyperlinkButton x:Name="Link1"
+                                     NavigateUri="/Windows/Main/MainWindowView.xaml"
+                                     TargetName="ContentFrame"
+                                     Content="home" />
+
+                    <HyperlinkButton x:Name="Link2"
+                                     NavigateUri="/Windows/Results/ResultsWindowView.xaml"
+                                     TargetName="ContentFrame"
+                                     Content="about" />
+
+                </StackPanel>
+            </Border>
+
+        </Grid>
 
     </Grid>
+
 </UserControl>

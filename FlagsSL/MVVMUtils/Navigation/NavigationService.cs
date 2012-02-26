@@ -1,26 +1,62 @@
 ﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
 
-namespace GadgetVote.Client.Navigation
+namespace FlagsSL
 {
     public class NavigationService : INavigationService
     {
-        private readonly System.Windows.Navigation.NavigationService _navigationService;
+        private Frame _mainFrame;
 
-        public NavigationService(System.Windows.Navigation.NavigationService navigationService)
+        public event NavigatingCancelEventHandler Navigating;
+
+        public void NavigateTo(Uri pageUri)
         {
-            _navigationService = navigationService;
+            if (EnsureMainFrame())
+            {
+                _mainFrame.Navigate(pageUri);
+            }
         }
 
-        public void Navigate(string url)
+        public void GoBack()
         {
-            _navigationService.Navigate(new Uri(url, UriKind.RelativeOrAbsolute));
+            if (EnsureMainFrame()
+                && _mainFrame.CanGoBack)
+            {
+                _mainFrame.GoBack();
+            }
         }
 
-        public void Back()
+        private bool EnsureMainFrame()
         {
-            if(_navigationService.CanGoBack)
-                _navigationService.GoBack();
+            if (_mainFrame != null)
+            {
+                return true;
+            }
+
+            var mainPage = (Application.Current.RootVisual as MainPage);
+
+            if (mainPage != null)
+            {
+                _mainFrame = mainPage.NavigationFrame;
+
+                if (_mainFrame != null)
+                {
+                    // Could be null if the app runs inside a design tool
+                    _mainFrame.Navigating += (s, e) =>
+                    {
+                        if (Navigating != null)
+                        {
+                            Navigating(s, e);
+                        }
+                    };
+
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
-
 }
