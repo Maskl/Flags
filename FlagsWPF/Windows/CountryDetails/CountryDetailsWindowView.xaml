@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="300"
-        Width="300"
+        Height="200"
+        Width="800"
         Title="Country Details"
         DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}">
 
@@ -13,8 +13,8 @@
 
         <TextBlock FontSize="36"
                    FontWeight="Bold"
-                   Foreground="Pink"
-                   Text="{Binding Country}"
+                   Foreground="Gold"
+                   Text="{Binding SelectedCountry}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap" />

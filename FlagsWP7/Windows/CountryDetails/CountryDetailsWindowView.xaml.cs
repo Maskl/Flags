@@ -22,7 +22,7 @@ namespace Flags
         {
             var url = e.Uri.ToString();
             var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
-            _viewModel.ParseCountry(parameters);
+            _viewModel.SelectCountry(parameters);
         }
     }
 }

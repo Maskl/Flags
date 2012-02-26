@@ -25,9 +25,7 @@ namespace Flags
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var url = e.Uri.ToString();
-            var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
-            _viewModel.ParseCountry(parameters);
+            _viewModel.SelectCountry(e.Uri.ToString());
         }
     }
 }

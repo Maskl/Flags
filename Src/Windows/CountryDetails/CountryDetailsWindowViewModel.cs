@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
+using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 
@@ -6,44 +7,48 @@ namespace Flags
 {
     public class CountryDetailsWindowViewModel : ViewModelBase
     {
-        private readonly ViewManager _viewManager;
+        #region Properties
+        private readonly ICountrySelector _countrySelector;
+
+        private Country _selectedCountry;
+        public Country SelectedCountry
+        {
+            get { return _selectedCountry; }
+            set { _selectedCountry = value; RaisePropertyChanged("SelectedCountry"); }
+        }
+        #endregion
+
+        #region Relay Commands
+        private ViewManager _viewManager;
         public RelayCommand ShowHelpWindowCommand { get; private set; }
 
-        public string TestString { get; set; }
-        public CountryDetailsWindowViewModel(ViewManager viewManager)
+        private void CreateRelayCommands(ViewManager viewManager)
         {
-            TestString = "A tu mamy CountryDetailsWindowViewModel";
-
             _viewManager = viewManager;
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
-
-            Messenger.Default.Register<CountryToShowDetailsMessage>(this, ChooseCountry);
         }
+        #endregion
 
-        private void ChooseCountry(CountryToShowDetailsMessage message)
+        #region Initialization
+        public CountryDetailsWindowViewModel(ViewManager viewManager, ICountrySelector countrySelector)
         {
-            Country = message.Country + "!";
+            CreateRelayCommands(viewManager);
+
+            _countrySelector = countrySelector;
+
+            Messenger.Default.Register<CountryToShowDetailsMessage>(this, SelectCountry);
         }
 
-        public void ParseCountry(string v)
+        private void SelectCountry(CountryToShowDetailsMessage message)
         {
-            Country = v + "!";
+            SelectCountry(message.Country);
         }
 
-        private string _country;
-        public string Country
+        public void SelectCountry(string tag)
         {
-            get { return _country; }
-            set
-            {
-                if (_country == value)
-                    return;
-
-                _country = value;
-
-                RaisePropertyChanged("Country");
-            }
+            //var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
+            SelectedCountry = _countrySelector.GetCountryByTag(tag);
         }
-
+        #endregion
     }
 }
