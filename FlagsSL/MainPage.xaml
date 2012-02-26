@@ -20,8 +20,13 @@
                     <uriMapper:UriMapper>
                         <uriMapper:UriMapping Uri=""
                                               MappedUri="/Windows/Main/MainWindowView.xaml" />
+                        <uriMapper:UriMapping Uri="/Results/{Whatever}"
+                                              MappedUri="/Windows/Results/ResultsWindowView.xaml" />
+                        <uriMapper:UriMapping Uri="/Country/{Whatever}"
+                                              MappedUri="/Windows/CountryDetails/CountryDetailsWindowView.xaml" />
                         <uriMapper:UriMapping Uri="/{pageName}"
                                               MappedUri="/Windows/{pageName}/{pageName}WindowView.xaml" />
+
                     </uriMapper:UriMapper>
                 </navigation:Frame.UriMapper>
             </navigation:Frame>
@@ -29,32 +34,29 @@
 
         <Grid x:Name="NavigationGrid">
 
-            <Border x:Name="BrandingBorder">
-                <StackPanel x:Name="BrandingStackPanel">
-
-                    <ContentControl />
-
-                    <TextBlock x:Name="ApplicationNameTextBlock"
-                               Text="my simple flag app"
-                               FontSize="16" />
-
-                </StackPanel>
-            </Border>
-
             <Border x:Name="LinksBorder">
                 <StackPanel x:Name="LinksStackPanel">
 
-                    <HyperlinkButton x:Name="Link1"
-                                     NavigateUri="/Main"
+                    <HyperlinkButton NavigateUri="/Main"
                                      TargetName="ContentFrame"
-                                     Content="home"
-                                     FontSize="12" />
+                                     Content="MAIN"
+                                     FontSize="64"
+                                     VerticalAlignment="Bottom"
+                                     HorizontalAlignment="Right" />
+                    
+                    <HyperlinkButton NavigateUri="/CountriesList"
+                                     TargetName="ContentFrame"
+                                     Content="COUNTRIES"
+                                     FontSize="64"
+                                     VerticalAlignment="Bottom"
+                                     HorizontalAlignment="Right" />
 
-                    <HyperlinkButton x:Name="Link2"
-                                     NavigateUri="/Results"
+                    <HyperlinkButton NavigateUri="/Help"
                                      TargetName="ContentFrame"
-                                     Content="about"
-                                     FontSize="24" />
+                                     Content="HELP"
+                                     FontSize="64"
+                                     VerticalAlignment="Bottom"
+                                     HorizontalAlignment="Right" />
 
                 </StackPanel>
             </Border>

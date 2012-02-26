@@ -11,10 +11,13 @@ namespace Flags
         public RelayCommand ShowResultsWindowCommand { get; private set; }
         public RelayCommand ShowCountriesListWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
+        
+        public string ResultUri { get; set; }
 
         public MainWindowViewModel(ViewManager viewManager)
         {
             TestString = "Sh=1, Col=23, Add=5";
+            ResultUri = "/Results/jakies_parametry_i_inne_znaczki";
 
             _viewManager = viewManager;
             ShowResultsWindowCommand = new RelayCommand(ShowResults);

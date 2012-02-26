@@ -7,17 +7,17 @@
                  mc:Ignorable="d"
                  d:DesignWidth="640"
                  d:DesignHeight="480"
-                 Title="About">
+                 Title="Country Details"
+                 DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
         <ScrollViewer x:Name="PageScrollViewer">
 
             <StackPanel x:Name="ContentStackPanel">
 
-                <TextBlock x:Name="HeaderText"
-                           Text="CountryDetailsWindowView" />
                 <TextBlock x:Name="ContentText"
-                           Text="About page content" />
+                           Text="{Binding Country}"
+                           FontSize="24" />
 
             </StackPanel>
 

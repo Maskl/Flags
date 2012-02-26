@@ -15,14 +15,19 @@ namespace Flags
 {
     public partial class CountryDetailsWindowView : Page
     {
+        private readonly CountryDetailsWindowViewModel _viewModel;
         public CountryDetailsWindowView()
         {
             InitializeComponent();
+            _viewModel = DataContext as CountryDetailsWindowViewModel;
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            var url = e.Uri.ToString();
+            var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
+            _viewModel.ParseCountry(parameters);
         }
     }
 }

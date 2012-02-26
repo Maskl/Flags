@@ -10,9 +10,12 @@ namespace Flags
         public RelayCommand ShowCountryDetailsWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
 
+        public string CountryDetailsUri { get; set; }
+
         public ResultsWindowViewModel(ViewManager viewManager)
         {
             CountryTag = "USA";
+            CountryDetailsUri = "/Country/ARG";
 
             _viewManager = viewManager;
             ShowCountryDetailsWindowCommand = new RelayCommand(ShowCountryDetails);

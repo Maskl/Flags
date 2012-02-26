@@ -7,17 +7,27 @@
                  mc:Ignorable="d"
                  d:DesignWidth="640"
                  d:DesignHeight="480"
-                 Title="About">
+                 Title="Results"
+                 DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
         <ScrollViewer x:Name="PageScrollViewer">
 
-            <StackPanel x:Name="ContentStackPanel">
+            <StackPanel HorizontalAlignment="Left"
+                        Margin="10,10,0,10"
+                        Orientation="Horizontal"
+                        d:LayoutOverrides="Height">
 
-                <TextBlock x:Name="HeaderText"
-                           Text="About" />
-                <TextBlock x:Name="ContentText"
-                           Text="About page content" />
+                <TextBox Text="{Binding CountryTag, Mode=TwoWay}"
+                         FontFamily="Segoe UI Semibold"
+                         FontSize="24" />
+
+                <HyperlinkButton NavigateUri="{Binding CountryDetailsUri}"
+                                 TargetName="ContentFrame"
+                                 Content="DETAILS"
+                                 FontSize="64"
+                                 VerticalAlignment="Bottom"
+                                 HorizontalAlignment="Right" />
 
             </StackPanel>
 

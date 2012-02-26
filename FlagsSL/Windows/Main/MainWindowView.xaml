@@ -12,11 +12,6 @@
                  Title="Home"
                  DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
 
-    <!--<navigation:Page.DataContext>
-        <Binding Path="MainWindowVm"
-                 Source="{StaticResource Locator}" />
-    </navigation:Page.DataContext>-->
-
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -28,31 +23,18 @@
                     Orientation="Horizontal"
                     d:LayoutOverrides="Height">
 
-            <TextBlock x:Name="HeaderText"
-                       Text="{Binding TestString, Mode=OneWay}"
-                       Foreground="#FF0010FF"
+            <TextBox Text="{Binding TestString, Mode=TwoWay}"
                        FontFamily="Segoe UI Semibold"
                        FontSize="24" />
 
-            <HyperlinkButton x:Name="Link2"
-                             NavigateUri="/Results"
-                             TargetName="ContentFrame"
-                             Content="about"
-                             FontSize="34" />
 
-            <!--<HyperlinkButton Content="(refresh)"
-                             Margin="10,0,0,6"
+            <HyperlinkButton NavigateUri="{Binding ResultUri, Mode=OneWay}"
+                             TargetName="ContentFrame"
+                             Content="RESULTS"
+                             FontSize="64"
                              VerticalAlignment="Bottom"
-                             FontFamily="Segoe UI Semibold"
-                             FontSize="16"
-                             Command="{Binding RefreshNews, Mode=OneWay}" />-->
+                             HorizontalAlignment="Right" />
 
         </StackPanel>
-
-        <!--<ListBox Grid.Row="1"
-                 ItemsSource="{Binding Items}"
-                 ItemTemplate="{StaticResource NewsItemTemplate}"
-                 Margin="10,0" />-->
-
     </Grid>
 </navigation:Page>
