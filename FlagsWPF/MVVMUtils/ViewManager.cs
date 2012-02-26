@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Flags
 {
-    public class ViewManager : IViewManager
+    public class ViewManager
     {
         public void Show(View view)
         {
@@ -13,11 +11,11 @@ namespace Flags
             switch (view)
             {
                 case View.Main:
-                    newWindow = new MainWindowViewWPF();
+                    newWindow = new MainWindowView();
                     break;
                     
                 case View.Results:
-                    newWindow = new ResultsWindowViewWPF();
+                    newWindow = new ResultsWindowView();
                     break;
 
                 default:

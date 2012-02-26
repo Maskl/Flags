@@ -8,9 +8,4 @@
         Details,
         Help
     }
-
-    public interface IViewManager
-    {
-        void Show(View view);
-    }
 }

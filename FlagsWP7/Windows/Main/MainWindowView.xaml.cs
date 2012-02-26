@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
-    public partial class MainWindowViewWP7
+    public partial class MainWindowView
     {
-        public MainWindowViewWP7()
+        public MainWindowView()
         {
             InitializeComponent();
 

@@ -2,9 +2,9 @@
 
 namespace Flags
 {
-    public partial class ResultsWindowViewWPF
+    public partial class ResultsWindowView
     {
-        public ResultsWindowViewWPF()
+        public ResultsWindowView()
         {
             InitializeComponent();
             Closing += (s, e) => ViewModelLocator.Cleanup();

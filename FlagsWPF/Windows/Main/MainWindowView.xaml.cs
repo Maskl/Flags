@@ -2,9 +2,9 @@
 
 namespace Flags
 {
-    public partial class MainWindowViewWPF
+    public partial class MainWindowView
     {
-        public MainWindowViewWPF()
+        public MainWindowView()
         {
             InitializeComponent();
             Closing += (s, e) => ViewModelLocator.Cleanup();

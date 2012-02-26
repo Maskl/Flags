@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Controls;
-using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
-    public class ViewManager : IViewManager
+    public class ViewManager
     {
         private readonly Dictionary<View, Uri> _viewToUri;  
 
@@ -14,8 +12,8 @@ namespace Flags
         {
             _viewToUri = new Dictionary<View, Uri>
                              {
-                                 {View.Main, new Uri("/Windows/Main/MainWindowViewWP7.xaml", UriKind.Relative)},
-                                 {View.Results, new Uri("/Windows/Results/ResultsWindowViewWP7.xaml", UriKind.Relative)}
+                                 {View.Main, new Uri("/Windows/Main/MainWindowView.xaml", UriKind.Relative)},
+                                 {View.Results, new Uri("/Windows/Results/ResultsWindowView.xaml", UriKind.Relative)}
                              };
         }
 

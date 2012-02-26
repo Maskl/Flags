@@ -1,8 +1,8 @@
 ﻿namespace Flags
 {
-    public partial class ResultsWindowViewWP7
+    public partial class ResultsWindowView
     {
-        public ResultsWindowViewWP7()
+        public ResultsWindowView()
         {
             InitializeComponent();
         }

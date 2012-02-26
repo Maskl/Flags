@@ -74,31 +74,29 @@
     <Reference Include="mscorlib.extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Src\MVVMUtils\IViewManager.cs">
-      <Link>MVVMUtils\IViewManager.cs</Link>
-    </Compile>
     <Compile Include="..\Src\MVVMUtils\ViewModelLocator.cs">
       <Link>MVVMUtils\ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\MVVMUtils\ViewsList.cs">
+      <Link>MVVMUtils\ViewsList.cs</Link>
     </Compile>
     <Compile Include="..\Src\Windows\Main\MainWindowViewModel.cs">
       <Link>Windows\Main\MainWindowViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Src\Windows\Main\MainWindowViewWP7.xaml.cs">
-      <Link>Windows\Main\MainWindowViewWP7.xaml.cs</Link>
-      <DependentUpon>MainWindowViewWP7.xaml</DependentUpon>
-    </Compile>
     <Compile Include="..\Src\Windows\Results\ResultsWindowViewModel.cs">
       <Link>Windows\Results\ResultsWindowViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\Src\Windows\Results\ResultsWindowViewWP7.xaml.cs">
-      <Link>Windows\Results\ResultsWindowViewWP7.xaml.cs</Link>
-      <DependentUpon>ResultsWindowViewWP7.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVMUtils\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Main\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Results\ResultsWindowView.xaml.cs">
+      <DependentUpon>ResultsWindowView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -121,15 +119,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Page Include="..\Src\Windows\Main\MainWindowViewWP7.xaml">
-      <Link>Windows\Main\MainWindowViewWP7.xaml</Link>
+    <Page Include="Windows\Main\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\Src\Windows\Results\ResultsWindowViewWP7.xaml">
-      <Link>Windows\Results\ResultsWindowViewWP7.xaml</Link>
+    <Page Include="Windows\Results\ResultsWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
