@@ -17,6 +17,7 @@ namespace Flags
                     
                 case View.Results:
                     newWindow = new ResultsWindowView();
+                    Messenger.Default.Send(new SearchParamsMessage((string)param));
                     break;
 
                 case View.CountriesList:

@@ -11,10 +11,10 @@
 
     <Grid x:Name="LayoutRoot">
 
-        <TextBlock FontSize="36"
+        <TextBox FontSize="36"
                    FontWeight="Bold"
                    Foreground="Purple"
-                   Text="{Binding TestString}"
+                   Text="{Binding TestString, Mode=TwoWay}"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap" />

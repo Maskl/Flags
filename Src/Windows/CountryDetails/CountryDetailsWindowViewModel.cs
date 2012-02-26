@@ -12,20 +12,18 @@ namespace Flags
         public string TestString { get; set; }
         public CountryDetailsWindowViewModel(ViewManager viewManager)
         {
-            Messenger.Default.Register<CountryToShowDetailsMessage>(this, ChooseCountry);
-
             TestString = "A tu mamy CountryDetailsWindowViewModel";
 
             _viewManager = viewManager;
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
 
+            Messenger.Default.Register<CountryToShowDetailsMessage>(this, ChooseCountry);
         }
 
         private void ChooseCountry(CountryToShowDetailsMessage message)
         {
             Country = message.Country + "!";
         }
-
 
         private string _country;
         public string Country

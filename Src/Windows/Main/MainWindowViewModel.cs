@@ -14,14 +14,18 @@ namespace Flags
 
         public MainWindowViewModel(ViewManager viewManager)
         {
-            TestString = "Testowy string";
+            TestString = "Sh=1, Col=23, Add=5";
 
             _viewManager = viewManager;
-            ShowResultsWindowCommand = new RelayCommand(() => _viewManager.Show(View.Results));
+            ShowResultsWindowCommand = new RelayCommand(ShowResults);
             ShowCountriesListWindowCommand = new RelayCommand(() => _viewManager.Show(View.CountriesList));
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
         }
 
+        void ShowResults()
+        {
+            _viewManager.Show(View.Results, TestString);
+        }
 
         private string _testString;
         public string TestString
