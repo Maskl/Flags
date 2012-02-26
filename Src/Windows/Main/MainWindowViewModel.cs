@@ -22,11 +22,6 @@ namespace Flags
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
         }
 
-        private void ShowAllMeasurementsView()
-        {
-            ;
-        }
-
 
         private string _testString;
         public string TestString
