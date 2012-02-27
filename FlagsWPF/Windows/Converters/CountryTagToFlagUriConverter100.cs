@@ -5,7 +5,7 @@ using System.Windows.Data;
 namespace Flags
 {
     [ValueConversion(typeof(string), typeof(string))]
-    public class CountryTagToFlagUriConverter : IValueConverter
+    public class CountryTagToFlagUriConverter100 : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

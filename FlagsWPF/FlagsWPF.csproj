@@ -113,6 +113,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter30.cs" />
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter300.cs" />
     <Compile Include="Windows\CountriesList\CountriesListWindowView.xaml.cs">
       <DependentUpon>CountriesListWindowView.xaml</DependentUpon>
     </Compile>
@@ -125,7 +127,7 @@
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Results\CountryTagToFlagUriConverter.cs" />
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter100.cs" />
     <Compile Include="Windows\Results\ResultsWindowView.xaml.cs">
       <DependentUpon>ResultsWindowView.xaml</DependentUpon>
     </Compile>
