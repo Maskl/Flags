@@ -64,7 +64,7 @@ namespace Flags
                 ? url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1)
                 : url;
 
-            // Create dictionary: param name -> value (int).
+            //// Create dictionary: param name -> value (int).
             var values = parameters.Split('&').Select(value => value.Split('=')).ToDictionary(pair => pair[0], pair => Convert.ToInt32(pair[1]));
             var color = values["color"];
             var shape = values["shape"];
@@ -72,6 +72,7 @@ namespace Flags
 
             // Get list of countries with proper flags.
             _countrySelector.GetCountriesByParams(Countries, color, shape, add);
+ 
             if (Countries.Count > 0)
                 SelectedCountry = Countries[0];
         }

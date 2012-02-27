@@ -11,21 +11,21 @@ namespace Flags
         public int AddNumber
         {
             get { return _addNumber; }
-            set { _addNumber = value; RaisePropertyChanged("AddNumber"); }
+            set { _addNumber = value; RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
         }
 
         private int _colorNumber;
         public int ColorNumber
         {
             get { return _colorNumber; }
-            set { _colorNumber = value; RaisePropertyChanged("ColorNumber"); }
+            set { _colorNumber = value; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
         }
 
         private int _shapeNumber;
         public int ShapeNumber
         {
             get { return _shapeNumber; }
-            set { _shapeNumber = value; RaisePropertyChanged("ShapeNumber"); }
+            set { _shapeNumber = value; RecalculateResultUri(); RaisePropertyChanged("ShapeNumber"); }
         }
 
         private string _resultUri;
@@ -60,17 +60,21 @@ namespace Flags
             ColorNumber = 123;
             ShapeNumber = 345;
             AddNumber = 567;
-            ResultUri = "/Results/undifined";
         }
         #endregion
 
         #region Navigation
         public void ShowResults()
         {
+            _viewManager.Show(View.Results, ResultUri);
+        }
+
+        private void RecalculateResultUri()
+        {
             var color = ColorNumber;
             var shape = ShapeNumber;
             var add = AddNumber;
-            _viewManager.Show(View.Results, String.Format("color={0}&shape={1}&add={2}", color, shape, add));
+            ResultUri = String.Format("color={0}&shape={1}&add={2}", color, shape, add);
         }
         #endregion
     }

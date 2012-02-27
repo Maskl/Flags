@@ -46,7 +46,6 @@ namespace Flags
 
         public void SelectCountry(string tag)
         {
-            //var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
             SelectedCountry = _countrySelector.GetCountryByTag(tag);
         }
         #endregion

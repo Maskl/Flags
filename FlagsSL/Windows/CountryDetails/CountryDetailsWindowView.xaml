@@ -15,9 +15,13 @@
 
             <StackPanel x:Name="ContentStackPanel">
 
-                <TextBlock x:Name="ContentText"
-                           Text="{Binding Country}"
-                           FontSize="24" />
+                <TextBlock FontSize="36"
+                           FontWeight="Bold"
+                           Foreground="Gold"
+                           Text="{Binding SelectedCountry}"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           TextWrapping="Wrap" />
 
             </StackPanel>
 

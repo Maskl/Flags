@@ -18,11 +18,15 @@
                         Orientation="Horizontal"
                         d:LayoutOverrides="Height">
 
-                <TextBox Text="{Binding CountryTag, Mode=TwoWay}"
-                         FontFamily="Segoe UI Semibold"
-                         FontSize="24" />
+                <ListBox FontSize="18"
+                         FontWeight="Bold"
+                         Foreground="Green"
+                         ItemsSource="{Binding Countries}"
+                         SelectedItem="{Binding Path=SelectedCountry, Mode=TwoWay}"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center" />
 
-                <HyperlinkButton NavigateUri="{Binding CountryDetailsUri}"
+                <HyperlinkButton NavigateUri="{Binding SelectedCountry.Tag, StringFormat='/Country/\?\{0\}'}"
                                  TargetName="ContentFrame"
                                  Content="DETAILS"
                                  FontSize="64"

@@ -23,12 +23,9 @@ namespace Flags
             _viewModel = DataContext as ResultsWindowViewModel;
         }
 
-        // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var url = e.Uri.ToString();
-            var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
-            _viewModel.ParseMessageFromMainWindow(parameters);
+            _viewModel.ParseMessageFromMainWindow(e.Uri.ToString());
         }
     }
 }

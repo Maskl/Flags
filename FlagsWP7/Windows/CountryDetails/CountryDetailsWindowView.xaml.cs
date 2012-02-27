@@ -20,9 +20,7 @@ namespace Flags
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var url = e.Uri.ToString();
-            var parameters = url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1);
-            _viewModel.SelectCountry(parameters);
+            _viewModel.SelectCountry(e.Uri.ToString());
         }
     }
 }

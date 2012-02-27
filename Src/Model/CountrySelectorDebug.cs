@@ -29,9 +29,10 @@ namespace Flags
         }
 
         private static readonly Random Rand = new Random();
-        public Country GetCountryByTag(string tag)
+        public Country GetCountryByTag(string uri)
         {
-            if (tag == null || tag.Length != 3)
+            var tag = uri.Contains("?") ? uri.Substring(uri.IndexOf("?", StringComparison.Ordinal) + 1) : uri;
+            if (tag.Length != 3)
                 return null;
 
             var country = new Country();

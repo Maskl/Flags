@@ -23,12 +23,22 @@
                     Orientation="Horizontal"
                     d:LayoutOverrides="Height">
 
-            <TextBox Text="{Binding TestString, Mode=TwoWay}"
-                       FontFamily="Segoe UI Semibold"
-                       FontSize="24" />
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding ColorNumber, Mode=TwoWay}"
+                     VerticalAlignment="Top" />
 
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding ShapeNumber, Mode=TwoWay}"
+                     VerticalAlignment="Center" />
 
-            <HyperlinkButton NavigateUri="{Binding ResultUri, Mode=OneWay}"
+            <TextBox Margin="46,31,134,0"
+                     TextWrapping="Wrap"
+                     Text="{Binding AddNumber, Mode=TwoWay}"
+                     VerticalAlignment="Bottom" />
+
+            <HyperlinkButton NavigateUri="{Binding ResultUri, StringFormat='/Results/\?\{0\}'}"
                              TargetName="ContentFrame"
                              Content="RESULTS"
                              FontSize="64"

@@ -1,5 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Windows.Controls;
 using System.Windows.Navigation;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
 {
@@ -12,6 +14,8 @@ namespace Flags
             InitializeComponent();
 
             _vm = (MainWindowViewModel)DataContext;
+
+            //Messenger.Default.Register<Uri>(this, "NavigationRequest", uri => NavigationService.Navigate(uri));
         }
 
         // Executes when the user navigates to this page.
