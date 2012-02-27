@@ -4,104 +4,460 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="539"
-        Width="650"
+        Height="619"
+        Width="562"
         Title="Main"
         DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
 
         <Grid Margin="0,24,0,0">
-        	<Grid.RowDefinitions>
-        		<RowDefinition/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition Height="2*"/>
-        		<RowDefinition Height="2*"/>
-        	</Grid.RowDefinitions>
-        	<TextBox FontSize="36"
-        		FontWeight="Bold"
-        		Foreground="Purple"
-        		Text="{Binding ColorNumber, Mode=TwoWay}"
-        		TextWrapping="Wrap" Margin="0,8,8,8" HorizontalAlignment="Right" Grid.RowSpan="2" Width="191.27" />
-        	<TextBox FontSize="36"
-        		FontWeight="Bold"
-        		Foreground="Orange"
-        		Text="{Binding ShapeNumber, Mode=TwoWay}"
-        		HorizontalAlignment="Right"
-        		TextWrapping="Wrap" Margin="0,7.999,8,8" Grid.Row="3" Grid.RowSpan="2" Width="191.27" />
-        	<TextBox FontSize="36"
-        		FontWeight="Bold"
-        		Foreground="Maroon"
-        		Text="{Binding AddNumber, Mode=TwoWay}"
-        		TextWrapping="Wrap" Margin="0,7.999,8,8" Grid.Row="6" HorizontalAlignment="Right" Width="191.27" Grid.RowSpan="2" />
-        	<Button Content="LIST"
-        		HorizontalAlignment="Left"
-        		Height="36.824"
-        		Margin="8,0,0,8"
-        		VerticalAlignment="Bottom"
-        		Command="{Binding ShowCountriesListWindowCommand}"
-        		Width="196.5" Grid.Row="9" />
-        	<Button Content="RESULTS"
-        		Height="36.824"
-        		Margin="208.5,0,8,8"
-        		VerticalAlignment="Bottom"
-        		Command="{Binding ShowResultsWindowCommand}"
-        		Grid.Row="9"
-        		d:LayoutOverrides="GridBox" />
-        	<TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Width="145" d:LayoutOverrides="Height" VerticalAlignment="Bottom"><Run Language="pl-pl" Text="Select colors"/></TextBlock>
-        	<TextBlock HorizontalAlignment="Left" Margin="8,0,0,-0.001" TextWrapping="Wrap" Width="221.5" VerticalAlignment="Bottom" Grid.Row="3" Height="14.053" d:LayoutOverrides="VerticalAlignment"><Run Language="pl-pl" Text="Select flag shape"/><LineBreak/><Run Language="pl-pl"/></TextBlock>
-        	<TextBlock HorizontalAlignment="Left" Margin="8,0,0,0" TextWrapping="Wrap" Width="299" VerticalAlignment="Bottom" Grid.Row="6"><Run Language="pl-pl" Text="Select additional flag elements"/></TextBlock>
-        	<StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape1.png" />
-        		</CheckBox>
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape2.png" />
-        		</CheckBox>
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape3.png" />
-        		</CheckBox>
-        	</StackPanel>
-        	<StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center">
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape4.png" />
-        		</CheckBox>
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape5.png" />
-        		</CheckBox>
-        		<CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0">
-        			<Image Height="60"
-        				Width="100"
-        				Source="/FlagsWPF;component/Media/Shapes/shape6.png" />
-        		</CheckBox>
-        	</StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Button Content="Search!"
+                    Command="{Binding ShowResultsWindowCommand}"
+                    Grid.Row="9"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="260"
+                    Height="40.5"
+                    FontSize="24" />
+            <TextBlock HorizontalAlignment="Center"
+                       Margin="8,0,0,2"
+                       TextWrapping="Wrap"
+                       d:LayoutOverrides="Height"
+                       VerticalAlignment="Bottom"
+                       FontSize="18.667"><Run Language="pl-pl"
+                                              Text="Select colors" /></TextBlock>
+            <TextBlock HorizontalAlignment="Center"
+                       Margin="8,0,0,2"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Bottom"
+                       Grid.Row="3"
+                       FontSize="18.667"><Run Language="pl-pl"
+                                              Text="Select flag shape" /></TextBlock>
+            <TextBlock HorizontalAlignment="Center"
+                       Margin="8,0,0,2"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Bottom"
+                       Grid.Row="6"
+                       FontSize="18.667"><Run Language="pl-pl"
+                                              Text="Select additional flag elements" /></TextBlock>
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FFE43535" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FF3568E4" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FFE4DD35" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FF35E438" />
+                </CheckBox>
+
+            </StackPanel>
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FFF7F7F7" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content=""
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FF353535" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content="other"
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FFAB35E4" />
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <CheckBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="#FFF1BCBE"
+                                          Offset="0" />
+                            <GradientStop Color="#FFCE6865"
+                                          Offset="0.41800001263618469" />
+                            <GradientStop Color="#FFAF231E"
+                                          Offset="0.418" />
+                            <GradientStop Color="#FF601818"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </CheckBox.Background>
+                    <Button Content="?"
+                            Width="60"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Background="#FF767676" />
+                </CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,5">
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape1.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape2.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape3.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+
+            </StackPanel>
+            <StackPanel Grid.Row="5"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape4.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape5.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+                <RadioButton GroupName="ShapeGroup"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Shapes/shape6.png" />
+                        </Button.Background>
+                    </Button>
+                </RadioButton>
+            </StackPanel>
+            <StackPanel Grid.Row="7"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,5">
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add1.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add2.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add3.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add4.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+
+            </StackPanel>
+            <StackPanel Grid.Row="8"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,5">
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add5.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add6.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add7.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+                <CheckBox HorizontalAlignment="Left"
+                          VerticalAlignment="Top"
+                          Margin="10,0">
+                    <Button Content=""
+                            Width="100"
+                            Height="60"
+                            IsHitTestVisible="False"
+                            Margin="0"
+                            Padding="0,0,1,1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add8.png" />
+                        </Button.Background>
+                    </Button>
+                </CheckBox>
+
+            </StackPanel>
+
         </Grid>
 
-        <Menu Height="20" VerticalAlignment="Top">
-        	<MenuItem Header="File" Height="20" Margin="0" Width="69.5">
-        		<MenuItem Header="Exit" Click="CloseMenuItemClick"/>
-        	</MenuItem>
-        	<MenuItem Margin="0" Width="71.41">
-        		<MenuItem.Header>Help</MenuItem.Header>
-        		<MenuItem Header="About"
-        			Command="{Binding ShowHelpWindowCommand}" />
-        	</MenuItem>
+        <Menu Height="20"
+              VerticalAlignment="Top">
+            <MenuItem Header="File"
+                      Height="20"
+                      Margin="0"
+                      Width="69.5">
+                <MenuItem Header="Exit"
+                          Click="CloseMenuItemClick" />
+                <MenuItem Header="Countries List"
+                          Command="{Binding ShowCountriesListWindowCommand}" />
+            </MenuItem>
+            <MenuItem Margin="0"
+                      Width="71.41">
+                <MenuItem.Header>Help</MenuItem.Header>
+                <MenuItem Header="About"
+                          Command="{Binding ShowHelpWindowCommand}" />
+            </MenuItem>
+
+
         </Menu>
 
     </Grid>
