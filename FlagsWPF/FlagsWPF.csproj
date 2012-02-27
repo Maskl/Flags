@@ -155,6 +155,18 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="BureauBlack.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShinyBlue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShinyRed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\CountriesList\CountriesListWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +187,1823 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Media\Adds\add1.png">
+      <Link>Media\Adds\add1.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add2.png">
+      <Link>Media\Adds\add2.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add3.png">
+      <Link>Media\Adds\add3.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add4.png">
+      <Link>Media\Adds\add4.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add5.png">
+      <Link>Media\Adds\add5.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add6.png">
+      <Link>Media\Adds\add6.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add7.png">
+      <Link>Media\Adds\add7.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Adds\add8.png">
+      <Link>Media\Adds\add8.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="..\Media\Shapes\shape1.png">
+      <Link>Media\Shapes\shape1.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Shapes\shape2.png">
+      <Link>Media\Shapes\shape2.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Shapes\shape3.png">
+      <Link>Media\Shapes\shape3.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Shapes\shape4.png">
+      <Link>Media\Shapes\shape4.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Shapes\shape5.png">
+      <Link>Media\Shapes\shape5.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Shapes\shape6.png">
+      <Link>Media\Shapes\shape6.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Media\Flags\100\ad.png">
+      <Link>Media\Flags\100\ad.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ae.png">
+      <Link>Media\Flags\100\ae.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\af.png">
+      <Link>Media\Flags\100\af.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ag.png">
+      <Link>Media\Flags\100\ag.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\al.png">
+      <Link>Media\Flags\100\al.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\am.png">
+      <Link>Media\Flags\100\am.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ao.png">
+      <Link>Media\Flags\100\ao.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ar.png">
+      <Link>Media\Flags\100\ar.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\at.png">
+      <Link>Media\Flags\100\at.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\au.png">
+      <Link>Media\Flags\100\au.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\az.png">
+      <Link>Media\Flags\100\az.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ba.png">
+      <Link>Media\Flags\100\ba.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bb.png">
+      <Link>Media\Flags\100\bb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bd.png">
+      <Link>Media\Flags\100\bd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\be.png">
+      <Link>Media\Flags\100\be.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bf.png">
+      <Link>Media\Flags\100\bf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bg.png">
+      <Link>Media\Flags\100\bg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bh.png">
+      <Link>Media\Flags\100\bh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bi.png">
+      <Link>Media\Flags\100\bi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bj.png">
+      <Link>Media\Flags\100\bj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bn.png">
+      <Link>Media\Flags\100\bn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bo.png">
+      <Link>Media\Flags\100\bo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\br.png">
+      <Link>Media\Flags\100\br.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bs.png">
+      <Link>Media\Flags\100\bs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bt.png">
+      <Link>Media\Flags\100\bt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bw.png">
+      <Link>Media\Flags\100\bw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\by.png">
+      <Link>Media\Flags\100\by.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\bz.png">
+      <Link>Media\Flags\100\bz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ca.png">
+      <Link>Media\Flags\100\ca.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cd.png">
+      <Link>Media\Flags\100\cd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cf.png">
+      <Link>Media\Flags\100\cf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cg.png">
+      <Link>Media\Flags\100\cg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ch.png">
+      <Link>Media\Flags\100\ch.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ci.png">
+      <Link>Media\Flags\100\ci.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cl.png">
+      <Link>Media\Flags\100\cl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cm.png">
+      <Link>Media\Flags\100\cm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cn.png">
+      <Link>Media\Flags\100\cn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\co.png">
+      <Link>Media\Flags\100\co.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cr.png">
+      <Link>Media\Flags\100\cr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cu.png">
+      <Link>Media\Flags\100\cu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cv.png">
+      <Link>Media\Flags\100\cv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cy.png">
+      <Link>Media\Flags\100\cy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\cz.png">
+      <Link>Media\Flags\100\cz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\de.png">
+      <Link>Media\Flags\100\de.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\dj.png">
+      <Link>Media\Flags\100\dj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\dk.png">
+      <Link>Media\Flags\100\dk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\dm.png">
+      <Link>Media\Flags\100\dm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\do.png">
+      <Link>Media\Flags\100\do.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\dz.png">
+      <Link>Media\Flags\100\dz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ec.png">
+      <Link>Media\Flags\100\ec.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ee.png">
+      <Link>Media\Flags\100\ee.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\eg.png">
+      <Link>Media\Flags\100\eg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\eh.png">
+      <Link>Media\Flags\100\eh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\er.png">
+      <Link>Media\Flags\100\er.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\es.png">
+      <Link>Media\Flags\100\es.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\et.png">
+      <Link>Media\Flags\100\et.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\fi.png">
+      <Link>Media\Flags\100\fi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\fj.png">
+      <Link>Media\Flags\100\fj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\fm.png">
+      <Link>Media\Flags\100\fm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\fr.png">
+      <Link>Media\Flags\100\fr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ga.png">
+      <Link>Media\Flags\100\ga.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gb.png">
+      <Link>Media\Flags\100\gb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gd.png">
+      <Link>Media\Flags\100\gd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ge.png">
+      <Link>Media\Flags\100\ge.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gh.png">
+      <Link>Media\Flags\100\gh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gm.png">
+      <Link>Media\Flags\100\gm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gn.png">
+      <Link>Media\Flags\100\gn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gq.png">
+      <Link>Media\Flags\100\gq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gr.png">
+      <Link>Media\Flags\100\gr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gt.png">
+      <Link>Media\Flags\100\gt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gw.png">
+      <Link>Media\Flags\100\gw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\gy.png">
+      <Link>Media\Flags\100\gy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\hn.png">
+      <Link>Media\Flags\100\hn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\hr.png">
+      <Link>Media\Flags\100\hr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ht.png">
+      <Link>Media\Flags\100\ht.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\hu.png">
+      <Link>Media\Flags\100\hu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\id.png">
+      <Link>Media\Flags\100\id.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ie.png">
+      <Link>Media\Flags\100\ie.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\il.png">
+      <Link>Media\Flags\100\il.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\in.png">
+      <Link>Media\Flags\100\in.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\iq.png">
+      <Link>Media\Flags\100\iq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ir.png">
+      <Link>Media\Flags\100\ir.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\is.png">
+      <Link>Media\Flags\100\is.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\it.png">
+      <Link>Media\Flags\100\it.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\jm.png">
+      <Link>Media\Flags\100\jm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\jo.png">
+      <Link>Media\Flags\100\jo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\jp.png">
+      <Link>Media\Flags\100\jp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ke.png">
+      <Link>Media\Flags\100\ke.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kg.png">
+      <Link>Media\Flags\100\kg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kh.png">
+      <Link>Media\Flags\100\kh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ki.png">
+      <Link>Media\Flags\100\ki.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\km.png">
+      <Link>Media\Flags\100\km.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kn.png">
+      <Link>Media\Flags\100\kn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kp.png">
+      <Link>Media\Flags\100\kp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kr.png">
+      <Link>Media\Flags\100\kr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ks.png">
+      <Link>Media\Flags\100\ks.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kw.png">
+      <Link>Media\Flags\100\kw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\kz.png">
+      <Link>Media\Flags\100\kz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\la.png">
+      <Link>Media\Flags\100\la.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lb.png">
+      <Link>Media\Flags\100\lb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lc.png">
+      <Link>Media\Flags\100\lc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\li.png">
+      <Link>Media\Flags\100\li.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lk.png">
+      <Link>Media\Flags\100\lk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lr.png">
+      <Link>Media\Flags\100\lr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ls.png">
+      <Link>Media\Flags\100\ls.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lt.png">
+      <Link>Media\Flags\100\lt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lu.png">
+      <Link>Media\Flags\100\lu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\lv.png">
+      <Link>Media\Flags\100\lv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ly.png">
+      <Link>Media\Flags\100\ly.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ma.png">
+      <Link>Media\Flags\100\ma.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mc.png">
+      <Link>Media\Flags\100\mc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\md.png">
+      <Link>Media\Flags\100\md.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\me.png">
+      <Link>Media\Flags\100\me.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mg.png">
+      <Link>Media\Flags\100\mg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mh.png">
+      <Link>Media\Flags\100\mh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mk.png">
+      <Link>Media\Flags\100\mk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ml.png">
+      <Link>Media\Flags\100\ml.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mm.png">
+      <Link>Media\Flags\100\mm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mn.png">
+      <Link>Media\Flags\100\mn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mr.png">
+      <Link>Media\Flags\100\mr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mt.png">
+      <Link>Media\Flags\100\mt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mu.png">
+      <Link>Media\Flags\100\mu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mv.png">
+      <Link>Media\Flags\100\mv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mw.png">
+      <Link>Media\Flags\100\mw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mx.png">
+      <Link>Media\Flags\100\mx.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\my.png">
+      <Link>Media\Flags\100\my.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\mz.png">
+      <Link>Media\Flags\100\mz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\na.png">
+      <Link>Media\Flags\100\na.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ne.png">
+      <Link>Media\Flags\100\ne.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ng.png">
+      <Link>Media\Flags\100\ng.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ni.png">
+      <Link>Media\Flags\100\ni.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\nl.png">
+      <Link>Media\Flags\100\nl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\no.png">
+      <Link>Media\Flags\100\no.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\np.png">
+      <Link>Media\Flags\100\np.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\nr.png">
+      <Link>Media\Flags\100\nr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\nz.png">
+      <Link>Media\Flags\100\nz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\om.png">
+      <Link>Media\Flags\100\om.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pa.png">
+      <Link>Media\Flags\100\pa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pe.png">
+      <Link>Media\Flags\100\pe.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pg.png">
+      <Link>Media\Flags\100\pg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ph.png">
+      <Link>Media\Flags\100\ph.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pk.png">
+      <Link>Media\Flags\100\pk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pl.png">
+      <Link>Media\Flags\100\pl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pt.png">
+      <Link>Media\Flags\100\pt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\pw.png">
+      <Link>Media\Flags\100\pw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\py.png">
+      <Link>Media\Flags\100\py.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\qa.png">
+      <Link>Media\Flags\100\qa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ro.png">
+      <Link>Media\Flags\100\ro.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\rs.png">
+      <Link>Media\Flags\100\rs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ru.png">
+      <Link>Media\Flags\100\ru.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\rw.png">
+      <Link>Media\Flags\100\rw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sa.png">
+      <Link>Media\Flags\100\sa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sb.png">
+      <Link>Media\Flags\100\sb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sc.png">
+      <Link>Media\Flags\100\sc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sd.png">
+      <Link>Media\Flags\100\sd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\se.png">
+      <Link>Media\Flags\100\se.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sg.png">
+      <Link>Media\Flags\100\sg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\si.png">
+      <Link>Media\Flags\100\si.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sk.png">
+      <Link>Media\Flags\100\sk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sl.png">
+      <Link>Media\Flags\100\sl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sm.png">
+      <Link>Media\Flags\100\sm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sn.png">
+      <Link>Media\Flags\100\sn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\so.png">
+      <Link>Media\Flags\100\so.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sr.png">
+      <Link>Media\Flags\100\sr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\st.png">
+      <Link>Media\Flags\100\st.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sv.png">
+      <Link>Media\Flags\100\sv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sy.png">
+      <Link>Media\Flags\100\sy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\sz.png">
+      <Link>Media\Flags\100\sz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\td.png">
+      <Link>Media\Flags\100\td.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tg.png">
+      <Link>Media\Flags\100\tg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\th.png">
+      <Link>Media\Flags\100\th.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tj.png">
+      <Link>Media\Flags\100\tj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tl.png">
+      <Link>Media\Flags\100\tl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tm.png">
+      <Link>Media\Flags\100\tm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tn.png">
+      <Link>Media\Flags\100\tn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\to.png">
+      <Link>Media\Flags\100\to.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tr.png">
+      <Link>Media\Flags\100\tr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tt.png">
+      <Link>Media\Flags\100\tt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tv.png">
+      <Link>Media\Flags\100\tv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tw.png">
+      <Link>Media\Flags\100\tw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\tz.png">
+      <Link>Media\Flags\100\tz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ua.png">
+      <Link>Media\Flags\100\ua.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ug.png">
+      <Link>Media\Flags\100\ug.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\us.png">
+      <Link>Media\Flags\100\us.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\uy.png">
+      <Link>Media\Flags\100\uy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\uz.png">
+      <Link>Media\Flags\100\uz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\va.png">
+      <Link>Media\Flags\100\va.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\vc.png">
+      <Link>Media\Flags\100\vc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ve.png">
+      <Link>Media\Flags\100\ve.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\vn.png">
+      <Link>Media\Flags\100\vn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\vu.png">
+      <Link>Media\Flags\100\vu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ws.png">
+      <Link>Media\Flags\100\ws.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\ye.png">
+      <Link>Media\Flags\100\ye.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\za.png">
+      <Link>Media\Flags\100\za.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\zm.png">
+      <Link>Media\Flags\100\zm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\100\zw.png">
+      <Link>Media\Flags\100\zw.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Media\Flags\30\ad.png">
+      <Link>Media\Flags\30\ad.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ae.png">
+      <Link>Media\Flags\30\ae.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\af.png">
+      <Link>Media\Flags\30\af.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ag.png">
+      <Link>Media\Flags\30\ag.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\al.png">
+      <Link>Media\Flags\30\al.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\am.png">
+      <Link>Media\Flags\30\am.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ao.png">
+      <Link>Media\Flags\30\ao.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ar.png">
+      <Link>Media\Flags\30\ar.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\at.png">
+      <Link>Media\Flags\30\at.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\au.png">
+      <Link>Media\Flags\30\au.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\az.png">
+      <Link>Media\Flags\30\az.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ba.png">
+      <Link>Media\Flags\30\ba.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bb.png">
+      <Link>Media\Flags\30\bb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bd.png">
+      <Link>Media\Flags\30\bd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\be.png">
+      <Link>Media\Flags\30\be.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bf.png">
+      <Link>Media\Flags\30\bf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bg.png">
+      <Link>Media\Flags\30\bg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bh.png">
+      <Link>Media\Flags\30\bh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bi.png">
+      <Link>Media\Flags\30\bi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bj.png">
+      <Link>Media\Flags\30\bj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bn.png">
+      <Link>Media\Flags\30\bn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bo.png">
+      <Link>Media\Flags\30\bo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\br.png">
+      <Link>Media\Flags\30\br.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bs.png">
+      <Link>Media\Flags\30\bs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bt.png">
+      <Link>Media\Flags\30\bt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bw.png">
+      <Link>Media\Flags\30\bw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\by.png">
+      <Link>Media\Flags\30\by.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\bz.png">
+      <Link>Media\Flags\30\bz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ca.png">
+      <Link>Media\Flags\30\ca.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cd.png">
+      <Link>Media\Flags\30\cd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cf.png">
+      <Link>Media\Flags\30\cf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cg.png">
+      <Link>Media\Flags\30\cg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ch.png">
+      <Link>Media\Flags\30\ch.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ci.png">
+      <Link>Media\Flags\30\ci.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cl.png">
+      <Link>Media\Flags\30\cl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cm.png">
+      <Link>Media\Flags\30\cm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cn.png">
+      <Link>Media\Flags\30\cn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\co.png">
+      <Link>Media\Flags\30\co.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cr.png">
+      <Link>Media\Flags\30\cr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cu.png">
+      <Link>Media\Flags\30\cu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cv.png">
+      <Link>Media\Flags\30\cv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cy.png">
+      <Link>Media\Flags\30\cy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\cz.png">
+      <Link>Media\Flags\30\cz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\de.png">
+      <Link>Media\Flags\30\de.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\dj.png">
+      <Link>Media\Flags\30\dj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\dk.png">
+      <Link>Media\Flags\30\dk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\dm.png">
+      <Link>Media\Flags\30\dm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\do.png">
+      <Link>Media\Flags\30\do.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\dz.png">
+      <Link>Media\Flags\30\dz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ec.png">
+      <Link>Media\Flags\30\ec.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ee.png">
+      <Link>Media\Flags\30\ee.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\eg.png">
+      <Link>Media\Flags\30\eg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\eh.png">
+      <Link>Media\Flags\30\eh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\er.png">
+      <Link>Media\Flags\30\er.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\es.png">
+      <Link>Media\Flags\30\es.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\et.png">
+      <Link>Media\Flags\30\et.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\fi.png">
+      <Link>Media\Flags\30\fi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\fj.png">
+      <Link>Media\Flags\30\fj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\fm.png">
+      <Link>Media\Flags\30\fm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\fr.png">
+      <Link>Media\Flags\30\fr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ga.png">
+      <Link>Media\Flags\30\ga.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gb.png">
+      <Link>Media\Flags\30\gb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gd.png">
+      <Link>Media\Flags\30\gd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ge.png">
+      <Link>Media\Flags\30\ge.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gh.png">
+      <Link>Media\Flags\30\gh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gm.png">
+      <Link>Media\Flags\30\gm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gn.png">
+      <Link>Media\Flags\30\gn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gq.png">
+      <Link>Media\Flags\30\gq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gr.png">
+      <Link>Media\Flags\30\gr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gt.png">
+      <Link>Media\Flags\30\gt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gw.png">
+      <Link>Media\Flags\30\gw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\gy.png">
+      <Link>Media\Flags\30\gy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\hn.png">
+      <Link>Media\Flags\30\hn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\hr.png">
+      <Link>Media\Flags\30\hr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ht.png">
+      <Link>Media\Flags\30\ht.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\hu.png">
+      <Link>Media\Flags\30\hu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\id.png">
+      <Link>Media\Flags\30\id.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ie.png">
+      <Link>Media\Flags\30\ie.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\il.png">
+      <Link>Media\Flags\30\il.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\in.png">
+      <Link>Media\Flags\30\in.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\iq.png">
+      <Link>Media\Flags\30\iq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ir.png">
+      <Link>Media\Flags\30\ir.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\is.png">
+      <Link>Media\Flags\30\is.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\it.png">
+      <Link>Media\Flags\30\it.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\jm.png">
+      <Link>Media\Flags\30\jm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\jo.png">
+      <Link>Media\Flags\30\jo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\jp.png">
+      <Link>Media\Flags\30\jp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ke.png">
+      <Link>Media\Flags\30\ke.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kg.png">
+      <Link>Media\Flags\30\kg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kh.png">
+      <Link>Media\Flags\30\kh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ki.png">
+      <Link>Media\Flags\30\ki.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\km.png">
+      <Link>Media\Flags\30\km.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kn.png">
+      <Link>Media\Flags\30\kn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kp.png">
+      <Link>Media\Flags\30\kp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kr.png">
+      <Link>Media\Flags\30\kr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ks.png">
+      <Link>Media\Flags\30\ks.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kw.png">
+      <Link>Media\Flags\30\kw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\kz.png">
+      <Link>Media\Flags\30\kz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\la.png">
+      <Link>Media\Flags\30\la.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lb.png">
+      <Link>Media\Flags\30\lb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lc.png">
+      <Link>Media\Flags\30\lc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\li.png">
+      <Link>Media\Flags\30\li.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lk.png">
+      <Link>Media\Flags\30\lk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lr.png">
+      <Link>Media\Flags\30\lr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ls.png">
+      <Link>Media\Flags\30\ls.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lt.png">
+      <Link>Media\Flags\30\lt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lu.png">
+      <Link>Media\Flags\30\lu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\lv.png">
+      <Link>Media\Flags\30\lv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ly.png">
+      <Link>Media\Flags\30\ly.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ma.png">
+      <Link>Media\Flags\30\ma.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mc.png">
+      <Link>Media\Flags\30\mc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\md.png">
+      <Link>Media\Flags\30\md.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\me.png">
+      <Link>Media\Flags\30\me.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mg.png">
+      <Link>Media\Flags\30\mg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mh.png">
+      <Link>Media\Flags\30\mh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mk.png">
+      <Link>Media\Flags\30\mk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ml.png">
+      <Link>Media\Flags\30\ml.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mm.png">
+      <Link>Media\Flags\30\mm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mn.png">
+      <Link>Media\Flags\30\mn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mr.png">
+      <Link>Media\Flags\30\mr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mt.png">
+      <Link>Media\Flags\30\mt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mu.png">
+      <Link>Media\Flags\30\mu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mv.png">
+      <Link>Media\Flags\30\mv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mw.png">
+      <Link>Media\Flags\30\mw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mx.png">
+      <Link>Media\Flags\30\mx.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\my.png">
+      <Link>Media\Flags\30\my.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\mz.png">
+      <Link>Media\Flags\30\mz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\na.png">
+      <Link>Media\Flags\30\na.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ne.png">
+      <Link>Media\Flags\30\ne.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ng.png">
+      <Link>Media\Flags\30\ng.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ni.png">
+      <Link>Media\Flags\30\ni.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\nl.png">
+      <Link>Media\Flags\30\nl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\no.png">
+      <Link>Media\Flags\30\no.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\np.png">
+      <Link>Media\Flags\30\np.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\nr.png">
+      <Link>Media\Flags\30\nr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\nz.png">
+      <Link>Media\Flags\30\nz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\om.png">
+      <Link>Media\Flags\30\om.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pa.png">
+      <Link>Media\Flags\30\pa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pe.png">
+      <Link>Media\Flags\30\pe.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pg.png">
+      <Link>Media\Flags\30\pg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ph.png">
+      <Link>Media\Flags\30\ph.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pk.png">
+      <Link>Media\Flags\30\pk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pl.png">
+      <Link>Media\Flags\30\pl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pt.png">
+      <Link>Media\Flags\30\pt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\pw.png">
+      <Link>Media\Flags\30\pw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\py.png">
+      <Link>Media\Flags\30\py.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\qa.png">
+      <Link>Media\Flags\30\qa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ro.png">
+      <Link>Media\Flags\30\ro.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\rs.png">
+      <Link>Media\Flags\30\rs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ru.png">
+      <Link>Media\Flags\30\ru.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\rw.png">
+      <Link>Media\Flags\30\rw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sa.png">
+      <Link>Media\Flags\30\sa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sb.png">
+      <Link>Media\Flags\30\sb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sc.png">
+      <Link>Media\Flags\30\sc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sd.png">
+      <Link>Media\Flags\30\sd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\se.png">
+      <Link>Media\Flags\30\se.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sg.png">
+      <Link>Media\Flags\30\sg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\si.png">
+      <Link>Media\Flags\30\si.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sk.png">
+      <Link>Media\Flags\30\sk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sl.png">
+      <Link>Media\Flags\30\sl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sm.png">
+      <Link>Media\Flags\30\sm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sn.png">
+      <Link>Media\Flags\30\sn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\so.png">
+      <Link>Media\Flags\30\so.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sr.png">
+      <Link>Media\Flags\30\sr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\st.png">
+      <Link>Media\Flags\30\st.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sv.png">
+      <Link>Media\Flags\30\sv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sy.png">
+      <Link>Media\Flags\30\sy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\sz.png">
+      <Link>Media\Flags\30\sz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\td.png">
+      <Link>Media\Flags\30\td.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tg.png">
+      <Link>Media\Flags\30\tg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\th.png">
+      <Link>Media\Flags\30\th.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tj.png">
+      <Link>Media\Flags\30\tj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tl.png">
+      <Link>Media\Flags\30\tl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tm.png">
+      <Link>Media\Flags\30\tm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tn.png">
+      <Link>Media\Flags\30\tn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\to.png">
+      <Link>Media\Flags\30\to.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tr.png">
+      <Link>Media\Flags\30\tr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tt.png">
+      <Link>Media\Flags\30\tt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tv.png">
+      <Link>Media\Flags\30\tv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tw.png">
+      <Link>Media\Flags\30\tw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\tz.png">
+      <Link>Media\Flags\30\tz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ua.png">
+      <Link>Media\Flags\30\ua.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ug.png">
+      <Link>Media\Flags\30\ug.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\us.png">
+      <Link>Media\Flags\30\us.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\uy.png">
+      <Link>Media\Flags\30\uy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\uz.png">
+      <Link>Media\Flags\30\uz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\va.png">
+      <Link>Media\Flags\30\va.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\vc.png">
+      <Link>Media\Flags\30\vc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ve.png">
+      <Link>Media\Flags\30\ve.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\vn.png">
+      <Link>Media\Flags\30\vn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\vu.png">
+      <Link>Media\Flags\30\vu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ws.png">
+      <Link>Media\Flags\30\ws.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\ye.png">
+      <Link>Media\Flags\30\ye.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\za.png">
+      <Link>Media\Flags\30\za.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\zm.png">
+      <Link>Media\Flags\30\zm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\30\zw.png">
+      <Link>Media\Flags\30\zw.png</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Media\Flags\300\ad.png">
+      <Link>Media\Flags\300\ad.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ae.png">
+      <Link>Media\Flags\300\ae.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\af.png">
+      <Link>Media\Flags\300\af.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ag.png">
+      <Link>Media\Flags\300\ag.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\al.png">
+      <Link>Media\Flags\300\al.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\am.png">
+      <Link>Media\Flags\300\am.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ao.png">
+      <Link>Media\Flags\300\ao.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ar.png">
+      <Link>Media\Flags\300\ar.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\at.png">
+      <Link>Media\Flags\300\at.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\au.png">
+      <Link>Media\Flags\300\au.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\az.png">
+      <Link>Media\Flags\300\az.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ba.png">
+      <Link>Media\Flags\300\ba.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bb.png">
+      <Link>Media\Flags\300\bb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bd.png">
+      <Link>Media\Flags\300\bd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\be.png">
+      <Link>Media\Flags\300\be.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bf.png">
+      <Link>Media\Flags\300\bf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bg.png">
+      <Link>Media\Flags\300\bg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bh.png">
+      <Link>Media\Flags\300\bh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bi.png">
+      <Link>Media\Flags\300\bi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bj.png">
+      <Link>Media\Flags\300\bj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bn.png">
+      <Link>Media\Flags\300\bn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bo.png">
+      <Link>Media\Flags\300\bo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\br.png">
+      <Link>Media\Flags\300\br.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bs.png">
+      <Link>Media\Flags\300\bs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bt.png">
+      <Link>Media\Flags\300\bt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bw.png">
+      <Link>Media\Flags\300\bw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\by.png">
+      <Link>Media\Flags\300\by.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\bz.png">
+      <Link>Media\Flags\300\bz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ca.png">
+      <Link>Media\Flags\300\ca.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cd.png">
+      <Link>Media\Flags\300\cd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cf.png">
+      <Link>Media\Flags\300\cf.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cg.png">
+      <Link>Media\Flags\300\cg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ch.png">
+      <Link>Media\Flags\300\ch.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ci.png">
+      <Link>Media\Flags\300\ci.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cl.png">
+      <Link>Media\Flags\300\cl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cm.png">
+      <Link>Media\Flags\300\cm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cn.png">
+      <Link>Media\Flags\300\cn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\co.png">
+      <Link>Media\Flags\300\co.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cr.png">
+      <Link>Media\Flags\300\cr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cu.png">
+      <Link>Media\Flags\300\cu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cv.png">
+      <Link>Media\Flags\300\cv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cy.png">
+      <Link>Media\Flags\300\cy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\cz.png">
+      <Link>Media\Flags\300\cz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\de.png">
+      <Link>Media\Flags\300\de.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\dj.png">
+      <Link>Media\Flags\300\dj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\dk.png">
+      <Link>Media\Flags\300\dk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\dm.png">
+      <Link>Media\Flags\300\dm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\do.png">
+      <Link>Media\Flags\300\do.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\dz.png">
+      <Link>Media\Flags\300\dz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ec.png">
+      <Link>Media\Flags\300\ec.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ee.png">
+      <Link>Media\Flags\300\ee.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\eg.png">
+      <Link>Media\Flags\300\eg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\eh.png">
+      <Link>Media\Flags\300\eh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\er.png">
+      <Link>Media\Flags\300\er.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\es.png">
+      <Link>Media\Flags\300\es.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\et.png">
+      <Link>Media\Flags\300\et.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\fi.png">
+      <Link>Media\Flags\300\fi.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\fj.png">
+      <Link>Media\Flags\300\fj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\fm.png">
+      <Link>Media\Flags\300\fm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\fr.png">
+      <Link>Media\Flags\300\fr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ga.png">
+      <Link>Media\Flags\300\ga.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gb.png">
+      <Link>Media\Flags\300\gb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gd.png">
+      <Link>Media\Flags\300\gd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ge.png">
+      <Link>Media\Flags\300\ge.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gh.png">
+      <Link>Media\Flags\300\gh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gm.png">
+      <Link>Media\Flags\300\gm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gn.png">
+      <Link>Media\Flags\300\gn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gq.png">
+      <Link>Media\Flags\300\gq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gr.png">
+      <Link>Media\Flags\300\gr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gt.png">
+      <Link>Media\Flags\300\gt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gw.png">
+      <Link>Media\Flags\300\gw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\gy.png">
+      <Link>Media\Flags\300\gy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\hn.png">
+      <Link>Media\Flags\300\hn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\hr.png">
+      <Link>Media\Flags\300\hr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ht.png">
+      <Link>Media\Flags\300\ht.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\hu.png">
+      <Link>Media\Flags\300\hu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\id.png">
+      <Link>Media\Flags\300\id.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ie.png">
+      <Link>Media\Flags\300\ie.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\il.png">
+      <Link>Media\Flags\300\il.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\in.png">
+      <Link>Media\Flags\300\in.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\iq.png">
+      <Link>Media\Flags\300\iq.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ir.png">
+      <Link>Media\Flags\300\ir.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\is.png">
+      <Link>Media\Flags\300\is.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\it.png">
+      <Link>Media\Flags\300\it.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\jm.png">
+      <Link>Media\Flags\300\jm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\jo.png">
+      <Link>Media\Flags\300\jo.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\jp.png">
+      <Link>Media\Flags\300\jp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ke.png">
+      <Link>Media\Flags\300\ke.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kg.png">
+      <Link>Media\Flags\300\kg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kh.png">
+      <Link>Media\Flags\300\kh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ki.png">
+      <Link>Media\Flags\300\ki.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\km.png">
+      <Link>Media\Flags\300\km.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kn.png">
+      <Link>Media\Flags\300\kn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kp.png">
+      <Link>Media\Flags\300\kp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kr.png">
+      <Link>Media\Flags\300\kr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ks.png">
+      <Link>Media\Flags\300\ks.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kw.png">
+      <Link>Media\Flags\300\kw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\kz.png">
+      <Link>Media\Flags\300\kz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\la.png">
+      <Link>Media\Flags\300\la.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lb.png">
+      <Link>Media\Flags\300\lb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lc.png">
+      <Link>Media\Flags\300\lc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\li.png">
+      <Link>Media\Flags\300\li.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lk.png">
+      <Link>Media\Flags\300\lk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lr.png">
+      <Link>Media\Flags\300\lr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ls.png">
+      <Link>Media\Flags\300\ls.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lt.png">
+      <Link>Media\Flags\300\lt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lu.png">
+      <Link>Media\Flags\300\lu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\lv.png">
+      <Link>Media\Flags\300\lv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ly.png">
+      <Link>Media\Flags\300\ly.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ma.png">
+      <Link>Media\Flags\300\ma.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mc.png">
+      <Link>Media\Flags\300\mc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\md.png">
+      <Link>Media\Flags\300\md.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\me.png">
+      <Link>Media\Flags\300\me.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mg.png">
+      <Link>Media\Flags\300\mg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mh.png">
+      <Link>Media\Flags\300\mh.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mk.png">
+      <Link>Media\Flags\300\mk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ml.png">
+      <Link>Media\Flags\300\ml.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mm.png">
+      <Link>Media\Flags\300\mm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mn.png">
+      <Link>Media\Flags\300\mn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mr.png">
+      <Link>Media\Flags\300\mr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mt.png">
+      <Link>Media\Flags\300\mt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mu.png">
+      <Link>Media\Flags\300\mu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mv.png">
+      <Link>Media\Flags\300\mv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mw.png">
+      <Link>Media\Flags\300\mw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mx.png">
+      <Link>Media\Flags\300\mx.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\my.png">
+      <Link>Media\Flags\300\my.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\mz.png">
+      <Link>Media\Flags\300\mz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\na.png">
+      <Link>Media\Flags\300\na.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ne.png">
+      <Link>Media\Flags\300\ne.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ng.png">
+      <Link>Media\Flags\300\ng.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ni.png">
+      <Link>Media\Flags\300\ni.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\nl.png">
+      <Link>Media\Flags\300\nl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\no.png">
+      <Link>Media\Flags\300\no.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\np.png">
+      <Link>Media\Flags\300\np.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\nr.png">
+      <Link>Media\Flags\300\nr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\nz.png">
+      <Link>Media\Flags\300\nz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\om.png">
+      <Link>Media\Flags\300\om.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pa.png">
+      <Link>Media\Flags\300\pa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pe.png">
+      <Link>Media\Flags\300\pe.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pg.png">
+      <Link>Media\Flags\300\pg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ph.png">
+      <Link>Media\Flags\300\ph.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pk.png">
+      <Link>Media\Flags\300\pk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pl.png">
+      <Link>Media\Flags\300\pl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pt.png">
+      <Link>Media\Flags\300\pt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\pw.png">
+      <Link>Media\Flags\300\pw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\py.png">
+      <Link>Media\Flags\300\py.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\qa.png">
+      <Link>Media\Flags\300\qa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ro.png">
+      <Link>Media\Flags\300\ro.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\rs.png">
+      <Link>Media\Flags\300\rs.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ru.png">
+      <Link>Media\Flags\300\ru.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\rw.png">
+      <Link>Media\Flags\300\rw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sa.png">
+      <Link>Media\Flags\300\sa.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sb.png">
+      <Link>Media\Flags\300\sb.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sc.png">
+      <Link>Media\Flags\300\sc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sd.png">
+      <Link>Media\Flags\300\sd.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\se.png">
+      <Link>Media\Flags\300\se.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sg.png">
+      <Link>Media\Flags\300\sg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\si.png">
+      <Link>Media\Flags\300\si.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sk.png">
+      <Link>Media\Flags\300\sk.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sl.png">
+      <Link>Media\Flags\300\sl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sm.png">
+      <Link>Media\Flags\300\sm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sn.png">
+      <Link>Media\Flags\300\sn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\so.png">
+      <Link>Media\Flags\300\so.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sr.png">
+      <Link>Media\Flags\300\sr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\st.png">
+      <Link>Media\Flags\300\st.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sv.png">
+      <Link>Media\Flags\300\sv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sy.png">
+      <Link>Media\Flags\300\sy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\sz.png">
+      <Link>Media\Flags\300\sz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\td.png">
+      <Link>Media\Flags\300\td.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tg.png">
+      <Link>Media\Flags\300\tg.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\th.png">
+      <Link>Media\Flags\300\th.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tj.png">
+      <Link>Media\Flags\300\tj.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tl.png">
+      <Link>Media\Flags\300\tl.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tm.png">
+      <Link>Media\Flags\300\tm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tn.png">
+      <Link>Media\Flags\300\tn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\to.png">
+      <Link>Media\Flags\300\to.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tr.png">
+      <Link>Media\Flags\300\tr.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tt.png">
+      <Link>Media\Flags\300\tt.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tv.png">
+      <Link>Media\Flags\300\tv.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tw.png">
+      <Link>Media\Flags\300\tw.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\tz.png">
+      <Link>Media\Flags\300\tz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ua.png">
+      <Link>Media\Flags\300\ua.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ug.png">
+      <Link>Media\Flags\300\ug.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\us.png">
+      <Link>Media\Flags\300\us.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\uy.png">
+      <Link>Media\Flags\300\uy.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\uz.png">
+      <Link>Media\Flags\300\uz.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\va.png">
+      <Link>Media\Flags\300\va.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\vc.png">
+      <Link>Media\Flags\300\vc.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ve.png">
+      <Link>Media\Flags\300\ve.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\vn.png">
+      <Link>Media\Flags\300\vn.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\vu.png">
+      <Link>Media\Flags\300\vu.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ws.png">
+      <Link>Media\Flags\300\ws.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\ye.png">
+      <Link>Media\Flags\300\ye.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\za.png">
+      <Link>Media\Flags\300\za.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\zm.png">
+      <Link>Media\Flags\300\zm.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Flags\300\zw.png">
+      <Link>Media\Flags\300\zw.png</Link>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

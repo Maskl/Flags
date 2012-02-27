@@ -6,10 +6,16 @@
              xmlns:mvvmutils="clr-namespace:Flags.MVVMUtils"
              StartupUri="Windows\Main\MainWindowView.xaml"
              mc:Ignorable="d">
-    
+
     <Application.Resources>
-        <mvvmutils:ViewModelLocator x:Key="Locator"
-                             d:IsDataSource="True" />
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ShinyRed.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <mvvmutils:ViewModelLocator x:Key="Locator"
+                                        d:IsDataSource="True" />
+        </ResourceDictionary>
     </Application.Resources>
-    
+
 </Application>

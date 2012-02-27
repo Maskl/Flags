@@ -9,5 +9,10 @@ namespace Flags
             InitializeComponent();
             Closing += (s, e) => ViewModelLocator.Cleanup();
         }
+
+        private void CloseMenuItemClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
