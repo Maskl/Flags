@@ -125,6 +125,7 @@
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Results\CountryTagToFlagUriConverter.cs" />
     <Compile Include="Windows\Results\ResultsWindowView.xaml.cs">
       <DependentUpon>ResultsWindowView.xaml</DependentUpon>
     </Compile>

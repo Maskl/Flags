@@ -50,6 +50,12 @@ namespace Flags
 
             Countries = new ObservableCollection<Country>();
             Messenger.Default.Register<SearchParamsMessage>(this, ParseMessageFromMainWindow);
+
+            // For Expression Blend only
+            if (IsInDesignModeStatic)
+            {
+                _countrySelector.GetCountriesByParams(Countries, 123, 345, 567);
+            }
         }
 
         public void ParseMessageFromMainWindow(SearchParamsMessage message)
