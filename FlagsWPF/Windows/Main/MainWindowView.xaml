@@ -445,10 +445,10 @@
                       Height="20"
                       Margin="0"
                       Width="69.5">
-                <MenuItem Header="Exit"
-                          Click="CloseMenuItemClick" />
                 <MenuItem Header="Countries List"
                           Command="{Binding ShowCountriesListWindowCommand}" />
+                <MenuItem Header="Exit"
+                          Click="CloseMenuItemClick" />
             </MenuItem>
             <MenuItem Margin="0"
                       Width="71.41">

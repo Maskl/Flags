@@ -16,7 +16,6 @@
     <Grid x:Name="LayoutRoot">
         <ListBox FontSize="20"
                  FontWeight="Bold"
-                 Foreground="Green"
                  ItemsSource="{Binding Countries}"
                  SelectedItem="{Binding Path=SelectedCountry, Mode=TwoWay}"
                  VerticalAlignment="Top"

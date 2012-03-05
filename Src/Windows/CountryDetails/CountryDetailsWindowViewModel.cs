@@ -14,7 +14,14 @@ namespace Flags
         public Country SelectedCountry
         {
             get { return _selectedCountry; }
-            set { _selectedCountry = value; RaisePropertyChanged("SelectedCountry"); }
+            set { _selectedCountry = value; CreateDescription(); RaisePropertyChanged("SelectedCountry"); }
+        }
+
+        private string _description;
+        public string Description
+        {
+            get { return _description; }
+            set { _description = value; RaisePropertyChanged("Description"); }
         }
         #endregion
 
@@ -37,6 +44,12 @@ namespace Flags
             _countrySelector = countrySelector;
 
             Messenger.Default.Register<CountryToShowDetailsMessage>(this, SelectCountry);
+
+            // For Expression Blend only
+            if (IsInDesignModeStatic)
+            {
+                SelectedCountry = new Country {Tag = "no", Name = "Norway", Continent = "Europe", Capital = "Oslo"};
+            }
         }
 
         private void SelectCountry(CountryToShowDetailsMessage message)
@@ -47,6 +60,15 @@ namespace Flags
         public void SelectCountry(string tag)
         {
             SelectedCountry = _countrySelector.GetCountryByTag(tag);
+        }
+
+        private void CreateDescription()
+        {
+            if (SelectedCountry == null)
+                return;
+
+            Description = "Country in " + SelectedCountry.Continent + ",\nCapital city: " + SelectedCountry.Capital
+                + " and ISO-xxx Code: " + SelectedCountry.Tag.ToUpper();
         }
         #endregion
     }

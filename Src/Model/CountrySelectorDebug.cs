@@ -32,13 +32,13 @@ namespace Flags
         public Country GetCountryByTag(string uri)
         {
             var tag = uri.Contains("?") ? uri.Substring(uri.IndexOf("?", StringComparison.Ordinal) + 1) : uri;
-            if (tag.Length != 3)
+            if (tag.Length != 2)
                 return null;
 
             var country = new Country();
             country.Tag = tag;
             country.Continent = "Atlantida";
-            country.Name = tag[0] + (tag[1].ToString() + tag[2].ToString()).ToLower();
+            country.Name = tag[0] + tag[1].ToString().ToLower();
             for (var i = 3; i < 3 + Rand.Next(7); ++i)
             {
                 country.Name += (char)('a' + Rand.Next(26));
