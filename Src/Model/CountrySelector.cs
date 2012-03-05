@@ -6,17 +6,17 @@ namespace Flags
     {
         public void GetCountriesByParams(ICollection<Country> list, int color, int shape, int add)
         {
-            throw new System.NotImplementedException();
+            list.Clear();
         }
 
         public void GetAllCountries(ICollection<Country> list)
         {
-            throw new System.NotImplementedException();
+            list.Clear();
         }
 
         public Country GetCountryByTag(string tag)
         {
-            throw new System.NotImplementedException();
+            return null;
         }
     }
 }

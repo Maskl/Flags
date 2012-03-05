@@ -56,6 +56,8 @@ namespace Flags
         public MainWindowViewModel(ViewManager viewManager)
         {
             CreateRelayCommands(viewManager);
+
+            ColorNumber = ShapeNumber = AddNumber = 0;
         }
         #endregion
 

@@ -16,7 +16,7 @@ namespace Flags.MVVMUtils
             }
             else
             {
-                SimpleIoc.Default.Register<ICountrySelector, CountrySelectorDebug>(); // TODO
+                SimpleIoc.Default.Register<ICountrySelector, CountrySelector>();
             }
 
             SimpleIoc.Default.Register<MainWindowViewModel>();
