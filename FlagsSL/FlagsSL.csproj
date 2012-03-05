@@ -123,6 +123,9 @@
     <Compile Include="..\Src\Model\CountrySelectorDebug.cs">
       <Link>Model\CountrySelectorDebug.cs</Link>
     </Compile>
+    <Compile Include="..\Src\Model\Flag.cs">
+      <Link>Model\Flag.cs</Link>
+    </Compile>
     <Compile Include="..\Src\Model\ICountrySelector.cs">
       <Link>Model\ICountrySelector.cs</Link>
     </Compile>
@@ -3249,6 +3252,12 @@
     <Resource Include="..\media\shapes\shape6.png">
       <Link>Media\Shapes\shape6.png</Link>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\Media\flags.sdf">
+      <Link>Media\flags.sdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

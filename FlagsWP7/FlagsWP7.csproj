@@ -60,6 +60,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+    <Reference Include="system.data.linq" />
     <Reference Include="System.Windows.Interactivity">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Laurent Bugnion (GalaSoft)\Mvvm Light Toolkit\Binaries\WP71\System.Windows.Interactivity.dll</HintPath>
@@ -82,6 +83,9 @@
     </Compile>
     <Compile Include="..\Src\Model\CountrySelectorDebug.cs">
       <Link>Model\CountrySelectorDebug.cs</Link>
+    </Compile>
+    <Compile Include="..\Src\Model\Flag.cs">
+      <Link>Model\Flag.cs</Link>
     </Compile>
     <Compile Include="..\Src\Model\ICountrySelector.cs">
       <Link>Model\ICountrySelector.cs</Link>
@@ -1951,6 +1955,10 @@
     <Resource Include="..\media\shapes\shape6.png">
       <Link>Media\Shapes\shape6.png</Link>
     </Resource>
+    <Content Include="..\Media\flags.sdf">
+      <Link>Media\flags.sdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ApplicationIcon.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
