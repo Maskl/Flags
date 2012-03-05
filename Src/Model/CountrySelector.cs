@@ -21,9 +21,9 @@ namespace Flags
         {
             list.Clear();
 
-            foreach (var flag in (from f in _flagsDB.Flags orderby f.Country select f))
+            foreach (var flag in (from f in _flagsDB.Flags orderby f.Col1 select f))
             {
-                list.Add(new Country { Capital="TEst", Continent = "fdsfas", Name = flag.Country, Tag = "pl"});
+                list.Add(new Country { Capital=flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower()});
             }
 
         }
