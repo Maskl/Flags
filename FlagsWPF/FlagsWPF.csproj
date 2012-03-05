@@ -113,6 +113,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Windows\Converters\IntegerToBinaryFlagsConverter.cs" />
     <Compile Include="Windows\Converters\CountryTagToFlagUriConverter30.cs" />
     <Compile Include="Windows\Converters\CountryTagToFlagUriConverter300.cs" />
     <Compile Include="Windows\CountriesList\CountriesListWindowView.xaml.cs">

@@ -64,14 +64,14 @@
         </Grid>
     </Grid>
 
-    <!--Sample code showing usage of ApplicationBar-->
+    <!--Sample code showing usage of ApplicationBar  IconUri="/Images/appbar_button1.png"-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True"
                               IsMenuEnabled="False">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png"
+            <shell:ApplicationBarIconButton 
                                             Text="List" 
                                             Click="CountriesListAppBarButtonClick"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png"
+            <shell:ApplicationBarIconButton 
                                             Text="Help"
                                             Click="HelpAppBarButtonClick"/>
         </shell:ApplicationBar>

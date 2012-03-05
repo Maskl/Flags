@@ -11,7 +11,7 @@ namespace Flags
         public int AddNumber
         {
             get { return _addNumber; }
-            set { _addNumber = value; RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
+            set { _addNumber = ApplyMask(_addNumber, value); RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
         }
 
         private int _colorNumber;
@@ -33,6 +33,11 @@ namespace Flags
         {
             get { return _resultUri; }
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
+        }
+
+        private int ApplyMask(int old, int mask)
+        {
+            return ((old & mask) == 0) ? old + mask : old - mask;
         }
         #endregion
 
@@ -59,7 +64,7 @@ namespace Flags
             // REM:
             ColorNumber = 123;
             ShapeNumber = 345;
-            AddNumber = 567;
+            AddNumber = 8;
         }
         #endregion
 
