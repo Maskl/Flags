@@ -63,7 +63,8 @@
                         HorizontalAlignment="Center">
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='0'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -85,7 +86,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='1'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -107,7 +109,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='2'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -129,7 +132,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='3'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -156,7 +160,8 @@
                         HorizontalAlignment="Center">
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='4'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -178,7 +183,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='5'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -200,7 +206,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='6'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -222,7 +229,8 @@
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
-                          Margin="10,0">
+                          Margin="10,0"
+                          IsChecked="{Binding ColorNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='7'}">
                     <CheckBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1"
                                              StartPoint="0.5,0">
@@ -250,7 +258,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='0'}">
                     <Button Content=""
                             Width="100"
                             Height="60"
@@ -263,7 +272,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='1'}">
                     <Button Content=""
                             Width="100"
                             Height="60"
@@ -276,7 +286,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='2'}">
                     <Button Content=""
                             Width="100"
                             Height="60"
@@ -294,7 +305,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='3'}">
                     <Button Content=""
                             Width="100"
                             Height="60"
@@ -307,7 +319,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='4'}">
                     <Button Content=""
                             Width="100"
                             Height="60"
@@ -320,7 +333,8 @@
                 <RadioButton GroupName="ShapeGroup"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Top"
-                             Margin="10,0">
+                             Margin="10,0"
+                             IsChecked="{Binding ShapeNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='5'}">
                     <Button Content=""
                             Width="100"
                             Height="60"

@@ -11,21 +11,21 @@ namespace Flags
         public int AddNumber
         {
             get { return _addNumber; }
-            set { _addNumber = ApplyMask(_addNumber, value); RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
+            set { _addNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
         }
 
         private int _colorNumber;
         public int ColorNumber
         {
             get { return _colorNumber; }
-            set { _colorNumber = value; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
+            set { _colorNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
         }
 
         private int _shapeNumber;
         public int ShapeNumber
         {
             get { return _shapeNumber; }
-            set { _shapeNumber = value; RecalculateResultUri(); RaisePropertyChanged("ShapeNumber"); }
+            set { _shapeNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("ShapeNumber"); }
         }
 
         private string _resultUri;
@@ -35,10 +35,6 @@ namespace Flags
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
         }
 
-        private int ApplyMask(int old, int mask)
-        {
-            return ((old & mask) == 0) ? old + mask : old - mask;
-        }
         #endregion
 
         #region Relay Commands
@@ -60,11 +56,6 @@ namespace Flags
         public MainWindowViewModel(ViewManager viewManager)
         {
             CreateRelayCommands(viewManager);
-
-            // REM:
-            ColorNumber = 123;
-            ShapeNumber = 345;
-            AddNumber = 8;
         }
         #endregion
 
@@ -76,10 +67,7 @@ namespace Flags
 
         private void RecalculateResultUri()
         {
-            var color = ColorNumber;
-            var shape = ShapeNumber;
-            var add = AddNumber;
-            ResultUri = String.Format("color={0}&shape={1}&add={2}", color, shape, add);
+            ResultUri = String.Format("color={0}&shape={1}&add={2}", ColorNumber, ShapeNumber, AddNumber);
         }
         #endregion
     }
