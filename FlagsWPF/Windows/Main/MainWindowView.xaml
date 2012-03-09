@@ -366,16 +366,14 @@
                           VerticalAlignment="Top"
                           Margin="10,0"
                           IsChecked="{Binding AddNumber, Converter={StaticResource IntegerToBinaryFlagsConverter}, ConverterParameter='1'}">
-
-                    <TextBox Text="{Binding AddNumber, Mode=TwoWay}" />
-                    <!--<Button Content=""
+                    <Button Content=""
                             Width="100"
                             Height="60"
                             IsHitTestVisible="False">
                         <Button.Background>
                             <ImageBrush ImageSource="/FlagsWPF;component/Media/Adds/add2.png" />
                         </Button.Background>
-                    </Button>-->
+                    </Button>
                 </CheckBox>
                 <CheckBox HorizontalAlignment="Left"
                           VerticalAlignment="Top"
