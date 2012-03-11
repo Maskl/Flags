@@ -57,7 +57,8 @@ namespace Flags
         {
             CreateRelayCommands(viewManager);
 
-            ColorNumber = ShapeNumber = AddNumber = 0;
+            ColorNumber = 2;
+            ShapeNumber = AddNumber = 0;
         }
         #endregion
 

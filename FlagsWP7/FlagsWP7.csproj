@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="MVVMUtils\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Converters\IntegerFlagToOpacityConverter.cs" />
     <Compile Include="Windows\CountriesList\CountriesListWindowView.xaml.cs">
       <DependentUpon>CountriesListWindowView.xaml</DependentUpon>
     </Compile>

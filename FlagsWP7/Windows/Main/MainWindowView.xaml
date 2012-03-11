@@ -4,7 +4,8 @@
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
-                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" mc:Ignorable="d"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:Flags="clr-namespace:Flags" mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -14,7 +15,13 @@
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
                             DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
-	<Grid Margin="13">
+
+
+    <phone:PhoneApplicationPage.Resources>
+        <Flags:IntegerFlagToOpacityConverter x:Key="IntegerFlagToOpacityConverter" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid Margin="13">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="80"/>
 			<RowDefinition/>
@@ -45,8 +52,17 @@
 						<RowDefinition Height="80"/>
 						<RowDefinition Height="13*"/>
 					</Grid.RowDefinitions>
-					<Rectangle Grid.Column="3" Fill="Blue" Grid.Row="1" Stroke="Black"/>
-				</Grid>
+                    <Rectangle Grid.Column="1"
+                               Grid.Row="1"
+                               Fill="Red"
+                               Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='0'}">
+                    </Rectangle>
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="1"
+                               Fill="Blue"
+                               Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='1'}">
+                    </Rectangle>
+                </Grid>
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
