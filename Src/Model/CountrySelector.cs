@@ -9,14 +9,14 @@ namespace Flags
 
         public CountrySelector()
         {
-            // WP7? const string dbConnectionString = "datasource='appdata:/flags.sdf'; mode='read only'";
-            //const string dbConnectionString = "Data Source='Media/flags.sdf';" +
-            //                                  "Mode='read only';" +
-            //                                  "Temp File Directory='Media/'";
-
+#if WINDOWS_PHONE
             const string dbConnectionString = "Data Source='appdata:/Media/flags.sdf';" +
                                   "Mode='read only'";
-
+#else
+            const string dbConnectionString = "Data Source='Media/flags.sdf';" +
+                                              "Mode='read only';" +
+                                              "Temp File Directory='Media/'";
+#endif
             _flagsDB = new FlagDataContext(dbConnectionString);
         }
 

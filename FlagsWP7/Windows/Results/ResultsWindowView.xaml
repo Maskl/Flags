@@ -16,47 +16,66 @@
                             shell:SystemTray.IsVisible="True"
                             DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
-    <Grid x:Name="LayoutRoot"
-          Background="Transparent">
+    <Grid Margin="13">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+            <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*" />
+            <ColumnDefinition Width="385*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel"
-                    Grid.Row="0"
-                    Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle"
-                       Text="MY APPLICATION"
-                       Style="{StaticResource PhoneTextNormalStyle}" />
-            <TextBlock x:Name="fsdf"
-                       Text="Wyniki!"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" />
+                <ListBox FontSize="18"
+                         FontWeight="Bold"
+                         Foreground="Green"
+                         ItemsSource="{Binding Countries}"
+                         SelectedItem="{Binding Path=SelectedCountry, Mode=TwoWay}"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Center" />
+
+
+                <Button Grid.Row="1"
+                        Content="Details"
+                        Command="{Binding ShowCountryDetailsWindowCommand}"
+                        Height="105"
+                        Margin="70,127,160,0"
+                        VerticalAlignment="Top" />
+            </Grid>
+        </ScrollViewer>
+
+        <StackPanel Grid.Column="0"
+                    Grid.Row="1">
+            <Button BorderThickness="0"
+                    Margin="-4,30,0,0"
+                    Padding="0"
+                    Background="{StaticResource PhoneForegroundBrush}"
+                    Height="72"
+                    Width="72"
+                    Click="ButtonClick">
+                <Button.OpacityMask>
+                    <ImageBrush  Stretch="None"
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                </Button.OpacityMask>
+            </Button>
+
+            <Button BorderThickness="0"
+                    Margin="-4,13,0,0"
+                    Padding="0"
+                    Background="{StaticResource PhoneForegroundBrush}"
+                    Height="72"
+                    Width="72">
+                <Button.OpacityMask>
+                    <ImageBrush  Stretch="None"
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
+                </Button.OpacityMask>
+            </Button>
         </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel"
-              Grid.Row="1"
-              Margin="12,0,12,0">
-
-            <ListBox FontSize="18"
-                     FontWeight="Bold"
-                     Foreground="Green"
-                     ItemsSource="{Binding Countries}"
-                     SelectedItem="{Binding Path=SelectedCountry, Mode=TwoWay}"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Center" />
-
-
-            <Button Content="Details"
-                    Command="{Binding ShowCountryDetailsWindowCommand}"
-                    Height="105"
-                    Margin="70,127,160,0"
-                    VerticalAlignment="Top" />
-
     </Grid>
-    </Grid>
-
 </phone:PhoneApplicationPage>

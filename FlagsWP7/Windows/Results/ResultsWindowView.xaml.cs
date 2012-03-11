@@ -21,5 +21,10 @@ namespace Flags
         {
             _viewModel.ParseMessageFromMainWindow(e.Uri.ToString());
         }
+
+        private void ButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
