@@ -1960,6 +1960,18 @@
       <Link>Media\flags.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="..\Media\Icons\IconBaseCircle.png">
+      <Link>Media\Icons\IconBaseCircle.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Icons\IconHelp.png">
+      <Link>Media\Icons\IconHelp.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Icons\IconList.png">
+      <Link>Media\Icons\IconList.png</Link>
+    </Resource>
+    <Resource Include="..\Media\Icons\IconSearch.png">
+      <Link>Media\Icons\IconSearch.png</Link>
+    </Resource>
     <Content Include="ApplicationIcon.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
