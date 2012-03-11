@@ -36,7 +36,7 @@
                         Width="388">
                 <TextBlock Height="30"
                            TextWrapping="Wrap"
-                           Text="TextBlock" />
+                           Text="Colors:" />
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
@@ -64,7 +64,7 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="0" />
+                            CommandParameter="0" Content="red" FontSize="21.333" Foreground="White" />
 
                     <Button Grid.Column="3"
                             Grid.Row="1"
@@ -73,7 +73,7 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="1" />
+                            CommandParameter="1" Content="blue" FontSize="21.333" Foreground="White" />
 
                     <Button Grid.Column="5"
                             Grid.Row="1"
@@ -82,7 +82,7 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="2" />
+                            CommandParameter="2" Content="yellow" FontSize="21.333" Foreground="Black" />
 
                     <Button Grid.Column="7"
                             Grid.Row="1"
@@ -91,25 +91,25 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="3" />
+                            CommandParameter="3" Content="green" FontSize="21.333" Foreground="White" />
 
                     <Button Grid.Column="1"
                             Grid.Row="3"
                             Background="White"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="3"
                             Opacity="{Binding ColorNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="4" />
+                            CommandParameter="4" Content="white" FontSize="21.333" Foreground="Black" />
 
                     <Button Grid.Column="3"
                             Grid.Row="3"
                             Background="Black"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="3"
                             Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="5" />
+                            CommandParameter="5" Content="black" FontSize="21.333" Foreground="White" />
 
                     <Button Grid.Column="5"
                             Grid.Row="3"
@@ -118,7 +118,7 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="6" />
+                            CommandParameter="6" Content="other" FontSize="21.333" Foreground="White" />
 
                     <Button Grid.Column="7"
                             Grid.Row="3"
@@ -127,29 +127,107 @@
                             BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="7" />
+                            CommandParameter="7" Content="?" FontSize="21.333" Foreground="White" />
+                </Grid>
 
-                    <!--<Rectangle Grid.Column="1"
-                               Grid.Row="1"
-                               Fill="Red"
-                               Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='0'}">
-                    </Rectangle>
-                    <Rectangle Grid.Column="3"
-                               Grid.Row="1"
-                               Fill="Blue"
-                               Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='1'}">
-                    </Rectangle>
+                <TextBlock Height="30"
+                           TextWrapping="Wrap"
+                           Text="Shape" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="111" />
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="111" />
+                        <RowDefinition Height="13*" />
+                    </Grid.RowDefinitions>
 
                     <Button Grid.Column="1"
                             Grid.Row="1"
-                            Background="Red"
-                            Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='0'}">
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="0">
+                    	<Button.Background>
+                    		<ImageBrush Stretch="Fill" ImageSource="/FlagsWP7;component/Media/Shapes/shape1.png"/>
+                    	</Button.Background>
                     </Button>
+
                     <Button Grid.Column="3"
                             Grid.Row="1"
-                            Background="Blue"
-                            Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='1'}">
-                    </Button>-->
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="1">
+                    	<Button.Background>
+                        <ImageBrush Stretch="Fill"
+                                    ImageSource="/FlagsWP7;component/Media/Shapes/shape2.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="5"
+                            Grid.Row="1"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="2">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape3.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="3">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape4.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="3"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="4">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape5.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="5"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="5">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape6.png" />
+                        </Button.Background>
+                    </Button>
+                    
                 </Grid>
             </StackPanel>
         </ScrollViewer>

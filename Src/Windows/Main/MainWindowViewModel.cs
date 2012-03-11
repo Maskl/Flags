@@ -66,7 +66,7 @@ namespace Flags
 
         private void ModifyShapeNumber(string num)
         {
-            ShapeNumber = 1 << Convert.ToInt32(num);
+            ShapeNumber = ShapeNumber | (1 << Convert.ToInt32(num));
         }
 
         private void ModifyAddNumber(string num)
