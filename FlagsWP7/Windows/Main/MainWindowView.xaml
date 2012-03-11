@@ -25,19 +25,28 @@
     <Grid Margin="13">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
-            <RowDefinition />
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="385*" />
             <ColumnDefinition Width="65*" />
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Row="1">
-            <StackPanel Height="662"
-                        Width="388">
-                <TextBlock Height="30"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                    Height="30"
                            TextWrapping="Wrap"
                            Text="Colors:" />
-                <Grid>
+                <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
                         <ColumnDefinition Width="80" />
@@ -54,7 +63,7 @@
                         <RowDefinition Height="80" />
                         <RowDefinition Height="13" />
                         <RowDefinition Height="80" />
-                        <RowDefinition Height="13*" />
+                        <RowDefinition Height="13" />
                     </Grid.RowDefinitions>
 
                     <Button Grid.Column="1"
@@ -130,10 +139,12 @@
                             CommandParameter="7" Content="?" FontSize="21.333" Foreground="White" />
                 </Grid>
 
-                <TextBlock Height="30"
+                <TextBlock  Grid.Row="2"
+                            Height="30"
                            TextWrapping="Wrap"
-                           Text="Shape" />
-                <Grid>
+                           Text="Shape:"
+                         />
+                <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
                         <ColumnDefinition Width="111" />
@@ -148,7 +159,7 @@
                         <RowDefinition Height="111" />
                         <RowDefinition Height="13" />
                         <RowDefinition Height="111" />
-                        <RowDefinition Height="13*" />
+                        <RowDefinition Height="13" />
                     </Grid.RowDefinitions>
 
                     <Button Grid.Column="1"
@@ -227,9 +238,144 @@
                                         ImageSource="/FlagsWP7;component/Media/Shapes/shape6.png" />
                         </Button.Background>
                     </Button>
-                    
                 </Grid>
-            </StackPanel>
+
+                <TextBlock  Grid.Row="4" Height="30"
+                           TextWrapping="Wrap"
+                           Text="Additional elements:"
+                          />
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="111" />
+                        <ColumnDefinition Width="13" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="111" />
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="111" />
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="111" />
+                        <RowDefinition Height="13" />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="1"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="0">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add1.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="3"
+                            Grid.Row="1"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="1">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add2.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="5"
+                            Grid.Row="1"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="2">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add3.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="3">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add4.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="3"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="4">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add5.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="5"
+                            Grid.Row="3"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="5">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add6.png" />
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Column="1"
+                            Grid.Row="5"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="6">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add7.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="3"
+                            Grid.Row="5"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding AddNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyAddNumberCommand}"
+                            CommandParameter="7">
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill"
+                                        ImageSource="/FlagsWP7;component/Media/Adds/Add8.png" />
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Column="5"
+                            Grid.Row="5"
+                            Margin="-12"
+                            Content="Find!">
+                    </Button>
+                </Grid>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </phone:PhoneApplicationPage>

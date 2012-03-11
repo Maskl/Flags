@@ -66,6 +66,7 @@ namespace Flags
 
         private void ModifyShapeNumber(string num)
         {
+            // like radio button
             ShapeNumber = ShapeNumber | (1 << Convert.ToInt32(num));
         }
 
