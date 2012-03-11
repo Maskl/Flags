@@ -43,12 +43,35 @@ namespace Flags
         public RelayCommand ShowCountriesListWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
 
+        public RelayCommand<string> ModifyColorNumberCommand { get; private set; }
+        public RelayCommand<string> ModifyShapeNumberCommand { get; private set; }
+        public RelayCommand<string> ModifyAddNumberCommand { get; private set; }
+
         private void CreateRelayCommands(ViewManager viewManager)
         {
             _viewManager = viewManager;
             ShowResultsWindowCommand = new RelayCommand(ShowResults);
             ShowCountriesListWindowCommand = new RelayCommand(() => _viewManager.Show(View.CountriesList));
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
+
+            ModifyColorNumberCommand = new RelayCommand<string>(ModifyColorNumber);
+            ModifyShapeNumberCommand = new RelayCommand<string>(ModifyShapeNumber);
+            ModifyAddNumberCommand = new RelayCommand<string>(ModifyAddNumber);
+        }
+
+        private void ModifyColorNumber(string num)
+        {
+            ColorNumber = 1 << Convert.ToInt32(num);
+        }
+
+        private void ModifyShapeNumber(string num)
+        {
+            ShapeNumber = 1 << Convert.ToInt32(num);
+        }
+
+        private void ModifyAddNumber(string num)
+        {
+            AddNumber = 1 << Convert.ToInt32(num);
         }
         #endregion
 

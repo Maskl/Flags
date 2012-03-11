@@ -5,7 +5,8 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-                            xmlns:Flags="clr-namespace:Flags" mc:Ignorable="d"
+                            xmlns:Flags="clr-namespace:Flags"
+                            mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -22,37 +23,113 @@
     </phone:PhoneApplicationPage.Resources>
 
     <Grid Margin="13">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="80"/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="385*"/>
-			<ColumnDefinition Width="65*"/>
-		</Grid.ColumnDefinitions>
-		<ScrollViewer Grid.Row="1">
-			<StackPanel Height="662" Width="388">
-				<TextBlock Height="30" TextWrapping="Wrap" Text="TextBlock"/>
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="13"/>
-						<ColumnDefinition Width="80"/>
-						<ColumnDefinition Width="13"/>
-						<ColumnDefinition Width="80"/>
-						<ColumnDefinition Width="13"/>
-						<ColumnDefinition Width="80"/>
-						<ColumnDefinition Width="13"/>
-						<ColumnDefinition Width="80"/>
-						<ColumnDefinition Width="13"/>
-					</Grid.ColumnDefinitions>
-					<Grid.RowDefinitions>
-						<RowDefinition Height="13"/>
-						<RowDefinition Height="80"/>
-						<RowDefinition Height="13"/>
-						<RowDefinition Height="80"/>
-						<RowDefinition Height="13*"/>
-					</Grid.RowDefinitions>
-                    <Rectangle Grid.Column="1"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="385*" />
+            <ColumnDefinition Width="65*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Height="662"
+                        Width="388">
+                <TextBlock Height="30"
+                           TextWrapping="Wrap"
+                           Text="TextBlock" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="13" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="13" />
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="13*" />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="1"
+                            Background="Red"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="0" />
+
+                    <Button Grid.Column="3"
+                            Grid.Row="1"
+                            Background="Blue"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="1" />
+
+                    <Button Grid.Column="5"
+                            Grid.Row="1"
+                            Background="Yellow"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="2" />
+
+                    <Button Grid.Column="7"
+                            Grid.Row="1"
+                            Background="Green"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="3" />
+
+                    <Button Grid.Column="1"
+                            Grid.Row="3"
+                            Background="White"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="4" />
+
+                    <Button Grid.Column="3"
+                            Grid.Row="3"
+                            Background="Black"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="5" />
+
+                    <Button Grid.Column="5"
+                            Grid.Row="3"
+                            Background="Violet"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="6" />
+
+                    <Button Grid.Column="7"
+                            Grid.Row="3"
+                            Background="Gray"
+                            Margin="-12"
+                            BorderThickness="0"
+                            Opacity="{Binding ColorNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyColorNumberCommand}"
+                            CommandParameter="7" />
+
+                    <!--<Rectangle Grid.Column="1"
                                Grid.Row="1"
                                Fill="Red"
                                Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='0'}">
@@ -62,8 +139,19 @@
                                Fill="Blue"
                                Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='1'}">
                     </Rectangle>
+
+                    <Button Grid.Column="1"
+                            Grid.Row="1"
+                            Background="Red"
+                            Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='0'}">
+                    </Button>
+                    <Button Grid.Column="3"
+                            Grid.Row="1"
+                            Background="Blue"
+                            Opacity="{Binding ColorNumber, Converter={StaticResource IntegerFlagToOpacityConverter}, ConverterParameter='1'}">
+                    </Button>-->
                 </Grid>
-			</StackPanel>
-		</ScrollViewer>
-	</Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </phone:PhoneApplicationPage>
