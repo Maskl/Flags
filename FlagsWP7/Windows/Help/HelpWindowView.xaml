@@ -16,42 +16,47 @@
                             shell:SystemTray.IsVisible="True"
                             DataContext="{Binding HelpWindowVm, Source={StaticResource Locator}}">
 
-    <Grid x:Name="LayoutRoot"
-          Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        <Grid Margin="13">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65*" />
+                <ColumnDefinition Width="385*" />
+            </Grid.ColumnDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel"
-                    Grid.Row="0"
-                    Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle"
-                       Text="MY APPLICATION"
-                       Style="{StaticResource PhoneTextNormalStyle}" />
-            <TextBlock x:Name="fsdf"
-                       Text="HelpWindowView!"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" />
-        </StackPanel>
-
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel"
-              Grid.Row="1"
-              Margin="12,0,12,0">
-
+            <Grid Grid.Row="1"
+                  Grid.Column="1">
             <TextBlock FontSize="20"
-                       FontWeight="Bold"
                        Text="Example help text. 
                    There will be something like lorem ipsum dolor sit amet, whatever. Or maybe:
                    Litwo! Ojczyzno moja! Ty jesteś jak zdrowie
+                   Ile Cię trzeba cenić ten tylko się dowie kto Cię stracił czy jakoś tak... Starczy chyba.
+                   Example help text. 
+                   There will be something like lorem ipsum dolor sit amet, whatever. Or maybe:
+                   Litwo! Ojczyzno moja! Ty jesteś jak zdrowie
                    Ile Cię trzeba cenić ten tylko się dowie kto Cię stracił czy jakoś tak... Starczy chyba."
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
                        TextWrapping="Wrap" />
-        </Grid>
-    </Grid>
+            </Grid>
 
+
+            <StackPanel Grid.Column="0"
+                        Grid.Row="1">
+                <Button BorderThickness="0"
+                        Margin="-4,30,0,0"
+                        Padding="0"
+                        Background="{StaticResource PhoneForegroundBrush}"
+                        Height="72"
+                        Width="72"
+                        Click="BackIconButtonClick">
+                    <Button.OpacityMask>
+                        <ImageBrush  Stretch="None"
+                                     ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                    </Button.OpacityMask>
+                </Button>
+
+            </StackPanel>
+        </Grid>
 
 </phone:PhoneApplicationPage>

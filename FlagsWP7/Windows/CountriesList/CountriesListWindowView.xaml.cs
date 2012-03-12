@@ -16,7 +16,7 @@ namespace Flags
             _viewModel.ShowHelpWindowCommand.Execute(null);
         }
 
-        private void ButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }

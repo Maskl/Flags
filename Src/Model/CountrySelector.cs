@@ -44,7 +44,7 @@ namespace Flags
                 addTab[i] = (add & (1 << i)) == 0 ? 1 : -1;
             }
 
-            var flags = from f in _flagsDB.Flags orderby (
+            var flags = (from f in _flagsDB.Flags orderby (
                 f.Col1 * colTab[0] +
                 f.Col2 * colTab[1] +
                 f.Col3 * colTab[2] +
@@ -68,7 +68,7 @@ namespace Flags
                 f.Add6 * addTab[5] +
                 f.Add7 * addTab[6] +
                 f.Add8 * addTab[7]
-        ) select f;
+        ) select f).Take(10);
 
 
             //var flags = _flagsDB.Flags.OrderBy(f => 

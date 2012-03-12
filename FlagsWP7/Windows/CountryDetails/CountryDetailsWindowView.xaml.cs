@@ -22,5 +22,10 @@ namespace Flags
         {
             _viewModel.SelectCountry(e.Uri.ToString());
         }
+
+        private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

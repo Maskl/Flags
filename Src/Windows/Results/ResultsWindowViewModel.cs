@@ -98,6 +98,7 @@ namespace Flags
             // Get list of countries with proper flags.
             _countrySelector.GetCountriesByParams(Countries, color, shape, add);
 
+            SelectedCountry = null;
 #if !WINDOWS_PHONE
             if (Countries.Count > 0)
                 SelectedCountry = Countries[0];
@@ -109,13 +110,14 @@ namespace Flags
         private void CreateGroups()
         {
             var allCountries = (from c in Countries select c);
-            var characters = new List<string> { "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            var characters = new List<string> { "all" };
 
             var groups = new List<LongListGroup<Country>>();
             characters.ForEach(x => groups.Add(new LongListGroup<Country>(x, new List<Country>())));
 
+            // todo: maybe do here something in the future
             var longListGrouped = (from c in allCountries
-                                   group c by c.FirstLetter.ToString() into grp
+                                   group c by "all" into grp
                                    orderby grp.Key
                                    select new LongListGroup<Country>(grp.Key, grp));
 

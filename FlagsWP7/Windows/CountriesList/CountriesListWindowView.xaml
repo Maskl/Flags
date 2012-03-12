@@ -109,10 +109,7 @@
                     </ItemsPanelTemplate>
                 </toolkit:LongListSelector.GroupItemsPanel>
             </toolkit:LongListSelector>
-
         </Grid>
-
-
 
 
         <StackPanel Grid.Column="0"
@@ -123,7 +120,7 @@
                     Background="{StaticResource PhoneForegroundBrush}"
                     Height="72"
                     Width="72"
-                    Click="ButtonClick">
+                    Click="BackIconButtonClick">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
@@ -135,19 +132,13 @@
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
                     Height="72"
-                    Width="72">
+                    Width="72"
+                    Command="{Binding ShowHelpWindowCommand}">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
                 </Button.OpacityMask>
             </Button>
         </StackPanel>
-        <ListBox FontSize="18"
-                 FontWeight="Bold"
-                 Foreground="Green"
-                 ItemsSource="{Binding CountriesByCategory}"
-                 Grid.Column="1" />
-        <Button Content="Details"
-                Command="{Binding ShowCountryDetailsWindowCommand}" />
     </Grid>
 </phone:PhoneApplicationPage>

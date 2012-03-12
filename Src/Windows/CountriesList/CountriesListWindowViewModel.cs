@@ -69,6 +69,7 @@ namespace Flags
             Countries = new ObservableCollection<Country>();
             _countrySelector.GetAllCountries(Countries);
 
+            SelectedCountry = null;
 #if !WINDOWS_PHONE
             if (Countries.Count > 0)
                 SelectedCountry = Countries[0];

@@ -5,9 +5,9 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            mc:Ignorable="d"
+                            xmlns:Flags="clr-namespace:Flags" mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="696"
+                            d:DesignHeight="768"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -16,39 +16,58 @@
                             shell:SystemTray.IsVisible="True"
                             DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}">
 
-    <Grid x:Name="LayoutRoot"
-          Background="Transparent">
+    <phone:PhoneApplicationPage.Resources>
+        <Flags:CountryTagToFlagUriConverter300 x:Key="CountryTagToFlagUriConverter300" />
+    </phone:PhoneApplicationPage.Resources>
+    
+    <Grid Margin="13">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="80" />
+            <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*" />
+            <ColumnDefinition Width="385*" />
+        </Grid.ColumnDefinitions>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel"
-                    Grid.Row="0"
-                    Margin="12,17,0,28">
-            <TextBlock x:Name="ApplicationTitle"
-                       Text="MY APPLICATION"
-                       Style="{StaticResource PhoneTextNormalStyle}" />
-            <TextBlock x:Name="fsdf"
-                       Text="CountryDetailsWindowView!"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" />
-        </StackPanel>
+        <Grid Grid.Row="1"
+              Grid.Column="1">
+            <Image Margin="13"
+                   Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel"
-              Grid.Row="1"
-              Margin="12,0,12,0">
-
-            <TextBlock FontSize="36"
-                       FontWeight="Bold"
-                       Foreground="Gold"
-                       Text="{Binding SelectedCountry}"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       TextWrapping="Wrap" />
+            <TextBlock HorizontalAlignment="Left"
+                       Height="47"
+                       Margin="8,8,0,0"
+                       TextWrapping="Wrap"
+                       Text="{Binding SelectedCountry.Name}"
+                       VerticalAlignment="Top"
+                       Width="208"
+                       FontSize="21.333"
+                       FontWeight="Bold" />
+            <TextBlock HorizontalAlignment="Left"
+                       Margin="8,59,0,66.5"
+                       TextWrapping="Wrap"
+                       Text="{Binding Description}"
+                       Width="208" />
         </Grid>
+
+
+        <StackPanel Grid.Column="0"
+                    Grid.Row="1">
+            <Button BorderThickness="0"
+                    Margin="-4,30,0,0"
+                    Padding="0"
+                    Background="{StaticResource PhoneForegroundBrush}"
+                    Height="72"
+                    Width="72"
+                    Click="BackIconButtonClick">
+                <Button.OpacityMask>
+                    <ImageBrush  Stretch="None"
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                </Button.OpacityMask>
+            </Button>
+
+        </StackPanel>
     </Grid>
 
 </phone:PhoneApplicationPage>
