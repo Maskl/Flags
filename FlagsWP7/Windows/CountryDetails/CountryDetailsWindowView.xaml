@@ -51,14 +51,4 @@
         </Grid>
     </Grid>
 
-    <!--Sample code showing usage of ApplicationBar  IconUri="/Images/appbar_button2.png" -->
-    <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True"
-                              IsMenuEnabled="False">
-            <shell:ApplicationBarIconButton 
-                                            Text="Help"
-                                            Click="HelpAppBarButtonClick" />
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>
-
 </phone:PhoneApplicationPage>

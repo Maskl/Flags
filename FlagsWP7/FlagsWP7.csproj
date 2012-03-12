@@ -136,6 +136,7 @@
     <Compile Include="Windows\Help\HelpWindowView.xaml.cs">
       <DependentUpon>HelpWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\LongListSelectorExtension.cs" />
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>

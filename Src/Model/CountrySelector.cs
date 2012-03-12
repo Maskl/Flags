@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Flags
@@ -164,8 +165,12 @@ namespace Flags
             }
         }
 
-        public Country GetCountryByTag(string tag)
+        public Country GetCountryByTag(string uri)
         {
+            var tag = uri.Contains("?") ? uri.Substring(uri.IndexOf("?", StringComparison.Ordinal) + 1) : uri;
+            if (tag.Length != 2)
+                return null;
+
             var flag = _flagsDB.Flags.Single(f => f.Iso == tag);
             return new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0] };
         }

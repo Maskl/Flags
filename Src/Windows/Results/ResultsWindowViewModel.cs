@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
@@ -43,13 +44,23 @@ namespace Flags
         private ViewManager _viewManager;
         public RelayCommand ShowCountryDetailsWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
+        public RelayCommand<object> SelectionChanged { get; private set; }
 
         private void CreateRelayCommands(ViewManager viewManager)
         {
             _viewManager = viewManager;
             ShowCountryDetailsWindowCommand = new RelayCommand(ShowCountryDetails);
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
+
+            SelectionChanged = new RelayCommand<object>(ChangeSelection);
         }
+
+        private void ChangeSelection(object obj)
+        {
+            SelectedCountry = (Country)obj;
+            ShowCountryDetails();
+        }
+
         #endregion
 
         #region Initialization
@@ -139,8 +150,8 @@ namespace Flags
             // Get list of countries with proper flags.
             _countrySelector.GetCountriesByParams(Countries, color, shape, add);
 
-            if (Countries.Count > 0)
-                SelectedCountry = Countries[0];
+          //  if (Countries.Count > 0)
+          //      SelectedCountry = Countries[0];
 
             Zzzzx();
         }

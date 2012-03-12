@@ -37,7 +37,9 @@
         <Grid Grid.Row="1"
               Grid.Column="1">
 
-            <toolkit:LongListSelector ItemsSource="{Binding CountriesGroup}">
+            <toolkit:LongListSelector ItemsSource="{Binding CountriesGroup}"
+                                      Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
+                                      SelectedItem="{Binding SelectedCountry}">
 
                 <!-- [a] -->
                 <toolkit:LongListSelector.GroupHeaderTemplate>
@@ -83,8 +85,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Margin="13"
-                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"
-                                   IsHitTestVisible="False"></Image>
+                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"/>
 
                             <StackPanel Grid.Column="1"
                                         VerticalAlignment="Center">
