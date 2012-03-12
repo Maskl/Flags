@@ -23,12 +23,17 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Controls;
+
+// TODO ODSADADASDASDDSA!!!!!!!!!!!!!!!!!!!!!!!!!!
+#if WINDOWS_PHONE
 using Microsoft.Phone.Controls;
+#endif
 
 namespace Flags
 {
     public static class LongListSelectorExtension
     {
+#if WINDOWS_PHONE
         public static readonly DependencyProperty CommandProperty =
             DependencyProperty.RegisterAttached("Command",
                 typeof(ICommand), typeof(LongListSelectorExtension),
@@ -76,5 +81,6 @@ namespace Flags
                 command.Execute(selector.SelectedItem);
             }
         }
+#endif
     }
 }

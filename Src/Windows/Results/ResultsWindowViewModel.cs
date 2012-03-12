@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
-using System.Windows.Input;
-using System.Windows.Media;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -31,11 +28,11 @@ namespace Flags
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
         }
 
-        private List<Group<Country>> _countriesGroup;
-        public List<Group<Country>> CountriesGroup
+        private List<LongListGroup<Country>> _countriesGrupped;
+        public List<LongListGroup<Country>> CountriesGrupped
         {
-            get { return _countriesGroup; }
-            set { _countriesGroup = value; RaisePropertyChanged("CountriesGroup"); }
+            get { return _countriesGrupped; }
+            set { _countriesGrupped = value; RaisePropertyChanged("CountriesGrupped"); }
         }
         
         #endregion
@@ -51,7 +48,6 @@ namespace Flags
             _viewManager = viewManager;
             ShowCountryDetailsWindowCommand = new RelayCommand(ShowCountryDetails);
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
-
             SelectionChanged = new RelayCommand<object>(ChangeSelection);
         }
 
@@ -77,56 +73,8 @@ namespace Flags
             if (IsInDesignModeStatic)
             {
                 _countrySelector.GetCountriesByParams(Countries, 123, 345, 567);
-
-                Zzzzx();
+                CreateGroups();
             }
-        }
-
-        private void Zzzzx()
-        {
-            var allTorrents = (from torrent in Countries
-                               select torrent);
-
-            var emptyGroups = new List<Group<Country>>()
-            {
-                new Group<Country>("#", new List<Country>()),
-                new Group<Country>("A", new List<Country>()),
-                new Group<Country>("B", new List<Country>()),
-                new Group<Country>("C", new List<Country>()),
-                new Group<Country>("D", new List<Country>()),
-                new Group<Country>("E", new List<Country>()),
-                new Group<Country>("F", new List<Country>()),
-                new Group<Country>("G", new List<Country>()),
-                new Group<Country>("H", new List<Country>()),
-                new Group<Country>("I", new List<Country>()),
-                new Group<Country>("J", new List<Country>()),
-                new Group<Country>("K", new List<Country>()),
-                new Group<Country>("L", new List<Country>()),
-                new Group<Country>("M", new List<Country>()),
-                new Group<Country>("N", new List<Country>()),
-                new Group<Country>("O", new List<Country>()),
-                new Group<Country>("P", new List<Country>()),
-                new Group<Country>("Q", new List<Country>()),
-                new Group<Country>("R", new List<Country>()),
-                new Group<Country>("S", new List<Country>()),
-                new Group<Country>("T", new List<Country>()),
-                new Group<Country>("U", new List<Country>()),
-                new Group<Country>("V", new List<Country>()),
-                new Group<Country>("W", new List<Country>()),
-                new Group<Country>("X", new List<Country>()),
-                new Group<Country>("Y", new List<Country>()),
-                new Group<Country>("Z", new List<Country>())
-            };
-
-            var groupedTorrents = (from t in allTorrents
-                                   group t by t.FirstLetter.ToString() into grp
-                                   orderby grp.Key
-                                   select new Group<Country>(grp.Key, grp));
-
-            CountriesGroup = (from t in groupedTorrents.Union(emptyGroups)
-                                   orderby t.Title
-                                   select t).ToList();
-
         }
 
         public void ParseMessageFromMainWindow(SearchParamsMessage message)
@@ -150,10 +98,30 @@ namespace Flags
             // Get list of countries with proper flags.
             _countrySelector.GetCountriesByParams(Countries, color, shape, add);
 
-          //  if (Countries.Count > 0)
-          //      SelectedCountry = Countries[0];
+#if !WINDOWS_PHONE
+            if (Countries.Count > 0)
+                SelectedCountry = Countries[0];
+#endif
 
-            Zzzzx();
+            CreateGroups();
+        }
+
+        private void CreateGroups()
+        {
+            var allCountries = (from c in Countries select c);
+            var characters = new List<string> { "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+
+            var groups = new List<LongListGroup<Country>>();
+            characters.ForEach(x => groups.Add(new LongListGroup<Country>(x, new List<Country>())));
+
+            var longListGrouped = (from c in allCountries
+                                   group c by c.FirstLetter.ToString() into grp
+                                   orderby grp.Key
+                                   select new LongListGroup<Country>(grp.Key, grp));
+
+            CountriesGrupped = (from t in longListGrouped.Union(groups)
+                                   orderby t.Title
+                                   select t).ToList();
         }
         #endregion
 
@@ -165,79 +133,6 @@ namespace Flags
 
             _viewManager.Show(View.CountryDetails, SelectedCountry.Tag);
         }
-        #endregion
-    }
-
-
-
-
-    public class Group<T> : IEnumerable<T>
-    {
-        public Group(string name, IEnumerable<T> items)
-        {
-            this.Title = name;
-            this.Items = new List<T>(items);
-        }
-
-        public override bool Equals(object obj)
-        {
-            Group<T> that = obj as Group<T>;
-
-            return (that != null) && (this.Title.Equals(that.Title));
-        }
-
-        public override int GetHashCode()
-        {
-            return this.Title.GetHashCode();
-        }
-
-        public string Title
-        {
-            get;
-            set;
-        }
-
-        public IList<T> Items
-        {
-            get;
-            set;
-        }
-
-        public bool HasItems
-        {
-            get
-            {
-                return Items.Count > 0;
-            }
-        }
-
-        public Brush GroupBackgroundBrush
-        {
-            get
-            {
-                if (HasItems)
-                    return (SolidColorBrush)Application.Current.Resources["PhoneAccentBrush"];
-                else
-                    return (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"];
-            }
-        }
-
-        #region IEnumerable<T> Members
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            return this.Items.GetEnumerator();
-        }
-
-        #endregion
-
-        #region IEnumerable Members
-
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return this.Items.GetEnumerator();
-        }
-
         #endregion
     }
 }

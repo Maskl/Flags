@@ -430,7 +430,8 @@
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
                     Height="72"
-                    Width="72">
+                    Width="72"
+                    Command="{Binding ShowCountriesListWindowCommand}">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
@@ -441,7 +442,8 @@
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
                     Height="72"
-                    Width="72">
+                    Width="72"
+                    Command="{Binding ShowHelpWindowCommand}">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
