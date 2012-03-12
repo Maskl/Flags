@@ -123,6 +123,9 @@
     </Compile>
     <Compile Include="MVVMUtils\ViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter100.cs" />
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter30.cs" />
+    <Compile Include="Windows\Converters\CountryTagToFlagUriConverter300.cs" />
     <Compile Include="Windows\Converters\IntegerFlagToOpacityConverter.cs" />
     <Compile Include="Windows\CountriesList\CountriesListWindowView.xaml.cs">
       <DependentUpon>CountriesListWindowView.xaml</DependentUpon>

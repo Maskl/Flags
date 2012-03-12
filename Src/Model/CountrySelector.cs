@@ -150,7 +150,7 @@ namespace Flags
                           f.Add6*addTab[5] +
                           f.Add7*addTab[6] +
                           f.Add8*addTab[7];
-                list.Add(new Country { Capital=flag.Capital, Continent = val.ToString(), Name = flag.Country, Tag = flag.Iso.ToLower()});
+                list.Add(new Country { Capital = flag.Capital, Continent = val.ToString(), Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0]});
             }
         }
 
@@ -160,14 +160,14 @@ namespace Flags
             var flags = _flagsDB.Flags.OrderBy(f => (f.Country));
             foreach (var flag in flags)
             {
-                list.Add(new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower() });
+                list.Add(new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0] });
             }
         }
 
         public Country GetCountryByTag(string tag)
         {
             var flag = _flagsDB.Flags.Single(f => f.Iso == tag);
-            return new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower() };
+            return new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0] };
         }
     }
 }

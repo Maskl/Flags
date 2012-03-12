@@ -1,11 +1,12 @@
-﻿<phone:PhoneApplicationPage
-                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<phone:PhoneApplicationPage xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" x:Class="Flags.ResultsWindowView"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:Flags="clr-namespace:Flags"
+                            x:Class="Flags.ResultsWindowView"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
@@ -16,13 +17,13 @@
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
                             DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
-    
-    
-    <phone:PhoneApplicationPage.Resources>
 
+
+    <phone:PhoneApplicationPage.Resources>
+        <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />
     </phone:PhoneApplicationPage.Resources>
-    
-    
+
+
     <Grid Margin="13">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
@@ -32,9 +33,86 @@
             <ColumnDefinition Width="65*" />
             <ColumnDefinition Width="385*" />
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="1" Grid.Column="1">
- 
-        </ScrollViewer>
+
+        <Grid Grid.Row="1"
+              Grid.Column="1">
+
+            <toolkit:LongListSelector ItemsSource="{Binding CountriesGroup}">
+
+                <!-- [a] -->
+                <toolkit:LongListSelector.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid Width="64"
+                                  Height="64"
+                                  HorizontalAlignment="Left"
+                                  Background="{StaticResource PhoneAccentBrush}">
+                                <TextBlock TextWrapping="Wrap"
+                                           Style="{StaticResource PhoneTextLargeStyle}"
+                                           Text="{Binding Title}"
+                                           VerticalAlignment="Center" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </toolkit:LongListSelector.GroupHeaderTemplate>
+
+                <!-- [a] [b] [c] [d] -->
+                <toolkit:LongListSelector.GroupItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{Binding GroupBackgroundBrush}"
+                                Width="99"
+                                Height="99"
+                                Margin="6"
+                                IsHitTestVisible="{Binding HasItems}">
+                            <TextBlock Text="{Binding Title}"
+                                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                                       FontSize="36"
+                                       Margin="{StaticResource PhoneTouchTargetOverhang}"
+                                       Foreground="{StaticResource PhoneForegroundBrush}"
+                                       VerticalAlignment="Bottom" />
+                        </Border>
+                    </DataTemplate>
+                </toolkit:LongListSelector.GroupItemTemplate>
+
+                <toolkit:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Margin="13"
+                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"
+                                   IsHitTestVisible="False"></Image>
+
+                            <StackPanel Grid.Column="1"
+                                        VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextWrapping="Wrap"
+                                               Text="{Binding Name}"
+                                               FontWeight="Bold"
+                                               IsHitTestVisible="True" />
+                                    <TextBlock TextWrapping="Wrap"
+                                               Text="{Binding Continent, StringFormat=' (\{0\})'}"
+                                               IsHitTestVisible="True" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </toolkit:LongListSelector.ItemTemplate>
+
+                <toolkit:LongListSelector.GroupItemsPanel>
+                    <ItemsPanelTemplate>
+                        <toolkit:WrapPanel />
+                    </ItemsPanelTemplate>
+                </toolkit:LongListSelector.GroupItemsPanel>
+            </toolkit:LongListSelector>
+
+        </Grid>
+
+
+
 
         <StackPanel Grid.Column="0"
                     Grid.Row="1">
@@ -64,12 +142,11 @@
             </Button>
         </StackPanel>
         <ListBox FontSize="18"
-        	FontWeight="Bold"
-        	Foreground="Green"
+                 FontWeight="Bold"
+                 Foreground="Green"
                  ItemsSource="{Binding CountriesByCategory}"
-        	 Grid.Column="1" />
-        <Button
-        	Content="Details"
-        	Command="{Binding ShowCountryDetailsWindowCommand}" />
+                 Grid.Column="1" />
+        <Button Content="Details"
+                Command="{Binding ShowCountryDetailsWindowCommand}" />
     </Grid>
 </phone:PhoneApplicationPage>

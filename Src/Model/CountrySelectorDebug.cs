@@ -8,24 +8,24 @@ namespace Flags
         public void GetCountriesByParams(ICollection<Country> list, int color, int shape, int add)
         {
             list.Clear();
-            if (color % 2 == 0) list.Add(new Country { Tag = "pl", Name = "Poland", Continent = "Europe", Capital = "Warsaw" });
-            if (color % 2 != 0) list.Add(new Country { Tag = "us", Name = "United States", Continent = "North America", Capital = "Washington" });
-            if (shape % 3 == 0) list.Add(new Country { Tag = "at", Name = "Austria", Continent = "Europe", Capital = "Vien" });
-            if (shape % 4 == 0) list.Add(new Country { Tag = "jp", Name = "Japan", Continent = "Asia", Capital = "Tokyo" });
-            if (add % 2 != 0) list.Add(new Country { Tag = "no", Name = "Norway", Continent = "Europe", Capital = "Oslo" });
-            if (add % 3 != 0) list.Add(new Country { Tag = "ar", Name = "Argentina", Continent = "South America", Capital = "Buenos Aires" });
+            if (color % 2 == 0) list.Add(new Country { Tag = "pl", Name = "Poland", FirstLetter = 'P', Continent = "Europe", Capital = "Warsaw" });
+            if (color % 2 != 0) list.Add(new Country { Tag = "us", Name = "United States", FirstLetter = 'U', Continent = "North America", Capital = "Washington" });
+            if (shape % 3 == 0) list.Add(new Country { Tag = "at", Name = "Austria", FirstLetter = 'A', Continent = "Europe", Capital = "Vien" });
+            if (shape % 4 == 0) list.Add(new Country { Tag = "jp", Name = "Japan", FirstLetter = 'J', Continent = "Asia", Capital = "Tokyo" });
+            if (add % 2 != 0) list.Add(new Country { Tag = "no", Name = "Norway", FirstLetter = 'N', Continent = "Europe", Capital = "Oslo" });
+            if (add % 3 != 0) list.Add(new Country { Tag = "ar", Name = "Argentina", FirstLetter = 'A', Continent = "South America", Capital = "Buenos Aires" });
         }
 
         public void GetAllCountries(ICollection<Country> list)
         {
             list.Clear();
-            list.Add(new Country { Tag = "pl", Name = "Poland", Continent = "Europe", Capital = "Warsaw" });
-            list.Add(new Country { Tag = "us", Name = "United States", Continent = "North America", Capital = "Washington" });
-            list.Add(new Country { Tag = "at", Name = "Austria", Continent = "Europe", Capital = "Vien" });
-            list.Add(new Country { Tag = "jp", Name = "Japan", Continent = "Asia", Capital = "Tokyo" });
-            list.Add(new Country { Tag = "no", Name = "Norway", Continent = "Europe", Capital = "Oslo" });
-            list.Add(new Country { Tag = "ar", Name = "Argentina", Continent = "South America", Capital = "Buenos Aires" });
-            list.Add(new Country { Tag = "co", Name = "Columbia", Continent = "South America", Capital = "Bogota" });
+            list.Add(new Country { Tag = "pl", Name = "Poland", FirstLetter = 'P', Continent = "Europe", Capital = "Warsaw" });
+            list.Add(new Country { Tag = "us", Name = "United States", FirstLetter = 'U', Continent = "North America", Capital = "Washington" });
+            list.Add(new Country { Tag = "at", Name = "Austria", FirstLetter = 'A', Continent = "Europe", Capital = "Vien" });
+            list.Add(new Country { Tag = "jp", Name = "Japan", FirstLetter = 'J', Continent = "Asia", Capital = "Tokyo" });
+            list.Add(new Country { Tag = "no", Name = "Norway", FirstLetter = 'N', Continent = "Europe", Capital = "Oslo" });
+            list.Add(new Country { Tag = "ar", Name = "Argentina", FirstLetter = 'A', Continent = "South America", Capital = "Buenos Aires" });
+            list.Add(new Country { Tag = "co", Name = "Columbia", FirstLetter = 'C', Continent = "South America", Capital = "Bogota" });
         }
 
         private static readonly Random Rand = new Random();
@@ -48,6 +48,8 @@ namespace Flags
             {
                 country.Capital += (char)('a' + Rand.Next(26));
             }
+
+            country.FirstLetter = country.Name[0];
 
             return country;
         }
