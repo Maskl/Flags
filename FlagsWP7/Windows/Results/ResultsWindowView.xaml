@@ -37,46 +37,10 @@
         <Grid Grid.Row="1"
               Grid.Column="1">
 
-            <toolkit:LongListSelector ItemsSource="{Binding CountriesGrupped}"
-                                      Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
-                                      SelectedItem="{Binding SelectedCountry}">
+            <ListBox ItemsSource="{Binding Countries}"
+                     SelectedItem="{Binding SelectedCountry, Mode=TwoWay}">
 
-                <!-- [a] -->
-                <toolkit:LongListSelector.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid Width="64"
-                                  Height="64"
-                                  HorizontalAlignment="Left"
-                                  Background="{StaticResource PhoneAccentBrush}">
-                                <TextBlock TextWrapping="Wrap"
-                                           Style="{StaticResource PhoneTextLargeStyle}"
-                                           Text="{Binding Title}"
-                                           VerticalAlignment="Center" />
-                            </Grid>
-                        </Grid>
-                    </DataTemplate>
-                </toolkit:LongListSelector.GroupHeaderTemplate>
-
-                <!-- [a] [b] [c] [d] -->
-                <toolkit:LongListSelector.GroupItemTemplate>
-                    <DataTemplate>
-                        <Border Background="{Binding GroupBackgroundBrush}"
-                                Width="99"
-                                Height="99"
-                                Margin="6"
-                                IsHitTestVisible="{Binding HasItems}">
-                            <TextBlock Text="{Binding Title}"
-                                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
-                                       FontSize="36"
-                                       Margin="{StaticResource PhoneTouchTargetOverhang}"
-                                       Foreground="{StaticResource PhoneForegroundBrush}"
-                                       VerticalAlignment="Bottom" />
-                        </Border>
-                    </DataTemplate>
-                </toolkit:LongListSelector.GroupItemTemplate>
-
-                <toolkit:LongListSelector.ItemTemplate>
+                <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -85,7 +49,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Margin="13"
-                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"/>
+                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
 
                             <StackPanel Grid.Column="1"
                                         VerticalAlignment="Center">
@@ -101,15 +65,8 @@
                             </StackPanel>
                         </Grid>
                     </DataTemplate>
-                </toolkit:LongListSelector.ItemTemplate>
-
-                <toolkit:LongListSelector.GroupItemsPanel>
-                    <ItemsPanelTemplate>
-                        <toolkit:WrapPanel />
-                    </ItemsPanelTemplate>
-                </toolkit:LongListSelector.GroupItemsPanel>
-            </toolkit:LongListSelector>
-
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
 
         <StackPanel Grid.Column="0"

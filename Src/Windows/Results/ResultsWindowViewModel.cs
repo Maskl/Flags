@@ -18,7 +18,7 @@ namespace Flags
         public Country SelectedCountry
         {
             get { return _selectedCountry; }
-            set { _selectedCountry = value; RaisePropertyChanged("SelectedCountry"); }
+            set { _selectedCountry = value; ShowCountryDetails(); RaisePropertyChanged("SelectedCountry"); }
         }
 
         private string _resultUri;
@@ -26,13 +26,6 @@ namespace Flags
         {
             get { return _resultUri; }
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
-        }
-
-        private List<LongListGroup<Country>> _countriesGrupped;
-        public List<LongListGroup<Country>> CountriesGrupped
-        {
-            get { return _countriesGrupped; }
-            set { _countriesGrupped = value; RaisePropertyChanged("CountriesGrupped"); }
         }
         
         #endregion
@@ -73,7 +66,6 @@ namespace Flags
             if (IsInDesignModeStatic)
             {
                 _countrySelector.GetCountriesByParams(Countries, 123, 345, 567);
-                CreateGroups();
             }
         }
 
@@ -103,27 +95,6 @@ namespace Flags
             if (Countries.Count > 0)
                 SelectedCountry = Countries[0];
 #endif
-
-            CreateGroups();
-        }
-
-        private void CreateGroups()
-        {
-            var allCountries = (from c in Countries select c);
-            var characters = new List<string> { "all" };
-
-            var groups = new List<LongListGroup<Country>>();
-            characters.ForEach(x => groups.Add(new LongListGroup<Country>(x, new List<Country>())));
-
-            // todo: maybe do here something in the future
-            var longListGrouped = (from c in allCountries
-                                   group c by "all" into grp
-                                   orderby grp.Key
-                                   select new LongListGroup<Country>(grp.Key, grp));
-
-            CountriesGrupped = (from t in longListGrouped.Union(groups)
-                                   orderby t.Title
-                                   select t).ToList();
         }
         #endregion
 
