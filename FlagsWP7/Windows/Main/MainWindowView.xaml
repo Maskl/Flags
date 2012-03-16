@@ -29,10 +29,6 @@
     </phone:PhoneApplicationPage.Resources>
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush Stretch="Fill"
-                        ImageSource="/FlagsWP7;component/Media/background.png" />
-        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition />
@@ -81,7 +77,7 @@
                             Grid.Row="1"
                             Background="Red"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="0"
@@ -93,7 +89,7 @@
                             Grid.Row="1"
                             Background="Blue"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="1"
@@ -105,7 +101,7 @@
                             Grid.Row="1"
                             Background="Yellow"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="2"
@@ -117,7 +113,7 @@
                             Grid.Row="1"
                             Background="Green"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="3"
@@ -129,7 +125,7 @@
                             Grid.Row="3"
                             Background="White"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="4"
@@ -141,7 +137,7 @@
                             Grid.Row="3"
                             Background="Black"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="5"
@@ -153,7 +149,7 @@
                             Grid.Row="3"
                             Background="Violet"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="6"
@@ -165,7 +161,7 @@
                             Grid.Row="3"
                             Background="Gray"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ColorNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="7"
@@ -196,6 +192,12 @@
                         <RowDefinition Height="26" />
                     </Grid.RowDefinitions>
 
+                    <Rectangle Grid.Column="1"
+                            Grid.Row="1"
+                            Fill="{StaticResource PhoneAccentBrush}"
+                            Opacity="{Binding ShapeNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+                    
                     <Button Grid.Column="1"
                             Grid.Row="1"
                             Margin="-12"
@@ -208,6 +210,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape1.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="1"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding ShapeNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="3"
                             Grid.Row="1"
@@ -222,6 +230,12 @@
                         </Button.Background>
                     </Button>
 
+                    <Rectangle Grid.Column="5"
+                               Grid.Row="1"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding ShapeNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+
                     <Button Grid.Column="5"
                             Grid.Row="1"
                             Margin="-12"
@@ -234,6 +248,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape3.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="1"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding ShapeNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="1"
                             Grid.Row="3"
@@ -248,6 +268,12 @@
                         </Button.Background>
                     </Button>
 
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding ShapeNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+
                     <Button Grid.Column="3"
                             Grid.Row="3"
                             Margin="-12"
@@ -260,6 +286,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape5.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="5"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="5"
                             Grid.Row="3"
@@ -298,7 +330,13 @@
                         <RowDefinition Height="67" />
                         <RowDefinition Height="13" />
                     </Grid.RowDefinitions>
-
+                    
+                    <Rectangle Grid.Column="1"
+                               Grid.Row="1"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+                    
                     <Button Grid.Column="1"
                             Grid.Row="1"
                             Margin="-12"
@@ -311,6 +349,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Adds/wp7Add1.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="1"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="3"
                             Grid.Row="1"
@@ -325,6 +369,12 @@
                         </Button.Background>
                     </Button>
 
+                    <Rectangle Grid.Column="5"
+                               Grid.Row="1"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+
                     <Button Grid.Column="5"
                             Grid.Row="1"
                             Margin="-12"
@@ -337,6 +387,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Adds/wp7Add3.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="1"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="1"
                             Grid.Row="3"
@@ -351,6 +407,12 @@
                         </Button.Background>
                     </Button>
 
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
+
                     <Button Grid.Column="3"
                             Grid.Row="3"
                             Margin="-12"
@@ -363,6 +425,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Adds/wp7Add5.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="5"
+                               Grid.Row="3"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="5"
                             Grid.Row="3"
@@ -377,6 +445,11 @@
                         </Button.Background>
                     </Button>
 
+                    <Rectangle Grid.Column="1"
+                               Grid.Row="5"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="1"
                             Grid.Row="5"
@@ -390,6 +463,12 @@
                                         ImageSource="/FlagsWP7;component/Media/Adds/wp7Add7.png" />
                         </Button.Background>
                     </Button>
+
+                    <Rectangle Grid.Column="3"
+                               Grid.Row="5"
+                               Fill="{StaticResource PhoneAccentBrush}"
+                               Opacity="{Binding AddNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                    </Rectangle>
 
                     <Button Grid.Column="3"
                             Grid.Row="5"
@@ -415,7 +494,7 @@
                             Command="{Binding ShowResultsWindowCommand}">
                         <Button.OpacityMask>
                             <ImageBrush  Stretch="None"
-                                         ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                                         ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
                         </Button.OpacityMask>
                     </Button>
                 </Grid>
@@ -432,7 +511,7 @@
                     Command="{Binding ShowResultsWindowCommand}">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
                 </Button.OpacityMask>
             </Button>
             <Button BorderThickness="0"
@@ -444,7 +523,7 @@
                     Command="{Binding ShowCountriesListWindowCommand}">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
                 </Button.OpacityMask>
             </Button>
             <Button BorderThickness="0"

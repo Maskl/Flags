@@ -9,13 +9,13 @@
                             x:Class="Flags.ResultsWindowView"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="768"
+                            d:DesignHeight="800"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.IsVisible="False"
                             DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource TransitionPageStyle}">
 
@@ -83,7 +83,7 @@
                     Click="BackIconButtonClick">
                 <Button.OpacityMask>
                     <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+                                 ImageSource="/FlagsWP7;component/Media/Icons/IconBack.png" />
                 </Button.OpacityMask>
             </Button>
 

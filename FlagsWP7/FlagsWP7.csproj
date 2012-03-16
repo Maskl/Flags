@@ -1935,18 +1935,6 @@
       <Link>Media\flags.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="..\Media\Icons\IconBaseCircle.png">
-      <Link>Media\Icons\IconBaseCircle.png</Link>
-    </Resource>
-    <Resource Include="..\Media\Icons\IconHelp.png">
-      <Link>Media\Icons\IconHelp.png</Link>
-    </Resource>
-    <Resource Include="..\Media\Icons\IconList.png">
-      <Link>Media\Icons\IconList.png</Link>
-    </Resource>
-    <Resource Include="..\Media\Icons\IconSearch.png">
-      <Link>Media\Icons\IconSearch.png</Link>
-    </Resource>
     <Content Include="ApplicationIcon.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1967,6 +1955,12 @@
     <Resource Include="Media\Adds\wp7add6.png" />
     <Resource Include="Media\Adds\wp7add7.png" />
     <Resource Include="Media\Adds\wp7add8.png" />
+    <Resource Include="Media\Icons\IconBack.png" />
+    <Resource Include="Media\Icons\IconBaseCircle.png" />
+    <Resource Include="Media\Icons\IconHelp.png" />
+    <Resource Include="Media\Icons\IconList.png" />
+    <Resource Include="Media\Icons\IconNext.png" />
+    <Resource Include="Media\Icons\IconSearch.png" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -13,7 +13,7 @@ namespace Flags
             var mask = 1 << System.Convert.ToInt32(parameter);
 
             // Return true if value AND mask is not zero.
-            return ((int)value & mask) != 0 ? 1.0 : 0.2;
+            return ((int)value & mask) != 0 ? 1.0 : 0.15;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
