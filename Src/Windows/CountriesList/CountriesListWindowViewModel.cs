@@ -28,11 +28,18 @@ namespace Flags
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
         }
 
-        private List< LongListGroup<Country> > _countriesGrupped;
-        public List< LongListGroup<Country> > CountriesGrupped
+        private List<LongListGroup<Country>> _countriesGruppedAlphabetically;
+        public List<LongListGroup<Country>> CountriesGruppedAlphabetically
         {
-            get { return _countriesGrupped; }
-            set { _countriesGrupped = value; RaisePropertyChanged("CountriesGrupped"); }
+            get { return _countriesGruppedAlphabetically; }
+            set { _countriesGruppedAlphabetically = value; RaisePropertyChanged("CountriesGruppedAlphabetically"); }
+        }
+
+        private List<LongListGroup<Country>> _countriesGruppedByContinent;
+        public List<LongListGroup<Country>> CountriesGruppedByContinent
+        {
+            get { return _countriesGruppedByContinent; }
+            set { _countriesGruppedByContinent = value; RaisePropertyChanged("CountriesGruppedByContinent"); }
         }
 
         #endregion
@@ -82,19 +89,32 @@ namespace Flags
         {
             var allCountries = (from c in Countries select c);
             var characters = new List<string> { "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            var continents = new List<string> { "africa", "asia", "europe", "north america", "oceania", "south america" };
 
-            var groups = new List<LongListGroup<Country>>();
-            characters.ForEach(x => groups.Add(new LongListGroup<Country>(x, new List<Country>())));
+            var groupsAlphabetically = new List<LongListGroup<Country>>();
+            characters.ForEach(x => groupsAlphabetically.Add(new LongListGroup<Country>(x, new List<Country>())));
 
-            var longListGrouped = (from c in allCountries
-                                   group c by c.FirstLetter.ToString() into grp
-                                   orderby grp.Key
-                                   select new LongListGroup<Country>(grp.Key, grp));
+            var groupsByContinent = new List<LongListGroup<Country>>();
+            continents.ForEach(x => groupsByContinent.Add(new LongListGroup<Country>(x, new List<Country>())));
 
-            CountriesGrupped = (from t in longListGrouped.Union(groups)
-                                      orderby t.Title
-                                      select t).ToList();
-        } 
+            var longListGroupedAlphabetically = (from c in allCountries
+                                                 group c by c.FirstLetter.ToString() into grp
+                                                 orderby grp.Key
+                                                 select new LongListGroup<Country>(grp.Key, grp));
+
+            var longListGroupedByContinent = (from c in allCountries
+                                              group c by c.Continent.ToLower() into grp
+                                              orderby grp.Key
+                                              select new LongListGroup<Country>(grp.Key, grp));
+
+            CountriesGruppedAlphabetically = (from t in longListGroupedAlphabetically.Union(groupsAlphabetically)
+                                              orderby t.Title
+                                              select t).ToList();
+
+            CountriesGruppedByContinent = (from t in longListGroupedByContinent.Union(groupsByContinent)
+                                              orderby t.Title
+                                              select t).ToList();
+        }
         #endregion
 
         #region Navigation

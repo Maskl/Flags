@@ -6,22 +6,97 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             xmlns:Flags="clr-namespace:Flags"
+                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
                             x:Class="Flags.CountriesListWindowView"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
-                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                            FontSize="{StaticResource PhoneFontSizeNormal}"
-                            Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding CountriesListWindowVm, Source={StaticResource Locator}}">
+                            shell:SystemTray.IsVisible="True">
 
 
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />
+
+        <!-- [a] -->
+        <DataTemplate x:Key="CharGroupHeaderTemplate">
+            <Grid>
+                <Grid Width="64"
+                      Height="64"
+                      HorizontalAlignment="Left"
+                      Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock TextWrapping="Wrap"
+                               Style="{StaticResource PhoneTextLargeStyle}"
+                               Text="{Binding Title}"
+                               VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
+        <!-- [a] [b] [c] [d] -->
+        <!-- [e] [f] [g] [h] -->
+        <!-- [i] [j] [k] [l] -->
+        <DataTemplate x:Key="CharGroupItemTemplate">
+            <Border Background="{Binding GroupBackgroundBrush}"
+                    Width="99"
+                    Height="99"
+                    Margin="6"
+                    IsHitTestVisible="{Binding HasItems}">
+                <TextBlock Text="{Binding Title}"
+                           FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                           FontSize="36"
+                           Margin="{StaticResource PhoneTouchTargetOverhang}"
+                           Foreground="{StaticResource PhoneForegroundBrush}"
+                           VerticalAlignment="Bottom" />
+            </Border>
+        </DataTemplate>
+
+        <!-- [lorem ipsum] -->
+        <DataTemplate x:Key="StringGroupHeaderTemplate">
+            <Grid>
+                <Grid Height="64"
+                      HorizontalAlignment="Left"
+                      Background="{StaticResource PhoneAccentBrush}">
+                    <TextBlock TextWrapping="Wrap"
+                               Style="{StaticResource PhoneTextLargeStyle}"
+                               Text="{Binding Title}"
+                               VerticalAlignment="Center" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+
+        <!-- [lorem ipsum] -->
+        <!-- [dolor sit amet] -->
+        <DataTemplate x:Key="StringGroupItemTemplate">
+            <Border Background="{Binding GroupBackgroundBrush}"
+                    Height="99"
+                    Margin="6"
+                    IsHitTestVisible="{Binding HasItems}">
+                <TextBlock Text="{Binding Title}"
+                           FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+                           FontSize="36"
+                           Margin="{StaticResource PhoneTouchTargetOverhang}"
+                           Foreground="{StaticResource PhoneForegroundBrush}"
+                           VerticalAlignment="Bottom" />
+            </Border>
+        </DataTemplate>
     </phone:PhoneApplicationPage.Resources>
+
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal" />
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal" />
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush" />
+    </phone:PhoneApplicationPage.Foreground>
+    <phone:PhoneApplicationPage.DataContext>
+        <Binding Path="CountriesListWindowVm"
+                 Source="{StaticResource Locator}" />
+    </phone:PhoneApplicationPage.DataContext>
 
 
     <Grid Margin="13">
@@ -37,78 +112,105 @@
         <Grid Grid.Row="1"
               Grid.Column="1">
 
-            <toolkit:LongListSelector ItemsSource="{Binding CountriesGrupped}"
-                                      Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
-                                      SelectedItem="{Binding SelectedCountry}">
-
-                <!-- [a] -->
-                <toolkit:LongListSelector.GroupHeaderTemplate>
+            <controls:Pivot>
+                <controls:Pivot.HeaderTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid Width="64"
-                                  Height="64"
-                                  HorizontalAlignment="Left"
-                                  Background="{StaticResource PhoneAccentBrush}">
-                                <TextBlock TextWrapping="Wrap"
-                                           Style="{StaticResource PhoneTextLargeStyle}"
-                                           Text="{Binding Title}"
-                                           VerticalAlignment="Center" />
-                            </Grid>
-                        </Grid>
+                        <TextBlock Text="{Binding}"
+                                   FontSize="48" />
                     </DataTemplate>
-                </toolkit:LongListSelector.GroupHeaderTemplate>
+                </controls:Pivot.HeaderTemplate>
 
-                <!-- [a] [b] [c] [d] -->
-                <toolkit:LongListSelector.GroupItemTemplate>
-                    <DataTemplate>
-                        <Border Background="{Binding GroupBackgroundBrush}"
-                                Width="99"
-                                Height="99"
-                                Margin="6"
-                                IsHitTestVisible="{Binding HasItems}">
-                            <TextBlock Text="{Binding Title}"
-                                       FontFamily="{StaticResource PhoneFontFamilySemiBold}"
-                                       FontSize="36"
-                                       Margin="{StaticResource PhoneTouchTargetOverhang}"
-                                       Foreground="{StaticResource PhoneForegroundBrush}"
-                                       VerticalAlignment="Bottom" />
-                        </Border>
-                    </DataTemplate>
-                </toolkit:LongListSelector.GroupItemTemplate>
+                <!-- Alphabetically -->
+                <controls:PivotItem Header="alphabetically">
+                    <toolkit:LongListSelector ItemsSource="{Binding CountriesGruppedAlphabetically}"
+                                              Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
+                                              SelectedItem="{Binding SelectedCountry}"
+                                              GroupHeaderTemplate="{StaticResource CharGroupHeaderTemplate}"
+                                              GroupItemTemplate="{StaticResource CharGroupItemTemplate}">
+                        <toolkit:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="
+                                              120" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
 
-                <toolkit:LongListSelector.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                                    <Image Margin="
+                                              13"
+                                           Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
 
-                            <Image Margin="13"
-                                   Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
+                                    <StackPanel Grid.Column="1"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock TextWrapping="Wrap"
+                                                       Text="{Binding Name}"
+                                                       FontWeight="Bold"
+                                                       IsHitTestVisible="True" />
+                                            <TextBlock TextWrapping="Wrap"
+                                                       Text="{Binding Continent, StringFormat=' (\{0\})'}"
+                                                       IsHitTestVisible="True" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </toolkit:LongListSelector.ItemTemplate>
 
-                            <StackPanel Grid.Column="1"
-                                        VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap"
-                                               Text="{Binding Name}"
-                                               FontWeight="Bold"
-                                               IsHitTestVisible="True" />
-                                    <TextBlock TextWrapping="Wrap"
-                                               Text="{Binding Continent, StringFormat=' (\{0\})'}"
-                                               IsHitTestVisible="True" />
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </toolkit:LongListSelector.ItemTemplate>
+                        <toolkit:LongListSelector.GroupItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </toolkit:LongListSelector.GroupItemsPanel>
+                    </toolkit:LongListSelector>
+                </controls:PivotItem>
 
-                <toolkit:LongListSelector.GroupItemsPanel>
-                    <ItemsPanelTemplate>
-                        <toolkit:WrapPanel />
-                    </ItemsPanelTemplate>
-                </toolkit:LongListSelector.GroupItemsPanel>
-            </toolkit:LongListSelector>
+
+                <!-- By continent -->
+                <controls:PivotItem Header="by continent">
+                    <toolkit:LongListSelector ItemsSource="{Binding CountriesGruppedByContinent}"
+                                              Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
+                                              SelectedItem="{Binding SelectedCountry}"
+                                              GroupHeaderTemplate="{StaticResource StringGroupHeaderTemplate}"
+                                              GroupItemTemplate="{StaticResource StringGroupItemTemplate}">
+                        
+                        <toolkit:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="
+                                              120" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Margin="
+                                              13"
+                                           Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
+
+                                    <StackPanel Grid.Column="1"
+                                                VerticalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock TextWrapping="Wrap"
+                                                       Text="{Binding Name}"
+                                                       FontWeight="Bold"
+                                                       IsHitTestVisible="True" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </toolkit:LongListSelector.ItemTemplate>
+                        
+                        <toolkit:LongListSelector.GroupItemsPanel>
+                            <ItemsPanelTemplate>
+                                <toolkit:WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </toolkit:LongListSelector.GroupItemsPanel>
+                    </toolkit:LongListSelector>
+                </controls:PivotItem>
+
+                <controls:PivotItem Header="item2">
+                    <Grid />
+                </controls:PivotItem>
+            </controls:Pivot>
         </Grid>
 
 
