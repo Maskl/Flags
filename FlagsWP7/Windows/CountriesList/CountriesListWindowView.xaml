@@ -13,8 +13,8 @@
                             d:DesignHeight="768"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True">
-
+                            shell:SystemTray.IsVisible="True"
+                            Style="{StaticResource TransitionPageStyle}">
 
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />
@@ -172,7 +172,7 @@
                                               SelectedItem="{Binding SelectedCountry}"
                                               GroupHeaderTemplate="{StaticResource StringGroupHeaderTemplate}"
                                               GroupItemTemplate="{StaticResource StringGroupItemTemplate}">
-                        
+
                         <toolkit:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -198,7 +198,7 @@
                                 </Grid>
                             </DataTemplate>
                         </toolkit:LongListSelector.ItemTemplate>
-                        
+
                         <toolkit:LongListSelector.GroupItemsPanel>
                             <ItemsPanelTemplate>
                                 <toolkit:WrapPanel Orientation="Horizontal" />
@@ -206,16 +206,17 @@
                         </toolkit:LongListSelector.GroupItemsPanel>
                     </toolkit:LongListSelector>
                 </controls:PivotItem>
-
-                <controls:PivotItem Header="item2">
-                    <Grid />
-                </controls:PivotItem>
             </controls:Pivot>
         </Grid>
 
 
         <StackPanel Grid.Column="0"
                     Grid.Row="1">
+
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+
             <Button BorderThickness="0"
                     Margin="-4,30,0,0"
                     Padding="0"
@@ -242,5 +243,34 @@
                 </Button.OpacityMask>
             </Button>
         </StackPanel>
+
+        <TextBlock Grid.Column="1"
+                   Margin="8,8,8,0"
+                   TextWrapping="Wrap"
+                   Text="flagger"
+                   FontSize="16"
+                   Height="24"
+                   VerticalAlignment="Top">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
+        <TextBlock Grid.Column="1"
+                   Margin="8,32,8,0"
+                   TextWrapping="Wrap"
+                   Text="COUNTRIES LIST"
+                   FontSize="29.333">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
     </Grid>
 </phone:PhoneApplicationPage>

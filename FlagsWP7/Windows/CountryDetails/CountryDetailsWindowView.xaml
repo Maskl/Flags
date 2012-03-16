@@ -5,7 +5,9 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            xmlns:Flags="clr-namespace:Flags" mc:Ignorable="d"
+                            xmlns:Flags="clr-namespace:Flags"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -14,8 +16,13 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}">
+                            DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}"
+                            Style="{StaticResource TransitionPageStyle}">
 
+    <toolkit:GestureService.GestureListener>
+        <toolkit:GestureListener Flick="GestureListenerFlick" />
+    </toolkit:GestureService.GestureListener>
+    
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter300 x:Key="CountryTagToFlagUriConverter300" />
     </phone:PhoneApplicationPage.Resources>
@@ -66,8 +73,36 @@
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
                 </Button.OpacityMask>
             </Button>
-
         </StackPanel>
+        
+        <TextBlock Grid.Column="1"
+                   Margin="8,8,8,0"
+                   TextWrapping="Wrap"
+                   Text="flagger"
+                   FontSize="16"
+                   Height="24"
+                   VerticalAlignment="Top">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
+        <TextBlock Grid.Column="1"
+                   Margin="8,32,8,0"
+                   TextWrapping="Wrap"
+                   Text="COUNTRY DETAILS"
+                   FontSize="29.333">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
     </Grid>
 
 </phone:PhoneApplicationPage>

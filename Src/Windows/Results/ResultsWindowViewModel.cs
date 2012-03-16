@@ -76,7 +76,7 @@ namespace Flags
 
         public void ParseMessageFromMainWindow(string url)
         {
-            // If we have whole URL then we remobe part before "?".
+            // If we have whole URL then we remove part before "?".
             var parameters = url.Contains("?")
                 ? url.Substring(url.IndexOf("?", StringComparison.Ordinal) + 1)
                 : url;

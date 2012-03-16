@@ -16,13 +16,16 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
+                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}"
+                            Style="{StaticResource TransitionPageStyle}">
 
-
+    <toolkit:GestureService.GestureListener>
+        <toolkit:GestureListener Flick="GestureListenerFlick" />
+    </toolkit:GestureService.GestureListener>
+    
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />
     </phone:PhoneApplicationPage.Resources>
-
 
     <Grid Margin="13">
         <Grid.RowDefinitions>
@@ -97,5 +100,18 @@
                 </Button.OpacityMask>
             </Button>
         </StackPanel>
+        
+        <TextBlock Grid.Column="1" Margin="8,8,8,0" TextWrapping="Wrap" Text="flagger" FontSize="16" Height="24" VerticalAlignment="Top">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+        	</TextBlock.Foreground>
+        </TextBlock>
+        
+        <TextBlock Grid.Column="1" Margin="8,32,8,0" TextWrapping="Wrap" Text="RESULTS" FontSize="29.333">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+        	</TextBlock.Foreground>
+        </TextBlock>
+        
     </Grid>
 </phone:PhoneApplicationPage>

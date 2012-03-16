@@ -6,6 +6,7 @@
                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:Flags="clr-namespace:Flags"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="768"
@@ -15,8 +16,12 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="True"
-                            DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}">
+                            DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}"
+                            Style="{StaticResource TransitionPageStyle}">
 
+    <toolkit:GestureService.GestureListener>
+        <toolkit:GestureListener Flick="GestureListenerFlick" />
+    </toolkit:GestureService.GestureListener>
 
     <phone:PhoneApplicationPage.Resources>
         <Flags:IntegerFlagToOpacityConverter x:Key="IntegerFlagToOpacityConverter" />
@@ -31,7 +36,7 @@
             <ColumnDefinition Width="385*" />
             <ColumnDefinition Width="65*" />
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -450,5 +455,34 @@
                 </Button.OpacityMask>
             </Button>
         </StackPanel>
+
+        <TextBlock Grid.Column="0"
+                   Margin="8,8,8,0"
+                   TextWrapping="Wrap"
+                   Text="flagger"
+                   FontSize="16"
+                   Height="24"
+                   VerticalAlignment="Top">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
+        <TextBlock Grid.Column="0"
+                   Margin="8,32,8,0"
+                   TextWrapping="Wrap"
+                   Text="FIND FLAG!"
+                   FontSize="29.333">
+        	<TextBlock.Foreground>
+        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+        	</TextBlock.Foreground>
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListenerFlick" />
+            </toolkit:GestureService.GestureListener>
+        </TextBlock>
+
     </Grid>
 </phone:PhoneApplicationPage>
