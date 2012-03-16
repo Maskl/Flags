@@ -39,23 +39,18 @@
 
         <Grid Grid.Row="1"
               Grid.Column="1">
-            <Image Margin="13"
-                   Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
-
-            <TextBlock HorizontalAlignment="Left"
-                       Height="47"
-                       Margin="8,8,0,0"
-                       TextWrapping="Wrap"
-                       Text="{Binding SelectedCountry.Name}"
-                       VerticalAlignment="Top"
-                       Width="208"
-                       FontSize="21.333"
-                       FontWeight="Bold" />
-            <TextBlock HorizontalAlignment="Left"
-                       Margin="8,59,0,66.5"
-                       TextWrapping="Wrap"
-                       Text="{Binding Description}"
-                       Width="208" />
+            <StackPanel>
+            	<Image
+            		Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
+            	<TextBlock HorizontalAlignment="Left"
+            		TextWrapping="Wrap"
+            		Text="{Binding SelectedCountry.Name}"
+            		FontSize="48"
+            		FontWeight="Bold" />
+            	<TextBlock HorizontalAlignment="Left"
+            		TextWrapping="Wrap"
+            		Text="{Binding Description}" Height="96" />
+            </StackPanel>
         </Grid>
 
 

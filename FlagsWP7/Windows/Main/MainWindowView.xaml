@@ -24,6 +24,7 @@
     </toolkit:GestureService.GestureListener>
 
     <phone:PhoneApplicationPage.Resources>
+        <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Flags:IntegerFlagToOpacityConverter x:Key="IntegerFlagToOpacityConverter" />
     </phone:PhoneApplicationPage.Resources>
 
@@ -36,7 +37,8 @@
             <ColumnDefinition Width="385*" />
             <ColumnDefinition Width="65*" />
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer Grid.Row="1"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -483,6 +485,27 @@
                 <toolkit:GestureListener Flick="GestureListenerFlick" />
             </toolkit:GestureService.GestureListener>
         </TextBlock>
+
+
+        <Border Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+                BorderThickness="3"
+                Margin="66,229,50,206"
+                Grid.Row="1"
+                BorderBrush="White"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Height="103"
+                Width="270">
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+            </Border.Background>
+            <TextBlock TextWrapping="Wrap"
+                       Text="Please wait..."
+                       FontSize="48"
+                       Margin="-1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" />
+        </Border>
 
     </Grid>
 </phone:PhoneApplicationPage>

@@ -67,8 +67,8 @@ namespace Flags
             if (SelectedCountry == null)
                 return;
 
-            Description = "Country in " + SelectedCountry.Continent + ",\nCapital city: " + SelectedCountry.Capital
-                + " and ISO-xxx Code: " + SelectedCountry.Tag.ToUpper();
+            Description = "Country in " + SelectedCountry.Continent + "\nCapital city: " + SelectedCountry.Capital
+                + "\nISO 3166 code: " + SelectedCountry.Tag.ToUpper();
         }
         #endregion
     }

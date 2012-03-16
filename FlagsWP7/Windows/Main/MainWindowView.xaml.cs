@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 
 namespace Flags
@@ -31,6 +32,11 @@ namespace Flags
             {
                 _viewModel.ShowResults();
             }
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            _viewModel.ShowPleaseWaitInfo = false;
         }
     }
 }

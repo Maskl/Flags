@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Navigation;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -35,6 +36,12 @@ namespace Flags
             set { _resultUri = value; RaisePropertyChanged("ResultUri"); }
         }
 
+        private bool _showPleaseWaitInfo;
+        public bool ShowPleaseWaitInfo
+        {
+            get { return _showPleaseWaitInfo; }
+            set { _showPleaseWaitInfo = value; RaisePropertyChanged("ShowPleaseWaitInfo"); }
+        }
         #endregion
 
         #region Relay Commands
@@ -51,7 +58,7 @@ namespace Flags
         {
             _viewManager = viewManager;
             ShowResultsWindowCommand = new RelayCommand(ShowResults);
-            ShowCountriesListWindowCommand = new RelayCommand(() => _viewManager.Show(View.CountriesList));
+            ShowCountriesListWindowCommand = new RelayCommand(ShowCountriesList);
             ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
 
             ModifyColorNumberCommand = new RelayCommand<string>(ModifyColorNumber);
@@ -81,21 +88,30 @@ namespace Flags
         {
             CreateRelayCommands(viewManager);
 
-            ColorNumber = 2;
-            ShapeNumber = AddNumber = 0;
+            ColorNumber = ShapeNumber = AddNumber = 0;
+
+            ShowPleaseWaitInfo = false;
         }
         #endregion
 
         #region Navigation
         public void ShowResults()
         {
+            ShowPleaseWaitInfo = true;
             _viewManager.Show(View.Results, ResultUri);
         }
 
+        public void ShowCountriesList()
+        {
+            ShowPleaseWaitInfo = true;
+            _viewManager.Show(View.CountriesList, ResultUri);
+        }
+        
         private void RecalculateResultUri()
         {
             ResultUri = String.Format("color={0}&shape={1}&add={2}", ColorNumber, ShapeNumber, AddNumber);
         }
+
         #endregion
     }
 }
