@@ -9,13 +9,13 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="768"
+                            d:DesignHeight="800"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="True"
+                            shell:SystemTray.IsVisible="False"
                             DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource TransitionPageStyle}">
 
@@ -28,7 +28,11 @@
         <Flags:IntegerFlagToOpacityConverter x:Key="IntegerFlagToOpacityConverter" />
     </phone:PhoneApplicationPage.Resources>
 
-    <Grid Margin="13">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill"
+                        ImageSource="/FlagsWP7;component/Media/background.png" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
             <RowDefinition />
@@ -38,7 +42,7 @@
             <ColumnDefinition Width="65*" />
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Row="1"
-                      ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="13,0,0,13">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -52,7 +56,7 @@
                 <TextBlock Grid.Row="0"
                            Height="30"
                            TextWrapping="Wrap"
-                           Text="Colors:" />
+                           Text="Colors:" Margin="12,0,0,0" />
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
@@ -67,9 +71,9 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="48" />
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="48" />
                         <RowDefinition Height="26" />
                     </Grid.RowDefinitions>
 
@@ -108,7 +112,7 @@
                             Content="yellow"
                             FontSize="21.333"
                             Foreground="Black" />
-
+                    
                     <Button Grid.Column="7"
                             Grid.Row="1"
                             Background="Green"
@@ -125,7 +129,7 @@
                             Grid.Row="3"
                             Background="White"
                             Margin="-12"
-                            BorderThickness="3"
+                            BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="4"
@@ -137,7 +141,7 @@
                             Grid.Row="3"
                             Background="Black"
                             Margin="-12"
-                            BorderThickness="3"
+                            BorderThickness="0"
                             Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="5"
@@ -173,7 +177,7 @@
                 <TextBlock  Grid.Row="2"
                             Height="30"
                             TextWrapping="Wrap"
-                            Text="Shape:" />
+                            Text="Shape:" Margin="12,0,0,0" />
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
@@ -186,9 +190,9 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="111" />
+                        <RowDefinition Height="67" />
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="111" />
+                        <RowDefinition Height="67" />
                         <RowDefinition Height="26" />
                     </Grid.RowDefinitions>
 
@@ -201,7 +205,7 @@
                             CommandParameter="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape1.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape1.png" />
                         </Button.Background>
                     </Button>
 
@@ -214,7 +218,7 @@
                             CommandParameter="1">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape2.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape2.png" />
                         </Button.Background>
                     </Button>
 
@@ -227,7 +231,7 @@
                             CommandParameter="2">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape3.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape3.png" />
                         </Button.Background>
                     </Button>
 
@@ -240,7 +244,7 @@
                             CommandParameter="3">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape4.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape4.png" />
                         </Button.Background>
                     </Button>
 
@@ -253,7 +257,7 @@
                             CommandParameter="4">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape5.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape5.png" />
                         </Button.Background>
                     </Button>
 
@@ -266,7 +270,7 @@
                             CommandParameter="5">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/shape6.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape6.png" />
                         </Button.Background>
                     </Button>
                 </Grid>
@@ -274,7 +278,7 @@
                 <TextBlock  Grid.Row="4"
                             Height="30"
                             TextWrapping="Wrap"
-                            Text="Additional elements:" />
+                            Text="Additional elements:" Margin="12,0,0,0" />
                 <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="13" />
@@ -287,11 +291,11 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="111" />
+                        <RowDefinition Height="67" />
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="111" />
+                        <RowDefinition Height="67" />
                         <RowDefinition Height="13" />
-                        <RowDefinition Height="111" />
+                        <RowDefinition Height="67" />
                         <RowDefinition Height="13" />
                     </Grid.RowDefinitions>
 
@@ -304,7 +308,7 @@
                             CommandParameter="0">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add1.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add1.png" />
                         </Button.Background>
                     </Button>
 
@@ -317,7 +321,7 @@
                             CommandParameter="1">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add2.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add2.png" />
                         </Button.Background>
                     </Button>
 
@@ -330,7 +334,7 @@
                             CommandParameter="2">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add3.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add3.png" />
                         </Button.Background>
                     </Button>
 
@@ -343,7 +347,7 @@
                             CommandParameter="3">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add4.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add4.png" />
                         </Button.Background>
                     </Button>
 
@@ -356,7 +360,7 @@
                             CommandParameter="4">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add5.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add5.png" />
                         </Button.Background>
                     </Button>
 
@@ -369,7 +373,7 @@
                             CommandParameter="5">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add6.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add6.png" />
                         </Button.Background>
                     </Button>
 
@@ -383,7 +387,7 @@
                             CommandParameter="6">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add7.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add7.png" />
                         </Button.Background>
                     </Button>
 
@@ -396,7 +400,7 @@
                             CommandParameter="7">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/Add8.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add8.png" />
                         </Button.Background>
                     </Button>
 
@@ -404,7 +408,6 @@
                     <Button Grid.Column="5"
                             Grid.Row="5"
                             BorderThickness="0"
-                            Margin="-4,13,0,0"
                             Padding="0"
                             Background="{StaticResource PhoneForegroundBrush}"
                             Height="72"
@@ -419,7 +422,7 @@
             </Grid>
         </ScrollViewer>
         <StackPanel Grid.Column="1"
-                    Grid.Row="1">
+                    Grid.Row="1" Margin="0,-1,13,13">
             <Button BorderThickness="0"
                     Margin="-4,30,0,0"
                     Padding="0"
@@ -459,12 +462,12 @@
         </StackPanel>
 
         <TextBlock Grid.Column="0"
-                   Margin="8,8,8,0"
+                   Margin="25,13,0,0"
                    TextWrapping="Wrap"
                    Text="flagger"
                    FontSize="16"
                    Height="24"
-                   VerticalAlignment="Top">
+                   VerticalAlignment="Top" Padding="0">
         	<TextBlock.Foreground>
         		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
         	</TextBlock.Foreground>
@@ -474,10 +477,10 @@
         </TextBlock>
 
         <TextBlock Grid.Column="0"
-                   Margin="8,32,8,0"
+                   Margin="25,30,0,0"
                    TextWrapping="Wrap"
                    Text="FIND FLAG!"
-                   FontSize="29.333">
+                   FontSize="29.333" Padding="0">
         	<TextBlock.Foreground>
         		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
         	</TextBlock.Foreground>

@@ -164,30 +164,6 @@
     <None Include="Properties\WMAppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\media\adds\add1.png">
-      <Link>Media\Adds\add1.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add2.png">
-      <Link>Media\Adds\add2.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add3.png">
-      <Link>Media\Adds\add3.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add4.png">
-      <Link>Media\Adds\add4.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add5.png">
-      <Link>Media\Adds\add5.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add6.png">
-      <Link>Media\Adds\add6.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add7.png">
-      <Link>Media\Adds\add7.png</Link>
-    </Resource>
-    <Resource Include="..\media\adds\add8.png">
-      <Link>Media\Adds\add8.png</Link>
-    </Resource>
     <Resource Include="..\media\flags\100\ad.png">
       <Link>Media\Flags\100\ad.png</Link>
     </Resource>
@@ -1952,23 +1928,8 @@
     <Resource Include="..\media\flags\300\zw.png">
       <Link>Media\Flags\300\zw.png</Link>
     </Resource>
-    <Resource Include="..\media\shapes\shape1.png">
-      <Link>Media\Shapes\shape1.png</Link>
-    </Resource>
-    <Resource Include="..\media\shapes\shape2.png">
-      <Link>Media\Shapes\shape2.png</Link>
-    </Resource>
-    <Resource Include="..\media\shapes\shape3.png">
-      <Link>Media\Shapes\shape3.png</Link>
-    </Resource>
-    <Resource Include="..\media\shapes\shape4.png">
-      <Link>Media\Shapes\shape4.png</Link>
-    </Resource>
-    <Resource Include="..\media\shapes\shape5.png">
-      <Link>Media\Shapes\shape5.png</Link>
-    </Resource>
-    <Resource Include="..\media\shapes\shape6.png">
-      <Link>Media\Shapes\shape6.png</Link>
+    <Resource Include="..\Media\background.png">
+      <Link>Media\background.png</Link>
     </Resource>
     <Content Include="..\Media\flags.sdf">
       <Link>Media\flags.sdf</Link>
@@ -1992,6 +1953,20 @@
     <Content Include="Background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Media\Shapes\wp7shape1.png" />
+    <Resource Include="Media\Shapes\wp7shape2.png" />
+    <Resource Include="Media\Shapes\wp7shape3.png" />
+    <Resource Include="Media\Shapes\wp7shape4.png" />
+    <Resource Include="Media\Shapes\wp7shape5.png" />
+    <Resource Include="Media\Shapes\wp7shape6.png" />
+    <Resource Include="Media\Adds\wp7add1.png" />
+    <Resource Include="Media\Adds\wp7add2.png" />
+    <Resource Include="Media\Adds\wp7add3.png" />
+    <Resource Include="Media\Adds\wp7add4.png" />
+    <Resource Include="Media\Adds\wp7add5.png" />
+    <Resource Include="Media\Adds\wp7add6.png" />
+    <Resource Include="Media\Adds\wp7add7.png" />
+    <Resource Include="Media\Adds\wp7add8.png" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
