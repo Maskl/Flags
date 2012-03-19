@@ -480,7 +480,7 @@
             <MenuItem Margin="0"
                       Width="71.41">
                 <MenuItem.Header>Help</MenuItem.Header>
-                <MenuItem Header="About"
+                <MenuItem Header="Help"
                           Command="{Binding ShowHelpWindowCommand}" />
             </MenuItem>
 

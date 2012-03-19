@@ -4,26 +4,361 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Height="179"
-        Width="284"
+        Height="386"
+        Width="631.55"
         Title="Help"
         DataContext="{Binding HelpWindowVm, Source={StaticResource Locator}}">
 
     <Grid x:Name="LayoutRoot">
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,0,0,42" Width="Auto" Background="White">
+        	<StackPanel Width="599.55" Margin="13">
+        		<TextBlock TextWrapping="Wrap"
+        			Text="Hi! This application helps you to recognize flags of all countries."
+        			Margin="0,0,0,13"
+        			FontSize="21.333" />
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0,0,0,13"
+        			FontSize="21.333"><Run Text="You just should select a few information about the flag you can't recognize:" /><LineBreak /><Run Text="1) Colors" /><LineBreak /><Run Text="       " /><Run FontSize="16"
+        				Text="Choose at least main colors">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run><Run FontSize="16"
+        				Text=".">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run><LineBreak /><Run Text="2) General flag shape " /><LineBreak /><Run Text="       " /><Run FontSize="16"
+        				Text="Two">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run><Run FontSize="16"
+        				Text=" horizontal or three vertical stripes?">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run><LineBreak /><Run Text="3) Additional flags elements" /><LineBreak /><Run Text="       " /><Run FontSize="16"
+        				Text="C">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run><Run FontSize="16"
+        				Text="rosses, diagonal lines etc.">
+        				<Run.Foreground>
+        					<SolidColorBrush Color="Gray">
+        						<SolidColorBrush.RelativeTransform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.RelativeTransform>
+        						<SolidColorBrush.Transform>
+        							<MatrixTransform Matrix="Identity" />
+        						</SolidColorBrush.Transform>
+        					</SolidColorBrush>
+        				</Run.Foreground>
+        			</Run></TextBlock>
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0,0,0,26"
+        			FontSize="21.333"><Run Text="It is not necessary to select " /><Run Text="everything" /><Run Text="!" /><LineBreak /><Run FontSize="16"
+        				Text="Our algorithm will also work if you forgot some things." /></TextBlock>
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0,0,0,13"
+        			FontSize="21.333"
+        			Text="Here are some examples of usage:" />
 
-        <TextBlock FontSize="24"
-                   FontWeight="Bold"
-                   Foreground="Black"
-                   VerticalAlignment="Top"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" Margin="8,8,0,0" Width="262.108" ><Run Language="pl-pl" Text="TODO:"/><LineBreak/><Run Language="pl-pl" Text="Write here whatever."/></TextBlock>
+
+            <!-- ITA -->
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0"
+        			FontSize="21.333"
+        			Text="If you have flag:" />
+
+        		<StackPanel Orientation="Horizontal">
+        			<Image Source="//FlagsWPF;component/Media/Flags/100/it.png"
+        				Height="45" />
+
+        		</StackPanel>
+
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0"
+        			FontSize="21.333"
+        			Text="the best option is to select:" />
+
+        		<StackPanel Orientation="Horizontal">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Height="30"
+        				Width="30" Background="Green"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Height="30"
+        				Width="30" Background="White"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Height="30"
+        				Width="30" Background="Red"/>
+
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Shapes/shape1.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0, 0, 0, 13"
+        			FontSize="21.333"
+        			Text="and click search button." />
+
+            <!-- USA -->
+        		<TextBlock TextWrapping="Wrap"
+        			FontSize="21.333"
+        			Margin="0"
+        			Text="Some harder examples:" />
+
+        		<StackPanel Orientation="Horizontal">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 13">
+        				<Image Source="/FlagsWPF;component/Media/Flags/100/us.png"
+        					Height="45" />
+        			</Border>
+        		</StackPanel>
+
+        		<StackPanel Orientation="Horizontal"
+        			Margin="0, 0, 0, 26">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="Red"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="Blue"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="White"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Shapes/shape5.png"
+        					Height="30" />
+        			</Border>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add2.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+            <!-- GB -->
+        		<StackPanel Orientation="Horizontal">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 13">
+        				<Image Source="/FlagsWPF;component/Media/Flags/100/gb.png"
+        					Height="45" />
+        			</Border>
+        		</StackPanel>
+
+        		<StackPanel Orientation="Horizontal"
+        			Margin="0, 0, 0, 26">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="Red"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="Blue"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="White"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add5.png"
+        					Height="30" />
+        			</Border>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add6.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+            <!-- Mauretania -->
+        		<StackPanel Orientation="Horizontal">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 13">
+        				<Image Source="/FlagsWPF;component/Media/Flags/100/mr.png"
+        					Height="45" />
+        			</Border>
+        		</StackPanel>
+
+        		<StackPanel Orientation="Horizontal"
+        			Margin="0, 0, 0, 26">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="Yellow"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add1.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+
+            <!-- Pakistan -->
+        		<StackPanel Orientation="Horizontal">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 13">
+        				<Image Source="/FlagsWPF;component/Media/Flags/100/pk.png"
+        					Height="45" />
+        			</Border>
+        		</StackPanel>
+
+        		<StackPanel Orientation="Horizontal"
+        			Margin="0">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="White"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Shapes/shape6.png"
+        					Height="30" />
+        			</Border>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add4.png"
+        					Height="30" />
+        			</Border>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add1.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0, 0, 0, 0"
+        			FontSize="21.333"
+        			Text="or" />
+
+        		<StackPanel Orientation="Horizontal"
+        			Margin="0, 0, 0, 26">
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0"
+        				Width="30" Background="White"/>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Shapes/shape2.png"
+        					Height="30" />
+        			</Border>
+
+        			<Border BorderThickness="1"
+        				BorderBrush="Black"
+        				Margin="13, 0, 0, 0">
+        				<Image Source="/FlagsWPF;component/Media/Adds/add1.png"
+        					Height="30" />
+        			</Border>
+        		</StackPanel>
+
+        		<TextBlock TextWrapping="Wrap"
+        			Margin="0, 0, 0, 26"
+        			FontSize="21.333"
+        			Text="Good luck and have fun :)" />
+
+        	</StackPanel>
+        </ScrollViewer>
         <Button Content="Cancel"
-        	HorizontalAlignment="Right"
-        	Height="40.5"
-        	Margin="0,103.5,8,0"
-        	VerticalAlignment="Top"
-        	Width="260"
-        	IsCancel="True" d:LayoutOverrides="GridBox" />
+        	Height="25.833"
+        	IsCancel="True"
+        	d:LayoutOverrides="GridBox" Margin="274.161,0,237.162,8" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="109.893" />
 
     </Grid>
 </Window>
