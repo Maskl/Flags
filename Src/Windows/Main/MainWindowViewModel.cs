@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
@@ -42,6 +43,27 @@ namespace Flags
             get { return _showPleaseWaitInfo; }
             set { _showPleaseWaitInfo = value; RaisePropertyChanged("ShowPleaseWaitInfo"); }
         }
+
+        private bool _showTrialInfo;
+        public bool ShowTrialInfo
+        {
+            get { return _showTrialInfo; }
+            set { _showTrialInfo = value; RaisePropertyChanged("ShowTrialInfo"); }
+        }
+
+        private bool _canCloseTrialInfo;
+        public bool CanCloseTrialInfo
+        {
+            get { return _canCloseTrialInfo; }
+            set { _canCloseTrialInfo = value; RaisePropertyChanged("CanCloseTrialInfo"); }
+        }
+
+        private int _showTrialTimeInfo;
+        public int ShowTrialTimeInfo
+        {
+            get { return _showTrialTimeInfo; }
+            set { _showTrialTimeInfo = value; RaisePropertyChanged("ShowTrialTimeInfo"); }
+        }
         #endregion
 
         #region Relay Commands
@@ -49,6 +71,10 @@ namespace Flags
         public RelayCommand ShowResultsWindowCommand { get; private set; }
         public RelayCommand ShowCountriesListWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
+        #if WINDOWS_PHONE
+            public RelayCommand HideTrialMessageCommand { get; private set; }
+        #endif
+
 
         public RelayCommand<string> ModifyColorNumberCommand { get; private set; }
         public RelayCommand<string> ModifyShapeNumberCommand { get; private set; }
@@ -64,6 +90,10 @@ namespace Flags
             ModifyColorNumberCommand = new RelayCommand<string>(ModifyColorNumber);
             ModifyShapeNumberCommand = new RelayCommand<string>(ModifyShapeNumber);
             ModifyAddNumberCommand = new RelayCommand<string>(ModifyAddNumber);
+        
+            #if WINDOWS_PHONE
+                HideTrialMessageCommand = new RelayCommand(HideTrialMessage);
+            #endif
         }
 
         private void ModifyColorNumber(string num)
@@ -87,11 +117,48 @@ namespace Flags
         public MainWindowViewModel(ViewManager viewManager)
         {
             CreateRelayCommands(viewManager);
-
             ColorNumber = ShapeNumber = AddNumber = 0;
-
             ShowPleaseWaitInfo = false;
         }
+
+        #if WINDOWS_PHONE
+        private DispatcherTimer _trialTimer = new DispatcherTimer();
+        public void OnNavigatedTo()
+        {
+            ShowPleaseWaitInfo = false;
+
+            if (TrialManager.IsTrial)
+            {
+                ShowTrialInfo = true;
+                ShowTrialTimeInfo = 10;
+                CanCloseTrialInfo = false;
+
+                _trialTimer = new DispatcherTimer {Interval = new TimeSpan(0, 0, 1)};
+                _trialTimer.Tick += HideTrialMessageTick;
+                _trialTimer.Start();
+            }
+            else
+            {
+                ShowTrialInfo = false;
+            }
+        }
+
+        private void HideTrialMessageTick(object state, EventArgs e)
+        {
+            ShowTrialTimeInfo--;
+            if (ShowTrialTimeInfo <= 0)
+            {
+                _trialTimer.Stop();
+                CanCloseTrialInfo = true;
+            }
+        }
+
+        private void HideTrialMessage()
+        {
+            ShowTrialInfo = false;
+        }
+        #endif
+
         #endregion
 
         #region Navigation

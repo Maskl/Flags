@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Navigation;
+using Flags;
 using Flags.MVVMUtils;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -28,10 +29,12 @@ namespace FlagsWP7
 
         private void ApplicationLaunching(object sender, LaunchingEventArgs e)
         {
+            TrialManager.DetermineIsTrail();
         }
 
         private void ApplicationActivated(object sender, ActivatedEventArgs e)
         {
+            TrialManager.DetermineIsTrail();
         }
 
         private void ApplicationDeactivated(object sender, DeactivatedEventArgs e)

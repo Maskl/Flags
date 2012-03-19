@@ -514,7 +514,8 @@
         </ScrollViewer>
         <StackPanel Grid.Column="1"
                     Grid.Row="1" Margin="0,-1,13,13">
-            <Button BorderThickness="0"
+            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
+                    BorderThickness="0"
                     Margin="-4,30,0,0"
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
@@ -526,7 +527,8 @@
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
                 </Button.OpacityMask>
             </Button>
-            <Button BorderThickness="0"
+            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
+                    BorderThickness="0"
                     Margin="-4,13,0,0"
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
@@ -538,7 +540,8 @@
                                  ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
                 </Button.OpacityMask>
             </Button>
-            <Button BorderThickness="0"
+            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
+                    BorderThickness="0"
                     Margin="-4,13,0,0"
                     Padding="0"
                     Background="{StaticResource PhoneForegroundBrush}"
@@ -581,7 +584,7 @@
         </TextBlock>
 
 
-        <Border Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+        <Border x:Name="PleaseWaitMessageBorder" Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
                 BorderThickness="3"
                 Margin="66,229,50,206"
                 Grid.Row="1"
@@ -601,6 +604,44 @@
                        Margin="3"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
+        </Border>
+
+
+
+
+
+
+        <Border x:Name="TrialMessageBorder" Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+                BorderThickness="3"
+                Grid.Row="1" Grid.RowSpan="2">
+        	<Border.Background>
+        		<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
+        	</Border.Background>
+            <ScrollViewer Margin="-3,-3,-70,-3" BorderThickness="0,0,13,0">
+            	<StackPanel Height="720" Width="426" Margin="26,0,26,13" HorizontalAlignment="Left">
+            		<TextBlock TextWrapping="Wrap" Text="This is a trial version of Flag Recognizer." FontSize="21.333" Margin="0,45,8,26" FontWeight="Bold">
+            			<TextBlock.Foreground>
+            				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+            			</TextBlock.Foreground>
+            		</TextBlock>
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Wait 10 seconds and skip this message or click the buy button below in order to purchase the full version (without advertisments)."
+                               FontSize="24"
+                               Margin="0,0,8,26" />
+                    
+                    <Button Content="Buy full version now!" Margin="0,0,8,0"></Button>
+
+                    <Button Visibility="{Binding CanCloseTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
+                            IsEnabled="false"
+                            Content="{Binding ShowTrialTimeInfo, StringFormat='Maybe later... (wait \{0\} sec)'}" Margin="0,0,8,0"></Button>
+
+                    <Button Visibility="{Binding CanCloseTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"
+                            IsEnabled="true"
+                            Content="Maybe later..."
+                            Command="{Binding HideTrialMessageCommand}" Margin="0,0,8,0"></Button>
+                    
+                </StackPanel>
+            </ScrollViewer>
         </Border>
 
     </Grid>

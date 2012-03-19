@@ -26,7 +26,7 @@ namespace Flags
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _viewModel.ShowPleaseWaitInfo = false;
+            _viewModel.OnNavigatedTo();
         }
     }
 }
