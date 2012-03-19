@@ -106,7 +106,7 @@
                             Command="{Binding ModifyColorNumberCommand}"
                             CommandParameter="2"
                             Content="yellow"
-                            FontSize="21.333"
+                            FontSize="20"
                             Foreground="Black" />
                     
                     <Button Grid.Column="7"
@@ -201,10 +201,10 @@
                     <Button Grid.Column="1"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ShapeNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="0">
+                            CommandParameter="0" BorderBrush="White">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape1.png" />
@@ -220,7 +220,8 @@
                     <Button Grid.Column="3"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding ShapeNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
                             CommandParameter="1">
@@ -239,7 +240,8 @@
                     <Button Grid.Column="5"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding ShapeNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
                             CommandParameter="2">
@@ -258,10 +260,10 @@
                     <Button Grid.Column="1"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
                             Opacity="{Binding ShapeNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="3">
+                            CommandParameter="3" BorderBrush="#DEFFFFFF">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape4.png" />
@@ -277,7 +279,8 @@
                     <Button Grid.Column="3"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding ShapeNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
                             CommandParameter="4">
@@ -296,7 +299,8 @@
                     <Button Grid.Column="5"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyShapeNumberCommand}"
                             CommandParameter="5">
@@ -340,7 +344,8 @@
                     <Button Grid.Column="1"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="0">
@@ -359,7 +364,8 @@
                     <Button Grid.Column="3"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="1">
@@ -378,7 +384,8 @@
                     <Button Grid.Column="5"
                             Grid.Row="1"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="2">
@@ -397,7 +404,8 @@
                     <Button Grid.Column="1"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="3">
@@ -416,7 +424,8 @@
                     <Button Grid.Column="3"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="4">
@@ -435,7 +444,8 @@
                     <Button Grid.Column="5"
                             Grid.Row="3"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="5">
@@ -454,7 +464,8 @@
                     <Button Grid.Column="1"
                             Grid.Row="5"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="6">
@@ -473,7 +484,8 @@
                     <Button Grid.Column="3"
                             Grid.Row="5"
                             Margin="-12"
-                            BorderThickness="0"
+                            BorderThickness="1"
+                            BorderBrush="White"
                             Opacity="{Binding AddNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
                             Command="{Binding ModifyAddNumberCommand}"
                             CommandParameter="7">

@@ -136,9 +136,11 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <Image Margin="
-                                              13"
-                                           Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
+                                    <Border BorderThickness="1"
+                                            BorderBrush="{StaticResource PhoneBorderBrush}"
+                                            Margin="13">
+                                        <Image Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
+                                    </Border>
 
                                     <StackPanel Grid.Column="1"
                                                 VerticalAlignment="Center">
@@ -182,10 +184,12 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <Image Margin="
-                                              13"
-                                           Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
-
+                                    <Border BorderThickness="1"
+                                            BorderBrush="{StaticResource PhoneBorderBrush}"
+                                            Margin="13">
+                                        <Image Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
+                                    </Border>
+                                    
                                     <StackPanel Grid.Column="1"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Horizontal">

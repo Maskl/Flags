@@ -9,7 +9,7 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="768"
+                            d:DesignHeight="800"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -40,9 +40,12 @@
         <Grid Grid.Row="1"
               Grid.Column="1">
             <StackPanel>
-            	<Image
-            		Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
-            	<TextBlock HorizontalAlignment="Left"
+
+                <Border BorderThickness="1"
+                        BorderBrush="{StaticResource PhoneBorderBrush}">
+                    <Image Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
+                </Border>
+                <TextBlock HorizontalAlignment="Left"
             		TextWrapping="Wrap"
             		Text="{Binding SelectedCountry.Name}"
             		FontSize="48"
