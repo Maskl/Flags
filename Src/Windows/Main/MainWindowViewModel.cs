@@ -19,7 +19,7 @@ namespace Flags
         public int ColorNumber
         {
             get { return _colorNumber; }
-            set { _colorNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
+            set { _colorNumber ^= value /*XOR!*/; if (value == 1 << 7) _colorNumber = 0; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
         }
 
         private int _shapeNumber;
