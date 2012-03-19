@@ -629,7 +629,7 @@
                                FontSize="24"
                                Margin="0,0,8,26" />
                     
-                    <Button Content="Buy full version now!" Margin="0,0,8,0"></Button>
+                    <Button Content="Buy full version now!" Margin="0,0,8,0" Click="BuyButtonClick"></Button>
 
                     <Button Visibility="{Binding CanCloseTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
                             IsEnabled="false"

@@ -20,7 +20,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>FlagsWP7.xap</XapFilename>
+    <XapFilename>flagrecognizer.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>FlagsWP7.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>

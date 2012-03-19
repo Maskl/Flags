@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
+using Microsoft.Phone.Tasks;
 
 namespace Flags
 {
@@ -27,6 +28,12 @@ namespace Flags
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _viewModel.OnNavigatedTo();
+        }
+
+        private void BuyButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var task = new MarketplaceDetailTask();
+            task.Show();
         }
     }
 }
