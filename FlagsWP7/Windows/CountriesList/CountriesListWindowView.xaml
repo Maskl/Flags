@@ -179,8 +179,7 @@
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="
-                                              120" />
+                                        <ColumnDefinition Width="120" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 

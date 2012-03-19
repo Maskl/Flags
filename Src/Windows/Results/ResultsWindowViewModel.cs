@@ -18,7 +18,14 @@ namespace Flags
         public Country SelectedCountry
         {
             get { return _selectedCountry; }
-            set { _selectedCountry = value; ShowCountryDetails(); RaisePropertyChanged("SelectedCountry"); }
+            set
+            {
+                _selectedCountry = value; 
+                #if WINDOWS_PHONE
+                    ShowCountryDetails(); 
+                #endif
+                RaisePropertyChanged("SelectedCountry");
+            }
         }
 
         private string _resultUri;
