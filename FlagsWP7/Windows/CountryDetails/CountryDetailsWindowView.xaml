@@ -76,7 +76,7 @@
         <TextBlock Grid.Column="1"
                    Margin="8,8,8,0"
                    TextWrapping="Wrap"
-                   Text="flagger"
+                   Text="flag recognizer"
                    FontSize="16"
                    Height="24"
                    VerticalAlignment="Top">

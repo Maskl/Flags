@@ -126,13 +126,13 @@
                                               Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
                                               SelectedItem="{Binding SelectedCountry}"
                                               GroupHeaderTemplate="{StaticResource CharGroupHeaderTemplate}"
-                                              GroupItemTemplate="{StaticResource CharGroupItemTemplate}">
+                                              GroupItemTemplate="{StaticResource CharGroupItemTemplate}"
+                                              Background="{StaticResource PhoneBackgroundBrush}">
                         <toolkit:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="
-                                              120" />
+                                        <ColumnDefinition Width="120" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
@@ -173,7 +173,8 @@
                                               Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
                                               SelectedItem="{Binding SelectedCountry}"
                                               GroupHeaderTemplate="{StaticResource StringGroupHeaderTemplate}"
-                                              GroupItemTemplate="{StaticResource StringGroupItemTemplate}">
+                                              GroupItemTemplate="{StaticResource StringGroupItemTemplate}"
+                                              Background="{StaticResource PhoneBackgroundBrush}">
 
                         <toolkit:LongListSelector.ItemTemplate>
                             <DataTemplate>
@@ -188,7 +189,7 @@
                                             Margin="13">
                                         <Image Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
                                     </Border>
-                                    
+
                                     <StackPanel Grid.Column="1"
                                                 VerticalAlignment="Center">
                                         <StackPanel Orientation="Horizontal">
@@ -250,7 +251,7 @@
         <TextBlock Grid.Column="1"
                    Margin="8,8,8,0"
                    TextWrapping="Wrap"
-                   Text="flagger"
+                   Text="flag recognizer"
                    FontSize="16"
                    Height="24"
                    VerticalAlignment="Top">

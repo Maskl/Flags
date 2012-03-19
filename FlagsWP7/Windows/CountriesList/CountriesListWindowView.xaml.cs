@@ -11,11 +11,6 @@ namespace Flags
             _viewModel = DataContext as CountriesListWindowViewModel;
         }
 
-        private void HelpAppBarButtonClick(object sender, EventArgs e)
-        {
-            _viewModel.ShowHelpWindowCommand.Execute(null);
-        }
-
         private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
         {
             NavigationService.GoBack();

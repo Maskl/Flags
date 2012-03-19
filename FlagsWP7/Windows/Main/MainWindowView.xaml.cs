@@ -16,19 +16,9 @@ namespace Flags
             Messenger.Default.Register<Uri>(this, "NavigationRequest", uri => NavigationService.Navigate(uri));
         }
 
-        private void CountriesListAppBarButtonClick(object sender, EventArgs e)
-        {
-            _viewModel.ShowCountriesListWindowCommand.Execute(null);
-        }
-
-        private void HelpAppBarButtonClick(object sender, EventArgs e)
-        {
-            _viewModel.ShowHelpWindowCommand.Execute(null);
-        }
-
         private void GestureListenerFlick(object sender, Microsoft.Phone.Controls.FlickGestureEventArgs e)
         {
-            //if (e.Direction == System.Windows.Controls.Orientation.Horizontal && Math.Abs(e.HorizontalVelocity) > 300)
+            //if (e.Direction == System.Windows.Controls.Orientation.Horizontal && Math.Abs(e.HorizontalVelocity) > 500)
             //{
             //    _viewModel.ShowResults();
             //}

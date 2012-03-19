@@ -13,11 +13,6 @@ namespace Flags
             _viewModel = DataContext as CountryDetailsWindowViewModel;
         }
 
-        private void HelpAppBarButtonClick(object sender, EventArgs e)
-        {
-            _viewModel.ShowHelpWindowCommand.Execute(null);
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _viewModel.SelectCountry(e.Uri.ToString());

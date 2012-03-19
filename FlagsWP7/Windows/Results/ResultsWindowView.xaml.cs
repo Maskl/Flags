@@ -12,11 +12,6 @@ namespace Flags
             _viewModel = DataContext as ResultsWindowViewModel;
         }
 
-        private void HelpAppBarButtonClick(object sender, EventArgs e)
-        {
-            _viewModel.ShowHelpWindowCommand.Execute(null);
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _viewModel.ParseMessageFromMainWindow(e.Uri.ToString());
