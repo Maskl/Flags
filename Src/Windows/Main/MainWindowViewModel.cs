@@ -13,21 +13,42 @@ namespace Flags
         public int AddNumber
         {
             get { return _addNumber; }
-            set { _addNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("AddNumber"); }
+            set
+            {
+                _addNumber ^= value /*XOR!*/;
+                if (value == 1 << 5)
+                    _addNumber = 0; 
+                RecalculateResultUri(); 
+                RaisePropertyChanged("AddNumber");
+            }
         }
 
         private int _colorNumber;
         public int ColorNumber
         {
             get { return _colorNumber; }
-            set { _colorNumber ^= value /*XOR!*/; if (value == 1 << 7) _colorNumber = 0; RecalculateResultUri(); RaisePropertyChanged("ColorNumber"); }
+            set
+            {
+                _colorNumber ^= value /*XOR but other!*/;
+                if (value == 1 << 7) 
+                    _colorNumber = 0; 
+                RecalculateResultUri(); 
+                RaisePropertyChanged("ColorNumber");
+            }
         }
 
         private int _shapeNumber;
         public int ShapeNumber
         {
             get { return _shapeNumber; }
-            set { _shapeNumber ^= value /*XOR!*/; RecalculateResultUri(); RaisePropertyChanged("ShapeNumber"); }
+            set
+            {
+                _shapeNumber ^= value /*XOR!*/;
+                if (_shapeNumber == 1 << 5)
+                    _shapeNumber = 0; 
+                RecalculateResultUri(); 
+                RaisePropertyChanged("ShapeNumber");
+            }
         }
 
         private string _resultUri;

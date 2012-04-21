@@ -44,4 +44,52 @@ namespace Flags
         }
 
     }
+
+
+
+
+
+
+
+    public sealed class IntegerToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var flag = false;
+            if (value is int)
+            {
+                flag = (int)value != 0;
+            }
+
+            if (parameter != null)
+            {
+                if (bool.Parse((string)parameter))
+                {
+                    flag = !flag;
+                }
+            }
+
+            if (flag)
+            {
+                return Visibility.Visible;
+            }
+
+            return Visibility.Collapsed;
+
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            var back = (((value is Visibility) && (((Visibility)value) == Visibility.Visible))) ? 1 : 0;
+            if (parameter != null)
+            {
+                if ((bool)parameter)
+                {
+                    back = (back == 0) ? 1 : 0;
+                }
+            }
+            return back;
+        }
+
+    }
 }

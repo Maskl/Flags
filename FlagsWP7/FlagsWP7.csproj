@@ -1947,9 +1947,6 @@
     <Resource Include="..\media\flags\300\zw.png">
       <Link>Media\Flags\300\zw.png</Link>
     </Resource>
-    <Resource Include="..\Media\background.png">
-      <Link>Media\background.png</Link>
-    </Resource>
     <Content Include="..\Media\flags.sdf">
       <Link>Media\flags.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -314,7 +314,17 @@
                             <Border.Background>
                                 <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
                             </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add6.png"
+                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add7.png"
+                                   Height="30" />
+                        </Border>
+
+                        <Border BorderThickness="1"
+                                BorderBrush="{StaticResource PhoneBorderBrush}"
+                                Margin="13, 0, 0, 0">
+                            <Border.Background>
+                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+                            </Border.Background>
+                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add8.png"
                                    Height="30" />
                         </Border>
                     </StackPanel>
