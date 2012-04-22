@@ -56,5 +56,10 @@ namespace Flags
                 VisualStateManager.GoToState(hub, "Flipped", true);
             }
         }
+
+        private void ApplicationBarIconButtonClick(object sender, EventArgs e)
+        {
+            _viewModel.ShowResults();
+        }
     }
 }
