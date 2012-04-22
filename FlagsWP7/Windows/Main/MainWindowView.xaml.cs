@@ -40,26 +40,6 @@ namespace Flags
             task.Show();
         }
 
-        private void btnGoToExpanded_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this.hubTile, "Expanded", true);
-        }
-
-        private void btnGoToSemiexpanded_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this.hubTile, "Semiexpanded", true);
-        }
-
-        private void btnGoToFlipped_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this.hubTile, "Flipped", true);
-        }
-
-        private void btnGoToCollapsed_Click(object sender, RoutedEventArgs e)
-        {
-            VisualStateManager.GoToState(this.hubTile, "Collapsed", true);
-        }
-
 
         private readonly List<HubTile> _flippedTiles = new List<HubTile>();
         private void HubTile_OnTap(object sender, GestureEventArgs e)

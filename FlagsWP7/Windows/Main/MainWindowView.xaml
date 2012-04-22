@@ -1,4 +1,4 @@
-﻿<phone:PhoneApplicationPage x:Class="Flags.MainWindowView"
+﻿<phone:PhoneApplicationPage
                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,21 +9,14 @@
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
+                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" x:Class="Flags.MainWindowView"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="800"
-                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                            FontSize="{StaticResource PhoneFontSizeNormal}"
-                            Foreground="{StaticResource PhoneForegroundBrush}"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
-                            DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}"
-                            Style="{StaticResource TransitionPageStyle}">
-
-    <toolkit:GestureService.GestureListener>
-        <toolkit:GestureListener Flick="GestureListenerFlick" />
-    </toolkit:GestureService.GestureListener>
+                            >
 
     <phone:PhoneApplicationPage.Resources>
         <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -361,6 +354,26 @@
         </Style>
     </phone:PhoneApplicationPage.Resources>
 
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+	<phone:PhoneApplicationPage.DataContext>
+		<Binding Path="MainWindowVm" Source="{StaticResource Locator}"/>
+	</phone:PhoneApplicationPage.DataContext>
+	<phone:PhoneApplicationPage.Style>
+		<StaticResource ResourceKey="TransitionPageStyle"/>
+	</phone:PhoneApplicationPage.Style>
+
+    <toolkit:GestureService.GestureListener>
+        <toolkit:GestureListener Flick="GestureListenerFlick" />
+    </toolkit:GestureService.GestureListener>
+
     <Grid Background="#FF9D5B0A">
     	<Grid.RowDefinitions>
     		<RowDefinition/>
@@ -369,167 +382,376 @@
 
 		<ScrollViewer>
             <StackPanel Orientation="Vertical">
-                <ListBox>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <toolkit:WrapPanel Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
+                <controls:Panorama Height="799" Title="flag helper" Width="480">
+            		<controls:PanoramaItem Header="shape">
+            			<ListBox Width="420">
+            				<ListBox.ItemsPanel>
+            					<ItemsPanelTemplate>
+            						<toolkit:WrapPanel Orientation="Horizontal" />
+            					</ItemsPanelTemplate>
+            				</ListBox.ItemsPanel>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="FRA like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="0" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="MLT like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="1" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="GER like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="2" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="POL like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="3" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="URU like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="4" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="LYB like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
+                                                            CommandParameter="5" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+
+
+
+                            <!--<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Message="USA                                       North America                                      Washington                                                                            HOLD TO SHOW DETAILS."
+                                             Margin="13, 13, 0, 0"
+                                             x:Name="hubTile1"
+                                             Title="USA"
+                                             IsFrozen="True"
+                                             Tap="HubTile_OnTap">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Hold">
+                                        <cmd:EventToCommand Command="{Binding HoldTileCommand}"
+                                                            CommandParameter="us" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>-->
+
+
+                        </ListBox>
+            		</controls:PanoramaItem>
+                    
+                    
+                    
+            		<controls:PanoramaItem Header="additional">
+                        <ListBox Width="420">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <toolkit:WrapPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="JAP like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="0" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="USA like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="1" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="CZE like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="2" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="BLR like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="3" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="ENG like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="4" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="JAM like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="5" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="TRI/ like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="6" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+
+                            <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                             Source="/FlagsWP7;component/Background.png"
+                                             Background="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                             Title="BHU\ like"
+                                             Margin="13, 13, 0, 0"
+                                             IsFrozen="True">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
+                                                            CommandParameter="7" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </toolkit:HubTile>
+                        </ListBox>
+                    </controls:PanoramaItem>
+                    
+                    
+                    
+            		<controls:PanoramaItem Header="colors">
+            			<ListBox Width="420">
+            				<ListBox.ItemsPanel>
+            					<ItemsPanelTemplate>
+            						<toolkit:WrapPanel Orientation="Horizontal" />
+            					</ItemsPanelTemplate>
+            				</ListBox.ItemsPanel>
                     
                     
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Message="USA 
-                                     North America
-                                     Washington
-                                     
-                                     HOLD TO SHOW DETAILS."
-                                     Margin="13, 13, 0, 0"
-                                     Name="hubTile"
-                                     Title="USA"
-                                     IsFrozen="True"
-                                     Tap="HubTile_OnTap">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Hold">
-                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
-                                                    CommandParameter="us" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Message="USA                                       North America                                      Washington                                                                            HOLD TO SHOW DETAILS."
+            					Margin="13, 13, 0, 0"
+            					x:Name="hubTile2"
+            					Title="USA"
+            					IsFrozen="True"
+            					Tap="HubTile_OnTap">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Hold">
+            							<cmd:EventToCommand Command="{Binding HoldTileCommand}"
+            								CommandParameter="us" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Media/Flags/100/us.png"
-                                     Message="Country in Europe
-                                     Warsaw is capital city.
-                                     ISO432 code: PL."
-                                     Margin="13, 13, 0, 0"
-                                     Title="Poland"
-                                     IsFrozen="True"
-                                     Tap="HubTile_OnTap">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Hold">
-                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
-                                                    CommandParameter="pl" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Media/Flags/100/us.png"
+            					Message="Country in Europe                                      Warsaw is capital city.                                      ISO432 code: PL."
+            					Margin="13, 13, 0, 0"
+            					Title="Poland"
+            					IsFrozen="True"
+            					Tap="HubTile_OnTap">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Hold">
+            							<cmd:EventToCommand Command="{Binding HoldTileCommand}"
+            								CommandParameter="pl" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Message="Country in Europe
-                                     Washington is capital city.
-                                     ISO432 code: US."
-                                     Margin="13, 13, 0, 0"
-                                     Notification="sdsada"
-                                     Title="Serbia and Montenegro"
-                                     IsFrozen="True"
-                                     Tap="HubTile_OnTap">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Hold">
-                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
-                                                    CommandParameter="pl" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Message="Country in Europe                                      Washington is capital city.                                      ISO432 code: US."
+            					Margin="13, 13, 0, 0"
+            					Notification="sdsada"
+            					Title="Serbia and Montenegro"
+            					IsFrozen="True"
+            					Tap="HubTile_OnTap">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Hold">
+            							<cmd:EventToCommand Command="{Binding HoldTileCommand}"
+            								CommandParameter="pl" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Message="Country in North America
-                                     Washington is capital city.
-                                     ISO432 code: US."
-                                     Margin="13, 13, 0, 0"
-                                     Notification="sdsada"
-                                     Title="Honduras"
-                                     IsFrozen="True"
-                                     Tap="HubTile_OnTap">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Hold">
-                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
-                                                    CommandParameter="pl" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Message="Country in North America                                      Washington is capital city.                                      ISO432 code: US."
+            					Margin="13, 13, 0, 0"
+            					Notification="sdsada"
+            					Title="Honduras"
+            					IsFrozen="True"
+            					Tap="HubTile_OnTap">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Hold">
+            							<cmd:EventToCommand Command="{Binding HoldTileCommand}"
+            								CommandParameter="pl" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
 
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Tap">
-                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
-                                                    CommandParameter="0" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Tap">
-                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
-                                                    CommandParameter="1" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Tap">
-                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
-                                                    CommandParameter="2" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Tap">
-                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
-                                                    CommandParameter="3" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
+            					Margin="13, 13, 0, 0"
+            					IsFrozen="True">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Tap">
+            							<cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+            								CommandParameter="0" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
+            					Margin="13, 13, 0, 0"
+            					IsFrozen="True">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Tap">
+            							<cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+            								CommandParameter="1" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
+            					Margin="13, 13, 0, 0"
+            					IsFrozen="True">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Tap">
+            							<cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+            								CommandParameter="2" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
+            				<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+            					Source="/FlagsWP7;component/Background.png"
+            					Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
+            					Margin="13, 13, 0, 0"
+            					IsFrozen="True">
+            					<i:Interaction.Triggers>
+            						<i:EventTrigger EventName="Tap">
+            							<cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+            								CommandParameter="3" />
+            						</i:EventTrigger>
+            					</i:Interaction.Triggers>
+            				</toolkit:HubTile>
 
-                </ListBox>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+            				<Grid Height="497" Width="420"/>
 
-                    <Button x:Name="btnGoToExpanded"
-                            Content=" Go To Expanded State"
-                            Click="btnGoToExpanded_Click" />
-                    <Button x:Name="btnGoToSemiexpanded"
-                            Content="Go To Semiexpanded State"
-                            Click="btnGoToSemiexpanded_Click" />
-                    <Button x:Name="btnGoToFlipped"
-                            Content="Go To Flipped State"
-                            Click="btnGoToFlipped_Click" />
-                    <Button x:Name="btnGoToCollapsed"
-                            Content="Go To Collapsed State"
-                            Click="btnGoToCollapsed_Click" />
+            			</ListBox>
+            		</controls:PanoramaItem>
+            	</controls:Panorama>
             </StackPanel>
             
 

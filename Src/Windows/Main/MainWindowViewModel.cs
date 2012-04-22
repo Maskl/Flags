@@ -16,8 +16,8 @@ namespace Flags
             set
             {
                 _addNumber ^= value /*XOR!*/;
-                if (value == 1 << 5)
-                    _addNumber = 0; 
+                //  if (value == 1 << 5) CLEAR
+              //      _addNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("AddNumber");
             }
@@ -30,8 +30,8 @@ namespace Flags
             set
             {
                 _colorNumber ^= value /*XOR but other!*/;
-                if (value == 1 << 7) 
-                    _colorNumber = 0; 
+               // if (value == 1 << 7)  CLEAR
+               //     _colorNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("ColorNumber");
             }
@@ -44,8 +44,8 @@ namespace Flags
             set
             {
                 _shapeNumber ^= value /*XOR!*/;
-                if (_shapeNumber == 1 << 5)
-                    _shapeNumber = 0; 
+             //   if (_shapeNumber == 1 << 5) CLEAR
+             //       _shapeNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("ShapeNumber");
             }
