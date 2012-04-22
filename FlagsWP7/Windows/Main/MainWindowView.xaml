@@ -7,6 +7,8 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:Flags="clr-namespace:Flags"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="800"
@@ -27,307 +29,511 @@
         <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Flags:IntegerToVisibilityConverter x:Key="IntegerToVisibilityConverter" />
         <Flags:IntegerFlagToOpacityConverter x:Key="IntegerFlagToOpacityConverter" />
+        <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
+                                           TrueValue="{StaticResource PhoneAccentBrush}"
+                                           FalseValue="DarkGray" />
+
+
+        <Style x:Key="HubTileStyle0"
+               TargetType="toolkit:HubTile">
+            <Setter Property="Height"
+                    Value="173" />
+            <Setter Property="Width"
+                    Value="173" />
+            <Setter Property="Background"
+                    Value="{StaticResource PhoneAccentBrush}" />
+            <Setter Property="Foreground"
+                    Value="#FFFFFFFF" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="toolkit:HubTile">
+                        <StackPanel x:Name="Viewport"
+                                    Height="173"
+                                    Width="173">
+                            <StackPanel.Resources>
+                                <CubicEase x:Key="HubTileEaseOut"
+                                           EasingMode="EaseOut" />
+                            </StackPanel.Resources>
+                            <StackPanel.Projection>
+                                <PlaneProjection x:Name="ViewportProjection"
+                                                 CenterOfRotationY="0.25" />
+                            </StackPanel.Projection>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="ImageStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition x:Name="ExpandedToSemiexpanded"
+                                                          From="Expanded"
+                                                          GeneratedDuration="0:0:0.85"
+                                                          To="Semiexpanded">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                                               Storyboard.TargetName="TitlePanel">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="-173.0" />
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.85"
+                                                                          Value="-79.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
+                                                                               Storyboard.TargetName="ViewportProjection">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="0.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="MessageBlock">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition x:Name="SemiexpandedToCollapsed"
+                                                          From="Semiexpanded"
+                                                          GeneratedDuration="0:0:0.85"
+                                                          To="Collapsed">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                                               Storyboard.TargetName="TitlePanel">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="-79.0" />
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.85"
+                                                                          Value="0.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="MessageBlock">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition x:Name="CollapsedToExpanded"
+                                                          From="Collapsed"
+                                                          GeneratedDuration="0:0:0.85"
+                                                          To="Expanded">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                                               Storyboard.TargetName="TitlePanel">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="0.0" />
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.85"
+                                                                          Value="-173.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="MessageBlock">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition x:Name="ExpandedToFlipped"
+                                                          From="Expanded"
+                                                          GeneratedDuration="0:0:0.85"
+                                                          To="Flipped">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                                               Storyboard.TargetName="TitlePanel">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="-173.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="Image">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="ImageText">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="MessageBlock">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Visible" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
+                                                                               Storyboard.TargetName="ViewportProjection">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="0.0" />
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.85"
+                                                                          Value="180.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition x:Name="FlippedToExpanded"
+                                                          From="Flipped"
+                                                          GeneratedDuration="0:0:0.85"
+                                                          To="Expanded">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                                               Storyboard.TargetName="TitlePanel">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="-173.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="Image">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Visible" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="ImageText">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Visible" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                               Storyboard.TargetName="MessageBlock">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
+                                                                            Value="Collapsed" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
+                                                                               Storyboard.TargetName="ViewportProjection">
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.0"
+                                                                          Value="180.0" />
+                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
+                                                                          KeyTime="0:0:0.85"
+                                                                          Value="360.0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Expanded">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0"
+                                                             To="-173.0"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                             Storyboard.TargetName="TitlePanel" />
+                                            <DoubleAnimation Duration="0"
+                                                             To="0.0"
+                                                             Storyboard.TargetProperty="RotationX"
+                                                             Storyboard.TargetName="ViewportProjection" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="Image">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="ImageText">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="MessageBlock">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Semiexpanded">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="MessageBlock">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimation Duration="0"
+                                                             To="-79.0"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                             Storyboard.TargetName="TitlePanel" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Collapsed" />
+                                    <VisualState x:Name="Flipped">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0"
+                                                             To="-173.0"
+                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
+                                                             Storyboard.TargetName="TitlePanel" />
+                                            <DoubleAnimation Duration="0"
+                                                             To="180.0"
+                                                             Storyboard.TargetProperty="RotationX"
+                                                             Storyboard.TargetName="ViewportProjection" />
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="Image">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="ImageText">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Collapsed" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                                           Storyboard.TargetName="MessageBlock">
+                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                                        Value="Visible" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Grid x:Name="TitlePanel"
+                                  Height="346"
+                                  RenderTransformOrigin="0.5,0.5"
+                                  Width="173">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.RenderTransform>
+                                    <CompositeTransform />
+                                </Grid.RenderTransform>
+                                <Border Background="{TemplateBinding Background}"
+                                        Grid.Row="0">
+                                    <TextBlock Foreground="{TemplateBinding Foreground}"
+                                               FontSize="41"
+                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                                               LineStackingStrategy="BlockLineHeight"
+                                               LineHeight="39"
+                                               Margin="10,0,0,6"
+                                               TextWrapping="Wrap"
+                                               Text="{TemplateBinding Title}"
+                                               VerticalAlignment="Bottom" />
+                                </Border>
+                                <Grid x:Name="BackPanel"
+                                      Background="{TemplateBinding Background}"
+                                      Height="173"
+                                      Grid.Row="1"
+                                      Width="173">
+                                    <Grid.Projection>
+                                        <PlaneProjection CenterOfRotationY="0.5"
+                                                         RotationX="180" />
+                                    </Grid.Projection>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="NotificationBlock"
+                                               Foreground="{TemplateBinding Foreground}"
+                                               FontSize="{StaticResource PhoneFontSizeLarge}"
+                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                                               LineStackingStrategy="BlockLineHeight"
+                                               LineHeight="32"
+                                               Margin="8,8,0,6"
+                                               Grid.Row="0"
+                                               TextWrapping="NoWrap"
+                                               Text="{TemplateBinding Notification}" />
+                                    <TextBlock x:Name="MessageBlock"
+                                               Foreground="{TemplateBinding Foreground}"
+                                               FontSize="{StaticResource PhoneFontSizeNormal}"
+                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                                               LineStackingStrategy="BlockLineHeight"
+                                               LineHeight="23.333"
+                                               Margin="10,10,10,6"
+                                               Grid.Row="0"
+                                               TextWrapping="Wrap"
+                                               Text="{TemplateBinding Message}" />
+                                </Grid>
+                                <Image x:Name="Image"
+                                       Grid.Row="1"
+                                       Source="{TemplateBinding Source}"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       Width="147"/>
+                                <!--Stretch="UniformToFill"
+                                       Height="173"
+                                       Width="173"-->
+
+                                <TextBlock x:Name="ImageText"
+                                           Foreground="{TemplateBinding Foreground}"
+                                           FontSize="{StaticResource PhoneFontSizeNormal}"
+                                           FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           LineHeight="23.333"
+                                           Margin="10,10,10,6"
+                                           Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           VerticalAlignment="Bottom"
+                                           Text="{TemplateBinding Title}" />
+                            </Grid>
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </phone:PhoneApplicationPage.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="385*" />
-            <ColumnDefinition Width="65*" />
-        </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="1"
-                      ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="13,0,0,13">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+    <Grid Background="#FF9D5B0A">
+    	<Grid.RowDefinitions>
+    		<RowDefinition/>
+    		<RowDefinition Height="1"/>
+    	</Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0"
-                           Height="30"
-                           TextWrapping="Wrap"
-                           Text="Colors:" Margin="12,0,0,0" />
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="80" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="80" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="80" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="80" />
-                        <ColumnDefinition Width="13" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="48" />
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="48" />
-                        <RowDefinition Height="26" />
-                    </Grid.RowDefinitions>
-
-                    <Button Grid.Column="1"
-                            Grid.Row="1"
-                            Background="Red"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="0"
-                            Content="red"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="3"
-                            Grid.Row="1"
-                            Background="Blue"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="1"
-                            Content="blue"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="5"
-                            Grid.Row="1"
-                            Background="Yellow"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="2"
-                            Content="yellow"
-                            FontSize="20"
-                            Foreground="Black" />
+		<ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <ListBox>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <toolkit:WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
                     
-                    <Button Grid.Column="7"
-                            Grid.Row="1"
-                            Background="Green"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="3"
-                            Content="green"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="1"
-                            Grid.Row="3"
-                            Background="White"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="4"
-                            Content="white"
-                            FontSize="21.333"
-                            Foreground="Black" />
-
-                    <Button Grid.Column="3"
-                            Grid.Row="3"
-                            Background="Black"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="5"
-                            Content="black"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="5"
-                            Grid.Row="3"
-                            Background="Violet"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="6"
-                            Content="other"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="7"
-                            Grid.Row="3"
-                            Background="Gray"
-                            Margin="-12"
-                            Visibility="{Binding ColorNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
-                            BorderThickness="1"
-                            Opacity="{Binding ColorNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyColorNumberCommand}"
-                            CommandParameter="7"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="7"
-                            Grid.Row="3"
-                            Margin="-12"
-                            Visibility="{Binding ColorNumber, Converter={StaticResource IntegerToVisibilityConverter}, ConverterParameter='true'}"
-                            BorderThickness="1"
-                            BorderBrush="{StaticResource PhoneBorderBrush}"
-                            Opacity="{Binding ColorNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="{StaticResource PhoneBorderBrush}" />
-                </Grid>
-
-                <TextBlock  Grid.Row="2"
-                            Height="30"
-                            TextWrapping="Wrap"
-                            Text="Shape:" Margin="12,0,0,0" />
-                <Grid Grid.Row="3">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="67" />
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="67" />
-                        <RowDefinition Height="26" />
-                    </Grid.RowDefinitions>
-
-                    <Rectangle Grid.Column="1"
-                            Grid.Row="1"
-                            Fill="{StaticResource PhoneAccentBrush}"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
                     
-                    <Button Grid.Column="1"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="0" BorderBrush="White">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape1.png" />
-                        </Button.Background>
-                    </Button>
 
-                    <Rectangle Grid.Column="3"
-                               Grid.Row="1"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding ShapeNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Message="USA 
+                                     North America
+                                     Washington
+                                     
+                                     HOLD TO SHOW DETAILS."
+                                     Margin="13, 13, 0, 0"
+                                     Name="hubTile"
+                                     Title="USA"
+                                     IsFrozen="True"
+                                     Tap="HubTile_OnTap">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Hold">
+                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
+                                                    CommandParameter="us" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
 
-                    <Button Grid.Column="3"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="1">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape2.png" />
-                        </Button.Background>
-                    </Button>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Media/Flags/100/us.png"
+                                     Message="Country in Europe
+                                     Warsaw is capital city.
+                                     ISO432 code: PL."
+                                     Margin="13, 13, 0, 0"
+                                     Title="Poland"
+                                     IsFrozen="True"
+                                     Tap="HubTile_OnTap">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Hold">
+                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
+                                                    CommandParameter="pl" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
 
-                    <Rectangle Grid.Column="5"
-                               Grid.Row="1"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding ShapeNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Message="Country in Europe
+                                     Washington is capital city.
+                                     ISO432 code: US."
+                                     Margin="13, 13, 0, 0"
+                                     Notification="sdsada"
+                                     Title="Serbia and Montenegro"
+                                     IsFrozen="True"
+                                     Tap="HubTile_OnTap">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Hold">
+                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
+                                                    CommandParameter="pl" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
 
-                    <Button Grid.Column="5"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="2">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape3.png" />
-                        </Button.Background>
-                    </Button>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Message="Country in North America
+                                     Washington is capital city.
+                                     ISO432 code: US."
+                                     Margin="13, 13, 0, 0"
+                                     Notification="sdsada"
+                                     Title="Honduras"
+                                     IsFrozen="True"
+                                     Tap="HubTile_OnTap">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Hold">
+                                <cmd:EventToCommand Command="{Binding HoldTileCommand}"
+                                                    CommandParameter="pl" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
 
-                    <Rectangle Grid.Column="1"
-                               Grid.Row="3"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding ShapeNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
 
-                    <Button Grid.Column="1"
-                            Grid.Row="3"
-                            Margin="-12"
-                            BorderThickness="1"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="3" BorderBrush="#DEFFFFFF">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape4.png" />
-                        </Button.Background>
-                    </Button>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                     Margin="13, 13, 0, 0"
+                                     IsFrozen="True">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+                                                    CommandParameter="0" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                     Margin="13, 13, 0, 0"
+                                     IsFrozen="True">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+                                                    CommandParameter="1" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                     Margin="13, 13, 0, 0"
+                                     IsFrozen="True">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+                                                    CommandParameter="2" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
+                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                                     Source="/FlagsWP7;component/Background.png"
+                                     Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
+                                     Margin="13, 13, 0, 0"
+                                     IsFrozen="True">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Tap">
+                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
+                                                    CommandParameter="3" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </toolkit:HubTile>
 
-                    <Rectangle Grid.Column="3"
-                               Grid.Row="3"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding ShapeNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
+                </ListBox>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-                    <Button Grid.Column="3"
-                            Grid.Row="3"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="4">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape5.png" />
-                        </Button.Background>
-                    </Button>
+                    <Button x:Name="btnGoToExpanded"
+                            Content=" Go To Expanded State"
+                            Click="btnGoToExpanded_Click" />
+                    <Button x:Name="btnGoToSemiexpanded"
+                            Content="Go To Semiexpanded State"
+                            Click="btnGoToSemiexpanded_Click" />
+                    <Button x:Name="btnGoToFlipped"
+                            Content="Go To Flipped State"
+                            Click="btnGoToFlipped_Click" />
+                    <Button x:Name="btnGoToCollapsed"
+                            Content="Go To Collapsed State"
+                            Click="btnGoToCollapsed_Click" />
+            </StackPanel>
+            
 
-                    <Button Grid.Column="5"
-                            Grid.Row="3"
-                            Margin="-12"
-                            Visibility="{Binding ShapeNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Background="Gray"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyShapeNumberCommand}"
-                            CommandParameter="5"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="White" />
-
-                    <Button Grid.Column="5"
-                            Grid.Row="3"
-                            Margin="-12"
-                            Visibility="{Binding ShapeNumber, Converter={StaticResource IntegerToVisibilityConverter}, ConverterParameter='true'}"
-                            BorderThickness="1"
-                            BorderBrush="{StaticResource PhoneBorderBrush}"
-                            Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="{StaticResource PhoneBorderBrush}" />
-                    <!--
+            <!--
                     <Rectangle Grid.Column="5"
                                Grid.Row="3"
                                Fill="{StaticResource PhoneAccentBrush}"
@@ -347,203 +553,512 @@
                                         ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape6.png" />
                         </Button.Background>
                     </Button>-->
-                </Grid>
 
-                <TextBlock  Grid.Row="4"
-                            Height="30"
-                            TextWrapping="Wrap"
-                            Text="Additional elements:" Margin="12,0,0,0" />
-                <Grid Grid.Row="5">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                        <ColumnDefinition Width="111" />
-                        <ColumnDefinition Width="13" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="67" />
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="67" />
-                        <RowDefinition Height="13" />
-                        <RowDefinition Height="67" />
-                        <RowDefinition Height="13" />
-                    </Grid.RowDefinitions>
+    	</ScrollViewer>
+
+		<Grid Margin="0,0,-423,-34" Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="80" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="385*" />
+				<ColumnDefinition Width="65*" />
+			</Grid.ColumnDefinitions>
+			<ScrollViewer Grid.Row="1"
+				ScrollViewer.VerticalScrollBarVisibility="Hidden" Margin="13,0,0,13">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+						<RowDefinition />
+					</Grid.RowDefinitions>
+
+					<TextBlock Grid.Row="0"
+						Height="30"
+						TextWrapping="Wrap"
+						Text="Colors:" Margin="12,0,0,0" />
+					<Grid Grid.Row="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="80" />
+							<ColumnDefinition Width="13" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="13" />
+							<RowDefinition Height="48" />
+							<RowDefinition Height="13" />
+							<RowDefinition Height="48" />
+							<RowDefinition Height="26" />
+						</Grid.RowDefinitions>
+
+						<Button Grid.Column="1"
+							Grid.Row="1"
+							Background="Red"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="0"
+							Content="red"
+							FontSize="21.333"
+							Foreground="White" />
+
+						<Button Grid.Column="3"
+							Grid.Row="1"
+							Background="Blue"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="1"
+							Content="blue"
+							FontSize="21.333"
+							Foreground="White" />
+
+						<Button Grid.Column="5"
+							Grid.Row="1"
+							Background="Yellow"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="2"
+							Content="yellow"
+							FontSize="20"
+							Foreground="Black" />
                     
-                    <Rectangle Grid.Column="1"
-                               Grid.Row="1"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
-                    
-                    <Button Grid.Column="1"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='0', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="0">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add1.png" />
-                        </Button.Background>
-                    </Button>
+						<Button Grid.Column="7"
+							Grid.Row="1"
+							Background="Green"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="3"
+							Content="green"
+							FontSize="21.333"
+							Foreground="White" />
 
-                    <Rectangle Grid.Column="3"
-                               Grid.Row="1"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
+						<Button Grid.Column="1"
+							Grid.Row="3"
+							Background="White"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="4"
+							Content="white"
+							FontSize="21.333"
+							Foreground="Black" />
 
-                    <Button Grid.Column="3"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='1', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="1">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add2.png" />
-                        </Button.Background>
-                    </Button>
+						<Button Grid.Column="3"
+							Grid.Row="3"
+							Background="Black"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="5"
+							Content="black"
+							FontSize="21.333"
+							Foreground="White" />
 
+						<Button Grid.Column="5"
+							Grid.Row="3"
+							Background="Violet"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="6"
+							Content="other"
+							FontSize="21.333"
+							Foreground="White" />
+
+						<Button Grid.Column="7"
+							Grid.Row="3"
+							Background="Gray"
+							Margin="-12"
+							Visibility="{Binding ColorNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							Opacity="{Binding ColorNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyColorNumberCommand}"
+							CommandParameter="7"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="White" />
+
+						<Button Grid.Column="7"
+							Grid.Row="3"
+							Margin="-12"
+							Visibility="{Binding ColorNumber, ConverterParameter=true, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							BorderBrush="{StaticResource PhoneBorderBrush}"
+							Opacity="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="{StaticResource PhoneBorderBrush}" />
+					</Grid>
+
+					<TextBlock  Grid.Row="2"
+						Height="30"
+						TextWrapping="Wrap"
+						Text="Shape:" Margin="12,0,0,0" />
+					<Grid Grid.Row="3">
+						<!--
                     <Rectangle Grid.Column="5"
-                               Grid.Row="1"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
-
-                    <Button Grid.Column="5"
-                            Grid.Row="1"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='2', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="2">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add3.png" />
-                        </Button.Background>
-                    </Button>
-
-                    <Rectangle Grid.Column="1"
                                Grid.Row="3"
                                Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}">
+                               Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}">
                     </Rectangle>
-
-                    <Button Grid.Column="1"
-                            Grid.Row="3"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='3', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="3">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add4.png" />
-                        </Button.Background>
-                    </Button>
                     
-                    <Rectangle Grid.Column="3"
-                               Grid.Row="3"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
-
-                    <Button Grid.Column="3"
-                            Grid.Row="3"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='6', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="6">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add7.png" />
-                        </Button.Background>
-                    </Button>
-
-                    <Rectangle Grid.Column="5"
-                               Grid.Row="3"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
-
                     <Button Grid.Column="5"
                             Grid.Row="3"
                             Margin="-12"
                             BorderThickness="1"
                             BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='7', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="7">
+                            Opacity="{Binding ShapeNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
+                            Command="{Binding ModifyShapeNumberCommand}"
+                            CommandParameter="5">
                         <Button.Background>
                             <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add8.png" />
+                                        ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape6.png" />
                         </Button.Background>
-                    </Button>
+                    </Button>-->
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="13" />
+							<RowDefinition Height="67" />
+							<RowDefinition Height="13" />
+							<RowDefinition Height="67" />
+							<RowDefinition Height="26" />
+						</Grid.RowDefinitions>
+
+						<Rectangle Grid.Column="1"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+                    
+						<Button Grid.Column="1"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="0" BorderBrush="White">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape1.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="3"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="3"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="1">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape2.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="5"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="5"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="2">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape3.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="1"
+							Grid.Row="3"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="1"
+							Grid.Row="3"
+							Margin="-12"
+							BorderThickness="1"
+							Opacity="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="3" BorderBrush="#DEFFFFFF">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape4.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="3"
+							Grid.Row="3"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="3"
+							Grid.Row="3"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="4">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Shapes/wp7shape5.png" />
+							</Button.Background>
+						</Button>
+
+						<Button Grid.Column="5"
+							Grid.Row="3"
+							Margin="-12"
+							Visibility="{Binding ShapeNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							BorderBrush="White"
+							Background="Gray"
+							Opacity="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyShapeNumberCommand}"
+							CommandParameter="5"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="White" />
+
+						<Button Grid.Column="5"
+							Grid.Row="3"
+							Margin="-12"
+							Visibility="{Binding ShapeNumber, ConverterParameter=true, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							BorderBrush="{StaticResource PhoneBorderBrush}"
+							Opacity="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="{StaticResource PhoneBorderBrush}" />
+					</Grid>
+
+					<TextBlock  Grid.Row="4"
+						Height="30"
+						TextWrapping="Wrap"
+						Text="Additional elements:" Margin="12,0,0,0" />
+					<Grid Grid.Row="5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+							<ColumnDefinition Width="111" />
+							<ColumnDefinition Width="13" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="13" />
+							<RowDefinition Height="67" />
+							<RowDefinition Height="13" />
+							<RowDefinition Height="67" />
+							<RowDefinition Height="13" />
+							<RowDefinition Height="67" />
+							<RowDefinition Height="13" />
+						</Grid.RowDefinitions>
+                    
+						<Rectangle Grid.Column="1"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+                    
+						<Button Grid.Column="1"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="0">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add1.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="3"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="3"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="1">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add2.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="5"
+							Grid.Row="1"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="5"
+							Grid.Row="1"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="2">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add3.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="1"
+							Grid.Row="3"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="1"
+							Grid.Row="3"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="3">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add4.png" />
+							</Button.Background>
+						</Button>
+                    
+						<Rectangle Grid.Column="3"
+							Grid.Row="3"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="3"
+							Grid.Row="3"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="6">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add7.png" />
+							</Button.Background>
+						</Button>
+
+						<Rectangle Grid.Column="5"
+							Grid.Row="3"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
+
+						<Button Grid.Column="5"
+							Grid.Row="3"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="7">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add8.png" />
+							</Button.Background>
+						</Button>
 
 
 
 
 
 
-                    <Rectangle Grid.Column="1"
-                               Grid.Row="5"
-                               Fill="{StaticResource PhoneAccentBrush}"
-                               Opacity="{Binding AddNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}">
-                    </Rectangle>
+						<Rectangle Grid.Column="1"
+							Grid.Row="5"
+							Fill="{StaticResource PhoneAccentBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToOpacityConverter}}"/>
 
-                    <Button Grid.Column="1"
-                            Grid.Row="5"
-                            Margin="-12"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Opacity="{Binding AddNumber, ConverterParameter='4', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="4">
-                        <Button.Background>
-                            <ImageBrush Stretch="Fill"
-                                        ImageSource="/FlagsWP7;component/Media/Adds/wp7Add5.png" />
-                        </Button.Background>
-                    </Button>
+						<Button Grid.Column="1"
+							Grid.Row="5"
+							Margin="-12"
+							BorderThickness="1"
+							BorderBrush="White"
+							Opacity="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="4">
+							<Button.Background>
+								<ImageBrush Stretch="Fill"
+									ImageSource="/FlagsWP7;component/Media/Adds/wp7Add5.png" />
+							</Button.Background>
+						</Button>
 
-                    <Button Grid.Column="3"
-                            Grid.Row="5"
-                            Margin="-12"
-                            Visibility="{Binding AddNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
-                            BorderThickness="1"
-                            BorderBrush="White"
-                            Background="Gray"
-                            Opacity="{Binding AddNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Command="{Binding ModifyAddNumberCommand}"
-                            CommandParameter="5"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="White"/>
+						<Button Grid.Column="3"
+							Grid.Row="5"
+							Margin="-12"
+							Visibility="{Binding AddNumber, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							BorderBrush="White"
+							Background="Gray"
+							Opacity="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Command="{Binding ModifyAddNumberCommand}"
+							CommandParameter="5"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="White"/>
 
-                    <Button Grid.Column="3"
-                            Grid.Row="5"
-                            Margin="-12"
-                            Visibility="{Binding AddNumber, Converter={StaticResource IntegerToVisibilityConverter}, ConverterParameter='true'}"
-                            BorderThickness="1"
-                            BorderBrush="{StaticResource PhoneBorderBrush}"
-                            Opacity="{Binding AddNumber, ConverterParameter='5', Converter={StaticResource IntegerFlagToOpacityConverter}}"
-                            Content="clear"
-                            FontSize="21.333"
-                            Foreground="{StaticResource PhoneBorderBrush}" />
+						<Button Grid.Column="3"
+							Grid.Row="5"
+							Margin="-12"
+							Visibility="{Binding AddNumber, ConverterParameter=true, Converter={StaticResource IntegerToVisibilityConverter}}"
+							BorderThickness="1"
+							BorderBrush="{StaticResource PhoneBorderBrush}"
+							Opacity="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToOpacityConverter}}"
+							Content="clear"
+							FontSize="21.333"
+							Foreground="{StaticResource PhoneBorderBrush}" />
 
-                    <!--
+						<!--
                    <Rectangle Grid.Column="3"
                             Grid.Row="3"
                             Fill="{StaticResource PhoneAccentBrush}"
@@ -624,153 +1139,154 @@
                     </Button>-->
 
 
-                    <Button Grid.Column="5"
-                            Grid.Row="5"
-                            BorderThickness="0"
-                            Padding="0"
-                            Background="{StaticResource PhoneForegroundBrush}"
-                            Height="72"
-                            Width="72"
-                            Command="{Binding ShowResultsWindowCommand}">
-                        <Button.OpacityMask>
-                            <ImageBrush  Stretch="None"
-                                         ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
-                        </Button.OpacityMask>
-                    </Button>
-                </Grid>
-            </Grid>
-        </ScrollViewer>
-        <StackPanel Grid.Column="1"
-                    Grid.Row="1" Margin="0,-1,13,13">
-            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
-                    BorderThickness="0"
-                    Margin="-4,30,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Command="{Binding ShowResultsWindowCommand}">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
-                </Button.OpacityMask>
-            </Button>
-            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
-                    BorderThickness="0"
-                    Margin="-4,13,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Command="{Binding ShowCountriesListWindowCommand}">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
-                </Button.OpacityMask>
-            </Button>
-            <Button Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
-                    BorderThickness="0"
-                    Margin="-4,13,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Command="{Binding ShowHelpWindowCommand}">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
-                </Button.OpacityMask>
-            </Button>
-        </StackPanel>
+						<Button Grid.Column="5"
+							Grid.Row="5"
+							BorderThickness="0"
+							Padding="0"
+							Background="{StaticResource PhoneForegroundBrush}"
+							Height="72"
+							Width="72"
+							Command="{Binding ShowResultsWindowCommand}">
+							<Button.OpacityMask>
+								<ImageBrush  Stretch="None"
+									ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
+							</Button.OpacityMask>
+						</Button>
+					</Grid>
+				</Grid>
+			</ScrollViewer>
+			<StackPanel Grid.Column="1"
+				Grid.Row="1" Margin="0,-1,13,13">
+				<Button Visibility="{Binding ShowTrialInfo, ConverterParameter=true, Converter={StaticResource BooleanToVisibilityConverter}}"
+					BorderThickness="0"
+					Margin="-4,30,0,0"
+					Padding="0"
+					Background="{StaticResource PhoneForegroundBrush}"
+					Height="72"
+					Width="72"
+					Command="{Binding ShowResultsWindowCommand}">
+					<Button.OpacityMask>
+						<ImageBrush  Stretch="None"
+							ImageSource="/FlagsWP7;component/Media/Icons/IconSearch.png" />
+					</Button.OpacityMask>
+				</Button>
+				<Button Visibility="{Binding ShowTrialInfo, ConverterParameter=true, Converter={StaticResource BooleanToVisibilityConverter}}"
+					BorderThickness="0"
+					Margin="-4,13,0,0"
+					Padding="0"
+					Background="{StaticResource PhoneForegroundBrush}"
+					Height="72"
+					Width="72"
+					Command="{Binding ShowCountriesListWindowCommand}">
+					<Button.OpacityMask>
+						<ImageBrush  Stretch="None"
+							ImageSource="/FlagsWP7;component/Media/Icons/IconList.png" />
+					</Button.OpacityMask>
+				</Button>
+				<Button Visibility="{Binding ShowTrialInfo, ConverterParameter=true, Converter={StaticResource BooleanToVisibilityConverter}}"
+					BorderThickness="0"
+					Margin="-4,13,0,0"
+					Padding="0"
+					Background="{StaticResource PhoneForegroundBrush}"
+					Height="72"
+					Width="72"
+					Command="{Binding ShowHelpWindowCommand}">
+					<Button.OpacityMask>
+						<ImageBrush  Stretch="None"
+							ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
+					</Button.OpacityMask>
+				</Button>
+			</StackPanel>
 
-        <TextBlock Grid.Column="0"
-                   Margin="25,13,0,0"
-                   TextWrapping="Wrap"
-                   Text="flag recognizer"
-                   FontSize="16"
-                   Height="24"
-                   VerticalAlignment="Top" Padding="0">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
-        	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
-        </TextBlock>
+			<TextBlock Grid.Column="0"
+				Margin="25,13,0,0"
+				TextWrapping="Wrap"
+				Text="flag recognizer"
+				FontSize="16"
+				Height="24"
+				VerticalAlignment="Top" Padding="0">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
+				</TextBlock.Foreground>
+				<toolkit:GestureService.GestureListener>
+					<toolkit:GestureListener Flick="GestureListenerFlick" />
+				</toolkit:GestureService.GestureListener>
+			</TextBlock>
 
-        <TextBlock Grid.Column="0"
-                   Margin="25,30,0,0"
-                   TextWrapping="Wrap"
-                   Text="FIND FLAG!"
-                   FontSize="29.333" Padding="0">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-        	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
-        </TextBlock>
-
-
-        <Border x:Name="PleaseWaitMessageBorder" Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
-                BorderThickness="3"
-                Margin="66,229,50,206"
-                Grid.Row="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Height="103"
-                Width="291">
-        	<Border.BorderBrush>
-        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-        	</Border.BorderBrush>
-            <Border.Background>
-                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-            </Border.Background>
-            <TextBlock TextWrapping="Wrap"
-                       Text="Please wait..."
-                       FontSize="45.333"
-                       Margin="3"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center" />
-        </Border>
+			<TextBlock Grid.Column="0"
+				Margin="25,30,0,0"
+				TextWrapping="Wrap"
+				Text="FIND FLAG!"
+				FontSize="29.333" Padding="0">
+				<TextBlock.Foreground>
+					<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+				</TextBlock.Foreground>
+				<toolkit:GestureService.GestureListener>
+					<toolkit:GestureListener Flick="GestureListenerFlick" />
+				</toolkit:GestureService.GestureListener>
+			</TextBlock>
 
 
+			<Border x:Name="PleaseWaitMessageBorder" Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+				BorderThickness="3"
+				Margin="66,229,50,206"
+				Grid.Row="1"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Height="103"
+				Width="291">
+				<Border.BorderBrush>
+					<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
+				</Border.BorderBrush>
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+				</Border.Background>
+				<TextBlock TextWrapping="Wrap"
+					Text="Please wait..."
+					FontSize="45.333"
+					Margin="3"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center" />
+			</Border>
 
 
 
 
-        <Border x:Name="TrialMessageBorder" Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
-                BorderThickness="3"
-                Grid.Row="1" Grid.RowSpan="2">
-        	<Border.Background>
-        		<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
-        	</Border.Background>
-            <ScrollViewer Margin="-3,-3,-70,-3" BorderThickness="0,0,13,0">
-            	<StackPanel Height="720" Width="426" Margin="26,0,26,13" HorizontalAlignment="Left">
-            		<TextBlock TextWrapping="Wrap" Text="This is a trial version of Flag Recognizer." FontSize="21.333" Margin="0,45,8,26" FontWeight="Bold">
-            			<TextBlock.Foreground>
-            				<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-            			</TextBlock.Foreground>
-            		</TextBlock>
-                    <TextBlock TextWrapping="Wrap"
-                               Text="Wait 10 seconds and skip this message or click the buy button below in order to purchase the full version (without this counter)."
-                               FontSize="24"
-                               Margin="0,0,8,26" />
+
+
+			<Border x:Name="TrialMessageBorder" Visibility="{Binding ShowTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
+				BorderThickness="3"
+				Grid.Row="1" Grid.RowSpan="2">
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
+				</Border.Background>
+				<ScrollViewer Margin="-3,-3,-70,-3" BorderThickness="0,0,13,0">
+					<StackPanel Height="720" Width="426" Margin="26,0,26,13" HorizontalAlignment="Left">
+						<TextBlock TextWrapping="Wrap" Text="This is a trial version of Flag Recognizer." FontSize="21.333" Margin="0,45,8,26" FontWeight="Bold">
+							<TextBlock.Foreground>
+								<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
+							</TextBlock.Foreground>
+						</TextBlock>
+						<TextBlock TextWrapping="Wrap"
+							Text="Wait 10 seconds and skip this message or click the buy button below in order to purchase the full version (without this counter)."
+							FontSize="24"
+							Margin="0,0,8,26" />
                     
-                    <Button Content="Buy full version now!" Margin="0,0,8,0" Click="BuyButtonClick"></Button>
+						<Button Content="Buy full version now!" Margin="0,0,8,0" Click="BuyButtonClick"/>
 
-                    <Button Visibility="{Binding CanCloseTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=true}"
-                            IsEnabled="false"
-                            Content="{Binding ShowTrialTimeInfo, StringFormat='Maybe later... (wait \{0\} sec)'}" Margin="0,0,8,0"></Button>
+						<Button Visibility="{Binding CanCloseTrialInfo, ConverterParameter=true, Converter={StaticResource BooleanToVisibilityConverter}}"
+							IsEnabled="false"
+							Content="{Binding ShowTrialTimeInfo, StringFormat=Maybe later... (wait \{0\} sec)}" Margin="0,0,8,0"/>
 
-                    <Button Visibility="{Binding CanCloseTrialInfo, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=false}"
-                            IsEnabled="true"
-                            Content="Maybe later..."
-                            Command="{Binding HideTrialMessageCommand}" Margin="0,0,8,0"></Button>
+						<Button Visibility="{Binding CanCloseTrialInfo, ConverterParameter=false, Converter={StaticResource BooleanToVisibilityConverter}}"
+							IsEnabled="true"
+							Content="Maybe later..."
+							Command="{Binding HideTrialMessageCommand}" Margin="0,0,8,0"/>
                     
-                </StackPanel>
-            </ScrollViewer>
-        </Border>
+					</StackPanel>
+				</ScrollViewer>
+			</Border>
 
-    </Grid>
+		</Grid>
+	</Grid>
 </phone:PhoneApplicationPage>

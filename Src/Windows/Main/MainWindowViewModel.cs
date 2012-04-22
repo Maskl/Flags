@@ -94,12 +94,18 @@ namespace Flags
         public RelayCommand ShowHelpWindowCommand { get; private set; }
         #if WINDOWS_PHONE
             public RelayCommand HideTrialMessageCommand { get; private set; }
-        #endif
+            public RelayCommand<string> HoldTileCommand { get; private set; }
 
+            public void ShowCountryDetailsOnHold(string tag)
+            {
+                _viewManager.Show(View.CountryDetails, tag);
+            }
+        #endif
 
         public RelayCommand<string> ModifyColorNumberCommand { get; private set; }
         public RelayCommand<string> ModifyShapeNumberCommand { get; private set; }
         public RelayCommand<string> ModifyAddNumberCommand { get; private set; }
+
 
         private void CreateRelayCommands(ViewManager viewManager)
         {
@@ -114,6 +120,7 @@ namespace Flags
         
             #if WINDOWS_PHONE
                 HideTrialMessageCommand = new RelayCommand(HideTrialMessage);
+                HoldTileCommand = new RelayCommand<string>(ShowCountryDetailsOnHold);
             #endif
         }
 
