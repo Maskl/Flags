@@ -16,7 +16,6 @@ namespace Flags
         {
             InitializeComponent();
             _viewModel = DataContext as MainWindowViewModel;
-            Messenger.Default.Register<Uri>(this, "NavigationRequest", uri => NavigationService.Navigate(uri));
         }
 
 
@@ -24,6 +23,7 @@ namespace Flags
         {
             _viewModel.OnNavigatedTo();
         }
+
         private void ApplicationBarIconButtonClick(object sender, EventArgs e)
         {
             _viewModel.ShowResults();

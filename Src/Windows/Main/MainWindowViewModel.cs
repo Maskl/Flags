@@ -63,9 +63,6 @@ namespace Flags
 
         #region Relay Commands
         private ViewManager _viewManager;
-        public RelayCommand ShowResultsWindowCommand { get; private set; }
-        public RelayCommand ShowCountriesListWindowCommand { get; private set; }
-        public RelayCommand ShowHelpWindowCommand { get; private set; }
 
         public RelayCommand<string> ModifyColorNumberCommand { get; private set; }
         public RelayCommand<string> ModifyShapeNumberCommand { get; private set; }
@@ -74,9 +71,6 @@ namespace Flags
         private void CreateRelayCommands(ViewManager viewManager)
         {
             _viewManager = viewManager;
-            ShowResultsWindowCommand = new RelayCommand(ShowResults);
-            ShowCountriesListWindowCommand = new RelayCommand(ShowCountriesList);
-            ShowHelpWindowCommand = new RelayCommand(() => _viewManager.Show(View.Help));
 
             ModifyColorNumberCommand = new RelayCommand<string>(ModifyColorNumber);
             ModifyShapeNumberCommand = new RelayCommand<string>(ModifyShapeNumber);
@@ -119,12 +113,6 @@ namespace Flags
         {
             ShowPleaseWaitInfo = true;
             _viewManager.Show(View.Results, ResultUri);
-        }
-
-        public void ShowCountriesList()
-        {
-            ShowPleaseWaitInfo = true;
-            _viewManager.Show(View.CountriesList, ResultUri);
         }
         
         private void RecalculateResultUri()

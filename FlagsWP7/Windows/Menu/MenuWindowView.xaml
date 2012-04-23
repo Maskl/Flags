@@ -1,0 +1,43 @@
+﻿<phone:PhoneApplicationPage x:Class="Flags.MenuWindowView"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            mc:Ignorable="d"
+                            d:DesignWidth="480"
+                            d:DesignHeight="800"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait"
+                            shell:SystemTray.IsVisible="False"
+                            DataContext="{Binding MenuWindowVm, Source={StaticResource Locator}}"
+                            Style="{StaticResource DefaultPageStyle}">
+
+	<Grid Margin="0" Background="#FF2A664C">
+		<Rectangle Fill="#331D1D99" Margin="61,200,79,134"/>
+        <Button Content="Find flag!"
+                Height="80"
+                Margin="88,270,110,0"
+                VerticalAlignment="Top"
+                Command="{Binding ShowMainWindowCommand}"/>
+        <Button Content="All flags"
+                Margin="88,350,110,370"
+                Command="{Binding ShowCountriesListWindowCommand}" />
+        <Button Content="Help"
+                Height="80"
+                Margin="88,0,110,290"
+                VerticalAlignment="Bottom"
+                Command="{Binding ShowHelpWindowCommand}" />
+        <Button Content="History and plans"
+                Height="80"
+                Margin="88,0,110,210"
+                VerticalAlignment="Bottom"
+                Command="{Binding ShowHistoryWindowCommand}" />
+	</Grid>
+
+</phone:PhoneApplicationPage>

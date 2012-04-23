@@ -3,11 +3,16 @@ using Microsoft.Phone.Tasks;
 
 namespace Flags
 {
-    public partial class HelpWindowView
+    public partial class HistoryWindowView
     {
-        public HelpWindowView()
+        public HistoryWindowView()
         {
             InitializeComponent();
+        }
+
+        private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
 
         private void RateButtonClick(object sender, System.Windows.RoutedEventArgs e)

@@ -18,10 +18,6 @@
                             shell:SystemTray.IsVisible="False"
                             DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource DefaultPageStyle}">
-
-    <toolkit:GestureService.GestureListener>
-        <toolkit:GestureListener Flick="GestureListenerFlick" />
-    </toolkit:GestureService.GestureListener>
     
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter300 x:Key="CountryTagToFlagUriConverter300" />

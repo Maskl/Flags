@@ -16,7 +16,9 @@ namespace Flags
                                 {View.Results, "/Windows/Results/ResultsWindowView.xaml?{0}"},
                                 {View.CountriesList, "/Windows/CountriesList/CountriesListWindowView.xaml"},
                                 {View.CountryDetails, "/Windows/CountryDetails/CountryDetailsWindowView.xaml?{0}"},
-                                {View.Help, "/Windows/Help/HelpWindowView.xaml"}
+                                {View.Help, "/Windows/Help/HelpWindowView.xaml"},
+                                {View.History, "/Windows/History/HistoryWindowView.xaml"},
+                                {View.Menu, "/Windows/Menu/MenuWindowView.xaml"}
                             };
         }
 

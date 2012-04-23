@@ -14,7 +14,7 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
-                            Style="{StaticResource TransitionPageStyle}">
+                            Style="{StaticResource DefaultPageStyle}">
 
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />
@@ -217,10 +217,6 @@
         <StackPanel Grid.Column="0"
                     Grid.Row="1">
 
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
-
             <Button BorderThickness="0"
                     Margin="-4,30,0,0"
                     Padding="0"
@@ -258,9 +254,6 @@
         	<TextBlock.Foreground>
         		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
         	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
         </TextBlock>
 
         <TextBlock Grid.Column="1"
@@ -271,9 +264,6 @@
         	<TextBlock.Foreground>
         		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
         	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
         </TextBlock>
 
     </Grid>

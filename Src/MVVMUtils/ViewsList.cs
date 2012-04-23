@@ -6,6 +6,8 @@
         Results,
         CountriesList,
         CountryDetails,
-        Help
+        Help,
+        History,
+        Menu
     }
 }

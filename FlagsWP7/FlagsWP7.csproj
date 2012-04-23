@@ -166,9 +166,13 @@
     <Compile Include="Windows\Help\HelpWindowView.xaml.cs">
       <DependentUpon>HelpWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\History\HistoryWindowView.cs" />
+    <Compile Include="Windows\History\HistoryWindowViewModel.cs" />
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Menu\MenuWindowView.cs" />
+    <Compile Include="Windows\Menu\MenuWindowViewModel.cs" />
     <Compile Include="Windows\Results\ResultsWindowView.xaml.cs">
       <DependentUpon>ResultsWindowView.xaml</DependentUpon>
     </Compile>
@@ -1994,7 +1998,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Windows\History\HistoryWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\Main\MainWindowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Menu\MenuWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
