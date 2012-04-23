@@ -340,7 +340,7 @@
                 Height="103"
                 Width="291">
             <Border.BorderBrush>
-                <SolidColorBrush Color="#FFE19F00" />
+                <SolidColorBrush Color="White" />
             </Border.BorderBrush>
             <Border.Background>
                 <SolidColorBrush Color="#FF003E71" />

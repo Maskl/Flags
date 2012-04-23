@@ -47,8 +47,12 @@ namespace Flags
         {
             get
             {
+           // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           //     if (HasItems)
+           //        return (SolidColorBrush)Application.Current.Resources["PhoneAccentBrush"];
+
                 if (HasItems)
-                    return (SolidColorBrush)Application.Current.Resources["PhoneAccentBrush"];
+                    return new SolidColorBrush(Color.FromArgb(0xff, 0xe1, 0x9f, 0x0));
                 
                 return (SolidColorBrush)Application.Current.Resources["PhoneChromeBrush"];
             }
