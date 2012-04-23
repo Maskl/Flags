@@ -18,26 +18,99 @@
                             DataContext="{Binding MenuWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource DefaultPageStyle}">
 
-	<Grid Margin="0" Background="#FF2A664C">
-		<Rectangle Fill="#331D1D99" Margin="61,200,79,134"/>
-        <Button Content="Find flag!"
-                Height="80"
-                Margin="88,270,110,0"
-                VerticalAlignment="Top"
-                Command="{Binding ShowMainWindowCommand}"/>
-        <Button Content="All flags"
-                Margin="88,350,110,370"
-                Command="{Binding ShowCountriesListWindowCommand}" />
-        <Button Content="Help"
-                Height="80"
-                Margin="88,0,110,290"
-                VerticalAlignment="Bottom"
-                Command="{Binding ShowHelpWindowCommand}" />
-        <Button Content="History and plans"
-                Height="80"
-                Margin="88,0,110,210"
-                VerticalAlignment="Bottom"
-                Command="{Binding ShowHistoryWindowCommand}" />
-	</Grid>
+    <!-- Main Grid -->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill"
+                        ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
+        </Grid.Background>
 
+        <StackPanel>
+            <!-- Title -->
+            <TextBlock HorizontalAlignment="Left"
+                       TextWrapping="Wrap"
+                       Text="flag helper"
+                       FontSize="60"
+                       Width="454"
+                       Margin="26,26,0,13" />
+
+            <ScrollViewer Margin="0" Height="680">
+                <StackPanel Margin="26,13">
+                    <StackPanel Background="#7F000000"
+                                Margin="0,0,0,13">
+                        <Button Command="{Binding ShowMainWindowCommand}"
+                                BorderThickness="0">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left" Width="380">
+                                <Image Source="/FlagsWP7;component/Media/Icons/IconSearch.png"
+                                       Width="48"
+                                       Height="48" />
+                                <TextBlock TextWrapping="Wrap"
+                                           Text="find flag"
+                                           VerticalAlignment="Center"
+                                           FontSize="48"
+                                           Margin="26,0,0,0"
+                                           FontFamily="Segoe WP" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Background="#7F000000"
+                                Margin="0,0,0,13">
+                        <Button Command="{Binding ShowCountriesListWindowCommand}"
+                                BorderThickness="0">
+                            <StackPanel Orientation="Horizontal" Height="64" Width="380">
+                                <Image Source="/FlagsWP7;component/Media/Icons/IconList.png"
+                                       Width="48"
+                                       Height="48" />
+                                <TextBlock TextWrapping="Wrap"
+                                           Text="flags list"
+                                           VerticalAlignment="Center"
+                                           FontSize="48"
+                                           Margin="26,0,0,0"
+                                           FontFamily="Segoe WP" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Background="#7F000000"
+                                Margin="0,0,0,13">
+                        <Button Command="{Binding ShowHelpWindowCommand}"
+                                BorderThickness="0">
+                            <StackPanel Orientation="Horizontal" Height="64" Width="380">
+                                <Image Source="/FlagsWP7;component/Media/Icons/IconHelp.png"
+                                       Width="48"
+                                       Height="48" />
+                                <TextBlock TextWrapping="Wrap"
+                                           Text="help"
+                                           VerticalAlignment="Center"
+                                           FontSize="48"
+                                           Margin="26,0,0,0"
+                                           FontFamily="Segoe WP" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Background="#7F000000"
+                                Margin="0,0,0,13">
+                        <Button Command="{Binding ShowHistoryWindowCommand}"
+                                BorderThickness="0">
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left" Width="380">
+                                <Image Source="/FlagsWP7;component/Media/Icons/IconHistory.png"
+                                       Width="48"
+                                       Height="48" />
+                                <TextBlock TextWrapping="Wrap"
+                                           Text="history"
+                                           VerticalAlignment="Center"
+                                           FontSize="48"
+                                           Margin="26,0,0,0"
+                                           FontFamily="Segoe WP" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
 </phone:PhoneApplicationPage>

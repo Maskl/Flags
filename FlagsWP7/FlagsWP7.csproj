@@ -171,7 +171,7 @@
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Menu\MenuWindowView.cs" />
+    <Compile Include="Windows\Menu\MenuWindowView.xaml.cs" />
     <Compile Include="Windows\Menu\MenuWindowViewModel.cs" />
     <Compile Include="Windows\Results\ResultsWindowView.xaml.cs">
       <DependentUpon>ResultsWindowView.xaml</DependentUpon>
@@ -1964,9 +1964,6 @@
     <Resource Include="Media\Icons\IconSearch.png" />
     <Resource Include="Background.png" />
     <Resource Include="ApplicationIcon.png" />
-    <Content Include="icons\appbar.feature.search.rest.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="Media\Back\back1.jpg" />
     <Resource Include="Media\Icons\wp7shape1.png" />
     <Resource Include="Media\Icons\wp7shape2.png" />
@@ -1989,6 +1986,8 @@
     <Resource Include="Media\Icons\wp7col5.png" />
     <Resource Include="Media\Icons\wp7col6.png" />
     <Resource Include="Media\Icons\wp7col7.png" />
+    <Resource Include="Media\Icons\IconHistory.png" />
+    <Resource Include="Media\Icons\appbar.feature.search.rest.png" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

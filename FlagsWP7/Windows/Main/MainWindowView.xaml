@@ -25,9 +25,6 @@
         <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
                                            TrueValue="#e19f00"
                                            FalseValue="#003e71" />
-        <!--<Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
-                                                       TrueValue="{StaticResource PhoneAccentBrush}"
-                                                       FalseValue="DarkGray" />-->
     </phone:PhoneApplicationPage.Resources>
 
 
@@ -359,7 +356,7 @@
         <shell:ApplicationBar IsVisible="True" Opacity="0.5">
             <shell:ApplicationBarIconButton Click="ApplicationBarIconButtonClick"
                                             Text="Find!"
-                                            IconUri="/icons/appbar.feature.search.rest.png" />
+                                            IconUri="/Media/Icons/appbar.feature.search.rest.png" />
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

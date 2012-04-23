@@ -41,7 +41,7 @@
                     <StackPanel Width="388" Margin="0,13">
                         <TextBlock TextWrapping="Wrap"
                                    Margin="0"
-                                   FontSize="21.333"><Run Text="This application helps you to recognize flags of all countries." /><LineBreak /><Run /><LineBreak /><Run Text="In &quot;find flag&quot; mode y" /><Run Text="ou just should select" /><Run Text=" a few specific things which you can see on flag you can't recognize" /><Run Text=" (colors, flag s" /><Run Text="h" /><Run Text="ape etc.)" /><Run Text=" and tap the find button." /><LineBreak /><Run /><LineBreak /><Run Text="In &quot;flag list&quot; mode" /><Run Text=" there are lists of all flags sorted alphabetically and by continent." /><LineBreak /><Run /><LineBreak /><Run Text="Have fun :)" /></TextBlock>
+                                   FontSize="21.333"><Run Text="This application helps you to recognize flags of all countries." /><LineBreak /><Run /><LineBreak /><Run Text="In &quot;find flag&quot; mode y" /><Run Text="ou just should select" /><Run Text=" a few specific things which you can see on flag you can't recognize" /><Run Text=" (colors, flag s" /><Run Text="h" /><Run Text="ape etc.)" /><Run Text=" and tap the find button." /><LineBreak /><Run /><LineBreak /><Run Text="In &quot;flags list&quot; mode" /><Run Text=" there are lists of all flags sorted alphabetically and by continent." /><LineBreak /><Run /><LineBreak /><Run Text="Have fun :)" /></TextBlock>
                     </StackPanel>
                 </ScrollViewer>
             </StackPanel>
