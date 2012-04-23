@@ -16,12 +16,11 @@
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
-                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}"
-                            Style="{StaticResource TransitionPageStyle}">
+                            DataContext="{Binding ResultsWindowVm, Source={StaticResource Locator}}">
 
-    <toolkit:GestureService.GestureListener>
-        <toolkit:GestureListener Flick="GestureListenerFlick" />
-    </toolkit:GestureService.GestureListener>
+    <phone:PhoneApplicationPage.Style>
+        <StaticResource ResourceKey="DefaultPageStyle" />
+    </phone:PhoneApplicationPage.Style>
     
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter100 x:Key="CountryTagToFlagUriConverter100" />

@@ -22,10 +22,6 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
 
-                <!-- Styles -->
-                <ResourceDictionary Source="../Styles/HubTileStyle.xaml" />
-                <ResourceDictionary Source="../Styles/DefaultPageStyle.xaml" />
-
                 <!-- Converters -->
                 <ResourceDictionary>
                     <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
@@ -282,7 +278,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAP like">
+                                     Title="red">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -294,7 +290,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="USA like">
+                                     Title="blue">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -306,7 +302,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="CZE like">
+                                     Title="yellow">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -318,7 +314,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BLR like">
+                                     Title="green">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -330,7 +326,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="ENG like">
+                                     Title="white">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -342,7 +338,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAM like">
+                                     Title="black">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -354,7 +350,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="TRI/ like">
+                                     Title="other">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -362,19 +358,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
-
-                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
-                                     Background="{Binding ColorNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BHU\ like">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Tap">
-                                <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
-                                                    CommandParameter="7" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
-
+                    
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
