@@ -32,7 +32,7 @@
                     <ScrollViewer>
                         <TextBlock TextWrapping="Wrap"
                                    FontSize="21.333"
-                                   Margin="13"><Run Text="version 1.0" /><LineBreak /><Run Text="Better algorithm, updates in interface." /><LineBreak /><Run /><LineBreak /><Run Text="version " /><Run Text="0" /><Run Text="." /><Run Text="9" /><LineBreak /><Run Text="Completly new interface" /><Run Text="." /><LineBreak /><Run /><LineBreak /><Run Text="version 0." /><Run Text="8" /><LineBreak /><Run Text="Changed application name" /><Run Text="." /><Run Text=" " /><Run Text="Only WP7 version." /><LineBreak /><Run /></TextBlock>
+                                   Margin="13"><Run Text="version 1.0"/><LineBreak/><Run Text="Better algorithm, updates in interface."/><LineBreak/><Run/><LineBreak/><Run Text="version "/><Run Text="0"/><Run Text="."/><Run Text="9"/><LineBreak/><Run Text="Completely new interface"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run Text="version 0."/><Run Text="8"/><LineBreak/><Run Text="Changed application name"/><Run Text="."/><Run Text=" "/><Run Text="Only WP7 version."/><Run Text=" New history."/><LineBreak/><Run/></TextBlock>
                     </ScrollViewer>
                 </StackPanel>
             </controls:PanoramaItem>

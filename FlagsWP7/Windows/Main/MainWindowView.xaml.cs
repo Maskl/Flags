@@ -26,6 +26,13 @@ namespace Flags
 
         private void ApplicationBarIconButtonClick(object sender, EventArgs e)
         {
+            if (_viewModel.ColorNumber == 0 && _viewModel.ShapeNumber == 0 && _viewModel.AddNumber == 0)
+            {
+                MessageBox.Show(
+                    "You must specify at least one information about flag (color, shape, additional element).");
+                return;
+            }
+
             _viewModel.ShowResults();
         }
     }

@@ -21,7 +21,7 @@
     <!-- Main Grid -->
     <Grid>
         <Grid.Background>
-            <ImageBrush Stretch="Fill"
+            <ImageBrush
                         ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
         </Grid.Background>
 
