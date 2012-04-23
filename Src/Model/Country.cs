@@ -8,6 +8,12 @@
         public string Continent { get; set; }
         public char FirstLetter { get; set; }
 
+        public string ShortDescription
+        {
+            get { return Continent + "\n" + Name + "\n" + Capital; }
+            private set { throw new System.NotImplementedException(); }
+        }
+
         public override string ToString()
         {
             return "(" + Tag + ") " + Name + " - " + Continent + " - " + Capital;

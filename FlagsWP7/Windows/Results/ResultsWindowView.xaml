@@ -6,7 +6,6 @@
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             xmlns:Flags="clr-namespace:Flags"
-                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
                             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
                             xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WP71"
                             x:Class="Flags.ResultsWindowView"
@@ -28,129 +27,44 @@
     </phone:PhoneApplicationPage.Resources>
 
     <!-- Main Grid -->
-    <Grid Background="#FF9D5B0A">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <Grid>
+    	<Grid.Background>
+    		<ImageBrush Stretch="Fill" ImageSource="/FlagsWP7;component/Media/Back/back1.jpg"/>
+    	</Grid.Background>
 
-        <!-- Shapes -->
-        <ListBox x:Name="ListboxWithFlags"
-                 Width="420"
-                 ItemsSource="{Binding Countries}">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <toolkit:WrapPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
+        <StackPanel>
+            
+            <!-- Page Title -->
+        	<TextBlock Height="76" Margin="13" TextWrapping="Wrap" Text="results" FontSize="60"/>
+            
+            <!-- Main Listbox -->
+        	<ListBox x:Name="ListboxWithFlags"
+        		ItemsSource="{Binding Countries}" Height="774">
+        		<ListBox.ItemsPanel>
+        			<ItemsPanelTemplate>
+        				<toolkit:WrapPanel Orientation="Horizontal" />
+        			</ItemsPanelTemplate>
+        		</ListBox.ItemsPanel>
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"
-                                     Message="{Binding Continent, StringFormat=' (\{0\})'}"
-                                     Title="{Binding Name}"
-                                     Tap="HubTile_OnTap">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Hold">
-                                <cmd:EventToCommand Command="{Binding Path=DataContext.ShowInfoAboutCountryCommand, ElementName=ListboxWithFlags}"
-                                                    CommandParameter="{Binding Tag}" />
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </toolkit:HubTile>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-    </Grid>
-
-    <!--<Grid Margin="13">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="65*" />
-            <ColumnDefinition Width="385*" />
-        </Grid.ColumnDefinitions>
-
-        <Grid Grid.Row="1"
-              Grid.Column="1">
-
-            <ListBox ItemsSource="{Binding Countries}"
-                     SelectedItem="{Binding SelectedCountry, Mode=TwoWay}">
-
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="120" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-
-                            <Border BorderThickness="1"
-                                    BorderBrush="{StaticResource PhoneBorderBrush}"
-                                    Margin="13">
-                                <Image Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}" />
-                            </Border>
-
-                            <StackPanel Grid.Column="1"
-                                        VerticalAlignment="Center">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock TextWrapping="Wrap"
-                                               Text="{Binding Name}"
-                                               FontWeight="Bold"
-                                               IsHitTestVisible="True" />
-                                    <TextBlock TextWrapping="Wrap"
-                                               Text="{Binding Continent, StringFormat=' (\{0\})'}"
-                                               IsHitTestVisible="True" />
-                                </StackPanel>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </Grid>
-
-        <StackPanel Grid.Column="0"
-                    Grid.Row="1">
-            <Button BorderThickness="0"
-                    Margin="-4,30,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Click="BackIconButtonClick">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconBack.png" />
-                </Button.OpacityMask>
-            </Button>
-
-            <Button BorderThickness="0"
-                    Margin="-4,13,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Command="{Binding ShowHelpWindowCommand}">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconHelp.png" />
-                </Button.OpacityMask>
-            </Button>
+        		<ListBox.ItemTemplate>
+        			<DataTemplate>
+        				<toolkit:HubTile Style="{StaticResource HubTileExStyle}"
+        					Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"
+                            Message="{Binding ShortDescription}"
+                            Notification="HOLD TO MORE..."
+        					Title="{Binding Name}"
+                            Background="#003e71"
+        					Tap="HubTile_OnTap">
+        					<i:Interaction.Triggers>
+        						<i:EventTrigger EventName="Hold">
+        							<cmd:EventToCommand Command="{Binding DataContext.ShowInfoAboutCountryCommand, ElementName=ListboxWithFlags}"
+        								CommandParameter="{Binding Tag}" />
+        						</i:EventTrigger>
+        					</i:Interaction.Triggers>
+        				</toolkit:HubTile>
+        			</DataTemplate>
+        		</ListBox.ItemTemplate>
+        	</ListBox>
         </StackPanel>
-        
-        <TextBlock Grid.Column="1" Margin="8,8,8,0" TextWrapping="Wrap" Text="flag recognizer" FontSize="16" Height="24" VerticalAlignment="Top">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}"/>
-        	</TextBlock.Foreground>
-        </TextBlock>
-        
-        <TextBlock Grid.Column="1" Margin="8,32,8,0" TextWrapping="Wrap" Text="RESULTS" FontSize="29.333">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>
-        	</TextBlock.Foreground>
-        </TextBlock>
-        
-    </Grid>-->
+    </Grid>
 </phone:PhoneApplicationPage>
