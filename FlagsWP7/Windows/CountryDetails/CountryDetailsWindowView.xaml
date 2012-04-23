@@ -29,77 +29,26 @@
     
     <Grid Margin="13">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="65*" />
-            <ColumnDefinition Width="385*" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,0,-32,-21">
 
-        <Grid Grid.Row="1"
-              Grid.Column="1">
-            <StackPanel>
-
-                <Border BorderThickness="1"
-                        BorderBrush="{StaticResource PhoneBorderBrush}">
-                    <Image Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" />
-                </Border>
-                <TextBlock HorizontalAlignment="Left"
-            		TextWrapping="Wrap"
-            		Text="{Binding SelectedCountry.Name}"
-            		FontSize="48"
-            		FontWeight="Bold" />
-            	<TextBlock HorizontalAlignment="Left"
-            		TextWrapping="Wrap"
-            		Text="{Binding Description}" Height="96" />
-            </StackPanel>
-        </Grid>
-
-
-        <StackPanel Grid.Column="0"
-                    Grid.Row="1">
-            <Button BorderThickness="0"
-                    Margin="-4,30,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Click="BackIconButtonClick">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconBack.png" />
-                </Button.OpacityMask>
-            </Button>
+        	<Border BorderThickness="1"
+        		BorderBrush="{StaticResource PhoneBorderBrush}" Height="330">
+        		<Image Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" Margin="-1" />
+        	</Border>
+        	<TextBlock HorizontalAlignment="Left"
+        		TextWrapping="Wrap"
+        		Text="{Binding SelectedCountry.Name}"
+        		FontSize="64"
+        		FontWeight="Bold" Width="454" />
+        	<TextBlock HorizontalAlignment="Left"
+        		TextWrapping="Wrap"
+        		Text="{Binding Description}" Height="293" FontSize="29.333" Width="454" />
         </StackPanel>
-        
-        <TextBlock Grid.Column="1"
-                   Margin="8,8,8,0"
-                   TextWrapping="Wrap"
-                   Text="flag recognizer"
-                   FontSize="16"
-                   Height="24"
-                   VerticalAlignment="Top">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
-        	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
-        </TextBlock>
-
-        <TextBlock Grid.Column="1"
-                   Margin="8,32,8,0"
-                   TextWrapping="Wrap"
-                   Text="COUNTRY DETAILS"
-                   FontSize="29.333">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-        	</TextBlock.Foreground>
-            <toolkit:GestureService.GestureListener>
-                <toolkit:GestureListener Flick="GestureListenerFlick" />
-            </toolkit:GestureService.GestureListener>
-        </TextBlock>
 
     </Grid>
 
