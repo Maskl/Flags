@@ -10,10 +10,12 @@
              xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
 
     <Application.Resources>
-        <mvvmutils:ViewModelLocator x:Key="Locator"
-                                    d:IsDataSource="True" />
 
-        <Style x:Key="TransitionPageStyle"
+                    <mvvmutils:ViewModelLocator x:Key="Locator"
+                                                d:IsDataSource="True" />
+    
+
+        <!--<Style x:Key="TransitionPageStyle"
                TargetType="phone:PhoneApplicationPage">
             <Setter Property="toolkit:TransitionService.NavigationInTransition">
                 <Setter.Value>
@@ -45,7 +47,7 @@
                     </toolkit:NavigationOutTransition>
                 </Setter.Value>
             </Setter>
-        </Style>
+        </Style>-->
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>

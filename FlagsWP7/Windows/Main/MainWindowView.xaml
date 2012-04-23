@@ -17,359 +17,42 @@
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False">
 
+    <!-- Resources -->
     <phone:PhoneApplicationPage.Resources>
-        <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-        <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
-                                           TrueValue="{StaticResource PhoneAccentBrush}"
-                                           FalseValue="DarkGray" />
-        <Style x:Key="HubTileStyle0"
-               TargetType="toolkit:HubTile">
-            <Setter Property="Height"
-                    Value="173" />
-            <Setter Property="Width"
-                    Value="173" />
-            <Setter Property="Background"
-                    Value="{StaticResource PhoneAccentBrush}" />
-            <Setter Property="Foreground"
-                    Value="#FFFFFFFF" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="toolkit:HubTile">
-                        <StackPanel x:Name="Viewport"
-                                    Height="173"
-                                    Width="173">
-                            <StackPanel.Resources>
-                                <CubicEase x:Key="HubTileEaseOut"
-                                           EasingMode="EaseOut" />
-                            </StackPanel.Resources>
-                            <StackPanel.Projection>
-                                <PlaneProjection x:Name="ViewportProjection"
-                                                 CenterOfRotationY="0.25" />
-                            </StackPanel.Projection>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="ImageStates">
-                                    <VisualStateGroup.Transitions>
-                                        <VisualTransition x:Name="ExpandedToSemiexpanded"
-                                                          From="Expanded"
-                                                          GeneratedDuration="0:0:0.85"
-                                                          To="Semiexpanded">
-                                            <Storyboard>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                                               Storyboard.TargetName="TitlePanel">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="-173.0" />
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.85"
-                                                                          Value="-79.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
-                                                                               Storyboard.TargetName="ViewportProjection">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="0.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="MessageBlock">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition>
-                                        <VisualTransition x:Name="SemiexpandedToCollapsed"
-                                                          From="Semiexpanded"
-                                                          GeneratedDuration="0:0:0.85"
-                                                          To="Collapsed">
-                                            <Storyboard>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                                               Storyboard.TargetName="TitlePanel">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="-79.0" />
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.85"
-                                                                          Value="0.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="MessageBlock">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition>
-                                        <VisualTransition x:Name="CollapsedToExpanded"
-                                                          From="Collapsed"
-                                                          GeneratedDuration="0:0:0.85"
-                                                          To="Expanded">
-                                            <Storyboard>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                                               Storyboard.TargetName="TitlePanel">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="0.0" />
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.85"
-                                                                          Value="-173.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="MessageBlock">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition>
-                                        <VisualTransition x:Name="ExpandedToFlipped"
-                                                          From="Expanded"
-                                                          GeneratedDuration="0:0:0.85"
-                                                          To="Flipped">
-                                            <Storyboard>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                                               Storyboard.TargetName="TitlePanel">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="-173.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="Image">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="ImageText">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="MessageBlock">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Visible" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
-                                                                               Storyboard.TargetName="ViewportProjection">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="0.0" />
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.85"
-                                                                          Value="180.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition>
-                                        <VisualTransition x:Name="FlippedToExpanded"
-                                                          From="Flipped"
-                                                          GeneratedDuration="0:0:0.85"
-                                                          To="Expanded">
-                                            <Storyboard>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                                               Storyboard.TargetName="TitlePanel">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="-173.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="Image">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Visible" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="ImageText">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Visible" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                               Storyboard.TargetName="MessageBlock">
-                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.185"
-                                                                            Value="Collapsed" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="RotationX"
-                                                                               Storyboard.TargetName="ViewportProjection">
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.0"
-                                                                          Value="180.0" />
-                                                    <EasingDoubleKeyFrame EasingFunction="{StaticResource HubTileEaseOut}"
-                                                                          KeyTime="0:0:0.85"
-                                                                          Value="360.0" />
-                                                </DoubleAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition>
-                                    </VisualStateGroup.Transitions>
-                                    <VisualState x:Name="Expanded">
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0"
-                                                             To="-173.0"
-                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                             Storyboard.TargetName="TitlePanel" />
-                                            <DoubleAnimation Duration="0"
-                                                             To="0.0"
-                                                             Storyboard.TargetProperty="RotationX"
-                                                             Storyboard.TargetName="ViewportProjection" />
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="Image">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Visible" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="ImageText">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Visible" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="MessageBlock">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Collapsed" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Semiexpanded">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="MessageBlock">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Collapsed" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <DoubleAnimation Duration="0"
-                                                             To="-79.0"
-                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                             Storyboard.TargetName="TitlePanel" />
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Collapsed" />
-                                    <VisualState x:Name="Flipped">
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0"
-                                                             To="-173.0"
-                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)"
-                                                             Storyboard.TargetName="TitlePanel" />
-                                            <DoubleAnimation Duration="0"
-                                                             To="180.0"
-                                                             Storyboard.TargetProperty="RotationX"
-                                                             Storyboard.TargetName="ViewportProjection" />
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="Image">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Collapsed" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="ImageText">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Collapsed" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                                           Storyboard.TargetName="MessageBlock">
-                                                <DiscreteObjectKeyFrame KeyTime="0:0:0"
-                                                                        Value="Visible" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Grid x:Name="TitlePanel"
-                                  Height="346"
-                                  RenderTransformOrigin="0.5,0.5"
-                                  Width="173">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.RenderTransform>
-                                    <CompositeTransform />
-                                </Grid.RenderTransform>
-                                <Border Background="{TemplateBinding Background}"
-                                        Grid.Row="0">
-                                    <TextBlock Foreground="{TemplateBinding Foreground}"
-                                               FontSize="41"
-                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                                               LineStackingStrategy="BlockLineHeight"
-                                               LineHeight="39"
-                                               Margin="10,0,0,6"
-                                               TextWrapping="Wrap"
-                                               Text="{TemplateBinding Title}"
-                                               VerticalAlignment="Bottom" />
-                                </Border>
-                                <Grid x:Name="BackPanel"
-                                      Background="{TemplateBinding Background}"
-                                      Height="173"
-                                      Grid.Row="1"
-                                      Width="173">
-                                    <Grid.Projection>
-                                        <PlaneProjection CenterOfRotationY="0.5"
-                                                         RotationX="180" />
-                                    </Grid.Projection>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <TextBlock x:Name="NotificationBlock"
-                                               Foreground="{TemplateBinding Foreground}"
-                                               FontSize="{StaticResource PhoneFontSizeLarge}"
-                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                                               LineStackingStrategy="BlockLineHeight"
-                                               LineHeight="32"
-                                               Margin="8,8,0,6"
-                                               Grid.Row="0"
-                                               TextWrapping="NoWrap"
-                                               Text="{TemplateBinding Notification}" />
-                                    <TextBlock x:Name="MessageBlock"
-                                               Foreground="{TemplateBinding Foreground}"
-                                               FontSize="{StaticResource PhoneFontSizeNormal}"
-                                               FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                                               LineStackingStrategy="BlockLineHeight"
-                                               LineHeight="23.333"
-                                               Margin="10,10,10,6"
-                                               Grid.Row="0"
-                                               TextWrapping="Wrap"
-                                               Text="{TemplateBinding Message}" />
-                                </Grid>
-                                <Image x:Name="Image"
-                                       Grid.Row="1"
-                                       Source="{TemplateBinding Source}"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       Width="147" />
-                                <!--Stretch="UniformToFill"
-                                       Height="173"
-                                       Width="173"-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
 
-                                <TextBlock x:Name="ImageText"
-                                           Foreground="{TemplateBinding Foreground}"
-                                           FontSize="{StaticResource PhoneFontSizeNormal}"
-                                           FontFamily="{StaticResource PhoneFontFamilyNormal}"
-                                           LineStackingStrategy="BlockLineHeight"
-                                           LineHeight="23.333"
-                                           Margin="10,10,10,6"
-                                           Grid.Row="1"
-                                           TextWrapping="Wrap"
-                                           VerticalAlignment="Bottom"
-                                           Text="{TemplateBinding Title}" />
-                            </Grid>
-                        </StackPanel>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+                <!-- Styles -->
+                <ResourceDictionary Source="../Styles/HubTileStyle.xaml" />
+                <ResourceDictionary Source="../Styles/DefaultPageStyle.xaml" />
+
+                <!-- Converters -->
+                <ResourceDictionary>
+                    <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                </ResourceDictionary>
+
+                <ResourceDictionary>
+                    <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
+                                                       TrueValue="{StaticResource PhoneAccentBrush}"
+                                                       FalseValue="DarkGray" />
+                </ResourceDictionary>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </phone:PhoneApplicationPage.Resources>
 
-    <phone:PhoneApplicationPage.FontFamily>
-        <StaticResource ResourceKey="PhoneFontFamilyNormal" />
-    </phone:PhoneApplicationPage.FontFamily>
-    <phone:PhoneApplicationPage.FontSize>
-        <StaticResource ResourceKey="PhoneFontSizeNormal" />
-    </phone:PhoneApplicationPage.FontSize>
-    <phone:PhoneApplicationPage.Foreground>
-        <StaticResource ResourceKey="PhoneForegroundBrush" />
-    </phone:PhoneApplicationPage.Foreground>
+    <!-- Data context -->
     <phone:PhoneApplicationPage.DataContext>
         <Binding Path="MainWindowVm"
                  Source="{StaticResource Locator}" />
     </phone:PhoneApplicationPage.DataContext>
+
+    <!-- Phone App Page Style -->
     <phone:PhoneApplicationPage.Style>
-        <StaticResource ResourceKey="TransitionPageStyle" />
+        <StaticResource ResourceKey="DefaultPageStyle" />
     </phone:PhoneApplicationPage.Style>
 
-    <toolkit:GestureService.GestureListener>
-        <toolkit:GestureListener Flick="GestureListenerFlick" />
-    </toolkit:GestureService.GestureListener>
-
+    <!-- Main Grid -->
     <Grid Background="#FF9D5B0A">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -378,6 +61,8 @@
         <controls:Panorama Height="799"
                            Title="flag helper"
                            Width="480">
+
+            <!-- Shapes -->
             <controls:PanoramaItem Header="shape">
                 <ListBox Width="420">
                     <ListBox.ItemsPanel>
@@ -386,12 +71,10 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="FRA like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="FRA like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -400,12 +83,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="MLT like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="MLT like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -414,12 +95,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="GER like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="GER like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -428,12 +107,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="POL like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="POL like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -442,12 +119,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="URU like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="URU like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -456,12 +131,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="LYB like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="LYB like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -473,15 +146,12 @@
 
 
 
-                    <!--<toolkit:HubTile Style="{StaticResource HubTileStyle0}"
-                                             Source="/FlagsWP7;component/Background.png"
+                    <!-- <toolkit:HubTile Style="{StaticResource HubTileExStyle}" HubTileExStyle        Source="/FlagsWP7;component/Background.png"
                                              Message="USA                                       North America                                      Washington                                                                            HOLD TO SHOW DETAILS."
-                                             Margin="13, 13, 0, 0"
-                                             x:Name="hubTile1"
+                                                     x:Name="hubTile1"
                                              Title="USA"
-                                             IsFrozen="True"
-                                             Tap="HubTile_OnTap">
-                                <i:Interaction.Triggers>
+                                                     Tap="HubTile_OnTap">
+                                                    <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Hold">
                                         <cmd:EventToCommand Command="{Binding HoldTileCommand}"
                                                             CommandParameter="us" />
@@ -493,8 +163,7 @@
                 </ListBox>
             </controls:PanoramaItem>
 
-
-
+            <!-- Additional elements -->
             <controls:PanoramaItem Header="additional">
                 <ListBox Width="420">
                     <ListBox.ItemsPanel>
@@ -503,12 +172,10 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAP like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="JAP like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -517,12 +184,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="USA like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="USA like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -531,12 +196,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="CZE like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="CZE like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -545,12 +208,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BLR like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="BLR like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -559,12 +220,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="ENG like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="ENG like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -573,12 +232,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAM like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="JAM like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -587,12 +244,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="TRI/ like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="TRI/ like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -601,12 +256,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BHU\ like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="BHU\ like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -617,8 +270,7 @@
                 </ListBox>
             </controls:PanoramaItem>
 
-
-
+            <!-- Colors -->
             <controls:PanoramaItem Header="colors">
                 <ListBox Width="420">
                     <ListBox.ItemsPanel>
@@ -627,12 +279,10 @@
                         </ItemsPanelTemplate>
                     </ListBox.ItemsPanel>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAP like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="JAP like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -641,12 +291,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="USA like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="USA like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -655,12 +303,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="CZE like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="CZE like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -669,12 +315,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BLR like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="BLR like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -683,12 +327,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="ENG like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="ENG like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -697,12 +339,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAM like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="JAM like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -711,12 +351,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="TRI/ like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="TRI/ like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -725,12 +363,10 @@
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
 
-                    <toolkit:HubTile Style="{StaticResource HubTileStyle0}"
+                    <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Background.png"
                                      Background="{Binding ColorNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BHU\ like"
-                                     Margin="13, 13, 0, 0"
-                                     IsFrozen="True">
+                                     Title="BHU\ like">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -743,6 +379,7 @@
             </controls:PanoramaItem>
         </controls:Panorama>
 
+        <!-- Please wait message -->
         <Border x:Name="PleaseWaitMessageBorder"
                 Visibility="{Binding ShowPleaseWaitInfo, Converter={StaticResource BooleanToVisibilityConverter}}"
                 BorderThickness="3"
@@ -767,7 +404,7 @@
         </Border>
     </Grid>
 
-
+    <!-- Application bar -->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True">
             <shell:ApplicationBarIconButton Click="ApplicationBarIconButtonClick"
