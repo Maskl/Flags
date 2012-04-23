@@ -12,7 +12,7 @@
                             x:Class="Flags.MainWindowView"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
-                            d:DesignHeight="728"
+                            d:DesignHeight="800"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
@@ -23,21 +23,28 @@
     <phone:PhoneApplicationPage.Resources>
         <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
+                                           TrueValue="#e19f00"
+                                           FalseValue="#003e71" />
+        <!--<Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
                                                        TrueValue="{StaticResource PhoneAccentBrush}"
-                                                       FalseValue="DarkGray" />
+                                                       FalseValue="DarkGray" />-->
     </phone:PhoneApplicationPage.Resources>
 
+
     <!-- Main Grid -->
-    <Grid Background="#FF9D5B0A">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <controls:Panorama Title="find flag">
-
+        <controls:Panorama>
+            <controls:Panorama.Background>
+                <ImageBrush Stretch="Fill"
+                            ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
+            </controls:Panorama.Background>
             <!-- Shapes -->
             <controls:PanoramaItem Header="shape">
-                <ListBox Width="420">
+                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -45,9 +52,9 @@
                     </ListBox.ItemsPanel>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape1.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="FRA like">
+                                     Title="vertical tricolor">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -57,9 +64,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape2.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="MLT like">
+                                     Title="vertical bicolor">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -69,9 +76,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape3.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="GER like">
+                                     Title="horiz. tricolor">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -81,9 +88,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape4.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="POL like">
+                                     Title="horiz. bicolor">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -93,9 +100,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape5.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="URU like">
+                                     Title="stripes">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -105,9 +112,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7shape6.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="LYB like">
+                                     Title="plain">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -115,30 +122,12 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
-
-
-
-
-                    <!-- <toolkit:HubTile Style="{StaticResource HubTileExStyle}" HubTileExStyle        Source="/FlagsWP7;component/Background.png"
-                                             Message="USA                                       North America                                      Washington                                                                            HOLD TO SHOW DETAILS."
-                                                     x:Name="hubTile1"
-                                             Title="USA"
-                                                     Tap="HubTile_OnTap">
-                                                    <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Hold">
-                                        <cmd:EventToCommand Command="{Binding HoldTileCommand}"
-                                                            CommandParameter="us" />
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </toolkit:HubTile>-->
-
-
                 </ListBox>
             </controls:PanoramaItem>
 
             <!-- Additional elements -->
             <controls:PanoramaItem Header="additional">
-                <ListBox Width="420">
+                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -146,9 +135,9 @@
                     </ListBox.ItemsPanel>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add1.png"
                                      Background="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAP like">
+                                     Title="something">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -158,9 +147,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add2.png"
                                      Background="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="USA like">
+                                     Title="canton">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -170,9 +159,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add3.png"
                                      Background="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="CZE like">
+                                     Title="triangle">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -182,9 +171,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add4.png"
                                      Background="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BLR like">
+                                     Title="stripe">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -194,9 +183,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add5.png"
                                      Background="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="ENG like">
+                                     Title="cross">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -206,9 +195,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add6.png"
                                      Background="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="JAM like">
+                                     Title="saltire">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -218,9 +207,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add7.png"
                                      Background="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="TRI/ like">
+                                     Title="slash">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -230,9 +219,9 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7add8.png"
                                      Background="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="BHU\ like">
+                                     Title="backslash">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -245,7 +234,7 @@
 
             <!-- Colors -->
             <controls:PanoramaItem Header="colors">
-                <ListBox Width="420">
+                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -253,7 +242,7 @@
                     </ListBox.ItemsPanel>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col1.png"
                                      Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="red">
                         <i:Interaction.Triggers>
@@ -265,7 +254,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col2.png"
                                      Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="blue">
                         <i:Interaction.Triggers>
@@ -277,7 +266,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col3.png"
                                      Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="yellow">
                         <i:Interaction.Triggers>
@@ -289,7 +278,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col4.png"
                                      Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="green">
                         <i:Interaction.Triggers>
@@ -301,7 +290,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col5.png"
                                      Background="{Binding ColorNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="white">
                         <i:Interaction.Triggers>
@@ -313,7 +302,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col6.png"
                                      Background="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="black">
                         <i:Interaction.Triggers>
@@ -325,7 +314,7 @@
                     </toolkit:HubTile>
 
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
-                                     Source="/FlagsWP7;component/Background.png"
+                                     Source="/FlagsWP7;component/Media/Icons/wp7col7.png"
                                      Background="{Binding ColorNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
                                      Title="other">
                         <i:Interaction.Triggers>
@@ -335,7 +324,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </toolkit:HubTile>
-                    
+
                 </ListBox>
             </controls:PanoramaItem>
         </controls:Panorama>
@@ -351,10 +340,10 @@
                 Height="103"
                 Width="291">
             <Border.BorderBrush>
-                <SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
+                <SolidColorBrush Color="#FFE19F00" />
             </Border.BorderBrush>
             <Border.Background>
-                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
+                <SolidColorBrush Color="#FF003E71" />
             </Border.Background>
             <TextBlock TextWrapping="Wrap"
                        Text="Please wait..."
@@ -367,7 +356,7 @@
 
     <!-- Application bar -->
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True">
+        <shell:ApplicationBar IsVisible="True" Opacity="0.5">
             <shell:ApplicationBarIconButton Click="ApplicationBarIconButtonClick"
                                             Text="Find!"
                                             IconUri="/icons/appbar.feature.search.rest.png" />

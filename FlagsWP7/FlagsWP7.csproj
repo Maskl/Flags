@@ -1956,20 +1956,6 @@
       <Link>Media\flags.sdf</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Media\Shapes\wp7shape1.png" />
-    <Resource Include="Media\Shapes\wp7shape2.png" />
-    <Resource Include="Media\Shapes\wp7shape3.png" />
-    <Resource Include="Media\Shapes\wp7shape4.png" />
-    <Resource Include="Media\Shapes\wp7shape5.png" />
-    <Resource Include="Media\Shapes\wp7shape6.png" />
-    <Resource Include="Media\Adds\wp7add1.png" />
-    <Resource Include="Media\Adds\wp7add2.png" />
-    <Resource Include="Media\Adds\wp7add3.png" />
-    <Resource Include="Media\Adds\wp7add4.png" />
-    <Resource Include="Media\Adds\wp7add5.png" />
-    <Resource Include="Media\Adds\wp7add6.png" />
-    <Resource Include="Media\Adds\wp7add7.png" />
-    <Resource Include="Media\Adds\wp7add8.png" />
     <Resource Include="Media\Icons\IconBack.png" />
     <Resource Include="Media\Icons\IconBaseCircle.png" />
     <Resource Include="Media\Icons\IconHelp.png" />
@@ -1981,6 +1967,28 @@
     <Content Include="icons\appbar.feature.search.rest.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Media\Back\back1.jpg" />
+    <Resource Include="Media\Icons\wp7shape1.png" />
+    <Resource Include="Media\Icons\wp7shape2.png" />
+    <Resource Include="Media\Icons\wp7shape3.png" />
+    <Resource Include="Media\Icons\wp7shape4.png" />
+    <Resource Include="Media\Icons\wp7shape5.png" />
+    <Resource Include="Media\Icons\wp7shape6.png" />
+    <Resource Include="Media\Icons\wp7add1.png" />
+    <Resource Include="Media\Icons\wp7add2.png" />
+    <Resource Include="Media\Icons\wp7add3.png" />
+    <Resource Include="Media\Icons\wp7add4.png" />
+    <Resource Include="Media\Icons\wp7add5.png" />
+    <Resource Include="Media\Icons\wp7add6.png" />
+    <Resource Include="Media\Icons\wp7add7.png" />
+    <Resource Include="Media\Icons\wp7add8.png" />
+    <Resource Include="Media\Icons\wp7col1.png" />
+    <Resource Include="Media\Icons\wp7col2.png" />
+    <Resource Include="Media\Icons\wp7col3.png" />
+    <Resource Include="Media\Icons\wp7col4.png" />
+    <Resource Include="Media\Icons\wp7col5.png" />
+    <Resource Include="Media\Icons\wp7col6.png" />
+    <Resource Include="Media\Icons\wp7col7.png" />
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
