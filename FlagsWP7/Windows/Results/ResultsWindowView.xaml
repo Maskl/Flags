@@ -32,7 +32,7 @@
     		<ImageBrush Stretch="Fill" ImageSource="/FlagsWP7;component/Media/Back/back1.jpg"/>
     	</Grid.Background>
 
-        <StackPanel>
+        <StackPanel Margin="13">
             
             <!-- Page Title -->
         	<TextBlock Height="76" Margin="13" TextWrapping="Wrap" Text="results" FontSize="60"/>

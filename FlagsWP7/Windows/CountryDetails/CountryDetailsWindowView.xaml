@@ -6,7 +6,6 @@
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                             xmlns:Flags="clr-namespace:Flags"
-                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="800"
@@ -18,32 +17,39 @@
                             shell:SystemTray.IsVisible="False"
                             DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource DefaultPageStyle}">
-    
+
     <phone:PhoneApplicationPage.Resources>
         <Flags:CountryTagToFlagUriConverter300 x:Key="CountryTagToFlagUriConverter300" />
     </phone:PhoneApplicationPage.Resources>
-    
-    <Grid Margin="13">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Margin="0,0,-32,-21">
 
-        	<Border BorderThickness="1"
-        		BorderBrush="{StaticResource PhoneBorderBrush}" Height="330">
-        		<Image Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}" Margin="-1" />
-        	</Border>
-        	<TextBlock HorizontalAlignment="Left"
-        		TextWrapping="Wrap"
-        		Text="{Binding SelectedCountry.Name}"
-        		FontSize="64"
-        		FontWeight="Bold" Width="454" />
-        	<TextBlock HorizontalAlignment="Left"
-        		TextWrapping="Wrap"
-        		Text="{Binding Description}" Height="293" FontSize="29.333" Width="454" />
+    <!-- Main Grid -->
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill"
+                        ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
+        </Grid.Background>
+
+        <StackPanel>
+
+            <!-- Flag image -->
+
+            <!-- Country description -->
+            <StackPanel Margin="26" Background="#7F000000">
+<!-- Country description -->
+            	<TextBlock HorizontalAlignment="Left"
+            		TextWrapping="Wrap"
+            		Text="{Binding SelectedCountry.Name}"
+            		FontSize="60"
+            		Width="454" Margin="13" />
+            	<Image Source="{Binding SelectedCountry.Tag, Converter={StaticResource CountryTagToFlagUriConverter300}}"
+            		Margin="13" Stretch="None" />
+            	<TextBlock HorizontalAlignment="Left"
+            		TextWrapping="Wrap"
+            		Text="{Binding Description}"
+            		FontSize="26.667" Margin="13" />
+            </StackPanel>
+            <StackPanel Margin="13,0,13,13"
+                        Background="#7F000000"/>
         </StackPanel>
 
     </Grid>
