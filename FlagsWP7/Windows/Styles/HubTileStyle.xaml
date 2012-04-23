@@ -308,7 +308,7 @@
                                    Source="{TemplateBinding Source}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   Width="147" />
+                                   Stretch="None"/>
                             <!--Stretch="UniformToFill"
                                        Height="173"
                                        Width="173"-->

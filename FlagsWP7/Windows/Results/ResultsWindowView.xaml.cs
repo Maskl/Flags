@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using GestureEventArgs = System.Windows.Input.GestureEventArgs;
 
 namespace Flags
 {
@@ -17,16 +21,20 @@ namespace Flags
             _viewModel.ParseMessageFromMainWindow(e.Uri.ToString());
         }
 
-        private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
+        // Flipping tiles (show country details).
+        private readonly List<HubTile> _flippedTiles = new List<HubTile>();
+        private void HubTile_OnTap(object sender, GestureEventArgs e)
         {
-            NavigationService.GoBack();
-        }
-
-        private void GestureListenerFlick(object sender, Microsoft.Phone.Controls.FlickGestureEventArgs e)
-        {
-            //if (e.Direction == System.Windows.Controls.Orientation.Horizontal && Math.Abs(e.HorizontalVelocity) > 500 && NavigationService.CanGoBack)
+            var hub = (HubTile)sender;
+            if (_flippedTiles.Contains(hub))
             {
-            //    NavigationService.GoBack();
+                _flippedTiles.Remove(hub);
+                VisualStateManager.GoToState(hub, "Expanded", true);
+            }
+            else
+            {
+                _flippedTiles.Add(hub);
+                VisualStateManager.GoToState(hub, "Flipped", true);
             }
         }
     }

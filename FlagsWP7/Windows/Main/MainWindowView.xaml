@@ -15,38 +15,17 @@
                             d:DesignHeight="728"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
-                            shell:SystemTray.IsVisible="False">
+                            shell:SystemTray.IsVisible="False"
+                            DataContext="{Binding MainWindowVm, Source={StaticResource Locator}}"
+                            Style="{StaticResource DefaultPageStyle}">
 
     <!-- Resources -->
     <phone:PhoneApplicationPage.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-
-                <!-- Converters -->
-                <ResourceDictionary>
-                    <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-                </ResourceDictionary>
-
-                <ResourceDictionary>
-                    <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
+        <Flags:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+        <Flags:IntegerFlagToBrushConverter x:Key="IntegerFlagToColorConverter"
                                                        TrueValue="{StaticResource PhoneAccentBrush}"
                                                        FalseValue="DarkGray" />
-                </ResourceDictionary>
-
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
     </phone:PhoneApplicationPage.Resources>
-
-    <!-- Data context -->
-    <phone:PhoneApplicationPage.DataContext>
-        <Binding Path="MainWindowVm"
-                 Source="{StaticResource Locator}" />
-    </phone:PhoneApplicationPage.DataContext>
-
-    <!-- Phone App Page Style -->
-    <phone:PhoneApplicationPage.Style>
-        <StaticResource ResourceKey="DefaultPageStyle" />
-    </phone:PhoneApplicationPage.Style>
 
     <!-- Main Grid -->
     <Grid Background="#FF9D5B0A">
@@ -54,9 +33,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <controls:Panorama Height="799"
-                           Title="flag helper"
-                           Width="480">
+        <controls:Panorama Title="find flag">
 
             <!-- Shapes -->
             <controls:PanoramaItem Header="shape">

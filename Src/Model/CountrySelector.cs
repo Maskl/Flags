@@ -88,7 +88,7 @@ namespace Flags
                 f.Add6 * addTab[5] +
                 f.Add7 * addTab[6] +
                 f.Add8 * addTab[7]
-            ) select f).Take(30);
+            ) select f).Take(16);
 
 
             //var flags = _flagsDB.Flags.OrderBy(f => 

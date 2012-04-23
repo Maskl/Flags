@@ -17,7 +17,7 @@
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
                             DataContext="{Binding CountryDetailsWindowVm, Source={StaticResource Locator}}"
-                            Style="{StaticResource TransitionPageStyle}">
+                            Style="{StaticResource DefaultPageStyle}">
 
     <toolkit:GestureService.GestureListener>
         <toolkit:GestureListener Flick="GestureListenerFlick" />

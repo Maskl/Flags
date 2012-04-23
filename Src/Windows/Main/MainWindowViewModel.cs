@@ -16,8 +16,6 @@ namespace Flags
             set
             {
                 _addNumber ^= value /*XOR!*/;
-                //  if (value == 1 << 5) CLEAR
-              //      _addNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("AddNumber");
             }
@@ -30,8 +28,6 @@ namespace Flags
             set
             {
                 _colorNumber ^= value /*XOR but other!*/;
-               // if (value == 1 << 7)  CLEAR
-               //     _colorNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("ColorNumber");
             }
@@ -44,8 +40,6 @@ namespace Flags
             set
             {
                 _shapeNumber ^= value /*XOR!*/;
-             //   if (_shapeNumber == 1 << 5) CLEAR
-             //       _shapeNumber = 0; 
                 RecalculateResultUri(); 
                 RaisePropertyChanged("ShapeNumber");
             }
@@ -65,26 +59,6 @@ namespace Flags
             set { _showPleaseWaitInfo = value; RaisePropertyChanged("ShowPleaseWaitInfo"); }
         }
 
-        private bool _showTrialInfo;
-        public bool ShowTrialInfo
-        {
-            get { return _showTrialInfo; }
-            set { _showTrialInfo = value; RaisePropertyChanged("ShowTrialInfo"); }
-        }
-
-        private bool _canCloseTrialInfo;
-        public bool CanCloseTrialInfo
-        {
-            get { return _canCloseTrialInfo; }
-            set { _canCloseTrialInfo = value; RaisePropertyChanged("CanCloseTrialInfo"); }
-        }
-
-        private int _showTrialTimeInfo;
-        public int ShowTrialTimeInfo
-        {
-            get { return _showTrialTimeInfo; }
-            set { _showTrialTimeInfo = value; RaisePropertyChanged("ShowTrialTimeInfo"); }
-        }
         #endregion
 
         #region Relay Commands
@@ -92,20 +66,10 @@ namespace Flags
         public RelayCommand ShowResultsWindowCommand { get; private set; }
         public RelayCommand ShowCountriesListWindowCommand { get; private set; }
         public RelayCommand ShowHelpWindowCommand { get; private set; }
-        #if WINDOWS_PHONE
-            public RelayCommand HideTrialMessageCommand { get; private set; }
-            public RelayCommand<string> HoldTileCommand { get; private set; }
-
-            public void ShowCountryDetailsOnHold(string tag)
-            {
-                _viewManager.Show(View.CountryDetails, tag);
-            }
-        #endif
 
         public RelayCommand<string> ModifyColorNumberCommand { get; private set; }
         public RelayCommand<string> ModifyShapeNumberCommand { get; private set; }
         public RelayCommand<string> ModifyAddNumberCommand { get; private set; }
-
 
         private void CreateRelayCommands(ViewManager viewManager)
         {
@@ -117,11 +81,6 @@ namespace Flags
             ModifyColorNumberCommand = new RelayCommand<string>(ModifyColorNumber);
             ModifyShapeNumberCommand = new RelayCommand<string>(ModifyShapeNumber);
             ModifyAddNumberCommand = new RelayCommand<string>(ModifyAddNumber);
-        
-            #if WINDOWS_PHONE
-                HideTrialMessageCommand = new RelayCommand(HideTrialMessage);
-                HoldTileCommand = new RelayCommand<string>(ShowCountryDetailsOnHold);
-            #endif
         }
 
         private void ModifyColorNumber(string num)
@@ -148,45 +107,11 @@ namespace Flags
             ColorNumber = ShapeNumber = AddNumber = 0;
             ShowPleaseWaitInfo = false;
         }
-
-        #if WINDOWS_PHONE
-        private DispatcherTimer _trialTimer = new DispatcherTimer();
         public void OnNavigatedTo()
         {
             ShowPleaseWaitInfo = false;
 
-            if (TrialManager.IsTrial)
-            {
-                ShowTrialInfo = true;
-                ShowTrialTimeInfo = 10;
-                CanCloseTrialInfo = false;
-
-                _trialTimer = new DispatcherTimer {Interval = new TimeSpan(0, 0, 1)};
-                _trialTimer.Tick += HideTrialMessageTick;
-                _trialTimer.Start();
-            }
-            else
-            {
-                ShowTrialInfo = false;
-            }
         }
-
-        private void HideTrialMessageTick(object state, EventArgs e)
-        {
-            ShowTrialTimeInfo--;
-            if (ShowTrialTimeInfo <= 0)
-            {
-                _trialTimer.Stop();
-                CanCloseTrialInfo = true;
-            }
-        }
-
-        private void HideTrialMessage()
-        {
-            ShowTrialInfo = false;
-        }
-        #endif
-
         #endregion
 
         #region Navigation
