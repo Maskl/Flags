@@ -5,7 +5,7 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
                             mc:Ignorable="d"
                             d:DesignWidth="480"
                             d:DesignHeight="800"
@@ -18,427 +18,45 @@
                             DataContext="{Binding HistoryWindowVm, Source={StaticResource Locator}}"
                             Style="{StaticResource DefaultPageStyle}">
 
-    <Grid Margin="13">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="65*" />
-            <ColumnDefinition Width="385*" />
-        </Grid.ColumnDefinitions>
+    <!-- Main Grid -->
+    <Grid>
+        
+        <controls:Panorama>
+            <controls:Panorama.Background>
+                <ImageBrush Stretch="Fill"
+                            ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
+            </controls:Panorama.Background>
 
-        <Grid Grid.Row="1"
-              Grid.Column="1">
-            <ScrollViewer>
-                <StackPanel Width="388">
+            <controls:PanoramaItem Header="history">
+                <StackPanel
+                            Background="#7F000000" VerticalAlignment="Top">
 
+                    <!-- Title -->
 
-                    <!-- ITA -->
-                    <TextBlock TextWrapping="Wrap"
-                               Margin="0"
-                               FontSize="21.333"
-                               Text="If you have flag:" />
-
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Image Source="/FlagsWP7;component/Media/Flags/100/it.png"
-                                   Height="45" />
-                        </Border>
-                    </StackPanel>
-
-                    <TextBlock TextWrapping="Wrap"
-                               Margin="0"
-                               FontSize="21.333"
-                               Text="the best option is to select:" />
-
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Height="30"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Green" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Height="30"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="White" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Height="30"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Red" />
-                            </Border.Background>
-                        </Border>
-
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Shapes/wp7shape1.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-
-                    <TextBlock TextWrapping="Wrap"
-                               Margin="0, 0, 0, 13"
-                               FontSize="21.333"
-                               Text="and click search button." />
-
-                    <!-- USA -->
-                    <TextBlock TextWrapping="Wrap"
-                               FontSize="21.333"
-                               Margin="0"
-                               Text="Some harder examples:" />
-
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 13">
-                            <Image Source="/FlagsWP7;component/Media/Flags/100/us.png"
-                                   Height="45" />
-                        </Border>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0, 0, 0, 26">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Red" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Blue" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="White" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Shapes/wp7shape5.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add2.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-                    <!-- GB -->
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 13">
-                            <Image Source="/FlagsWP7;component/Media/Flags/100/gb.png"
-                                   Height="45" />
-                        </Border>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0, 0, 0, 26">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Red" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Blue" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="White" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add5.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add7.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add8.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-                    <!-- Mauretania -->
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 13">
-                            <Image Source="/FlagsWP7;component/Media/Flags/100/mr.png"
-                                   Height="45" />
-                        </Border>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0, 0, 0, 26">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Green" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Yellow" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add1.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-
-                    <!-- Pakistan -->
-                    <StackPanel Orientation="Horizontal">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 13">
-                            <Image Source="/FlagsWP7;component/Media/Flags/100/pk.png"
-                                   Height="45" />
-                        </Border>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Green" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="White" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Shapes/wp7shape6.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add4.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add1.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-                    <TextBlock TextWrapping="Wrap"
-                               Margin="0, 0, 0, 0"
-                               FontSize="21.333"
-                               Text="or" />
-
-                    <StackPanel Orientation="Horizontal"
-                                Margin="0, 0, 0, 26">
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="Green" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0"
-                                Width="30">
-                            <Border.Background>
-                                <SolidColorBrush Color="White" />
-                            </Border.Background>
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Shapes/wp7shape2.png"
-                                   Height="30" />
-                        </Border>
-
-                        <Border BorderThickness="1"
-                                BorderBrush="{StaticResource PhoneBorderBrush}"
-                                Margin="13, 0, 0, 0">
-                            <Border.Background>
-                                <SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-                            </Border.Background>
-                            <Image Source="/FlagsWP7;component/Media/Adds/wp7add1.png"
-                                   Height="30" />
-                        </Border>
-                    </StackPanel>
-
-                    <TextBlock TextWrapping="Wrap"
-                               Margin="0, 0, 0, 26"
-                               FontSize="21.333"
-                               Text="Good luck and have fun :)" />
-
-                    <Button Margin="-12, 0, 0, 0"
-                            Content="Rate this application!"
-                            Padding="0"
-                            Click="RateButtonClick" />
+                    <!-- Text -->
+                    <ScrollViewer>
+                        <TextBlock TextWrapping="Wrap"
+                    		FontSize="21.333" Margin="13"><Run Text="version 1.0"/><LineBreak/><Run Text="Better algorithm, updates in interface."/><LineBreak/><Run/><LineBreak/><Run Text="version "/><Run Text="0"/><Run Text="."/><Run Text="9"/><LineBreak/><Run Text="Completly new interface"/><Run Text="."/><LineBreak/><Run/><LineBreak/><Run Text="version 0."/><Run Text="8"/><LineBreak/><Run Text="Changed application name"/><Run Text="."/><Run Text=" "/><Run Text="Only WP7 version."/><LineBreak/><Run/></TextBlock>
+                    </ScrollViewer>
                 </StackPanel>
-            </ScrollViewer>
-        </Grid>
+            </controls:PanoramaItem>
+            <controls:PanoramaItem Header="plans">
+            	<StackPanel
+            		Background="#7F000000" VerticalAlignment="Top">
 
-
-        <StackPanel Grid.Column="0"
-                    Grid.Row="1">
-            <Button BorderThickness="0"
-                    Margin="-4,30,0,0"
-                    Padding="0"
-                    Background="{StaticResource PhoneForegroundBrush}"
-                    Height="72"
-                    Width="72"
-                    Click="BackIconButtonClick">
-                <Button.OpacityMask>
-                    <ImageBrush  Stretch="None"
-                                 ImageSource="/FlagsWP7;component/Media/Icons/IconBack.png" />
-                </Button.OpacityMask>
-            </Button>
-        </StackPanel>
-
-        <TextBlock Grid.Column="1"
-                   Margin="0,8,8,0"
-                   TextWrapping="Wrap"
-                   Text="flag recognizer"
-                   FontSize="16"
-                   Height="24"
-                   VerticalAlignment="Top">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneBorderColor}" />
-        	</TextBlock.Foreground>
-        </TextBlock>
-
-        <TextBlock Grid.Column="1"
-                   Margin="0,32,8,0"
-                   TextWrapping="Wrap"
-                   Text="HISTORY"
-                   FontSize="29.333">
-        	<TextBlock.Foreground>
-        		<SolidColorBrush Color="{StaticResource PhoneAccentColor}" />
-        	</TextBlock.Foreground>
-        </TextBlock>
-
+                    <!-- Text -->
+            		<ScrollViewer>
+            			<StackPanel>
+            				<TextBlock TextWrapping="Wrap"
+            					FontSize="21.333" Margin="13,13,13,0"><Run Text="If you think that this application is useful"/><Run Text=" and I should make it better and better"/><Run Text=", please buy full ve"/><Run Text="r"/><Run Text="sion. Thanks."/><LineBreak/><Run/><Run/><LineBreak/><Run Text="If you need some functions or have any ideas, please tap "/><Run Text="link "/><Run Text="below and write "/><Run Text="about it "/><Run Text="in comment."/></TextBlock>
+                            <HyperlinkButton Content="Write comment and rate this app!"
+                                             Click="RateButtonClick" HorizontalAlignment="Left" Margin="0" HorizontalContentAlignment="Left"/>
+                            <TextBlock TextWrapping="Wrap"
+                            	FontSize="21.333" Margin="13"><Run Text="My plans/ideas:"/><LineBreak/><Run Text="1. Map in country details screen."/><LineBreak/><Run Text="2. Add some non-country flags (European Union, historical flags etc.)."/><LineBreak/><Run Text="3. Support to other languages."/><LineBreak/><Run Text="4. Tests and some algorith"/><Run Text="m"/><Run Text=" fixes."/><LineBreak/><Run Text="5. Better graphics in &quot;find flag&quot; mode."/></TextBlock>
+            			</StackPanel>
+            		</ScrollViewer>
+            	</StackPanel>
+            </controls:PanoramaItem>
+        </controls:Panorama>
     </Grid>
-
 </phone:PhoneApplicationPage>

@@ -166,7 +166,7 @@
     <Compile Include="Windows\Help\HelpWindowView.xaml.cs">
       <DependentUpon>HelpWindowView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\History\HistoryWindowView.cs" />
+    <Compile Include="Windows\History\HistoryWindowView.xaml.cs" />
     <Compile Include="Windows\History\HistoryWindowViewModel.cs" />
     <Compile Include="Windows\Main\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>

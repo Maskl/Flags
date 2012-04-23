@@ -10,11 +10,6 @@ namespace Flags
             InitializeComponent();
         }
 
-        private void BackIconButtonClick(object sender, System.Windows.RoutedEventArgs e)
-        {
-            NavigationService.GoBack();
-        }
-
         private void RateButtonClick(object sender, System.Windows.RoutedEventArgs e)
         {
             var task = new MarketplaceReviewTask();
