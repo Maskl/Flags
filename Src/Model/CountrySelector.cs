@@ -56,13 +56,13 @@ namespace Flags
             var usedAdds = (addTab[0] < 0 || addTab[1] < 0 || addTab[2] < 0 || addTab[3] < 0 || addTab[4] < 0 || addTab[5] < 0 || addTab[6] < 0 || addTab[7] < 0);
 
             if (!usedColors)
-                colTab[0] = colTab[1] = colTab[2] = colTab[3] = colTab[4] = colTab[5] = colTab[6] = 0;
+                colTab[0] = colTab[1] = colTab[2] = colTab[3] = colTab[4] = colTab[5] = colTab[6] = 1;
 
             if (!usedShapes)
-                shaTab[0] = shaTab[1] = shaTab[2] = shaTab[3] = shaTab[4] = shaTab[5] = 0;
+                shaTab[0] = shaTab[1] = shaTab[2] = shaTab[3] = shaTab[4] = shaTab[5] = 1;
 
             if (!usedAdds)
-                addTab[0] = addTab[1] = addTab[2] = addTab[3] = addTab[4] = addTab[5] = addTab[6] = addTab[7] = 0;
+                addTab[0] = addTab[1] = addTab[2] = addTab[3] = addTab[4] = addTab[5] = addTab[6] = addTab[7] = 1;
 
             var flags = (from f in _flagsDB.Flags orderby (
                 f.Col1 * colTab[0] +

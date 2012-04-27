@@ -41,7 +41,8 @@
             </controls:Panorama.Background>
             <!-- Shapes -->
             <controls:PanoramaItem Header="shape">
-                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <ListBox Width="420"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -124,7 +125,8 @@
 
             <!-- Additional elements -->
             <controls:PanoramaItem Header="additional">
-                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <ListBox Width="420"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -231,7 +233,8 @@
 
             <!-- Colors -->
             <controls:PanoramaItem Header="colors">
-                <ListBox Width="420" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                <ListBox Width="420"
+                         ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <toolkit:WrapPanel Orientation="Horizontal" />
@@ -353,7 +356,10 @@
 
     <!-- Application bar -->
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" Opacity="0.5">
+        <shell:ApplicationBar IsVisible="True"
+                              Opacity="0.5"
+                              BackgroundColor="Black"
+                              ForegroundColor="White">
             <shell:ApplicationBarIconButton Click="ApplicationBarIconButtonClick"
                                             Text="Find!"
                                             IconUri="/Media/Icons/appbar.feature.search.rest.png" />

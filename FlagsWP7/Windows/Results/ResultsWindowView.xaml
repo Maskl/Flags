@@ -14,7 +14,7 @@
                             d:DesignHeight="800"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
-                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Foreground="White"
                             SupportedOrientations="Portrait"
                             Orientation="Portrait"
                             shell:SystemTray.IsVisible="False"
@@ -39,7 +39,7 @@
             
             <!-- Main Listbox -->
         	<ListBox x:Name="ListboxWithFlags"
-        		ItemsSource="{Binding Countries}" Height="774">
+        		ItemsSource="{Binding Countries}" Height="671">
         		<ListBox.ItemsPanel>
         			<ItemsPanelTemplate>
         				<toolkit:WrapPanel Orientation="Horizontal" />

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 using System.Windows.Navigation;
 using Flags;
 using Flags.MVVMUtils;
@@ -25,6 +26,11 @@ namespace FlagsWP7
                 Current.Host.Settings.EnableFrameRateCounter = true;
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+
+            (Current.Resources["PhoneAccentBrush"] as SolidColorBrush).Color = Color.FromArgb(0xff, 0xe1, 0x9f, 0x00);
+            (Current.Resources["PhoneForegroundBrush"] as SolidColorBrush).Color = Colors.White;
+            (Current.Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color = Colors.Black;
+
         }
 
         private void ApplicationLaunching(object sender, LaunchingEventArgs e)

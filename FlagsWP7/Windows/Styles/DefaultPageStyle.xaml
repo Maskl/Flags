@@ -17,7 +17,7 @@
                 Value="{StaticResource PhoneFontSizeNormal}" />
 
         <Setter Property="Foreground"
-                Value="{StaticResource PhoneForegroundBrush}" />
+                Value="White" />
 
         <Setter Property="SupportedOrientations"
                 Value="PortraitOrLandscape" />

@@ -48,7 +48,7 @@
                            FontFamily="{StaticResource PhoneFontFamilySemiBold}"
                            FontSize="36"
                            Margin="{StaticResource PhoneTouchTargetOverhang}"
-                           Foreground="{StaticResource PhoneForegroundBrush}"
+                           Foreground="White"
                            VerticalAlignment="Bottom" />
             </Border>
         </DataTemplate>
@@ -78,7 +78,7 @@
                            FontFamily="{StaticResource PhoneFontFamilySemiBold}"
                            FontSize="36"
                            Margin="{StaticResource PhoneTouchTargetOverhang}"
-                           Foreground="{StaticResource PhoneForegroundBrush}"
+                           Foreground="White"
                            VerticalAlignment="Bottom" />
             </Border>
         </DataTemplate>
