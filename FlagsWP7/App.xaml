@@ -5,12 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
-             xmlns:mvvmutils="clr-namespace:Flags.MVVMUtils">
+             xmlns:mvvmutils="clr-namespace:Flags.MVVMUtils" xmlns:FlagsWP7="clr-namespace:FlagsWP7">
     
     <!-- Resources -->
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary>
+                    <FlagsWP7:Translations xmlns:local="clr-namespace:FlagsWP7"
+                                           x:Key="Translations" />
+                </ResourceDictionary>
 
                 <!-- Styles -->
                 <ResourceDictionary Source="Windows/Styles/HubTileStyle.xaml" />

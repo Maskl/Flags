@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Threading;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using Flags;
@@ -41,6 +43,8 @@ namespace FlagsWP7
         private void ApplicationActivated(object sender, ActivatedEventArgs e)
         {
             TrialManager.DetermineIsTrail();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("pl-PL");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("pl-PL");
         }
 
         private void ApplicationDeactivated(object sender, DeactivatedEventArgs e)
