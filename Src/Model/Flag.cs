@@ -218,6 +218,30 @@ namespace Flags
             set { S("Add8"); _add8 = value; E("Add8"); }
         }
 
+        private string _countryPL;
+        [Column]
+        public string CountryPL
+        {
+            get { return _countryPL; }
+            set { S("CountryPL"); _countryPL = value; E("CountryPL"); }
+        }
+
+        private string _continentPL;
+        [Column]
+        public string ContinentPL
+        {
+            get { return _continentPL; }
+            set { S("ContinentPL"); _continentPL = value; E("ContinentPL"); }
+        }
+
+        private string _capitalPL;
+        [Column]
+        public string CapitalPL
+        {
+            get { return _capitalPL; }
+            set { S("CapitalPL"); _capitalPL = value; E("CapitalPL"); }
+        }
+
         #region PropertyChange
         public event PropertyChangedEventHandler PropertyChanged;
 

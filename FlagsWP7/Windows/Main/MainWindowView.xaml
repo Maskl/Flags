@@ -347,7 +347,7 @@
             </Border.Background>
             <TextBlock TextWrapping="Wrap"
                        Text="{Binding Path=Texts.MainPleaseWaitMessage, Source={StaticResource Translations}}"
-                       FontSize="45.333"
+                       FontSize="32"
                        Margin="3"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />

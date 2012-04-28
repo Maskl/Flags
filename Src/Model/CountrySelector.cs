@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Flags
@@ -171,8 +172,32 @@ namespace Flags
                 //          f.Add6*addTab[5] +
                 //          f.Add7*addTab[6] +
                 //          f.Add8*addTab[7];
-                list.Add(new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0]});
+                list.Add(CreateCountryUsingFlagData(flag));
             }
+        }
+
+        private static Country CreateCountryUsingFlagData(Flag flag)
+        {
+            if (CultureInfo.CurrentCulture.Name.Substring(0, 2).ToLower() == "pl")
+            {
+                return new Country
+                {
+                    Capital = flag.CapitalPL,
+                    Continent = flag.ContinentPL,
+                    Name = flag.CountryPL,
+                    Tag = flag.Iso.ToLower(),
+                    FirstLetter = flag.Country[0]
+                };
+            }
+
+            return new Country
+                {
+                    Capital = flag.Capital,
+                    Continent = flag.Continent,
+                    Name = flag.Country,
+                    Tag = flag.Iso.ToLower(),
+                    FirstLetter = flag.Country[0]
+                };
         }
 
         public void GetAllCountries(ICollection<Country> list)
@@ -181,7 +206,7 @@ namespace Flags
             var flags = _flagsDB.Flags.OrderBy(f => (f.Country));
             foreach (var flag in flags)
             {
-                list.Add(new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0] });
+                list.Add(CreateCountryUsingFlagData(flag));
             }
         }
 
@@ -192,7 +217,7 @@ namespace Flags
                 return null;
 
             var flag = _flagsDB.Flags.Single(f => f.Iso == tag);
-            return new Country { Capital = flag.Capital, Continent = flag.Continent, Name = flag.Country, Tag = flag.Iso.ToLower(), FirstLetter = flag.Country[0] };
+            return CreateCountryUsingFlagData(flag);
         }
     }
 }

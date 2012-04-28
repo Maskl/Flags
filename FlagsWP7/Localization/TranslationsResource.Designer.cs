@@ -108,7 +108,7 @@ namespace FlagsWP7.Localization {
         /// <summary>
         ///   Looks up a localized string similar to This application helps you to recognize flags of all countries.
         ///
-        ///In &quot;find a flag&quot; mode you just should select a few specific things which you can see on flag you can&apos;t recognize (colors, flag shape etc.) and tap the find button.
+        ///In &quot;find the flag&quot; mode you just should select a few specific things which you can see on flag you can&apos;t recognize (colors, flag shape etc.) and tap the find button.
         ///
         ///In &quot;flags list&quot; mode there are lists of all flags sorted alphabetically and by continent.
         ///
@@ -392,7 +392,7 @@ namespace FlagsWP7.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to find a flag.
+        ///   Looks up a localized string similar to find the flag.
         /// </summary>
         public static string MenuFindAFlag {
             get {
@@ -460,7 +460,7 @@ namespace FlagsWP7.Localization {
         ///2. Add some non-country flags (European Union, historical flags etc.).
         ///3. Support to other languages.
         ///4. Tests and some algorith
-        ///5. Better graphics in &quot;find flag&quot; mode..
+        ///5. Better graphics..
         /// </summary>
         public static string PlansText {
             get {

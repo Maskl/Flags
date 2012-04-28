@@ -135,7 +135,7 @@
   <data name="HelpText" xml:space="preserve">
     <value>This application helps you to recognize flags of all countries.
 
-In "find a flag" mode you just should select a few specific things which you can see on flag you can't recognize (colors, flag shape etc.) and tap the find button.
+In "find the flag" mode you just should select a few specific things which you can see on flag you can't recognize (colors, flag shape etc.) and tap the find button.
 
 In "flags list" mode there are lists of all flags sorted alphabetically and by continent.
 
@@ -239,7 +239,7 @@ version 0.8
     <value>vertical tricolor</value>
   </data>
   <data name="MenuFindAFlag" xml:space="preserve">
-    <value>find a flag</value>
+    <value>find the flag</value>
   </data>
   <data name="MenuFlagsList" xml:space="preserve">
     <value>flags list</value>
@@ -265,7 +265,7 @@ version 0.8
 2. Add some non-country flags (European Union, historical flags etc.).
 3. Support to other languages.
 4. Tests and some algorith
-5. Better graphics in "find flag" mode.</value>
+5. Better graphics.</value>
   </data>
   <data name="PlansTitle" xml:space="preserve">
     <value>plans</value>

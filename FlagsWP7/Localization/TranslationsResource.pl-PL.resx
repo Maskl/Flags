@@ -121,16 +121,16 @@
     <value>alfabetycznie</value>
   </data>
   <data name="CountriesListByContinent" xml:space="preserve">
-    <value>po kontynencie</value>
+    <value>kontynenty</value>
   </data>
   <data name="CountryDetailsCapital" xml:space="preserve">
-    <value>Stolica:</value>
+    <value>Stolica: </value>
   </data>
   <data name="CountryDetailsContinent" xml:space="preserve">
-    <value>Kontynent:</value>
+    <value>Kontynent: </value>
   </data>
   <data name="CountryDetailsISO" xml:space="preserve">
-    <value>Kod ISO 3166:</value>
+    <value>Kod ISO 3166: </value>
   </data>
   <data name="HelpText" xml:space="preserve">
     <value>Ta aplikacja pomoże Ci rozpoznać flagi wszystkich państw Świata.
@@ -145,17 +145,17 @@ Dobrego dnia! :)</value>
     <value>pomoc</value>
   </data>
   <data name="HistoryText" xml:space="preserve">
-    <value>version 1.1
-  Dodany język polski.
+    <value>wersja 1.1
+Dodany język polski.
 
-version 1.0
- Lepszy algorytm, poprawki w interfejsie.
+wersja 1.0
+Lepszy algorytm, poprawki w interfejsie.
 
-version 0.9
-  Kompletnie nowy interfejs.
+wersja 0.9
+Kompletnie nowy interfejs.
 
-version 0.8
-  Zmiana nazwy.Wyłącznie wersja na WP7. Nowa historia.</value>
+wersja 0.8
+Zmiana nazwy. Wyłącznie wersja na WP7. Nowa historia.</value>
   </data>
   <data name="HistoryTitle" xml:space="preserve">
     <value>historia</value>
@@ -188,7 +188,7 @@ version 0.8
     <value>trójkąt</value>
   </data>
   <data name="MainAtLeastOneMessage" xml:space="preserve">
-    <value>Musisz podać przynajmniej jedną informację (kształt, dodatki, kolor).</value>
+    <value>Musisz zaznaczyć przynajmniej jedną informację (kształt, dodatki, kolor).</value>
   </data>
   <data name="MainColBlack" xml:space="preserve">
     <value>czarny</value>
@@ -215,7 +215,7 @@ version 0.8
     <value>żółty</value>
   </data>
   <data name="MainPleaseWaitMessage" xml:space="preserve">
-    <value>Proszę czekać...</value>
+    <value>Poczekaj chwilę...</value>
   </data>
   <data name="MainShapeTitle" xml:space="preserve">
     <value>kształt</value>
@@ -271,7 +271,7 @@ version 0.8
     <value>pomysły</value>
   </data>
   <data name="ResultsHoldForMore" xml:space="preserve">
-    <value>Przytrzymaj...</value>
+    <value>przytrzymaj chwilę by zobaczyć więcej...</value>
   </data>
   <data name="ResultsTitle" xml:space="preserve">
     <value>wyniki</value>

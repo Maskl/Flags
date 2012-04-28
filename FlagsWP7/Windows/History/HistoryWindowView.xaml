@@ -26,7 +26,7 @@
                             ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
             </controls:Panorama.Background>
 
-            <controls:PanoramaItem Header="history">
+            <controls:PanoramaItem Header="{Binding Path=Texts.HistoryTitle, Source={StaticResource Translations}}">
                 <StackPanel Background="#7F000000"
                             VerticalAlignment="Top">
                     <ScrollViewer>
