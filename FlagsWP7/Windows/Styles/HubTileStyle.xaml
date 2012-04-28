@@ -344,7 +344,7 @@
                                            Text="{TemplateBinding Message}" />
                                 <TextBlock x:Name="MessageBlockDown"
                                            Foreground="DarkGray"
-                                           FontSize="{StaticResource PhoneFontSizeSmall}"
+                                           FontSize="14"
                                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
                                            LineStackingStrategy="BlockLineHeight"
                                            LineHeight="23.333"

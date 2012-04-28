@@ -29,7 +29,7 @@
             <!-- Title -->
             <TextBlock HorizontalAlignment="Left"
                        TextWrapping="Wrap"
-                       Text="flag helper"
+                       Text="{Binding Path=Texts.MenuTitle, Source={StaticResource Translations}}"
                        FontSize="60"
                        Width="454"
                        Margin="26,26,0,13" />
@@ -46,7 +46,7 @@
                                        Width="48"
                                        Height="48" />
                                 <TextBlock TextWrapping="Wrap"
-                                           Text="find flag"
+                                           Text="{Binding Path=Texts.MenuFindAFlag, Source={StaticResource Translations}}"
                                            VerticalAlignment="Center"
                                            FontSize="48"
                                            Margin="26,0,0,0"
@@ -64,7 +64,7 @@
                                        Width="48"
                                        Height="48" />
                                 <TextBlock TextWrapping="Wrap"
-                                           Text="flags list"
+                                           Text="{Binding Path=Texts.MenuFlagsList, Source={StaticResource Translations}}"
                                            VerticalAlignment="Center"
                                            FontSize="48"
                                            Margin="26,0,0,0"
@@ -82,7 +82,7 @@
                                        Width="48"
                                        Height="48" />
                                 <TextBlock TextWrapping="Wrap"
-                                           Text="help"
+                                           Text="{Binding Path=Texts.MenuHelp, Source={StaticResource Translations}}"
                                            VerticalAlignment="Center"
                                            FontSize="48"
                                            Margin="26,0,0,0"
@@ -101,7 +101,7 @@
                                        Width="48"
                                        Height="48" />
                                 <TextBlock TextWrapping="Wrap"
-                                           Text="history"
+                                           Text="{Binding Path=Texts.MenuHistoryAndPlans, Source={StaticResource Translations}}"
                                            VerticalAlignment="Center"
                                            FontSize="48"
                                            Margin="26,0,0,0"

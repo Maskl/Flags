@@ -92,7 +92,7 @@
                             ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
             </controls:Panorama.Background>
 
-            <controls:PanoramaItem Header="alphabetically">
+            <controls:PanoramaItem Header="{Binding Path=Texts.CountriesListAlphabetically, Source={StaticResource Translations}}">
     
                     <toolkit:LongListSelector ItemsSource="{Binding CountriesGruppedAlphabetically}"
                                               Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
@@ -139,7 +139,7 @@
                     </toolkit:LongListSelector>
             </controls:PanoramaItem>
 
-            <controls:PanoramaItem Header="by continent">
+            <controls:PanoramaItem Header="{Binding Path=Texts.CountriesListByContinent, Source={StaticResource Translations}}">
                 <toolkit:LongListSelector ItemsSource="{Binding CountriesGruppedByContinent}"
                                           Flags:LongListSelectorExtension.Command="{Binding SelectionChanged}"
                                           SelectedItem="{Binding SelectedCountry}"

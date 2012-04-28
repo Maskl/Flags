@@ -35,7 +35,10 @@
         <StackPanel Margin="13">
             
             <!-- Page Title -->
-        	<TextBlock Height="76" Margin="13" TextWrapping="Wrap" Text="results" FontSize="60"/>
+            <TextBlock Height="76"
+                       Margin="13"
+                       TextWrapping="Wrap"
+                       Text="{Binding Path=Texts.ResultsTitle, Source={StaticResource Translations}}" FontSize="60"/>
             
             <!-- Main Listbox -->
         	<ListBox x:Name="ListboxWithFlags"
@@ -51,7 +54,7 @@
         				<toolkit:HubTile Style="{StaticResource HubTileExStyle}"
         					Source="{Binding Tag, Converter={StaticResource CountryTagToFlagUriConverter100}}"
                             Message="{Binding ShortDescription}"
-                            Notification="HOLD TO MORE..."
+                            Notification="{Binding Path=Texts.ResultsHoldForMore, Source={StaticResource Translations}}"
         					Title="{Binding Name}"
                             Background="#003e71"
         					Tap="HubTile_OnTap">

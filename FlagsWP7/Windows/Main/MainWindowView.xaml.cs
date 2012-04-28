@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Navigation;
+using FlagsWP7.Localization;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
@@ -28,8 +29,7 @@ namespace Flags
         {
             if (_viewModel.ColorNumber == 0 && _viewModel.ShapeNumber == 0 && _viewModel.AddNumber == 0)
             {
-                MessageBox.Show(
-                    "You must specify at least one information about flag (color, shape, additional element).");
+                MessageBox.Show(TranslationsResource.MainAtLeastOneMessage);
                 return;
             }
 

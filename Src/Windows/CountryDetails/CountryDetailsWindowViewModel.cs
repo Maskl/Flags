@@ -1,4 +1,5 @@
 ﻿using System;
+using FlagsWP7.Localization;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -67,8 +68,9 @@ namespace Flags
             if (SelectedCountry == null)
                 return;
 
-            Description = "Country in " + SelectedCountry.Continent + "\nCapital city: " + SelectedCountry.Capital
-                + "\nISO 3166 code: " + SelectedCountry.Tag.ToUpper();
+            Description = TranslationsResource.CountryDetailsContinent + SelectedCountry.Continent +
+                "\n" + TranslationsResource.CountryDetailsCapital + SelectedCountry.Capital +
+                "\n" + TranslationsResource.CountryDetailsISO + SelectedCountry.Tag.ToUpper();
         }
         #endregion
     }

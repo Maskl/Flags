@@ -117,10 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HelpText1" xml:space="preserve">
-    <value>Aplikacja ta rozpozna flagi wszystkich krajów Świata.</value>
+  <data name="CountriesListAlphabetically" xml:space="preserve">
+    <value>alfabetycznie</value>
+  </data>
+  <data name="CountriesListByContinent" xml:space="preserve">
+    <value>po kontynencie</value>
+  </data>
+  <data name="CountryDetailsCapital" xml:space="preserve">
+    <value>Stolica:</value>
+  </data>
+  <data name="CountryDetailsContinent" xml:space="preserve">
+    <value>Kontynent:</value>
+  </data>
+  <data name="CountryDetailsISO" xml:space="preserve">
+    <value>Kod ISO 3166:</value>
+  </data>
+  <data name="HelpText" xml:space="preserve">
+    <value>Ta aplikacja pomoże Ci rozpoznać flagi wszystkich państw Świata.
+
+W trybie "Znajdź flagę" musisz podać parę informacji na temat flagi, której nie możesz rozpoznać (jej kształt, kolor itp.), oraz nadusić ikonkę lupy. Aplikacja pokaże flagi najbliższe podanymi przez Ciebie informacjom.
+
+W trybie "Lista flag" znajduje się lista wszystkich flag dostępnych w aplikacji, posortowana alfabetycznie i wg kontynentów.
+
+Dobrego dnia! :)</value>
   </data>
   <data name="HelpTitle" xml:space="preserve">
-    <value>Pomoc</value>
+    <value>pomoc</value>
+  </data>
+  <data name="HistoryText" xml:space="preserve">
+    <value>version 1.1
+  Dodany język polski.
+
+version 1.0
+ Lepszy algorytm, poprawki w interfejsie.
+
+version 0.9
+  Kompletnie nowy interfejs.
+
+version 0.8
+  Zmiana nazwy.Wyłącznie wersja na WP7. Nowa historia.</value>
+  </data>
+  <data name="HistoryTitle" xml:space="preserve">
+    <value>historia</value>
+  </data>
+  <data name="MainAddBackslash" xml:space="preserve">
+    <value>skośna linia 2</value>
+  </data>
+  <data name="MainAddCanton" xml:space="preserve">
+    <value>kanton</value>
+  </data>
+  <data name="MainAddCross" xml:space="preserve">
+    <value>krzyż</value>
+  </data>
+  <data name="MainAdditionalTitle" xml:space="preserve">
+    <value>dodatki</value>
+  </data>
+  <data name="MainAddSaltire" xml:space="preserve">
+    <value>saltire</value>
+  </data>
+  <data name="MainAddSlash" xml:space="preserve">
+    <value>skośna linia 1</value>
+  </data>
+  <data name="MainAddSomething" xml:space="preserve">
+    <value>coś</value>
+  </data>
+  <data name="MainAddStripe" xml:space="preserve">
+    <value>pasek</value>
+  </data>
+  <data name="MainAddTriangle" xml:space="preserve">
+    <value>trójkąt</value>
+  </data>
+  <data name="MainAtLeastOneMessage" xml:space="preserve">
+    <value>Musisz podać przynajmniej jedną informację (kształt, dodatki, kolor).</value>
+  </data>
+  <data name="MainColBlack" xml:space="preserve">
+    <value>czarny</value>
+  </data>
+  <data name="MainColBlue" xml:space="preserve">
+    <value>niebieski</value>
+  </data>
+  <data name="MainColGreen" xml:space="preserve">
+    <value>zielony</value>
+  </data>
+  <data name="MainColorsTitle" xml:space="preserve">
+    <value>kolory</value>
+  </data>
+  <data name="MainColOther" xml:space="preserve">
+    <value>inne</value>
+  </data>
+  <data name="MainColRed" xml:space="preserve">
+    <value>czerwony</value>
+  </data>
+  <data name="MainColWhite" xml:space="preserve">
+    <value>biały</value>
+  </data>
+  <data name="MainColYellow" xml:space="preserve">
+    <value>żółty</value>
+  </data>
+  <data name="MainPleaseWaitMessage" xml:space="preserve">
+    <value>Proszę czekać...</value>
+  </data>
+  <data name="MainShapeTitle" xml:space="preserve">
+    <value>kształt</value>
+  </data>
+  <data name="MainShpHorizontalBicolor" xml:space="preserve">
+    <value>dwa poziome</value>
+  </data>
+  <data name="MainShpHorizontalTricolor" xml:space="preserve">
+    <value>trzy poziome</value>
+  </data>
+  <data name="MainShpPlain" xml:space="preserve">
+    <value>bez pasków</value>
+  </data>
+  <data name="MainShpStripes" xml:space="preserve">
+    <value>wiele pasków</value>
+  </data>
+  <data name="MainShpVerticalBicolor" xml:space="preserve">
+    <value>dwa pionowe</value>
+  </data>
+  <data name="MainShpVerticalTricolor" xml:space="preserve">
+    <value>trzy pionowe</value>
+  </data>
+  <data name="MenuFindAFlag" xml:space="preserve">
+    <value>znajdź flagę</value>
+  </data>
+  <data name="MenuFlagsList" xml:space="preserve">
+    <value>lista flag</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>pomoc</value>
+  </data>
+  <data name="MenuHistoryAndPlans" xml:space="preserve">
+    <value>historia</value>
+  </data>
+  <data name="MenuTitle" xml:space="preserve">
+    <value>flag helper</value>
+  </data>
+  <data name="PlansIntro" xml:space="preserve">
+    <value>Jeśli chcesz napisać czego Ci brakuje w tej aplikacji lub co Ci się w niej podoba kliknij poniższy link.</value>
+  </data>
+  <data name="PlansRateButton" xml:space="preserve">
+    <value>Napisz komentarz i wystaw ocenę!</value>
+  </data>
+  <data name="PlansText" xml:space="preserve">
+    <value>Moje plany/pomysły:
+1. Mapka w ekranie szczegółów wybranego państwa.
+2. Roszerzenie bazy flag o te nie będące flagami państw  (Unia Europejska, flagi historyczne itp.).
+3. Kolejne wersje językowe.
+4. Testy i poprawki algorytmu wyszukiwania.
+5. Lepsze grafiki.</value>
+  </data>
+  <data name="PlansTitle" xml:space="preserve">
+    <value>pomysły</value>
+  </data>
+  <data name="ResultsHoldForMore" xml:space="preserve">
+    <value>Przytrzymaj...</value>
+  </data>
+  <data name="ResultsTitle" xml:space="preserve">
+    <value>wyniki</value>
   </data>
 </root>

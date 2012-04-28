@@ -117,6 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CountriesListAlphabetically" xml:space="preserve">
+    <value>alphabetically</value>
+  </data>
+  <data name="CountriesListByContinent" xml:space="preserve">
+    <value>by continent</value>
+  </data>
+  <data name="CountryDetailsCapital" xml:space="preserve">
+    <value>Capital city: </value>
+  </data>
+  <data name="CountryDetailsContinent" xml:space="preserve">
+    <value>Country in </value>
+  </data>
+  <data name="CountryDetailsISO" xml:space="preserve">
+    <value>ISO 3166 code: </value>
+  </data>
   <data name="HelpText" xml:space="preserve">
     <value>This application helps you to recognize flags of all countries.
 
@@ -137,18 +152,109 @@ version 1.0
   Better algorithm, updates in interface.
 
 version 0.9
-  Completely new interface
+  Completely new interface.
 
 version 0.8
   Changed application name. Only WP7 version. New history.</value>
   </data>
   <data name="HistoryTitle" xml:space="preserve">
-    <value>History</value>
+    <value>history</value>
+  </data>
+  <data name="MainAddBackslash" xml:space="preserve">
+    <value>backslash</value>
+  </data>
+  <data name="MainAddCanton" xml:space="preserve">
+    <value>canton</value>
+  </data>
+  <data name="MainAddCross" xml:space="preserve">
+    <value>cross</value>
+  </data>
+  <data name="MainAdditionalTitle" xml:space="preserve">
+    <value>additional</value>
+  </data>
+  <data name="MainAddSaltire" xml:space="preserve">
+    <value>saltire</value>
+  </data>
+  <data name="MainAddSlash" xml:space="preserve">
+    <value>slash</value>
+  </data>
+  <data name="MainAddSomething" xml:space="preserve">
+    <value>something</value>
+  </data>
+  <data name="MainAddStripe" xml:space="preserve">
+    <value>stripe</value>
+  </data>
+  <data name="MainAddTriangle" xml:space="preserve">
+    <value>triangle</value>
+  </data>
+  <data name="MainAtLeastOneMessage" xml:space="preserve">
+    <value>You must specify at least one information about flag (color, shape, additional element).</value>
+  </data>
+  <data name="MainColBlack" xml:space="preserve">
+    <value>black</value>
+  </data>
+  <data name="MainColBlue" xml:space="preserve">
+    <value>blue</value>
+  </data>
+  <data name="MainColGreen" xml:space="preserve">
+    <value>green</value>
+  </data>
+  <data name="MainColorsTitle" xml:space="preserve">
+    <value>colors</value>
+  </data>
+  <data name="MainColOther" xml:space="preserve">
+    <value>other</value>
+  </data>
+  <data name="MainColRed" xml:space="preserve">
+    <value>red</value>
+  </data>
+  <data name="MainColWhite" xml:space="preserve">
+    <value>white</value>
+  </data>
+  <data name="MainColYellow" xml:space="preserve">
+    <value>yellow</value>
+  </data>
+  <data name="MainPleaseWaitMessage" xml:space="preserve">
+    <value>Please wait...</value>
+  </data>
+  <data name="MainShapeTitle" xml:space="preserve">
+    <value>shape</value>
+  </data>
+  <data name="MainShpHorizontalBicolor" xml:space="preserve">
+    <value>horiz. bicolor</value>
+  </data>
+  <data name="MainShpHorizontalTricolor" xml:space="preserve">
+    <value>horiz. tricolor</value>
+  </data>
+  <data name="MainShpPlain" xml:space="preserve">
+    <value>plain</value>
+  </data>
+  <data name="MainShpStripes" xml:space="preserve">
+    <value>stripes</value>
+  </data>
+  <data name="MainShpVerticalBicolor" xml:space="preserve">
+    <value>vertical bicolor</value>
+  </data>
+  <data name="MainShpVerticalTricolor" xml:space="preserve">
+    <value>vertical tricolor</value>
+  </data>
+  <data name="MenuFindAFlag" xml:space="preserve">
+    <value>find a flag</value>
+  </data>
+  <data name="MenuFlagsList" xml:space="preserve">
+    <value>flags list</value>
+  </data>
+  <data name="MenuHelp" xml:space="preserve">
+    <value>help</value>
+  </data>
+  <data name="MenuHistoryAndPlans" xml:space="preserve">
+    <value>history</value>
+  </data>
+  <data name="MenuTitle" xml:space="preserve">
+    <value>flag helper</value>
   </data>
   <data name="PlansIntro" xml:space="preserve">
-    <value>If you think that this application is useful and I should make it better and better, please buy full version. Thanks.
-
-If you need some functions or have any ideas, please tap link below and write about it in comment.</value>
+    <value>If you need some functions or have any ideas, please tap link below and write about it in comment.</value>
   </data>
   <data name="PlansRateButton" xml:space="preserve">
     <value>Write comment and rate this app!</value>
@@ -163,5 +269,11 @@ If you need some functions or have any ideas, please tap link below and write ab
   </data>
   <data name="PlansTitle" xml:space="preserve">
     <value>plans</value>
+  </data>
+  <data name="ResultsHoldForMore" xml:space="preserve">
+    <value>HOLD FOR MORE...</value>
+  </data>
+  <data name="ResultsTitle" xml:space="preserve">
+    <value>results</value>
   </data>
 </root>

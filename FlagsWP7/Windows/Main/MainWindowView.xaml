@@ -40,7 +40,7 @@
                             ImageSource="/FlagsWP7;component/Media/Back/back1.jpg" />
             </controls:Panorama.Background>
             <!-- Shapes -->
-            <controls:PanoramaItem Header="shape">
+            <controls:PanoramaItem Header="{Binding Path=Texts.MainShapeTitle, Source={StaticResource Translations}}">
                 <ListBox Width="420"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
@@ -52,7 +52,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape1.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="vertical tricolor">
+                                     Title="{Binding Path=Texts.MainShpVerticalTricolor, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -64,7 +64,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape2.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="vertical bicolor">
+                                     Title="{Binding Path=Texts.MainShpVerticalBicolor, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -76,7 +76,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape3.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="horiz. tricolor">
+                                     Title="{Binding Path=Texts.MainShpHorizontalTricolor, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -88,7 +88,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape4.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="horiz. bicolor">
+                                     Title="{Binding Path=Texts.MainShpHorizontalBicolor, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -100,7 +100,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape5.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="stripes">
+                                     Title="{Binding Path=Texts.MainShpStripes, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -112,7 +112,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7shape6.png"
                                      Background="{Binding ShapeNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="plain">
+                                     Title="{Binding Path=Texts.MainShpPlain, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyShapeNumberCommand}"
@@ -124,7 +124,7 @@
             </controls:PanoramaItem>
 
             <!-- Additional elements -->
-            <controls:PanoramaItem Header="additional">
+            <controls:PanoramaItem Header="{Binding Path=Texts.MainAdditionalTitle, Source={StaticResource Translations}}">
                 <ListBox Width="420"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
@@ -136,7 +136,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add1.png"
                                      Background="{Binding AddNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="something">
+                                     Title="{Binding Path=Texts.MainAddSomething, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -148,7 +148,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add2.png"
                                      Background="{Binding AddNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="canton">
+                                     Title="{Binding Path=Texts.MainAddCanton, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -160,7 +160,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add3.png"
                                      Background="{Binding AddNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="triangle">
+                                     Title="{Binding Path=Texts.MainAddTriangle, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -172,7 +172,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add4.png"
                                      Background="{Binding AddNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="stripe">
+                                     Title="{Binding Path=Texts.MainAddStripe, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -184,7 +184,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add5.png"
                                      Background="{Binding AddNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="cross">
+                                     Title="{Binding Path=Texts.MainAddCross, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -196,7 +196,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add6.png"
                                      Background="{Binding AddNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="saltire">
+                                     Title="{Binding Path=Texts.MainAddSaltire, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -208,7 +208,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add7.png"
                                      Background="{Binding AddNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="slash">
+                                     Title="{Binding Path=Texts.MainAddSlash, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -220,7 +220,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7add8.png"
                                      Background="{Binding AddNumber, ConverterParameter=7, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="backslash">
+                                     Title="{Binding Path=Texts.MainAddBackslash, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyAddNumberCommand}"
@@ -232,7 +232,7 @@
             </controls:PanoramaItem>
 
             <!-- Colors -->
-            <controls:PanoramaItem Header="colors">
+            <controls:PanoramaItem Header="{Binding Path=Texts.MainColorsTitle, Source={StaticResource Translations}}">
                 <ListBox Width="420"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden">
                     <ListBox.ItemsPanel>
@@ -244,7 +244,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col1.png"
                                      Background="{Binding ColorNumber, ConverterParameter=0, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="red">
+                                     Title="{Binding Path=Texts.MainColRed, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -256,7 +256,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col2.png"
                                      Background="{Binding ColorNumber, ConverterParameter=1, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="blue">
+                                     Title="{Binding Path=Texts.MainColBlue, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -268,7 +268,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col3.png"
                                      Background="{Binding ColorNumber, ConverterParameter=2, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="yellow">
+                                     Title="{Binding Path=Texts.MainColYellow, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -280,7 +280,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col4.png"
                                      Background="{Binding ColorNumber, ConverterParameter=3, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="green">
+                                     Title="{Binding Path=Texts.MainColGreen, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -292,7 +292,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col5.png"
                                      Background="{Binding ColorNumber, ConverterParameter=4, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="white">
+                                     Title="{Binding Path=Texts.MainColWhite, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -304,7 +304,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col6.png"
                                      Background="{Binding ColorNumber, ConverterParameter=5, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="black">
+                                     Title="{Binding Path=Texts.MainColBlack, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -316,7 +316,7 @@
                     <toolkit:HubTile Style="{StaticResource HubTileExStyle}"
                                      Source="/FlagsWP7;component/Media/Icons/wp7col7.png"
                                      Background="{Binding ColorNumber, ConverterParameter=6, Converter={StaticResource IntegerFlagToColorConverter}}"
-                                     Title="other">
+                                     Title="{Binding Path=Texts.MainColOther, Source={StaticResource Translations}}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Tap">
                                 <cmd:EventToCommand Command="{Binding ModifyColorNumberCommand}"
@@ -346,7 +346,7 @@
                 <SolidColorBrush Color="#FF003E71" />
             </Border.Background>
             <TextBlock TextWrapping="Wrap"
-                       Text="Please wait..."
+                       Text="{Binding Path=Texts.MainPleaseWaitMessage, Source={StaticResource Translations}}"
                        FontSize="45.333"
                        Margin="3"
                        HorizontalAlignment="Center"

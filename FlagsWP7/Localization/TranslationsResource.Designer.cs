@@ -61,6 +61,51 @@ namespace FlagsWP7.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alphabetically.
+        /// </summary>
+        public static string CountriesListAlphabetically {
+            get {
+                return ResourceManager.GetString("CountriesListAlphabetically", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to by continent.
+        /// </summary>
+        public static string CountriesListByContinent {
+            get {
+                return ResourceManager.GetString("CountriesListByContinent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capital city: .
+        /// </summary>
+        public static string CountryDetailsCapital {
+            get {
+                return ResourceManager.GetString("CountryDetailsCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country in .
+        /// </summary>
+        public static string CountryDetailsContinent {
+            get {
+                return ResourceManager.GetString("CountryDetailsContinent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ISO 3166 code: .
+        /// </summary>
+        public static string CountryDetailsISO {
+            get {
+                return ResourceManager.GetString("CountryDetailsISO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This application helps you to recognize flags of all countries.
         ///
         ///In &quot;find a flag&quot; mode you just should select a few specific things which you can see on flag you can&apos;t recognize (colors, flag shape etc.) and tap the find button.
@@ -92,7 +137,7 @@ namespace FlagsWP7.Localization {
         ///  Better algorithm, updates in interface.
         ///
         ///version 0.9
-        ///  Completely new interface
+        ///  Completely new interface.
         ///
         ///version 0.8
         ///  Changed application name. Only WP7 version. New history..
@@ -104,7 +149,7 @@ namespace FlagsWP7.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to History.
+        ///   Looks up a localized string similar to history.
         /// </summary>
         public static string HistoryTitle {
             get {
@@ -113,9 +158,286 @@ namespace FlagsWP7.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you think that this application is useful and I should make it better and better, please buy full version. Thanks.
-        ///
-        ///If you need some functions or have any ideas, please tap link below and write about it in comment..
+        ///   Looks up a localized string similar to backslash.
+        /// </summary>
+        public static string MainAddBackslash {
+            get {
+                return ResourceManager.GetString("MainAddBackslash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to canton.
+        /// </summary>
+        public static string MainAddCanton {
+            get {
+                return ResourceManager.GetString("MainAddCanton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cross.
+        /// </summary>
+        public static string MainAddCross {
+            get {
+                return ResourceManager.GetString("MainAddCross", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to additional.
+        /// </summary>
+        public static string MainAdditionalTitle {
+            get {
+                return ResourceManager.GetString("MainAdditionalTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to saltire.
+        /// </summary>
+        public static string MainAddSaltire {
+            get {
+                return ResourceManager.GetString("MainAddSaltire", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to slash.
+        /// </summary>
+        public static string MainAddSlash {
+            get {
+                return ResourceManager.GetString("MainAddSlash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to something.
+        /// </summary>
+        public static string MainAddSomething {
+            get {
+                return ResourceManager.GetString("MainAddSomething", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stripe.
+        /// </summary>
+        public static string MainAddStripe {
+            get {
+                return ResourceManager.GetString("MainAddStripe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to triangle.
+        /// </summary>
+        public static string MainAddTriangle {
+            get {
+                return ResourceManager.GetString("MainAddTriangle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must specify at least one information about flag (color, shape, additional element)..
+        /// </summary>
+        public static string MainAtLeastOneMessage {
+            get {
+                return ResourceManager.GetString("MainAtLeastOneMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to black.
+        /// </summary>
+        public static string MainColBlack {
+            get {
+                return ResourceManager.GetString("MainColBlack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to blue.
+        /// </summary>
+        public static string MainColBlue {
+            get {
+                return ResourceManager.GetString("MainColBlue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to green.
+        /// </summary>
+        public static string MainColGreen {
+            get {
+                return ResourceManager.GetString("MainColGreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to colors.
+        /// </summary>
+        public static string MainColorsTitle {
+            get {
+                return ResourceManager.GetString("MainColorsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to other.
+        /// </summary>
+        public static string MainColOther {
+            get {
+                return ResourceManager.GetString("MainColOther", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to red.
+        /// </summary>
+        public static string MainColRed {
+            get {
+                return ResourceManager.GetString("MainColRed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to white.
+        /// </summary>
+        public static string MainColWhite {
+            get {
+                return ResourceManager.GetString("MainColWhite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to yellow.
+        /// </summary>
+        public static string MainColYellow {
+            get {
+                return ResourceManager.GetString("MainColYellow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please wait....
+        /// </summary>
+        public static string MainPleaseWaitMessage {
+            get {
+                return ResourceManager.GetString("MainPleaseWaitMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to shape.
+        /// </summary>
+        public static string MainShapeTitle {
+            get {
+                return ResourceManager.GetString("MainShapeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horiz. bicolor.
+        /// </summary>
+        public static string MainShpHorizontalBicolor {
+            get {
+                return ResourceManager.GetString("MainShpHorizontalBicolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to horiz. tricolor.
+        /// </summary>
+        public static string MainShpHorizontalTricolor {
+            get {
+                return ResourceManager.GetString("MainShpHorizontalTricolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to plain.
+        /// </summary>
+        public static string MainShpPlain {
+            get {
+                return ResourceManager.GetString("MainShpPlain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stripes.
+        /// </summary>
+        public static string MainShpStripes {
+            get {
+                return ResourceManager.GetString("MainShpStripes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to vertical bicolor.
+        /// </summary>
+        public static string MainShpVerticalBicolor {
+            get {
+                return ResourceManager.GetString("MainShpVerticalBicolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to vertical tricolor.
+        /// </summary>
+        public static string MainShpVerticalTricolor {
+            get {
+                return ResourceManager.GetString("MainShpVerticalTricolor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to find a flag.
+        /// </summary>
+        public static string MenuFindAFlag {
+            get {
+                return ResourceManager.GetString("MenuFindAFlag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to flags list.
+        /// </summary>
+        public static string MenuFlagsList {
+            get {
+                return ResourceManager.GetString("MenuFlagsList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to help.
+        /// </summary>
+        public static string MenuHelp {
+            get {
+                return ResourceManager.GetString("MenuHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to history.
+        /// </summary>
+        public static string MenuHistoryAndPlans {
+            get {
+                return ResourceManager.GetString("MenuHistoryAndPlans", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to flag helper.
+        /// </summary>
+        public static string MenuTitle {
+            get {
+                return ResourceManager.GetString("MenuTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you need some functions or have any ideas, please tap link below and write about it in comment..
         /// </summary>
         public static string PlansIntro {
             get {
@@ -152,6 +474,24 @@ namespace FlagsWP7.Localization {
         public static string PlansTitle {
             get {
                 return ResourceManager.GetString("PlansTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HOLD FOR MORE....
+        /// </summary>
+        public static string ResultsHoldForMore {
+            get {
+                return ResourceManager.GetString("ResultsHoldForMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to results.
+        /// </summary>
+        public static string ResultsTitle {
+            get {
+                return ResourceManager.GetString("ResultsTitle", resourceCulture);
             }
         }
     }
