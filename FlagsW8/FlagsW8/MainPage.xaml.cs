@@ -30,6 +30,9 @@ namespace FlagsW8
     {
         public ItemsPage()
         {
+            Country.BoxSize = 510;
+            Country.MaxImageSizeX = 50;
+            Country.MaxImageSizeY = 30;
             this.InitializeComponent();
         }
 
@@ -44,20 +47,17 @@ namespace FlagsW8
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-            this.DefaultViewModel["Items"] = sampleDataGroups;
-
+            var i = 0;
             ResultCountries = new ObservableCollection<Country>();
             foreach (var country in CountryManager.Countries)
             {
-                ResultCountries.Add(country);
-
-                if (country.Name[0] == 'D')
+                if (++i > 8)
                     break;
+
+                ResultCountries.Add(country);
             }
-            this.DefaultViewModel["ResultCountries"] = ResultCountries;
-            
+
+            DefaultViewModel["ResultCountries"] = ResultCountries;
         }
 
         public ObservableCollection<Country> ResultCountries;
@@ -72,7 +72,7 @@ namespace FlagsW8
         {
             // Navigate to the appropriate destination page, configuring the new page
             // by passing required information as a navigation parameter
-            var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
+            //var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
          //   this.Frame.Navigate(typeof(SplitPage), groupId);
         }
     }

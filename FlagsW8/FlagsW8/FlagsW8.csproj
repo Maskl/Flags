@@ -107,6 +107,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\GridWidthToHeightConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -147,9 +148,6 @@
     <Content Include="Media\background - Copy.png" />
     <Content Include="Media\background.png" />
     <Content Include="Media\Back\back1.jpg" />
-    <Content Include="Media\flags.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Media\Flags\100\ad.png" />
     <Content Include="Media\Flags\100\ae.png" />
     <Content Include="Media\Flags\100\af.png" />

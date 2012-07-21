@@ -7,6 +7,10 @@ namespace FlagsW8.Model
 {
     public class Country
     {
+        static public int BoxSize { get; set; }
+        static public int MaxImageSizeX { get; set; }
+        static public int MaxImageSizeY { get; set; }
+
         public string Iso { get; set; }
         public char FirstLetter { get; set; }
 
@@ -78,7 +82,7 @@ namespace FlagsW8.Model
             {
                 if (this._image == null)
                 {
-                    this._image = new BitmapImage(new Uri("ms-appx:///Assets/SmallLogo.png"));
+                    this._image = new BitmapImage(new Uri("ms-appx:///Media/Flags/100/" + Iso.ToLower() + ".png"));
                 }
                 return this._image;
             }
