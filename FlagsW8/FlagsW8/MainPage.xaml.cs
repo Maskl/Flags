@@ -57,6 +57,9 @@ namespace FlagsW8
                 ResultCountries.Add(country);
             }
 
+            DefaultViewModel["ShapeOptions"] = FlagParamsManager.Shapes;
+            DefaultViewModel["AddOptions"] = FlagParamsManager.Adds;
+            DefaultViewModel["ColorOptions"] = FlagParamsManager.Colors;
             DefaultViewModel["ResultCountries"] = ResultCountries;
         }
 

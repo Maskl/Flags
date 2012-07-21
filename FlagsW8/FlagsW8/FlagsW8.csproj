@@ -111,6 +111,10 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\FlagColor.cs" />
+    <Compile Include="Model\FlagAdd.cs" />
+    <Compile Include="Model\FlagParamsManager.cs" />
+    <Compile Include="Model\FlagShape.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\CountryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

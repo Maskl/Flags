@@ -13,10 +13,22 @@
     mc:Ignorable="d">
 
     <common:LayoutAwarePage.Resources>
+        
         <CollectionViewSource
             x:Name="ShapeItemSource"
-            Source="{Binding ResultCountries}"
+            Source="{Binding ShapeOptions}"
             d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
+        
+        <CollectionViewSource
+            x:Name="AddItemSource"
+            Source="{Binding AddOptions}"
+            d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
+        
+        <CollectionViewSource
+                x:Name="ColorItemSource"
+                Source="{Binding ColorOptions}"
+                d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
+        
         <CollectionViewSource
             x:Name="ResultItemSource"
             Source="{Binding ResultCountries}"
@@ -181,6 +193,7 @@
                 Text="=" />
         </Border>
 
+        <!-- Shape -->
         <Viewbox
             Grid.Column="1"
             Grid.Row="5"
@@ -212,10 +225,10 @@
                                 <Image
                                     Source="{Binding Image}"
                                     Width="150"
-                                    Height="120"
+                                    Height="130"
                                     VerticalAlignment="Top" />
                             </Border>
-                            
+
                             <StackPanel
                                 VerticalAlignment="Bottom"
                                 Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
@@ -224,13 +237,7 @@
                                     Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                     Style="{StaticResource TitleTextStyle}"
                                     Height="20"
-                                    Margin="15,0,15,0" />
-                                <TextBlock
-                                    Text="{Binding Continent}"
-                                    Foreground="{StaticResource ListViewItemOverlaySecondaryForegroundThemeBrush}"
-                                    Style="{StaticResource CaptionTextStyle}"
-                                    TextWrapping="NoWrap"
-                                    Margin="15,0,15,10" />
+                                    Margin="15,0,15,15" />
                             </StackPanel>
                         </Grid>
                     </DataTemplate>
@@ -238,6 +245,110 @@
             </GridView>
         </Viewbox>
         
+        <!-- Add -->
+        <Viewbox
+            Grid.Column="5"
+            Grid.Row="5"
+            Stretch="Uniform"
+            VerticalAlignment="Top">
+
+            <GridView
+                x:Name="AddGridView"
+                ItemsSource="{Binding Source={StaticResource AddItemSource}}"
+                SelectionMode="Multiple">
+
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid
+                            Orientation="Horizontal"
+                            VerticalChildrenAlignment="Center"
+                            MaximumRowsOrColumns="2" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Width="150"
+                            Height="150">
+
+                            <Border
+                                Background="#FF02B812">
+                                <Image
+                                    Source="{Binding Image}"
+                                    Width="150"
+                                    Height="130"
+                                    VerticalAlignment="Top" />
+                            </Border>
+
+                            <StackPanel
+                                VerticalAlignment="Bottom"
+                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                <TextBlock
+                                    Text="{Binding Name}"
+                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                    Style="{StaticResource TitleTextStyle}"
+                                    Height="20"
+                                    Margin="15,0,15,15" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Viewbox>
+        
+        <!-- Color -->
+        <Viewbox
+            Grid.Column="9"
+            Grid.Row="5"
+            Stretch="Uniform"
+            VerticalAlignment="Top">
+
+            <GridView
+                x:Name="ColorGridView"
+                ItemsSource="{Binding Source={StaticResource ColorItemSource}}"
+                SelectionMode="Multiple">
+
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid
+                            Orientation="Horizontal"
+                            VerticalChildrenAlignment="Center"
+                            MaximumRowsOrColumns="2" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            Width="150"
+                            Height="150">
+
+                            <Border
+                                Background="#FF02B812">
+                                <Image
+                                    Source="{Binding Image}"
+                                    Width="150"
+                                    Height="130"
+                                    VerticalAlignment="Top" />
+                            </Border>
+
+                            <StackPanel
+                                VerticalAlignment="Bottom"
+                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                <TextBlock
+                                    Text="{Binding Name}"
+                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                    Style="{StaticResource TitleTextStyle}"
+                                    Height="20"
+                                    Margin="15,0,15,15" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </Viewbox>
+
         <!-- Results -->
         <Viewbox
             Grid.Column="13"
