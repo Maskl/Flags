@@ -206,7 +206,7 @@
             <GridView
                 x:Name="ShapeGridView"
                 ItemsSource="{Binding Source={StaticResource ShapeItemSource}}"
-                SelectionMode="Multiple"
+                SelectionMode="Single"
                 SelectionChanged="FlagParameterSelectionChanged">
                 
                 <GridView.ItemsPanel>
@@ -365,7 +365,9 @@
             <GridView
                 x:Name="ResultsGridView"
                 ItemsSource="{Binding Source={StaticResource ResultItemSource}}"
-                SelectionMode="Multiple">
+                SelectionMode="None"
+                IsItemClickEnabled="True"
+                ItemClick="ResultCountryClicked">
 
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -406,64 +408,25 @@
                 </GridView.ItemTemplate>
             </GridView>
         </Viewbox>
+        <Border
+            Tapped="CloseCountryDetailsClicked"  x:Name="DarkenerBackground" BorderBrush="Black" Grid.ColumnSpan="15" HorizontalAlignment="Left" Height="768" Grid.RowSpan="7" VerticalAlignment="Top" Width="1366" Background="#FF888888" Opacity="0.25" Visibility="Collapsed"/>
+        <Border x:Name="CountryDetailsPopup" BorderBrush="Black" HorizontalAlignment="Center" Height="500" VerticalAlignment="Center" Background="White" Margin="26,26,25,121" Width="800" Grid.ColumnSpan="9" Grid.Column="3" Grid.Row="3" Grid.RowSpan="3" Visibility="Collapsed">
+        	<Grid>
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="100"/>
+        			<RowDefinition/>
+        		</Grid.RowDefinitions>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition/>
+        			<ColumnDefinition Width="400"/>
+        		</Grid.ColumnDefinitions>
+        		<TextBlock x:Name="CountryNameLabel" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Country name" Margin="30,30,0,0" Foreground="Black" FontSize="48"/>
+        		<TextBox x:Name="CountryDetailsText" Grid.Row="1" TextWrapping="Wrap" Text="Continent: Africa&#xD;&#xA;Capital City: Mbamba&#xD;&#xA;ISO 325 Code: NG" BorderThickness="0" Margin="30,0,0,0" FontSize="26.667" Padding="0"/>
+        		<Image x:Name="CountryFlagImage" Grid.Column="1" HorizontalAlignment="Right" Height="200" Margin="0,0,50,0" Grid.Row="1" VerticalAlignment="Top" Width="300"/>
+        		<Button 
+Click="CloseCountryDetailsClicked" 
+                    x:Name="CloseCountryDetailsButton" Content="x" HorizontalAlignment="Right" Height="31.667" Margin="0,10,10,0" VerticalAlignment="Top" Width="32" Foreground="Black" BorderBrush="Black" BorderThickness="1" Padding="0" Grid.Column="1"/>
+        	</Grid>
+        </Border>
     </Grid>
-
-
-
-
-
-    <!--
-    
-    		<VisualStateManager.VisualStateGroups>
-< !- - Visual states reflect the application's view state - - >
-    <VisualStateGroup x:Name="ApplicationViewStates">
-        <VisualState x:Name="FullScreenLandscape"/>
-        <VisualState x:Name="Filled"/>
-
-        < ! - - The entire page respects the narrower 100-pixel margin convention for portrait  - - >
-        <VisualState x:Name="FullScreenPortrait">
-            <Storyboard>
-                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Padding">
-                    <DiscreteObjectKeyFrame KeyTime="0" Value="96,0,86,56"/>
-                </ObjectAnimationUsingKeyFrames>
-            </Storyboard>
-        </VisualState>
-
-        <! - -
-                    The back button and title have different styles when snapped, and the list representation is substituted
-                    for the grid displayed in all other view states
-                - - >
-        <VisualState x:Name="Snapped">
-            <Storyboard>
-                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Visibility">
-                    <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
-                </ObjectAnimationUsingKeyFrames>
-            </Storyboard>
-        </VisualState>
-    </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-    < ! - - Horizontal scrolling grid used in most view states - - >
-    <GridView
-			x:Name="itemGridView"
-			AutomationProperties.AutomationId="ItemsGridView"
-			AutomationProperties.Name="Items"
-			TabIndex="1"
-			Padding="116,0,116,46"
-			ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-			ItemTemplate="{StaticResource Flag130x130ItemTemplate}"
-			SelectionMode="Multiple"/>
-    <GridView
-			x:Name="itemGridViesw"
-			AutomationProperties.AutomationId="ItemsdadasdasGridView"
-			AutomationProperties.Name="Itedasdams"
-			TabIndex="2"
-			Margin="0,-4,200,-404"
-			Padding="116,0,116,46"
-			ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-			ItemTemplate="{StaticResource Flag130x130ItemTemplate}"
-			SelectionMode="None"
-			IsItemClickEnabled="True"
-			ItemClick="ItemView_ItemClick" Grid.Column="1"/>
-    
-    -->
 </common:LayoutAwarePage>

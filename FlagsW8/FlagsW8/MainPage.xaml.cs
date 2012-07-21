@@ -65,26 +65,29 @@ namespace FlagsW8
 
         public ObservableCollection<Country> ResultCountries;
 
-        /// <summary>
-        /// Invoked when an item is clicked.
-        /// </summary>
-        /// <param name="sender">The GridView (or ListView when the application is snapped)
-        /// displaying the item clicked.</param>
-        /// <param name="e">Event data that describes the item clicked.</param>
-        void ItemView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            // Navigate to the appropriate destination page, configuring the new page
-            // by passing required information as a navigation parameter
-            //var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
-         //   this.Frame.Navigate(typeof(SplitPage), groupId);
-        }
-
         private void FlagParameterSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var color = ColorGridView.SelectedItems.Aggregate(0, (current, col) => current | 1 << (((FlagColor)col).Id - 1));
             var shape = ShapeGridView.SelectedItems.Aggregate(0, (current, sha) => current | 1 << (((FlagShape)sha).Id - 1));
-            var addit =   AddGridView.SelectedItems.Aggregate(0, (current, add) => current | 1 << (((FlagAdd  )add).Id - 1));
+            var addit = AddGridView.SelectedItems.Aggregate(0, (current, add) => current | 1 << (((FlagAdd)add).Id - 1));
             CountryManager.GetCountriesByParams(ResultCountries, color, shape, addit);
+        }
+
+        private void ResultCountryClicked(object sender, ItemClickEventArgs e)
+        {
+            var country = (Country)e.ClickedItem;
+            CountryNameLabel.Text = country.Name;
+            CountryDetailsText.Text = country.ShortDescription;
+            CountryFlagImage.Source = country.Image;
+
+            DarkenerBackground.Visibility = Visibility.Visible;
+            CountryDetailsPopup.Visibility = Visibility.Visible;
+        }
+
+        private void CloseCountryDetailsClicked(object sender, RoutedEventArgs e)
+        {
+            DarkenerBackground.Visibility = Visibility.Collapsed;
+            CountryDetailsPopup.Visibility = Visibility.Collapsed;
         }
     }
 }
