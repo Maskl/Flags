@@ -429,4 +429,33 @@ Click="CloseCountryDetailsClicked"
         	</Grid>
         </Border>
     </Grid>
+    
+    <Page.BottomAppBar>
+        <AppBar
+            x:Name="bottomAppBar"
+            Padding="10,0,10,0">
+            <Grid>
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left">
+                    <Button
+                        AutomationProperties.Name ="Clear"
+                        Style="{StaticResource DiscardAppBarButtonStyle}"
+                        Click="ClearButtonClicked"/>
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+                    <Button
+                        AutomationProperties.Name="WP7 version"
+                        Style="{StaticResource DownloadAppBarButtonStyle}"
+                        Click="Wp7VersionDownloadClicked"/>
+                    <Button
+                        AutomationProperties.Name="About"
+                        Style="{StaticResource HelpAppBarButtonStyle}"
+                        Click="AboutButtonClicked"/>
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
 </common:LayoutAwarePage>

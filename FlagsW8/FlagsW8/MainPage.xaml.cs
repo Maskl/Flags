@@ -89,5 +89,22 @@ namespace FlagsW8
             DarkenerBackground.Visibility = Visibility.Collapsed;
             CountryDetailsPopup.Visibility = Visibility.Collapsed;
         }
+
+        private void ClearButtonClicked(object sender, RoutedEventArgs e)
+        {
+            ShapeGridView.SelectedItem = FlagParamsManager.Shapes[0];
+            AddGridView.SelectedItem = null;
+            ColorGridView.SelectedItem = null;
+        }
+
+        private void Wp7VersionDownloadClicked(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AboutButtonClicked(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
