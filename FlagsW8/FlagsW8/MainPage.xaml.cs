@@ -78,5 +78,13 @@ namespace FlagsW8
             //var groupId = ((SampleDataGroup)e.ClickedItem).UniqueId;
          //   this.Frame.Navigate(typeof(SplitPage), groupId);
         }
+
+        private void FlagParameterSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var color = ColorGridView.SelectedItems.Aggregate(0, (current, col) => current | 1 << (((FlagColor)col).Id - 1));
+            var shape = ShapeGridView.SelectedItems.Aggregate(0, (current, sha) => current | 1 << (((FlagShape)sha).Id - 1));
+            var addit =   AddGridView.SelectedItems.Aggregate(0, (current, add) => current | 1 << (((FlagAdd  )add).Id - 1));
+            CountryManager.GetCountriesByParams(ResultCountries, color, shape, addit);
+        }
     }
 }

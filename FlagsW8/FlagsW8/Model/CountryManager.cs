@@ -277,7 +277,7 @@ namespace FlagsW8.Model
                 f.Add[5] * addTab[5] +
                 f.Add[6] * addTab[6] +
                 f.Add[7] * addTab[7]
-            ) select f).Take(16);
+            ) select f).Take(8);
 
             foreach (var country in flags)
             {

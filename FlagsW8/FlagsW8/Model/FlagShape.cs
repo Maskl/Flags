@@ -18,7 +18,7 @@ namespace FlagsW8.Model
             NamePL = namePL;
         }
 
-        private ImageSource _image = null;
+        private ImageSource _image;
         public ImageSource Image
         {
             get { return _image ?? (_image = new BitmapImage(new Uri("ms-appx:///Media/Icons/wp7shape" + Id + ".png"))); }

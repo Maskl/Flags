@@ -99,6 +99,7 @@
             Grid.Row="3"
             Background="#FF1202B8">
             <TextBlock
+                Name="ShapeLabel"
                 TextWrapping="Wrap"
                 FontSize="32"
                 Padding="10,5"
@@ -112,6 +113,7 @@
             Grid.Row="3"
             Background="#FF1202B8">
             <TextBlock
+                Name="AddLabel"
                 TextWrapping="Wrap"
                 FontSize="32"
                 Padding="10,5"
@@ -125,6 +127,7 @@
             Grid.Row="3"
             Background="#FF1202B8">
             <TextBlock
+                Name="ColorsLabel"
                 TextWrapping="Wrap"
                 FontSize="32"
                 Padding="10,5"
@@ -203,7 +206,8 @@
             <GridView
                 x:Name="ShapeGridView"
                 ItemsSource="{Binding Source={StaticResource ShapeItemSource}}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectionChanged="FlagParameterSelectionChanged">
                 
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -255,7 +259,8 @@
             <GridView
                 x:Name="AddGridView"
                 ItemsSource="{Binding Source={StaticResource AddItemSource}}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectionChanged="FlagParameterSelectionChanged">
 
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -307,7 +312,8 @@
             <GridView
                 x:Name="ColorGridView"
                 ItemsSource="{Binding Source={StaticResource ColorItemSource}}"
-                SelectionMode="Multiple">
+                SelectionMode="Multiple"
+                SelectionChanged="FlagParameterSelectionChanged">
 
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
