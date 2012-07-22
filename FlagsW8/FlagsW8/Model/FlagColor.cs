@@ -21,7 +21,7 @@ namespace FlagsW8.Model
         private ImageSource _image;
         public ImageSource Image
         {
-            get { return _image ?? (_image = new BitmapImage(new Uri("ms-appx:///Media/Icons/wp7col" + Id + ".png"))); }
+            get { return _image ?? (_image = new BitmapImage(new Uri("ms-appx:///Media/Colors/col" + Id + ".png"))); }
         }
     }
 }

@@ -220,7 +220,7 @@
                                         Text="{Binding Name}"
                                         Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                         Style="{StaticResource TitleTextStyle}"
-                                        FontSize="20"
+                                        FontSize="18"
                                         Height="35"
                                         Padding="0,10,0,0"
                                         Margin="15,0,15,15" />
@@ -274,7 +274,7 @@
                                         Text="{Binding Name}"
                                         Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                         Style="{StaticResource TitleTextStyle}"
-                                        FontSize="20"
+                                        FontSize="18"
                                         Height="35"
                                         Padding="0,10,0,0"
                                         Margin="15,0,15,15" />
@@ -329,7 +329,7 @@
                                         Text="{Binding Name}"
                                         Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                         Style="{StaticResource TitleTextStyle}"
-                                        FontSize="20"
+                                        FontSize="18"
                                         Height="35"
                                         Padding="0,10,0,0"
                                         Margin="15,0,15,15" />
@@ -385,7 +385,7 @@
                                         Text="{Binding Name}"
                                         Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                         Style="{StaticResource TitleTextStyle}"
-                                        FontSize="20"
+                                        FontSize="18"
                                         Height="35"
                                         Padding="0,10,0,0"
                                         Margin="15,0,15,15" />

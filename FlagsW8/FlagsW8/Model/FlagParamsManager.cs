@@ -14,10 +14,10 @@ namespace FlagsW8.Model
         static FlagParamsManager()
         {
             Shapes = new ObservableCollection<FlagShape>();
-            Shapes.Add(new FlagShape(1, "vertical tricolor", "trzy pionowe"));
-            Shapes.Add(new FlagShape(2, "vertical bicolor", "dwa pionowe"));
-            Shapes.Add(new FlagShape(3, "horizontal tricolor", "trzy poziome"));
-            Shapes.Add(new FlagShape(4, "horizontal bicolor", "dwa poziome"));
+            Shapes.Add(new FlagShape(1, "vert. tricolor", "trzy pionowe"));
+            Shapes.Add(new FlagShape(2, "vert. bicolor", "dwa pionowe"));
+            Shapes.Add(new FlagShape(3, "horiz. tricolor", "trzy poziome"));
+            Shapes.Add(new FlagShape(4, "horiz. bicolor", "dwa poziome"));
             Shapes.Add(new FlagShape(5, "stripes", "paski"));
             Shapes.Add(new FlagShape(6, "plain", "bez pasków"));
 
