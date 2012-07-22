@@ -1,33 +1,18 @@
 ﻿using System.Collections.ObjectModel;
-using FlagsW8.Data;
-
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using FlagsW8.Model;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234233
 
 namespace FlagsW8
 {
-    /// <summary>
-    /// A page that displays a collection of item previews.  In the Split Application this page
-    /// is used to display and select one of the available groups.
-    /// </summary>
-    public sealed partial class ItemsPage : FlagsW8.Common.LayoutAwarePage
+    public sealed partial class ItemsPage
     {
+        public ObservableCollection<Country> ResultCountries;
+
         public ItemsPage()
         {
             Window.Current.SizeChanged += WindowSizeChanged;     
@@ -37,15 +22,6 @@ namespace FlagsW8
             this.InitializeComponent();
         }
 
-        /// <summary>
-        /// Populates the page with content passed during navigation.  Any saved state is also
-        /// provided when recreating a page from a prior session.
-        /// </summary>
-        /// <param name="navigationParameter">The parameter value passed to
-        /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested.
-        /// </param>
-        /// <param name="pageState">A dictionary of state preserved by this page during an earlier
-        /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             ResultCountries = new ObservableCollection<Country>();
@@ -54,8 +30,6 @@ namespace FlagsW8
             DefaultViewModel["ColorOptions"] = FlagParamsManager.Colors;
             DefaultViewModel["ResultCountries"] = ResultCountries;
         }
-
-        public ObservableCollection<Country> ResultCountries;
 
         private void FlagParameterSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -98,7 +72,6 @@ namespace FlagsW8
             AddGridView.SelectedItem = null;
             ColorGridView.SelectedItem = null;
         }
-    
 
         private void WindowSizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
         {
