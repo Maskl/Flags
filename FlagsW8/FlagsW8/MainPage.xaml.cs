@@ -72,8 +72,18 @@ namespace FlagsW8
             CountryDetailsText.Text = country.ShortDescription;
             CountryFlagImage.Source = country.BigImage;
 
-            DarkenerBackground.Visibility = Visibility.Visible;
-            CountryDetailsPopup.Visibility = Visibility.Visible;
+            var viewState = ApplicationView.Value;
+            if (viewState != ApplicationViewState.Snapped)
+            {
+                DarkenerBackground.Visibility = Visibility.Visible;
+                CountryDetailsPopup.Visibility = Visibility.Visible;
+            }
+
+            CountryNameLabelSnapped.Text = country.Name;
+            CountryDetailsTextSnapped.Text = country.ShortDescription;
+            CountryFlagImageSnapped.Source = country.BigImage;
+            CountryDetailsGridSnapped.Visibility = Visibility.Visible;
+            MainScrollViewerSnapped.ScrollToVerticalOffset(99999);
         }
 
         private void CloseCountryDetailsClicked(object sender, RoutedEventArgs e)

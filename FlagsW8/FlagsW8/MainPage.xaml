@@ -410,7 +410,8 @@
                 Grid.RowSpan="7"
                 Background="#FF000000"
                 Opacity="0.75"
-                Visibility="Collapsed" />
+                Visibility="Collapsed"
+                Canvas.ZIndex="9998"/>
             <Border
                 x:Name="CountryDetailsPopup"
                 BorderBrush="Black"
@@ -419,7 +420,8 @@
                 Grid.RowSpan="7"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Visibility="Collapsed">
+                Visibility="Collapsed"
+                Canvas.ZIndex="9999">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush
@@ -541,6 +543,8 @@
                         Height="580" />
                     <RowDefinition
                         Height="20" />
+                    <RowDefinition/>
+                    <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
 
                 <Border
@@ -591,90 +595,40 @@
                     Grid.Row="13" />
 
                 <!-- Country details -->
-                <Border
-                    Tapped="CloseCountryDetailsClicked"
-                    x:Name="DarkenerBackgroundSnapped"
-                    BorderBrush="Black"
-                    Grid.ColumnSpan="15"
-                    HorizontalAlignment="Left"
-                    Height="768"
-                    Grid.RowSpan="7"
-                    VerticalAlignment="Top"
-                    Width="1366"
-                    Background="#FF000000"
-                    Opacity="0.5"
-                    Visibility="Collapsed" />
-                <Border
-                    x:Name="CountryDetailsPopupSnapped"
-                    BorderBrush="Black"
-                    HorizontalAlignment="Center"
-                    Height="500"
-                    VerticalAlignment="Center"
-                    Margin="26,26,25,121"
-                    Width="800"
-                    Grid.ColumnSpan="9"
-                    Grid.Column="3"
-                    Grid.Row="3"
-                    Grid.RowSpan="3"
-                    Visibility="Collapsed">
-                    <Grid>
-                        <Grid.Background>
-                            <ImageBrush
-                                ImageSource="Media/background.png"
-                                Stretch="UniformToFill" />
-                        </Grid.Background>
-                        <Grid.RowDefinitions>
-                            <RowDefinition
-                                Height="100" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition
-                                Width="400" />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                            x:Name="CountryNameLabelSnapped"
-                            Grid.ColumnSpan="2"
-                            TextWrapping="Wrap"
-                            Text="Country name"
-                            Margin="30,30,0,0"
-                            Foreground="Black"
-                            FontSize="48" />
-                        <TextBox
-                            x:Name="CountryDetailsTextSnapped"
-                            Grid.Row="1"
-                            TextWrapping="Wrap"
-                            Text="Continent: Africa&#xA;Capital City: Mbamba&#xA;ISO 325 Code: NG"
-                            BorderThickness="0"
-                            Margin="30,0,0,0"
-                            FontSize="26.667"
-                            Padding="0" />
-                        <Image
-                            x:Name="CountryFlagImageSnapped"
-                            Grid.Column="1"
-                            HorizontalAlignment="Right"
-                            Height="200"
-                            Margin="0,0,50,0"
-                            Grid.Row="1"
-                            VerticalAlignment="Top"
-                            Width="300" />
-                        <Button
-                            Click="CloseCountryDetailsClicked"
-                            x:Name="CloseCountryDetailsButtonSnapped"
-                            Content="x"
-                            HorizontalAlignment="Right"
-                            Height="31.667"
-                            Margin="0,10,10,0"
-                            VerticalAlignment="Top"
-                            Width="32"
-                            Foreground="Black"
-                            BorderBrush="Black"
-                            BorderThickness="1"
-                            Padding="0"
-                            Grid.Column="1" />
-                    </Grid>
-                </Border>
+                <Grid x:Name="CountryDetailsGridSnapped"
+                    Grid.Column="1"
+                    Grid.Row="17" Visibility="Collapsed" MinHeight="400">
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="Auto" />
+                        <RowDefinition
+                            Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                            Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="CountryNameLabelSnapped"
+                        TextWrapping="Wrap"
+                        Text="Country name"
+                        Foreground="White"
+                        FontSize="32" />
+                    <TextBlock
+                        x:Name="CountryDetailsTextSnapped"
+                        Grid.Row="1"
+                        TextWrapping="Wrap"
+                        Text="fsdfadfdsaf"
+                        FontSize="21.333"
+                        Padding="0"
+                        Foreground="White" />
+                    <Image
+                        x:Name="CountryFlagImageSnapped"
+                        HorizontalAlignment="Left"
+                        Grid.Row="2"
+                        VerticalAlignment="Top" Width="280" />
+                </Grid>
             </Grid>
         </ScrollViewer>
 
