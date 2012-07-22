@@ -34,449 +34,697 @@
             d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
     </common:LayoutAwarePage.Resources>
 
-    <Grid
-        x:Name="MainGrid"
-        Style="{StaticResource LayoutRootStyle}"
-        VerticalAlignment="Top">
-        <Grid.Background>
-            <ImageBrush
-                ImageSource="Media/background.png"
-                Stretch="UniformToFill" />
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="21*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="10*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="21*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="10*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="21*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="10*" />
-            <ColumnDefinition />
-            <ColumnDefinition
-                Width="21*" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid
+            x:Name="MainGrid"
+            Style="{StaticResource LayoutRootStyle}"
+            VerticalAlignment="Stretch"
+            Height="Auto">
+            <Grid.Background>
+                <ImageBrush
+                    ImageSource="Media/background.png"
+                    Stretch="UniformToFill" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    Width="5*" />
+                <ColumnDefinition
+                    Width="21*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="5*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="21*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="5*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="21*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="5*" />
+                <ColumnDefinition />
+                <ColumnDefinition
+                    Width="21*" />
+                <ColumnDefinition
+                    Width="5*" />
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition
-                Height="6*" />
-            <RowDefinition />
-            <RowDefinition
-                Height="4*" />
-            <RowDefinition />
-            <RowDefinition
-                Height="43*" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Border
-            BorderThickness="0,0,0,0"
-            Grid.Column="1"
-            Grid.Row="1"
-            Grid.ColumnSpan="5">
-            <TextBlock
-                TextWrapping="Wrap"
-                FontSize="64"
-                Padding="10,5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Text="flag helper" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
-            Grid.Column="1"
-            Grid.Row="3">
-            <TextBlock
-                Name="ShapeLabel"
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="10,5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Text="shape" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
-            Grid.Column="5"
-            Grid.Row="3">
-            <TextBlock
-                Name="AddLabel"
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="10,5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Text="additionals" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
-            Grid.Column="9"
-            Grid.Row="3">
-            <TextBlock
-                Name="ColorsLabel"
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="10,5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Text="colors" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
-            Grid.Column="13"
-            Grid.Row="3">
-            <TextBlock
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="10,5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Text="results" />
-        </Border>
-
-        <TextBlock
-            Grid.Column="3"
-            TextWrapping="Wrap"
-            FontSize="96"
-            Padding="0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Text="+"
-            Margin="0"
-            Grid.RowSpan="7" />
-        <TextBlock
-            Grid.Column="7"
-            TextWrapping="Wrap"
-            FontSize="96"
-            Padding="0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Text="+"
-            Margin="0"
-            Grid.RowSpan="7" />
-        <TextBlock
-            Grid.Column="11"
-            TextWrapping="Wrap"
-            FontSize="96"
-            Padding="0"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Text="="
-            Margin="0"
-            Grid.RowSpan="7" />
-
-        <!-- Shape -->
-        <Viewbox
-            Grid.Column="1"
-            Grid.Row="5"
-            Stretch="Uniform"
-            VerticalAlignment="Top">
-
-            <GridView
-                x:Name="ShapeGridView"
-                ItemsSource="{Binding Source={StaticResource ShapeItemSource}}"
-                SelectionMode="Single"
-                SelectionChanged="FlagParameterSelectionChanged">
-
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapGrid
-                            Orientation="Horizontal"
-                            VerticalChildrenAlignment="Center"
-                            MaximumRowsOrColumns="2" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid
-                            Width="150"
-                            Height="150">
-                            <Border>
-                                <Image
-                                    Source="{Binding Image}"
-                                    Width="150"
-                                    Height="100"
-                                    VerticalAlignment="Top" />
-                            </Border>
-
-                            <StackPanel
-                                VerticalAlignment="Bottom"
-                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                <TextBlock
-                                    Text="{Binding Name}"
-                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
-                                    Style="{StaticResource TitleTextStyle}"
-                                    FontSize="20"
-                                    Height="35"
-                                    Padding="0,10,0,0"
-                                    Margin="15,0,15,15" />
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-        </Viewbox>
-
-        <!-- Add -->
-        <Viewbox
-            Grid.Column="5"
-            Grid.Row="5"
-            Stretch="Uniform"
-            VerticalAlignment="Top">
-
-            <GridView
-                x:Name="AddGridView"
-                ItemsSource="{Binding Source={StaticResource AddItemSource}}"
-                SelectionMode="Multiple"
-                SelectionChanged="FlagParameterSelectionChanged">
-
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapGrid
-                            Orientation="Horizontal"
-                            VerticalChildrenAlignment="Center"
-                            MaximumRowsOrColumns="2" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid
-                            Width="150"
-                            Height="150">
-                            <Border>
-                                <Image
-                                    Source="{Binding Image}"
-                                    Width="150"
-                                    Height="100"
-                                    VerticalAlignment="Top" />
-                            </Border>
-
-                            <StackPanel
-                                VerticalAlignment="Bottom"
-                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                <TextBlock
-                                    Text="{Binding Name}"
-                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
-                                    Style="{StaticResource TitleTextStyle}"
-                                    FontSize="20"
-                                    Height="35"
-                                    Padding="0,10,0,0"
-                                    Margin="15,0,15,15" />
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-        </Viewbox>
-
-        <!-- Color -->
-        <Viewbox
-            Grid.Column="9"
-            Grid.Row="5"
-            Stretch="Uniform"
-            VerticalAlignment="Top">
-
-            <GridView
-                x:Name="ColorGridView"
-                ItemsSource="{Binding Source={StaticResource ColorItemSource}}"
-                SelectionMode="Multiple"
-                SelectionChanged="FlagParameterSelectionChanged">
-
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapGrid
-                            Orientation="Horizontal"
-                            VerticalChildrenAlignment="Center"
-                            MaximumRowsOrColumns="2" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid
-                            Width="150"
-                            Height="150">
-
-                            <Border>
-                                <Image
-                                    Source="{Binding Image}"
-                                    Width="150"
-                                    Height="100"
-                                    VerticalAlignment="Top" />
-                            </Border>
-
-                            <StackPanel
-                                VerticalAlignment="Bottom"
-                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                <TextBlock
-                                    Text="{Binding Name}"
-                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
-                                    Style="{StaticResource TitleTextStyle}"
-                                    FontSize="20"
-                                    Height="35"
-                                    Padding="0,10,0,0"
-                                    Margin="15,0,15,15" />
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-        </Viewbox>
-
-        <!-- Results -->
-        <Viewbox
-            Grid.Column="13"
-            Grid.Row="5"
-            Stretch="Uniform"
-            VerticalAlignment="Top">
-
-            <GridView
-                x:Name="ResultsGridView"
-                ItemsSource="{Binding Source={StaticResource ResultItemSource}}"
-                SelectionMode="None"
-                IsItemClickEnabled="True"
-                ItemClick="ResultCountryClicked">
-
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapGrid
-                            Orientation="Horizontal"
-                            VerticalChildrenAlignment="Center"
-                            MaximumRowsOrColumns="2" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid
-                            Width="150"
-                            Height="150">
-
-                            <Border>
-                                <Image
-                                    Source="{Binding SmallImage}"
-                                    Width="150"
-                                    Height="100"
-                                    VerticalAlignment="Top" />
-                            </Border>
-
-                            <StackPanel
-                                VerticalAlignment="Bottom"
-                                Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                <TextBlock
-                                    Text="{Binding Name}"
-                                    Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
-                                    Style="{StaticResource TitleTextStyle}"
-                                    FontSize="20"
-                                    Height="35"
-                                    Padding="0,10,0,0"
-                                    Margin="15,0,15,15" />
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-        </Viewbox>
-
-        <!-- Country details -->
-        <Border
-            Tapped="CloseCountryDetailsClicked"
-            x:Name="DarkenerBackground"
-            BorderBrush="Black"
-            Grid.ColumnSpan="15"
-            HorizontalAlignment="Left"
-            Height="768"
-            Grid.RowSpan="7"
-            VerticalAlignment="Top"
-            Width="1366"
-            Background="#FF000000"
-            Opacity="0.5"
-            Visibility="Collapsed" />
-        <Border
-            x:Name="CountryDetailsPopup"
-            BorderBrush="Black"
-            HorizontalAlignment="Center"
-            Height="500"
-            VerticalAlignment="Center"
-            Margin="26,26,25,121"
-            Width="800"
-            Grid.ColumnSpan="9"
-            Grid.Column="3"
-            Grid.Row="3"
-            Grid.RowSpan="3"
-            Visibility="Collapsed">
-            <Grid>
-                <Grid.Background>
-                    <ImageBrush
-                        ImageSource="Media/backgroundWhite.png"
-                        Stretch="UniformToFill" />
-                </Grid.Background>
-                <Grid.RowDefinitions>
-                    <RowDefinition
-                        Height="100" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition
-                        Width="400" />
-                </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="5*" />
+                <RowDefinition
+                    Height="6*" />
+                <RowDefinition />
+                <RowDefinition
+                    Height="4*" />
+                <RowDefinition />
+                <RowDefinition
+                    Height="43*" />
+                <RowDefinition
+                    Height="5*" />
+            </Grid.RowDefinitions>
+            <Border
+                BorderThickness="0,0,0,0"
+                Grid.Column="1"
+                Grid.Row="1"
+                Grid.ColumnSpan="5">
                 <TextBlock
-                    x:Name="CountryNameLabel"
-                    Grid.ColumnSpan="2"
                     TextWrapping="Wrap"
-                    Text="Country name"
-                    Margin="30,30,0,0"
-                    Foreground="Black"
-                    FontSize="48" />
-                <TextBox
-                    x:Name="CountryDetailsText"
-                    Grid.Row="1"
+                    FontSize="64"
+                    Padding="10,5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="flag helper" />
+            </Border>
+            <Border
+                BorderThickness="0,0,0,0"
+                Grid.Column="1"
+                Grid.Row="3">
+                <TextBlock
+                    Name="ShapeLabel"
                     TextWrapping="Wrap"
-                    Text="Continent: Africa&#xD;&#xA;Capital City: Mbamba&#xD;&#xA;ISO 325 Code: NG"
-                    BorderThickness="0"
-                    Margin="30,0,0,0"
-                    FontSize="26.667"
-                    Padding="0" />
-                <Image
-                    x:Name="CountryFlagImage"
-                    Grid.Column="1"
-                    HorizontalAlignment="Right"
-                    Height="200"
-                    Margin="0,0,50,0"
-                    Grid.Row="1"
-                    VerticalAlignment="Top"
-                    Width="300" />
-                <Button
-                    Click="CloseCountryDetailsClicked"
-                    x:Name="CloseCountryDetailsButton"
-                    Content="x"
-                    HorizontalAlignment="Right"
-                    Height="31.667"
-                    Margin="0,10,10,0"
-                    VerticalAlignment="Top"
-                    Width="32"
-                    Foreground="Black"
-                    BorderBrush="Black"
-                    BorderThickness="1"
-                    Padding="0"
-                    Grid.Column="1" />
-            </Grid>
-        </Border>
-    </Grid>
+                    FontSize="32"
+                    Padding="10,5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="shape" />
+            </Border>
+            <Border
+                BorderThickness="0,0,0,0"
+                Grid.Column="5"
+                Grid.Row="3">
+                <TextBlock
+                    Name="AddLabel"
+                    TextWrapping="Wrap"
+                    FontSize="32"
+                    Padding="10,5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="additionals" />
+            </Border>
+            <Border
+                BorderThickness="0,0,0,0"
+                Grid.Column="9"
+                Grid.Row="3">
+                <TextBlock
+                    Name="ColorsLabel"
+                    TextWrapping="Wrap"
+                    FontSize="32"
+                    Padding="10,5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="colors" />
+            </Border>
+            <Border
+                BorderThickness="0,0,0,0"
+                Grid.Column="13"
+                Grid.Row="3">
+                <TextBlock
+                    TextWrapping="Wrap"
+                    FontSize="32"
+                    Padding="10,5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Text="results" />
+            </Border>
+
+            <TextBlock
+                Grid.Column="3"
+                TextWrapping="Wrap"
+                FontSize="96"
+                Padding="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="+"
+                Margin="0"
+                Grid.RowSpan="7" />
+            <TextBlock
+                Grid.Column="7"
+                TextWrapping="Wrap"
+                FontSize="96"
+                Padding="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="+"
+                Margin="0"
+                Grid.RowSpan="7" />
+            <TextBlock
+                Grid.Column="11"
+                TextWrapping="Wrap"
+                FontSize="96"
+                Padding="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Text="="
+                Margin="0"
+                Grid.RowSpan="7" />
+
+            <!-- Shape -->
+            <Viewbox
+                x:Name="ShapeViewbox"
+                Grid.Column="1"
+                Grid.Row="5"
+                Stretch="Uniform"
+                VerticalAlignment="Top">
+
+                <GridView
+                    x:Name="ShapeGridView"
+                    ItemsSource="{Binding Source={StaticResource ShapeItemSource}}"
+                    SelectionMode="Single"
+                    SelectionChanged="FlagParameterSelectionChanged">
+
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid
+                                Orientation="Horizontal"
+                                VerticalChildrenAlignment="Center"
+                                MaximumRowsOrColumns="2" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Width="150"
+                                Height="150">
+                                <Border>
+                                    <Image
+                                        Source="{Binding Image}"
+                                        Width="150"
+                                        Height="100"
+                                        VerticalAlignment="Top" />
+                                </Border>
+
+                                <StackPanel
+                                    VerticalAlignment="Bottom"
+                                    Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                    <TextBlock
+                                        Text="{Binding Name}"
+                                        Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                        Style="{StaticResource TitleTextStyle}"
+                                        FontSize="20"
+                                        Height="35"
+                                        Padding="0,10,0,0"
+                                        Margin="15,0,15,15" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Viewbox>
+
+            <!-- Add -->
+            <Viewbox
+                x:Name="AddViewbox"
+                Grid.Column="5"
+                Grid.Row="5"
+                Stretch="Uniform"
+                VerticalAlignment="Top">
+
+                <GridView
+                    x:Name="AddGridView"
+                    ItemsSource="{Binding Source={StaticResource AddItemSource}}"
+                    SelectionMode="Multiple"
+                    SelectionChanged="FlagParameterSelectionChanged">
+
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid
+                                Orientation="Horizontal"
+                                VerticalChildrenAlignment="Center"
+                                MaximumRowsOrColumns="2" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Width="150"
+                                Height="150">
+                                <Border>
+                                    <Image
+                                        Source="{Binding Image}"
+                                        Width="150"
+                                        Height="100"
+                                        VerticalAlignment="Top" />
+                                </Border>
+
+                                <StackPanel
+                                    VerticalAlignment="Bottom"
+                                    Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                    <TextBlock
+                                        Text="{Binding Name}"
+                                        Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                        Style="{StaticResource TitleTextStyle}"
+                                        FontSize="20"
+                                        Height="35"
+                                        Padding="0,10,0,0"
+                                        Margin="15,0,15,15" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Viewbox>
+
+            <!-- Color -->
+            <Viewbox
+                x:Name="ColorViewbox"
+                Grid.Column="9"
+                Grid.Row="5"
+                Stretch="Uniform"
+                VerticalAlignment="Top">
+
+                <GridView
+                    x:Name="ColorGridView"
+                    ItemsSource="{Binding Source={StaticResource ColorItemSource}}"
+                    SelectionMode="Multiple"
+                    SelectionChanged="FlagParameterSelectionChanged">
+
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid
+                                Orientation="Horizontal"
+                                VerticalChildrenAlignment="Center"
+                                MaximumRowsOrColumns="2" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Width="150"
+                                Height="150">
+
+                                <Border>
+                                    <Image
+                                        Source="{Binding Image}"
+                                        Width="150"
+                                        Height="100"
+                                        VerticalAlignment="Top" />
+                                </Border>
+
+                                <StackPanel
+                                    VerticalAlignment="Bottom"
+                                    Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                    <TextBlock
+                                        Text="{Binding Name}"
+                                        Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                        Style="{StaticResource TitleTextStyle}"
+                                        FontSize="20"
+                                        Height="35"
+                                        Padding="0,10,0,0"
+                                        Margin="15,0,15,15" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Viewbox>
+
+            <!-- Results -->
+            <Viewbox
+                x:Name="ResultViewbox"
+                Grid.Column="13"
+                Grid.Row="5"
+                Stretch="Uniform"
+                VerticalAlignment="Top">
+
+                <GridView
+                    x:Name="ResultsGridView"
+                    ItemsSource="{Binding Source={StaticResource ResultItemSource}}"
+                    SelectionMode="None"
+                    IsItemClickEnabled="True"
+                    ItemClick="ResultCountryClicked">
+
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapGrid
+                                Orientation="Horizontal"
+                                VerticalChildrenAlignment="Center"
+                                MaximumRowsOrColumns="2" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                Width="150"
+                                Height="150">
+
+                                <Border>
+                                    <Image
+                                        Source="{Binding SmallImage}"
+                                        Width="150"
+                                        Height="100"
+                                        VerticalAlignment="Top" />
+                                </Border>
+
+                                <StackPanel
+                                    VerticalAlignment="Bottom"
+                                    Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
+                                    <TextBlock
+                                        Text="{Binding Name}"
+                                        Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
+                                        Style="{StaticResource TitleTextStyle}"
+                                        FontSize="20"
+                                        Height="35"
+                                        Padding="0,10,0,0"
+                                        Margin="15,0,15,15" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </Viewbox>
+
+            <!-- Country details -->
+            <Border
+                Tapped="CloseCountryDetailsClicked"
+                x:Name="DarkenerBackground"
+                BorderBrush="Black"
+                Grid.ColumnSpan="15"
+                HorizontalAlignment="Left"
+                Height="768"
+                Grid.RowSpan="7"
+                VerticalAlignment="Top"
+                Width="1366"
+                Background="#FF000000"
+                Opacity="0.5"
+                Visibility="Collapsed" />
+            <Border
+                x:Name="CountryDetailsPopup"
+                BorderBrush="Black"
+                HorizontalAlignment="Center"
+                Height="500"
+                VerticalAlignment="Center"
+                Margin="26,26,25,121"
+                Width="800"
+                Grid.ColumnSpan="9"
+                Grid.Column="3"
+                Grid.Row="3"
+                Grid.RowSpan="3"
+                Visibility="Collapsed">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush
+                            ImageSource="Media/backgroundWhite.png"
+                            Stretch="UniformToFill" />
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition
+                            Height="100" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition
+                            Width="400" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        x:Name="CountryNameLabel"
+                        Grid.ColumnSpan="2"
+                        TextWrapping="Wrap"
+                        Text="Country name"
+                        Margin="30,30,0,0"
+                        Foreground="Black"
+                        FontSize="48" />
+                    <TextBox
+                        x:Name="CountryDetailsText"
+                        Grid.Row="1"
+                        TextWrapping="Wrap"
+                        Text="Continent: Africa&#xD;&#xA;Capital City: Mbamba&#xD;&#xA;ISO 325 Code: NG"
+                        BorderThickness="0"
+                        Margin="30,0,0,0"
+                        FontSize="26.667"
+                        Padding="0" />
+                    <Image
+                        x:Name="CountryFlagImage"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        Height="200"
+                        Margin="0,0,50,0"
+                        Grid.Row="1"
+                        VerticalAlignment="Top"
+                        Width="300" />
+                    <Button
+                        Click="CloseCountryDetailsClicked"
+                        x:Name="CloseCountryDetailsButton"
+                        Content="x"
+                        HorizontalAlignment="Right"
+                        Height="31.667"
+                        Margin="0,10,10,0"
+                        VerticalAlignment="Top"
+                        Width="32"
+                        Foreground="Black"
+                        BorderBrush="Black"
+                        BorderThickness="1"
+                        Padding="0"
+                        Grid.Column="1" />
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <!-- !!! SNAPPED !!! -->
+        <ScrollViewer
+            Visibility="Collapsed"
+            x:Name="MainScrollViewerSnapped">
+        	<Grid
+                x:Name="MainGridSnapped"
+        		Style="{StaticResource LayoutRootStyle}"
+        		VerticalAlignment="Stretch"
+        		Width="320">
+        		<Grid.Background>
+        			<ImageBrush
+        				ImageSource="Media/backgroundSnapped.png"
+        				Stretch="UniformToFill" />
+        		</Grid.Background>
+        		<Grid.ColumnDefinitions>
+        			<ColumnDefinition
+        				Width="20" />
+        			<ColumnDefinition />
+        			<ColumnDefinition Width="20" />
+        		</Grid.ColumnDefinitions>
+
+        		<Grid.RowDefinitions>
+        			<RowDefinition Height="20" />
+        			<RowDefinition Height="60"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="430"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="40"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="580"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="40"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="580"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="40"/>
+        			<RowDefinition Height="20"/>
+        			<RowDefinition Height="580"/>
+        			<RowDefinition Height="20"/>
+        		</Grid.RowDefinitions>
+                
+        		<Border
+        			BorderThickness="0,0,0,0"
+        			Grid.Column="1"
+        			Grid.Row="1"
+        			Grid.ColumnSpan="5">
+        			<TextBlock
+        				TextWrapping="Wrap"
+        				FontSize="48"
+        				Padding="10,5"
+        				VerticalAlignment="Center"
+        				HorizontalAlignment="Left"
+        				Text="flag helper" />
+        		</Border>
+
+        		<TextBlock
+        			Grid.Column="1"
+        			TextWrapping="Wrap"
+        			FontSize="72"
+        			Padding="0"
+        			VerticalAlignment="Center"
+        			HorizontalAlignment="Center"
+        			Text="+"
+        			Margin="0" Grid.Row="5" />
+                
+        		<TextBlock
+        			Grid.Column="1"
+        			TextWrapping="Wrap"
+        			FontSize="72"
+        			Padding="0"
+        			VerticalAlignment="Center"
+        			HorizontalAlignment="Center"
+        			Text="+"
+        			Margin="0" Grid.Row="9" />
+                
+        		<TextBlock
+        			Grid.Column="1"
+        			TextWrapping="Wrap"
+        			FontSize="72"
+        			Padding="0"
+        			VerticalAlignment="Center"
+        			HorizontalAlignment="Center"
+        			Text="="
+        			Margin="0" Grid.Row="13" />
+
+                <!-- Country details -->
+        		<Border
+        			Tapped="CloseCountryDetailsClicked"
+        			x:Name="DarkenerBackgroundSnapped"
+        			BorderBrush="Black"
+        			Grid.ColumnSpan="15"
+        			HorizontalAlignment="Left"
+        			Height="768"
+        			Grid.RowSpan="7"
+        			VerticalAlignment="Top"
+        			Width="1366"
+        			Background="#FF000000"
+        			Opacity="0.5"
+        			Visibility="Collapsed" />
+        		<Border
+        			x:Name="CountryDetailsPopupSnapped"
+        			BorderBrush="Black"
+        			HorizontalAlignment="Center"
+        			Height="500"
+        			VerticalAlignment="Center"
+        			Margin="26,26,25,121"
+        			Width="800"
+        			Grid.ColumnSpan="9"
+        			Grid.Column="3"
+        			Grid.Row="3"
+        			Grid.RowSpan="3"
+        			Visibility="Collapsed">
+        			<Grid>
+        				<Grid.Background>
+        					<ImageBrush
+        						ImageSource="Media/background.png"
+        						Stretch="UniformToFill" />
+        				</Grid.Background>
+        				<Grid.RowDefinitions>
+        					<RowDefinition
+        						Height="100" />
+        					<RowDefinition />
+        				</Grid.RowDefinitions>
+        				<Grid.ColumnDefinitions>
+        					<ColumnDefinition />
+        					<ColumnDefinition
+        						Width="400" />
+        				</Grid.ColumnDefinitions>
+        				<TextBlock
+        					x:Name="CountryNameLabelSnapped"
+        					Grid.ColumnSpan="2"
+        					TextWrapping="Wrap"
+        					Text="Country name"
+        					Margin="30,30,0,0"
+        					Foreground="Black"
+        					FontSize="48" />
+        				<TextBox
+        					x:Name="CountryDetailsTextSnapped"
+        					Grid.Row="1"
+        					TextWrapping="Wrap"
+        					Text="Continent: Africa&#xA;Capital City: Mbamba&#xA;ISO 325 Code: NG"
+        					BorderThickness="0"
+        					Margin="30,0,0,0"
+        					FontSize="26.667"
+        					Padding="0" />
+        				<Image
+        					x:Name="CountryFlagImageSnapped"
+        					Grid.Column="1"
+        					HorizontalAlignment="Right"
+        					Height="200"
+        					Margin="0,0,50,0"
+        					Grid.Row="1"
+        					VerticalAlignment="Top"
+        					Width="300" />
+        				<Button
+        					Click="CloseCountryDetailsClicked"
+        					x:Name="CloseCountryDetailsButtonSnapped"
+        					Content="x"
+        					HorizontalAlignment="Right"
+        					Height="31.667"
+        					Margin="0,10,10,0"
+        					VerticalAlignment="Top"
+        					Width="32"
+        					Foreground="Black"
+        					BorderBrush="Black"
+        					BorderThickness="1"
+        					Padding="0"
+        					Grid.Column="1" />
+        			</Grid>
+        		</Border>
+        	</Grid>
+        </ScrollViewer>
+
+    
+    
+    
+    
+    
+<!-- Vertical scrolling list only used when snapped -->
+    <!--<ListView
+        x:Name="itemListView"
+        AutomationProperties.AutomationId="ItemsListView"
+        AutomationProperties.Name="Items"
+        TabIndex="1"
+        Grid.Row="1"
+        Visibility="Collapsed"
+        Margin="0,-10,0,0"
+        Padding="10,0,0,60"
+        ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
+        ItemTemplate="{StaticResource Standard80ItemTemplate}"
+        SelectionMode="None"
+        IsItemClickEnabled="True"
+        ItemClick="ItemView_ItemClick" />-->
+
+    <VisualStateManager.VisualStateGroups>
+
+        <!-- Visual states reflect the application's view state -->
+        <VisualStateGroup
+            x:Name="ApplicationViewStates">
+            <VisualState
+                x:Name="FullScreenLandscape" />
+            <VisualState
+                x:Name="Filled" />
+
+            <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+            <VisualState
+                x:Name="FullScreenPortrait" />
+
+            <!--
+                    The back button and title have different styles when snapped, and the list representation is substituted
+                    for the grid displayed in all other view states
+                -->
+            <VisualState
+                x:Name="Snapped">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames
+                        Storyboard.TargetName="MainScrollViewerSnapped"
+                        Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame
+                            KeyTime="0"
+                            Value="Visible" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames
+                        Storyboard.TargetName="MainGrid"
+                        Storyboard.TargetProperty="Visibility">
+                        <DiscreteObjectKeyFrame
+                            KeyTime="0"
+                            Value="Collapsed" />
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    
+    
+</Grid>
+    
 
     <!-- Bottom appbar -->
     <Page.BottomAppBar>

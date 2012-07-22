@@ -30,6 +30,7 @@ namespace FlagsW8
     {
         public ItemsPage()
         {
+            Window.Current.SizeChanged += WindowSizeChanged;     
             Country.BoxSize = 510;
             Country.MaxImageSizeX = 50;
             Country.MaxImageSizeY = 30;
@@ -47,16 +48,7 @@ namespace FlagsW8
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            var i = 0;
             ResultCountries = new ObservableCollection<Country>();
-            foreach (var country in CountryManager.Countries)
-            {
-                if (++i > 8)
-                    break;
-
-                ResultCountries.Add(country);
-            }
-
             DefaultViewModel["ShapeOptions"] = FlagParamsManager.Shapes;
             DefaultViewModel["AddOptions"] = FlagParamsManager.Adds;
             DefaultViewModel["ColorOptions"] = FlagParamsManager.Colors;
@@ -95,6 +87,37 @@ namespace FlagsW8
             ShapeGridView.SelectedItem = FlagParamsManager.Shapes[0];
             AddGridView.SelectedItem = null;
             ColorGridView.SelectedItem = null;
+        }
+    
+
+        private void WindowSizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+        {
+            // Awful solution. There is no public setter for GridView.SelectedItems, I can't easily bind or copy
+            // selected items from MainGrid to SnappedGrid so I just move controls on visual state change...
+            MoveControlToSnappedGridOrMainGrid(ShapeViewbox, 1, 5, 1, 3);
+            MoveControlToSnappedGridOrMainGrid(AddViewbox, 5, 5, 1, 7);
+            MoveControlToSnappedGridOrMainGrid(ColorViewbox, 9, 5, 1, 11);
+            MoveControlToSnappedGridOrMainGrid(ResultViewbox, 13, 5, 1, 15);
+        }
+
+        private void MoveControlToSnappedGridOrMainGrid(FrameworkElement control, int mainColumn, int mainRow, int snappedColumn, int snappedRow)
+        {
+            var viewState = ApplicationView.Value;
+            if (viewState == ApplicationViewState.Snapped && control.Parent == MainGrid)
+            {
+                MainGrid.Children.Remove(control);
+                MainGridSnapped.Children.Add(control);
+                Grid.SetColumn(control, snappedColumn);
+                Grid.SetRow(control, snappedRow);
+            }
+
+            if (viewState != ApplicationViewState.Snapped && control.Parent == MainGridSnapped)
+            {
+                MainGridSnapped.Children.Remove(control);
+                MainGrid.Children.Add(control);
+                Grid.SetColumn(control, mainColumn);
+                Grid.SetRow(control, mainRow);
+            }
         }
     }
 }

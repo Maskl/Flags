@@ -102,12 +102,12 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\GridWidthToHeightConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -150,6 +150,7 @@
     <Content Include="Media\Adds\add7.png" />
     <Content Include="Media\Adds\add8.png" />
     <Content Include="Media\background.png" />
+    <Content Include="Media\BackgroundSnapped.png" />
     <Content Include="Media\backgroundWhite.png" />
     <Content Include="Media\Back\back1.jpg" />
     <Content Include="Media\Flags\100\ad.png" />
