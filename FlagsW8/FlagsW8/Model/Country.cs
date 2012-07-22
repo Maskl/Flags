@@ -67,7 +67,7 @@ namespace FlagsW8.Model
 
         public string ShortDescription
         {
-            get { return Continent + "\n" + Name + "\n" + Capital; }
+            get { return "Continent: " + Continent + "\nCapital: " + Capital + "\nCountry code: " + Iso; }
         }
 
         public override string ToString()
