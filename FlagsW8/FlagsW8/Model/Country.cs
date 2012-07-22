@@ -75,17 +75,16 @@ namespace FlagsW8.Model
             return "(" + Iso + ") " + Name + " - " + Continent + " - " + Capital;
         }
 
-        private ImageSource _image = null;
-        public ImageSource Image
+        private ImageSource _bigImage;
+        public ImageSource BigImage
         {
-            get
-            {
-                if (this._image == null)
-                {
-                    this._image = new BitmapImage(new Uri("ms-appx:///Media/Flags/100/" + Iso.ToLower() + ".png"));
-                }
-                return this._image;
-            }
+            get { return _bigImage ?? (_bigImage = new BitmapImage(new Uri("ms-appx:///Media/Flags/300/" + Iso.ToLower() + ".png"))); }
+        }
+
+        private ImageSource _smallImage;
+        public ImageSource SmallImage
+        {
+            get { return _smallImage ?? (_smallImage = new BitmapImage(new Uri("ms-appx:///Media/Flags/300x200/" + Iso.ToLower() + ".png"))); }
         }
     }
 }

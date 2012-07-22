@@ -78,7 +78,7 @@ namespace FlagsW8
             var country = (Country)e.ClickedItem;
             CountryNameLabel.Text = country.Name;
             CountryDetailsText.Text = country.ShortDescription;
-            CountryFlagImage.Source = country.Image;
+            CountryFlagImage.Source = country.BigImage;
 
             DarkenerBackground.Visibility = Visibility.Visible;
             CountryDetailsPopup.Visibility = Visibility.Visible;
@@ -95,16 +95,6 @@ namespace FlagsW8
             ShapeGridView.SelectedItem = FlagParamsManager.Shapes[0];
             AddGridView.SelectedItem = null;
             ColorGridView.SelectedItem = null;
-        }
-
-        private void Wp7VersionDownloadClicked(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void AboutButtonClicked(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 }

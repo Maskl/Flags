@@ -1,47 +1,48 @@
 ﻿<common:LayoutAwarePage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FlagsW8"
     xmlns:data="using:FlagsW8.Data"
     xmlns:common="using:FlagsW8.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Converters="using:FlagsW8.Converters" xmlns:Model="using:FlagsW8.Model" x:Name="pageRoot"
+    x:Name="pageRoot"
     x:Class="FlagsW8.ItemsPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
     IsTabStop="false"
     mc:Ignorable="d">
 
     <common:LayoutAwarePage.Resources>
-        
+
         <CollectionViewSource
             x:Name="ShapeItemSource"
             Source="{Binding ShapeOptions}"
             d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
-        
+
         <CollectionViewSource
             x:Name="AddItemSource"
             Source="{Binding AddOptions}"
             d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
-        
+
         <CollectionViewSource
-                x:Name="ColorItemSource"
-                Source="{Binding ColorOptions}"
-                d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
-        
+            x:Name="ColorItemSource"
+            Source="{Binding ColorOptions}"
+            d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
+
         <CollectionViewSource
             x:Name="ResultItemSource"
             Source="{Binding ResultCountries}"
             d:Source="{Binding AllGroups, Source={d:DesignInstance IsDesignTimeCreatable=True, Type=data:SampleDataSource}}" />
     </common:LayoutAwarePage.Resources>
 
-
     <Grid
         x:Name="MainGrid"
         Style="{StaticResource LayoutRootStyle}"
-        VerticalAlignment="Top"
-        Background="#FF6C1919"
-        Height="768">
+        VerticalAlignment="Top">
+        <Grid.Background>
+            <ImageBrush
+                ImageSource="Media/background.png"
+                Stretch="UniformToFill" />
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition
@@ -83,7 +84,6 @@
             BorderThickness="0,0,0,0"
             Grid.Column="1"
             Grid.Row="1"
-            Background="#FF1202B8"
             Grid.ColumnSpan="5">
             <TextBlock
                 TextWrapping="Wrap"
@@ -96,8 +96,7 @@
         <Border
             BorderThickness="0,0,0,0"
             Grid.Column="1"
-            Grid.Row="3"
-            Background="#FF1202B8">
+            Grid.Row="3">
             <TextBlock
                 Name="ShapeLabel"
                 TextWrapping="Wrap"
@@ -110,8 +109,7 @@
         <Border
             BorderThickness="0,0,0,0"
             Grid.Column="5"
-            Grid.Row="3"
-            Background="#FF1202B8">
+            Grid.Row="3">
             <TextBlock
                 Name="AddLabel"
                 TextWrapping="Wrap"
@@ -124,8 +122,7 @@
         <Border
             BorderThickness="0,0,0,0"
             Grid.Column="9"
-            Grid.Row="3"
-            Background="#FF1202B8">
+            Grid.Row="3">
             <TextBlock
                 Name="ColorsLabel"
                 TextWrapping="Wrap"
@@ -138,8 +135,7 @@
         <Border
             BorderThickness="0,0,0,0"
             Grid.Column="13"
-            Grid.Row="3"
-            Background="#FF1202B8">
+            Grid.Row="3">
             <TextBlock
                 TextWrapping="Wrap"
                 FontSize="32"
@@ -148,53 +144,37 @@
                 HorizontalAlignment="Left"
                 Text="results" />
         </Border>
-        <Border
-            BorderThickness="0,0,0,0"
+
+        <TextBlock
             Grid.Column="3"
-            Grid.Row="5"
-            Background="#FF1202B8"
-            Width="50"
-            Height="50">
-            <TextBlock
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Text="+" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
+            TextWrapping="Wrap"
+            FontSize="96"
+            Padding="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="+"
+            Margin="0"
+            Grid.RowSpan="7" />
+        <TextBlock
             Grid.Column="7"
-            Grid.Row="5"
-            Background="#FF1202B8"
-            Width="50"
-            Height="50"
-            Margin="31,241.5">
-            <TextBlock
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Text="+" />
-        </Border>
-        <Border
-            BorderThickness="0,0,0,0"
+            TextWrapping="Wrap"
+            FontSize="96"
+            Padding="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="+"
+            Margin="0"
+            Grid.RowSpan="7" />
+        <TextBlock
             Grid.Column="11"
-            Grid.Row="5"
-            Background="#FF1202B8"
-            Width="50"
-            Height="50"
-            Margin="31,241.5">
-            <TextBlock
-                TextWrapping="Wrap"
-                FontSize="32"
-                Padding="0"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Text="=" />
-        </Border>
+            TextWrapping="Wrap"
+            FontSize="96"
+            Padding="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="="
+            Margin="0"
+            Grid.RowSpan="7" />
 
         <!-- Shape -->
         <Viewbox
@@ -208,7 +188,7 @@
                 ItemsSource="{Binding Source={StaticResource ShapeItemSource}}"
                 SelectionMode="Single"
                 SelectionChanged="FlagParameterSelectionChanged">
-                
+
                 <GridView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapGrid
@@ -223,13 +203,11 @@
                         <Grid
                             Width="150"
                             Height="150">
-                            
-                            <Border
-                                Background="#FF02B812">
+                            <Border>
                                 <Image
                                     Source="{Binding Image}"
                                     Width="150"
-                                    Height="130"
+                                    Height="100"
                                     VerticalAlignment="Top" />
                             </Border>
 
@@ -240,7 +218,9 @@
                                     Text="{Binding Name}"
                                     Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                     Style="{StaticResource TitleTextStyle}"
-                                    Height="20"
+                                    FontSize="20"
+                                    Height="35"
+                                    Padding="0,10,0,0"
                                     Margin="15,0,15,15" />
                             </StackPanel>
                         </Grid>
@@ -248,7 +228,7 @@
                 </GridView.ItemTemplate>
             </GridView>
         </Viewbox>
-        
+
         <!-- Add -->
         <Viewbox
             Grid.Column="5"
@@ -276,13 +256,11 @@
                         <Grid
                             Width="150"
                             Height="150">
-
-                            <Border
-                                Background="#FF02B812">
+                            <Border>
                                 <Image
                                     Source="{Binding Image}"
                                     Width="150"
-                                    Height="130"
+                                    Height="100"
                                     VerticalAlignment="Top" />
                             </Border>
 
@@ -293,7 +271,9 @@
                                     Text="{Binding Name}"
                                     Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                     Style="{StaticResource TitleTextStyle}"
-                                    Height="20"
+                                    FontSize="20"
+                                    Height="35"
+                                    Padding="0,10,0,0"
                                     Margin="15,0,15,15" />
                             </StackPanel>
                         </Grid>
@@ -301,7 +281,7 @@
                 </GridView.ItemTemplate>
             </GridView>
         </Viewbox>
-        
+
         <!-- Color -->
         <Viewbox
             Grid.Column="9"
@@ -330,12 +310,11 @@
                             Width="150"
                             Height="150">
 
-                            <Border
-                                Background="#FF02B812">
+                            <Border>
                                 <Image
                                     Source="{Binding Image}"
                                     Width="150"
-                                    Height="130"
+                                    Height="100"
                                     VerticalAlignment="Top" />
                             </Border>
 
@@ -346,7 +325,9 @@
                                     Text="{Binding Name}"
                                     Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                     Style="{StaticResource TitleTextStyle}"
-                                    Height="20"
+                                    FontSize="20"
+                                    Height="35"
+                                    Padding="0,10,0,0"
                                     Margin="15,0,15,15" />
                             </StackPanel>
                         </Grid>
@@ -384,12 +365,11 @@
                             Width="150"
                             Height="150">
 
-                            <Border
-                                Background="#FF023812">
+                            <Border>
                                 <Image
-                                    Source="{Binding Image}"
+                                    Source="{Binding SmallImage}"
                                     Width="150"
-                                    Height="130"
+                                    Height="100"
                                     VerticalAlignment="Top" />
                             </Border>
 
@@ -400,7 +380,9 @@
                                     Text="{Binding Name}"
                                     Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}"
                                     Style="{StaticResource TitleTextStyle}"
-                                    Height="20"
+                                    FontSize="20"
+                                    Height="35"
+                                    Padding="0,10,0,0"
                                     Margin="15,0,15,15" />
                             </StackPanel>
                         </Grid>
@@ -408,28 +390,95 @@
                 </GridView.ItemTemplate>
             </GridView>
         </Viewbox>
+
+        <!-- Country details -->
         <Border
-            Tapped="CloseCountryDetailsClicked"  x:Name="DarkenerBackground" BorderBrush="Black" Grid.ColumnSpan="15" HorizontalAlignment="Left" Height="768" Grid.RowSpan="7" VerticalAlignment="Top" Width="1366" Background="#FF888888" Opacity="0.25" Visibility="Collapsed"/>
-        <Border x:Name="CountryDetailsPopup" BorderBrush="Black" HorizontalAlignment="Center" Height="500" VerticalAlignment="Center" Background="White" Margin="26,26,25,121" Width="800" Grid.ColumnSpan="9" Grid.Column="3" Grid.Row="3" Grid.RowSpan="3" Visibility="Collapsed">
-        	<Grid>
-        		<Grid.RowDefinitions>
-        			<RowDefinition Height="100"/>
-        			<RowDefinition/>
-        		</Grid.RowDefinitions>
-        		<Grid.ColumnDefinitions>
-        			<ColumnDefinition/>
-        			<ColumnDefinition Width="400"/>
-        		</Grid.ColumnDefinitions>
-        		<TextBlock x:Name="CountryNameLabel" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Country name" Margin="30,30,0,0" Foreground="Black" FontSize="48"/>
-        		<TextBox x:Name="CountryDetailsText" Grid.Row="1" TextWrapping="Wrap" Text="Continent: Africa&#xD;&#xA;Capital City: Mbamba&#xD;&#xA;ISO 325 Code: NG" BorderThickness="0" Margin="30,0,0,0" FontSize="26.667" Padding="0"/>
-        		<Image x:Name="CountryFlagImage" Grid.Column="1" HorizontalAlignment="Right" Height="200" Margin="0,0,50,0" Grid.Row="1" VerticalAlignment="Top" Width="300"/>
-        		<Button 
-Click="CloseCountryDetailsClicked" 
-                    x:Name="CloseCountryDetailsButton" Content="x" HorizontalAlignment="Right" Height="31.667" Margin="0,10,10,0" VerticalAlignment="Top" Width="32" Foreground="Black" BorderBrush="Black" BorderThickness="1" Padding="0" Grid.Column="1"/>
-        	</Grid>
+            Tapped="CloseCountryDetailsClicked"
+            x:Name="DarkenerBackground"
+            BorderBrush="Black"
+            Grid.ColumnSpan="15"
+            HorizontalAlignment="Left"
+            Height="768"
+            Grid.RowSpan="7"
+            VerticalAlignment="Top"
+            Width="1366"
+            Background="#FF000000"
+            Opacity="0.5"
+            Visibility="Collapsed" />
+        <Border
+            x:Name="CountryDetailsPopup"
+            BorderBrush="Black"
+            HorizontalAlignment="Center"
+            Height="500"
+            VerticalAlignment="Center"
+            Margin="26,26,25,121"
+            Width="800"
+            Grid.ColumnSpan="9"
+            Grid.Column="3"
+            Grid.Row="3"
+            Grid.RowSpan="3"
+            Visibility="Collapsed">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush
+                        ImageSource="Media/backgroundWhite.png"
+                        Stretch="UniformToFill" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="100" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition
+                        Width="400" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="CountryNameLabel"
+                    Grid.ColumnSpan="2"
+                    TextWrapping="Wrap"
+                    Text="Country name"
+                    Margin="30,30,0,0"
+                    Foreground="Black"
+                    FontSize="48" />
+                <TextBox
+                    x:Name="CountryDetailsText"
+                    Grid.Row="1"
+                    TextWrapping="Wrap"
+                    Text="Continent: Africa&#xD;&#xA;Capital City: Mbamba&#xD;&#xA;ISO 325 Code: NG"
+                    BorderThickness="0"
+                    Margin="30,0,0,0"
+                    FontSize="26.667"
+                    Padding="0" />
+                <Image
+                    x:Name="CountryFlagImage"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    Height="200"
+                    Margin="0,0,50,0"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Width="300" />
+                <Button
+                    Click="CloseCountryDetailsClicked"
+                    x:Name="CloseCountryDetailsButton"
+                    Content="x"
+                    HorizontalAlignment="Right"
+                    Height="31.667"
+                    Margin="0,10,10,0"
+                    VerticalAlignment="Top"
+                    Width="32"
+                    Foreground="Black"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    Padding="0"
+                    Grid.Column="1" />
+            </Grid>
         </Border>
     </Grid>
-    
+
+    <!-- Bottom appbar -->
     <Page.BottomAppBar>
         <AppBar
             x:Name="bottomAppBar"
@@ -438,22 +487,14 @@ Click="CloseCountryDetailsClicked"
                 <StackPanel
                     Orientation="Horizontal"
                     HorizontalAlignment="Left">
-                    <Button
-                        AutomationProperties.Name ="Clear"
-                        Style="{StaticResource DiscardAppBarButtonStyle}"
-                        Click="ClearButtonClicked"/>
                 </StackPanel>
                 <StackPanel
                     Orientation="Horizontal"
                     HorizontalAlignment="Right">
                     <Button
-                        AutomationProperties.Name="WP7 version"
-                        Style="{StaticResource DownloadAppBarButtonStyle}"
-                        Click="Wp7VersionDownloadClicked"/>
-                    <Button
-                        AutomationProperties.Name="About"
-                        Style="{StaticResource HelpAppBarButtonStyle}"
-                        Click="AboutButtonClicked"/>
+                        AutomationProperties.Name="Clear"
+                        Style="{StaticResource DiscardAppBarButtonStyle}"
+                        Click="ClearButtonClicked" />
                 </StackPanel>
             </Grid>
         </AppBar>
