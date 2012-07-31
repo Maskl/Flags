@@ -92,7 +92,7 @@
                     Padding="10,5"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    Text="flag helper" />
+                    Text="flag recognizer" />
             </Border>
             <Border
                 BorderThickness="0,0,0,0"
@@ -549,11 +549,11 @@
                     Grid.ColumnSpan="5">
                     <TextBlock
                         TextWrapping="Wrap"
-                        FontSize="48"
+                        FontSize="32"
                         Padding="10,5"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Left"
-                        Text="flag helper" />
+                        Text="flag recognizer" />
                 </Border>
 
                 <TextBlock
