@@ -8,7 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <x:String x:Key="AppName">Flag Helper</x:String>
+            <x:String x:Key="AppName">Flag Recognizer</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

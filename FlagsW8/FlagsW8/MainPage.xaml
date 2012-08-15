@@ -85,14 +85,16 @@
                 BorderThickness="0,0,0,0"
                 Grid.Column="1"
                 Grid.Row="1"
-                Grid.ColumnSpan="5">
+                Grid.ColumnSpan="10">
                 <TextBlock
                     TextWrapping="Wrap"
                     FontSize="64"
                     Padding="10,5"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Left"
-                    Text="flag recognizer" />
+                    Text="flag recognizer" 
+					Margin="0,-8,-311,-8" 
+					Width="893" />
             </Border>
             <Border
                 BorderThickness="0,0,0,0"
